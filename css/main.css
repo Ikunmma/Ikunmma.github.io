@@ -41,6 +41,12 @@
   margin-top: 2.4rem;
   margin-bottom: 2.4rem;
 }
+@font-face {
+  font-family: 'hyng';
+  src: url("/font/qc.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --theme-link: #2094f3;
   --theme-color: #1cd0fd;
