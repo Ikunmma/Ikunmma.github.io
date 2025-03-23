@@ -131,9 +131,7 @@
 <p>  eg.i&#x3D;(a&#x3D;6,a*5),a+6;&#x2F;&#x2F;&gt;i&#x3D;30</p>
 <p>9.要输出%应该连续使用2个%</p>
 <p>10.字符变量</p>
-<pre><code class="hljs plaintext">char c=&#x27; ? &#x27;;
-printf(&quot;%d %c&quot;,c,c);
-=&gt;63 ?</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">char c=&#x27; ? &#x27;;<br>printf(&quot;%d %c&quot;,c,c);<br>=&gt;63 ?<br></code></pre></td></tr></table></figure>
 
 <p>11.i++和++i</p>
 <p>i&#x3D;3;</p>
@@ -176,39 +174,18 @@ printf(&quot;%d %c&quot;,c,c);
 <p>输出时遇到’\0’就停止输出</p>
 <p>scanf输入项如果是字符数组名，不加&amp;</p>
 <p>scanf读取字符串时，会在遇空白字符时停止读取</p>
-<h5 id="单行字符串"><a href="#单行字符串" class="headerlink" title="单行字符串"></a>单行字符串</h5><pre><code class="hljs plaintext">while((ch=getchar())!=&#x27;\n&#x27;)&#123;
-    a[i]=ch;
-    i++;
-&#125;</code></pre>
+<h5 id="单行字符串"><a href="#单行字符串" class="headerlink" title="单行字符串"></a>单行字符串</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">while((ch=getchar())!=&#x27;\n&#x27;)&#123;<br>    a[i]=ch;<br>    i++;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">char string[100];
-char c;
-gets(string);
-for(int i=0;(c=string[i])!=&#x27;\0&#x27;;i++)&#123;···&#125;\\遍历字符串中每个字符</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">char string[100];<br>char c;<br>gets(string);<br>for(int i=0;(c=string[i])!=&#x27;\0&#x27;;i++)&#123;···&#125;\\遍历字符串中每个字符<br></code></pre></td></tr></table></figure>
 
-<h5 id="n行字符串"><a href="#n行字符串" class="headerlink" title="n行字符串"></a>n行字符串</h5><pre><code class="hljs plaintext">scanf(&quot;%d&quot;,&amp;n);
-getchar();
-char a[100];
-for(int i=0;i&lt;n;i++)&#123;
-    gets(a);
-    ···
-&#125;</code></pre>
+<h5 id="n行字符串"><a href="#n行字符串" class="headerlink" title="n行字符串"></a>n行字符串</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">scanf(&quot;%d&quot;,&amp;n);<br>getchar();<br>char a[100];<br>for(int i=0;i&lt;n;i++)&#123;<br>    gets(a);<br>    ···<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">scanf(&quot;%d&quot;,&amp;n);
-getchar();
-char string[n][100];
-for(int i=0;i&lt;n;i++)&#123;
-    gets(string[i]);
-    for(int j=0;string[i][j]!=&#x27;\0&#x27;;j++)&#123;···&#125;
-&#125;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">scanf(&quot;%d&quot;,&amp;n);<br>getchar();<br>char string[n][100];<br>for(int i=0;i&lt;n;i++)&#123;<br>    gets(string[i]);<br>    for(int j=0;string[i][j]!=&#x27;\0&#x27;;j++)&#123;···&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h4 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h4><p>记得加<code>#include&lt;string.h&gt;</code></p>
 <h5 id="puts"><a href="#puts" class="headerlink" title="puts"></a>puts</h5><p>输出的字符串中可以包含转义字符</p>
 <p>e.g </p>
-<pre><code class="hljs plaintext">char str[]=&#123;&quot;abc \n def&quot;&#125;;
-puts(str);
-   =&gt;abc
-     def</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">char str[]=&#123;&quot;abc \n def&quot;&#125;;<br>puts(str);<br>   =&gt;abc<br>     def<br></code></pre></td></tr></table></figure>
 
 <h5 id="gets"><a href="#gets" class="headerlink" title="gets"></a>gets</h5><p>从终端输入一个字符串到字符数组，并且得到一个函数值，该函数值是字符数组的起始地址</p>
 <p>注：gets和puts函数只能输入&#x2F;输出一个字符串</p>
@@ -237,13 +214,7 @@ puts(str);
 <p>函数类型决定返回值类型</p>
 <p>用函数原型（函数首部）作函数声明</p>
 <p>e.g int add(int a,int b);</p>
-<h3 id="函数的嵌套"><a href="#函数的嵌套" class="headerlink" title="函数的嵌套"></a>函数的嵌套</h3><pre><code class="hljs plaintext">int max4(int a,int b,int c,int d)&#123;
-    int max2(int a,int b);
-    return max2(max2(max2(a,b),c),d);
-&#125;
-int max2(int a,int b)&#123;
-    return(a&gt;=b?a:b);
-&#125;</code></pre>
+<h3 id="函数的嵌套"><a href="#函数的嵌套" class="headerlink" title="函数的嵌套"></a>函数的嵌套</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int max4(int a,int b,int c,int d)&#123;<br>    int max2(int a,int b);<br>    return max2(max2(max2(a,b),c),d);<br>&#125;<br>int max2(int a,int b)&#123;<br>    return(a&gt;=b?a:b);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="局部与全局变量"><a href="#局部与全局变量" class="headerlink" title="局部与全局变量"></a>局部与全局变量</h3><p>注：全局变量开头一般用大写字母，来区别局部变量</p>
 <h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><p>静态局部&#x2F;全局变量</p>
@@ -264,28 +235,17 @@ int max2(int a,int b)&#123;
 <p>e.g swap(point_1,point_2);</p>
 <p>为使在函数中改变的变量能被main所用，应该用指针变量做函数参数</p>
 <p>e.g</p>
-<pre><code class="hljs plaintext">void swap(int *p1,int *p2)&#123;
-    int temp;
-    temp=*p1;
-    *p1=*p2;
-    *p2=temp;
-&#125;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">void swap(int *p1,int *p2)&#123;<br>    int temp;<br>    temp=*p1;<br>    *p1=*p2;<br>    *p2=temp;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="通过指针引用数组"><a href="#通过指针引用数组" class="headerlink" title="通过指针引用数组"></a>通过指针引用数组</h3><h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><pre><code class="hljs plaintext">int *p;
-p=&amp;a[0];\\不能写成*p=&amp;a[0];</code></pre>
+<h3 id="通过指针引用数组"><a href="#通过指针引用数组" class="headerlink" title="通过指针引用数组"></a>通过指针引用数组</h3><h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int *p;<br>p=&amp;a[0];\\不能写成*p=&amp;a[0];<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">p=&amp;a[0];
-p=a;\\p的值是数组a的首元素</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">p=&amp;a[0];<br>p=a;\\p的值是数组a的首元素<br></code></pre></td></tr></table></figure>
 
 <p>如果指针元素p指向数组中的一个元素，则p+1指向同一数组的下个元素，p-1指向同一数组的上个元素</p>
 <p>如果p的初值为&amp;a[0]，则p+i&#x2F;a+i即a[i]的地址，*(p+i)&#x2F; *(a+i)是p+i&#x2F;a+i所指向的数组元素即a[i]</p>
 <p>两个地址不能相加</p>
 <p>若指针变量p1、p2都指向同一数组中的元素，p2-p1结果为(p2-p1)的值（地址之差）</p>
-<pre><code class="hljs plaintext">int i,a[10];
-int* p=a;\\p初值是a，p指向a[0]
-for(i=0;i&lt;10;i++)scanf(&quot;%d&quot;,p++);
-p=a;\\重新使p指向a[0]
-for(i=0;i&lt;10;i++,p++)printf(&quot;%d&quot;,*p);</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int i,a[10];<br>int* p=a;\\p初值是a，p指向a[0]<br>for(i=0;i&lt;10;i++)scanf(&quot;%d&quot;,p++);<br>p=a;\\重新使p指向a[0]<br>for(i=0;i&lt;10;i++,p++)printf(&quot;%d&quot;,*p);<br></code></pre></td></tr></table></figure>
 
 <p>若a[0]&#x3D;3，++(*p) &#x3D;&gt;a[0]&#x3D;4</p>
 <p>fun(int arr[],int n)  &#x3D;  fun(int* arr,int n)</p>
@@ -294,20 +254,15 @@ for(i=0;i&lt;10;i++,p++)printf(&quot;%d&quot;,*p);</code></pre>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250119103815734.png"></p>
 <p>int (*p)[4]定义包含4个元素的一维数组的指针变量</p>
 <p>e.g 有一个二维数组<code>int arr[3][4]</code>，可用int (*p)[4]来声明一个指针p指向这个二维数组某一行</p>
-<pre><code class="hljs plaintext">int arr[3][4]=&#123;&#123;0,1,2,3&#125;,&#123;4,5,6,7&#125;,&#123;8,9,10,11&#125;&#125;;
-int (*p)[4]=&amp;arr[0];\\p指向arr某一行</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int arr[3][4]=&#123;&#123;0,1,2,3&#125;,&#123;4,5,6,7&#125;,&#123;8,9,10,11&#125;&#125;;<br>int (*p)[4]=&amp;arr[0];\\p指向arr某一行<br></code></pre></td></tr></table></figure>
 
 <h3 id="通过指针引用字符串"><a href="#通过指针引用字符串" class="headerlink" title="通过指针引用字符串"></a>通过指针引用字符串</h3><p>通过字符数组名&#x2F;字符指针变量可以输出一个字符串</p>
-<pre><code class="hljs plaintext">char* a,str[10];
-a=str;
-scanf(&quot;%s&quot;,a);</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">char* a,str[10];<br>a=str;<br>scanf(&quot;%s&quot;,a);<br></code></pre></td></tr></table></figure>
 
 <p>数组名虽代表地址，但它是常量，其值不可改变</p>
 <p>字符指针变量指向的字符串常量中的内容是不可被取代</p>
 <h3 id="指向函数的指针"><a href="#指向函数的指针" class="headerlink" title="指向函数的指针"></a>指向函数的指针</h3><p>函数名是一个指针（地址）</p>
-<pre><code class="hljs plaintext">int (*p)(int,int)
-p=max;\\将函数入口地址赋给p
-c=(*p)(a,b);\\用*p代替函数名</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int (*p)(int,int)<br>p=max;\\将函数入口地址赋给p<br>c=(*p)(a,b);\\用*p代替函数名<br></code></pre></td></tr></table></figure>
 
 <p>char* p[6]包含6个指针的数值</p>
 <h2 id="用户自己建立数据类型"><a href="#用户自己建立数据类型" class="headerlink" title="用户自己建立数据类型"></a>用户自己建立数据类型</h2><h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>struct 结构体名{</p>
@@ -321,75 +276,17 @@ c=(*p)(a,b);\\用*p代替函数名</code></pre>
 <h3 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h3><p>union 共用体名{</p>
 <p>​	成员表列（类型名 成员名）;</p>
 <p>};</p>
-<h3 id="typedef声明新类型名"><a href="#typedef声明新类型名" class="headerlink" title="typedef声明新类型名"></a>typedef声明新类型名</h3><h1 id="C语言经典例题"><a href="#C语言经典例题" class="headerlink" title="C语言经典例题"></a>C语言经典例题</h1><h2 id="统计一个字符串中每个单词的字符数"><a href="#统计一个字符串中每个单词的字符数" class="headerlink" title="统计一个字符串中每个单词的字符数"></a>统计一个字符串中每个单词的字符数</h2><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;
-int main()&#123;
-    char c;
-    int count=0;\\用于统计当前单词的字符数
-    int first=1;\\用于标记是否是第一个输出的字符数，初始值为1，表示是第一个
-    while(scanf(&quot;%c&quot;,&amp;c)&amp;&amp;c!=&#x27;.&#x27;)&#123;
-        if(c==&#x27; &#x27;)&#123;\\如果读取到的字符是空格，说明当前单词结束
-            if(count&gt;0)&#123;\\如果count大于0，说明前面有单词字符被统计
-                if(!first)printf(&quot; &quot;);\\如果first为0（即不是第一个输出），则先输出一个空格作为分隔
-                printf(&quot;%d&quot;,count);
-                first=0;
-                count=0;\\重置count为0，准备统计下一个单词
-            &#125;
-        &#125;
-        else count++;\\如果读取到的字符不是空格，则count加1，继续统计当前单词的字符数
-    &#125;
-    if(count&gt;0)&#123;\\循环结束后，如果count大于0，说明最后一个单词的字符数还没有输出
-        if(!first)printf(&quot; &quot;);\\如果不是第一个输出，先输出一个空格
-        printf(&quot;%d&quot;,count);\\输出最后一个单词的字符数
-    &#125;
-&#125;</code></pre>
+<h3 id="typedef声明新类型名"><a href="#typedef声明新类型名" class="headerlink" title="typedef声明新类型名"></a>typedef声明新类型名</h3><h1 id="C语言经典例题"><a href="#C语言经典例题" class="headerlink" title="C语言经典例题"></a>C语言经典例题</h1><h2 id="统计一个字符串中每个单词的字符数"><a href="#统计一个字符串中每个单词的字符数" class="headerlink" title="统计一个字符串中每个单词的字符数"></a>统计一个字符串中每个单词的字符数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>int main()&#123;<br>    char c;<br>    int count=0;\\用于统计当前单词的字符数<br>    int first=1;\\用于标记是否是第一个输出的字符数，初始值为1，表示是第一个<br>    while(scanf(&quot;%c&quot;,&amp;c)&amp;&amp;c!=&#x27;.&#x27;)&#123;<br>        if(c==&#x27; &#x27;)&#123;\\如果读取到的字符是空格，说明当前单词结束<br>            if(count&gt;0)&#123;\\如果count大于0，说明前面有单词字符被统计<br>                if(!first)printf(&quot; &quot;);\\如果first为0（即不是第一个输出），则先输出一个空格作为分隔<br>                printf(&quot;%d&quot;,count);<br>                first=0;<br>                count=0;\\重置count为0，准备统计下一个单词<br>            &#125;<br>        &#125;<br>        else count++;\\如果读取到的字符不是空格，则count加1，继续统计当前单词的字符数<br>    &#125;<br>    if(count&gt;0)&#123;\\循环结束后，如果count大于0，说明最后一个单词的字符数还没有输出<br>        if(!first)printf(&quot; &quot;);\\如果不是第一个输出，先输出一个空格<br>        printf(&quot;%d&quot;,count);\\输出最后一个单词的字符数<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="统计3个字符串，并找出其中最大值"><a href="#统计3个字符串，并找出其中最大值" class="headerlink" title="统计3个字符串，并找出其中最大值"></a>统计3个字符串，并找出其中最大值</h2><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-int main()&#123;
-    char str [3] [20];
-    char string[20];
-    for(int i=0;i&lt;3;i++)&#123;
-        gets(str[i]);
-    &#125;
-    for(int i=0;i&lt;2;i++)&#123;
-        if(strcmp(str[i],str[i+1])&gt;0)strcpy(string,str[i]);
-        if(strcmp(str[i],str[i+1])&lt;=0)strcpy(string,str[i+1]);
-    &#125;
-    printf(&quot;%s&quot;,string);
-&#125;</code></pre>
+<h2 id="统计3个字符串，并找出其中最大值"><a href="#统计3个字符串，并找出其中最大值" class="headerlink" title="统计3个字符串，并找出其中最大值"></a>统计3个字符串，并找出其中最大值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>#include&lt;string.h&gt;<br>int main()&#123;<br>    char str [3] [20];<br>    char string[20];<br>    for(int i=0;i&lt;3;i++)&#123;<br>        gets(str[i]);<br>    &#125;<br>    for(int i=0;i&lt;2;i++)&#123;<br>        if(strcmp(str[i],str[i+1])&gt;0)strcpy(string,str[i]);<br>        if(strcmp(str[i],str[i+1])&lt;=0)strcpy(string,str[i+1]);<br>    &#125;<br>    printf(&quot;%s&quot;,string);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="字符串的复制（指针）"><a href="#字符串的复制（指针）" class="headerlink" title="字符串的复制（指针）"></a>字符串的复制（指针）</h2><pre><code class="hljs plaintext">void copy_string(char* from,char* to)&#123;
-    while((*to=*from)!=&#x27;\0&#x27;)&#123;
-        to++;
-        from++;
-    &#125;
-&#125;</code></pre>
+<h2 id="字符串的复制（指针）"><a href="#字符串的复制（指针）" class="headerlink" title="字符串的复制（指针）"></a>字符串的复制（指针）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">void copy_string(char* from,char* to)&#123;<br>    while((*to=*from)!=&#x27;\0&#x27;)&#123;<br>        to++;<br>        from++;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">void copy_string(char* from,char* to)&#123;
-    while((*to++=*from++)!=&#x27;\0&#x27;);
-&#125;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">void copy_string(char* from,char* to)&#123;<br>    while((*to++=*from++)!=&#x27;\0&#x27;);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">void copy_string(char* from,char* to)&#123;
-    while(*from!=&#x27;\0&#x27;)&#123;
-        *to++=*from++;
-        *to=&#x27;\0&#x27;;
-    &#125;
-&#125;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">void copy_string(char* from,char* to)&#123;<br>    while(*from!=&#x27;\0&#x27;)&#123;<br>        *to++=*from++;<br>        *to=&#x27;\0&#x27;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><pre><code class="hljs plaintext">void selectSort(int arr[],int n)&#123;
-    int i,j,minIndex,temp;
-    for(i=0;i&lt;n-1;i++)&#123;  //外层循环控制排序趟数
-        minIndex=i;  //假设当前位置元素就是最小值
-        for (j=i+1;j&lt;n;j++)&#123;  //内层循环在剩余元素中找最小值
-            if(arr[j]&lt;arr[minIndex])minIndex=j;  //更新最小值索引
-        &#125;
-        if(minIndex!=i)&#123;  //如果找到更小的元素，进行交换
-            temp=arr[i];
-            arr[i]=arr[minIndex];
-            arr[minIndex]=temp;
-        &#125;
-    &#125;
-&#125;</code></pre>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">void selectSort(int arr[],int n)&#123;<br>    int i,j,minIndex,temp;<br>    for(i=0;i&lt;n-1;i++)&#123;  //外层循环控制排序趟数<br>        minIndex=i;  //假设当前位置元素就是最小值<br>        for (j=i+1;j&lt;n;j++)&#123;  //内层循环在剩余元素中找最小值<br>            if(arr[j]&lt;arr[minIndex])minIndex=j;  //更新最小值索引<br>        &#125;<br>        if(minIndex!=i)&#123;  //如果找到更小的元素，进行交换<br>            temp=arr[i];<br>            arr[i]=arr[minIndex];<br>            arr[minIndex]=temp;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="人数过半"><a href="#人数过半" class="headerlink" title="人数过半"></a>人数过半</h2><p>输入N个数，求出现次数超过总数一半的数。数据保证存在这个数。</p>
 <p>输入格式:</p>
@@ -397,109 +294,24 @@ int main()&#123;
 <p>第二行输入N个数，每个数的绝对值不超过1e9。</p>
 <p>输出格式:</p>
 <p>输出一个数，即出现次数超过总数一半的数。</p>
-<pre><code class="hljs plaintext">#include&lt;stdio.h&gt;
-int main()&#123;
-    int n;
-    scanf(&quot;%d&quot;,&amp;n);
-    int a[2000];
-    for(int i=0;i&lt;n;i++)&#123;
-        scanf(&quot;%d&quot;,&amp;a[i]);
-    &#125;
-    int can=a[0];
-    int cnt=1;
-    for(int i=0;i&lt;n;i++)&#123;
-        if(cnt==0)&#123;
-            can=a[i];
-            cnt=1;
-        &#125;
-        else if(can==a[i])cnt++;
-        else cnt--;
-    &#125;
-    printf(&quot;%d&quot;,can);
-&#125;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>int main()&#123;<br>    int n;<br>    scanf(&quot;%d&quot;,&amp;n);<br>    int a[2000];<br>    for(int i=0;i&lt;n;i++)&#123;<br>        scanf(&quot;%d&quot;,&amp;a[i]);<br>    &#125;<br>    int can=a[0];<br>    int cnt=1;<br>    for(int i=0;i&lt;n;i++)&#123;<br>        if(cnt==0)&#123;<br>            can=a[i];<br>            cnt=1;<br>        &#125;<br>        else if(can==a[i])cnt++;<br>        else cnt--;<br>    &#125;<br>    printf(&quot;%d&quot;,can);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="n个数字中选出数字和最大的连续一段"><a href="#n个数字中选出数字和最大的连续一段" class="headerlink" title="n个数字中选出数字和最大的连续一段"></a>n个数字中选出数字和最大的连续一段</h2><pre><code class="hljs plaintext">int sum1=0,sum=-1000;
-   for(int i=0;i&lt;n;i++)&#123;
-       sum1=(sum1+a[i])&gt;a[i]?(sum1+a[i]):a[i];
-       if(sum1&gt;sum)sum=sum1;
-   &#125;
-   printf(&quot;%d&quot;,sum);</code></pre>
+<h2 id="n个数字中选出数字和最大的连续一段"><a href="#n个数字中选出数字和最大的连续一段" class="headerlink" title="n个数字中选出数字和最大的连续一段"></a>n个数字中选出数字和最大的连续一段</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int sum1=0,sum=-1000;<br>   for(int i=0;i&lt;n;i++)&#123;<br>       sum1=(sum1+a[i])&gt;a[i]?(sum1+a[i]):a[i];<br>       if(sum1&gt;sum)sum=sum1;<br>   &#125;<br>   printf(&quot;%d&quot;,sum);<br></code></pre></td></tr></table></figure>
 
-<h2 id="结尾不输出空行"><a href="#结尾不输出空行" class="headerlink" title="结尾不输出空行"></a>结尾不输出空行</h2><pre><code class="hljs plaintext">int flag=1;
-···
-if(!flag)printf(&quot;\n&quot;);
-flag=0;
-···\\输出···</code></pre>
+<h2 id="结尾不输出空行"><a href="#结尾不输出空行" class="headerlink" title="结尾不输出空行"></a>结尾不输出空行</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int flag=1;<br>···<br>if(!flag)printf(&quot;\n&quot;);<br>flag=0;<br>···\\输出···<br></code></pre></td></tr></table></figure>
 
 <h2 id="数组元素右移"><a href="#数组元素右移" class="headerlink" title="数组元素右移"></a>数组元素右移</h2><p>n个数，第i个数向右移m个整数变为a[(i+n-m)%n]</p>
-<h2 id="单词翻转"><a href="#单词翻转" class="headerlink" title="单词翻转"></a>单词翻转</h2><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-char* r(char* s)&#123;
-    int len=strlen(s);
-    for(int i=0;i&lt;len/2;i++)&#123;
-        char t=s[i];
-        s[i]=s[len-1-i];
-        s[len-1-i]=t;
-    &#125;
-    return s;
-&#125;
-int main()&#123;
-    char s[25];
-    while(scanf(&quot;%s&quot;,s)!=EOF)&#123; \\去除多余空格
-        printf(&quot;%s&quot;,r(s));
-    &#125;
-&#125;</code></pre>
+<h2 id="单词翻转"><a href="#单词翻转" class="headerlink" title="单词翻转"></a>单词翻转</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>#include&lt;string.h&gt;<br>char* r(char* s)&#123;<br>    int len=strlen(s);<br>    for(int i=0;i&lt;len/2;i++)&#123;<br>        char t=s[i];<br>        s[i]=s[len-1-i];<br>        s[len-1-i]=t;<br>    &#125;<br>    return s;<br>&#125;<br>int main()&#123;<br>    char s[25];<br>    while(scanf(&quot;%s&quot;,s)!=EOF)&#123; \\去除多余空格<br>        printf(&quot;%s&quot;,r(s));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="10进制数n转化成m进制"><a href="#10进制数n转化成m进制" class="headerlink" title="10进制数n转化成m进制"></a>10进制数n转化成m进制</h2><pre><code class="hljs plaintext">int cnt=1,sum=0;
-while(n&gt;0)&#123;
-    t=n%m;
-    t*=cnt;
-    sum+=t;
-    n/=m;
-    cnt*=10;
-&#125;</code></pre>
+<h2 id="10进制数n转化成m进制"><a href="#10进制数n转化成m进制" class="headerlink" title="10进制数n转化成m进制"></a>10进制数n转化成m进制</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int cnt=1,sum=0;<br>while(n&gt;0)&#123;<br>    t=n%m;<br>    t*=cnt;<br>    sum+=t;<br>    n/=m;<br>    cnt*=10;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="求n的素数因子和"><a href="#求n的素数因子和" class="headerlink" title="求n的素数因子和"></a>求n的素数因子和</h2><pre><code class="hljs plaintext">for(int i=1;i&lt;sqrt(n);i++)&#123;
-    if(n%i==0)&#123;
-        sum+=i;
-        if(n/i!=i)&#123;
-            sum+=n/i;
-        &#125;
-    &#125;
-&#125;</code></pre>
+<h2 id="求n的素数因子和"><a href="#求n的素数因子和" class="headerlink" title="求n的素数因子和"></a>求n的素数因子和</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">for(int i=1;i&lt;sqrt(n);i++)&#123;<br>    if(n%i==0)&#123;<br>        sum+=i;<br>        if(n/i!=i)&#123;<br>            sum+=n/i;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="求a，b的最大公约数"><a href="#求a，b的最大公约数" class="headerlink" title="求a，b的最大公约数"></a>求a，b的最大公约数</h2><pre><code class="hljs plaintext">m=a;
-n=b;
-while(n!=0)&#123;
-    t=m%n;
-    m=n;
-    n=t;
-&#125;\\m即为最大公约数</code></pre>
+<h2 id="求a，b的最大公约数"><a href="#求a，b的最大公约数" class="headerlink" title="求a，b的最大公约数"></a>求a，b的最大公约数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">m=a;<br>n=b;<br>while(n!=0)&#123;<br>    t=m%n;<br>    m=n;<br>    n=t;<br>&#125;\\m即为最大公约数<br></code></pre></td></tr></table></figure>
 
-<h2 id="将一个n位数反转"><a href="#将一个n位数反转" class="headerlink" title="将一个n位数反转"></a>将一个n位数反转</h2><pre><code class="hljs plaintext">int number,res=0,rem;
-scanf(&quot;%d&quot;,&amp;number);
-while(number!=0)&#123;
-    rem=num%10;
-    res=res*10+rem;
-    number/=10;
-&#125;</code></pre>
+<h2 id="将一个n位数反转"><a href="#将一个n位数反转" class="headerlink" title="将一个n位数反转"></a>将一个n位数反转</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">int number,res=0,rem;<br>scanf(&quot;%d&quot;,&amp;number);<br>while(number!=0)&#123;<br>    rem=num%10;<br>    res=res*10+rem;<br>    number/=10;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h2><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;
-int main()&#123;
-    int rows,conf=1;
-    scanf(&quot;%d&quot;,&amp;rows);
-    for(int i=0;i&lt;rows;i++)&#123;
-        for(int space=1;space&lt;=rows-i-1;space++)&#123;
-            printf(&quot;  &quot;);
-        &#125;
-        for(int j=0;j&lt;=i;j++)&#123;
-            if(j==0||i==0)conf=1;
-            else conf=conf*(i-j+1)/j;
-            printf(&quot;%4d &quot;,conf);
-        &#125;
-        printf(&quot;\n&quot;);
-    &#125;
-&#125;</code></pre>
+<h2 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>int main()&#123;<br>    int rows,conf=1;<br>    scanf(&quot;%d&quot;,&amp;rows);<br>    for(int i=0;i&lt;rows;i++)&#123;<br>        for(int space=1;space&lt;=rows-i-1;space++)&#123;<br>            printf(&quot;  &quot;);<br>        &#125;<br>        for(int j=0;j&lt;=i;j++)&#123;<br>            if(j==0||i==0)conf=1;<br>            else conf=conf*(i-j+1)/j;<br>            printf(&quot;%4d &quot;,conf);<br>        &#125;<br>        printf(&quot;\n&quot;);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 <div class="article-footer fs14">
@@ -1149,5 +961,5 @@ int main()&#123;
 
 
 <!-- inject -->
-
+<script async src="/js/title.js"></script>
 </div></body></html>

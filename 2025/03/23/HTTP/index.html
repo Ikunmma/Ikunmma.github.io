@@ -127,23 +127,20 @@
 <p>get请求的参数传递方式</p>
 <p>在 HTTP 请求中，GET 请求可以通过 URL 参数或者请求体的方式传递参数。</p>
 <p>URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。</p>
-<pre><code class="hljs plaintext">http://example.com/search?q=test&amp;page=2</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://example.com/search?q=test&amp;page=2<br></code></pre></td></tr></table></figure>
 
 <p>？后 key&#x3D; value</p>
 <h5 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h5><p>POST 请求<strong>主要用于向服务器提交数据，通常用于创建、更新或删除资源</strong>、上传文件、发送 JSON 数据</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241224235651764.png"></p>
 <p>post请求的参数传递方式：URL 参数和请求体。</p>
 <p>1.URL 参数：POST 请求可以通过 URL 中指定的 key-value 形式传递参数。例如，在访问如下 URL 时：</p>
-<pre><code class="hljs plaintext">http://example.com/search?q=test&amp;page=2</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://example.com/search?q=test&amp;page=2<br></code></pre></td></tr></table></figure>
 
 <p>2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。请求体中的数据可以是表单数据、JSON 数据等。例如，使用 POST 请求将 JSON 数据发送到如下 URL 时：</p>
-<pre><code class="hljs plaintext">http://example.com/users</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://example.com/users<br></code></pre></td></tr></table></figure>
 
 <p>请求体中的 JSON 数据如下：</p>
-<pre><code class="hljs plaintext">&#123;
- &quot;name&quot;: &quot;John Doe&quot;,
- &quot;email&quot;: &quot;john.doe@example.com&quot;
-&#125;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;<br> &quot;name&quot;: &quot;John Doe&quot;,<br> &quot;email&quot;: &quot;john.doe@example.com&quot;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="get和post区别"><a href="#get和post区别" class="headerlink" title="get和post区别"></a>get和post区别</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241224235651765.png"></p>
 <h5 id="get-和-post-请求的使用场景"><a href="#get-和-post-请求的使用场景" class="headerlink" title="get 和 post 请求的使用场景"></a>get 和 post 请求的使用场景</h5><h6 id="get"><a href="#get" class="headerlink" title="get"></a>get</h6><ul>
@@ -172,7 +169,7 @@
 </li>
 <li><p><strong>User-Agent</strong>：包含发出请求的用户代理（浏览器）的信息，可用来浏览器伪造。</p>
 <p>一个典型的 <code>User-Agent</code> 字符串可能看起来像这样：</p>
-<pre><code class="hljs text">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36</code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36<br></code></pre></td></tr></table></figure>
 
 <p>这个字符串包含了以下信息：</p>
 <ul>
@@ -196,7 +193,7 @@
 <p>[!IMPORTANT]</p>
 <h4 id="HTTP-基本认证"><a href="#HTTP-基本认证" class="headerlink" title="HTTP 基本认证"></a>HTTP 基本认证</h4><p>通过在请求头 (<code>Authorization</code> 头) 中发送用户名和密码来进行身份验证。用户名和密码（用户名：密码）会经过 <strong>Base64 编码</strong>，但 <strong>不会加密</strong></p>
 <p><strong>客户端提供用户名和密码</strong>，并在 <code>Authorization</code> 头中发送：</p>
-<pre><code class="hljs plaintext">Authorization: Basic &lt;Base64编码的用户名:密码&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Authorization: Basic &lt;Base64编码的用户名:密码&gt;<br></code></pre></td></tr></table></figure>
 
 </blockquote>
 </li>
@@ -206,7 +203,7 @@
 <p>持久Cookie：在过期时间（<code>Expires</code>）指定的日期或有效期（<code>Max-Age</code>）指定的一段时间后被删除。</p>
 <p>示例</p>
 <p>假设服务器想要设置一个Cookie，其内容如下：</p>
-<pre><code class="hljs text">Set-Cookie: sessionId=abc123; Expires=Wed, 09 Jun 2024 10:18:14 GMT; Domain=example.com; Path=/; Secure; HttpOnly; SameSite=Lax</code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">Set-Cookie: sessionId=abc123; Expires=Wed, 09 Jun 2024 10:18:14 GMT; Domain=example.com; Path=/; Secure; HttpOnly; SameSite=Lax<br></code></pre></td></tr></table></figure>
 
 <p>在这个例子中：</p>
 <p><code>sessionId=abc123</code> 是Cookie的名称-值对（存储在Cookie中的数据）</p>
@@ -310,16 +307,14 @@
 <li><p><strong>Referer</strong>：指示请求来源的页面URL（用户是从哪个页面点击链接到达当前请求的页面的），可用来服务器伪造 <a target="_blank" rel="noopener" href="https://www.xxxx.com,这个头部字段通常用于分析流量来源、防止csrf(跨站请求伪造)攻击以及跟踪用户行为/">https://www.xxxx.com，这个头部字段通常用于分析流量来源、防止CSRF（跨站请求伪造）攻击以及跟踪用户行为</a></p>
 <p>示例</p>
 <p>假设你访问了一个网站 <code>http://example.com/page1</code>，然后从该页面点击链接跳转到 <code>http://example.com/page2</code>，浏览器在请求 <code>page2</code> 时，通常会将以下头部添加到请求中：</p>
-<pre><code class="hljs plaintext">Referer: http://example.com/page1</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Referer: http://example.com/page1<br></code></pre></td></tr></table></figure>
 
 <p>假设用户从页面 <code>https://www.example.com/page1.html</code> 点击一个链接，跳转到 <code>https://www.example.com/page2.html</code>，那么在请求 <code>page2.html</code> 时，HTTP请求的 <code>Referer</code> 头部可能如下：</p>
-<pre><code class="hljs plaintext">GET /page2.html HTTP/1.1
-Host: www.example.com
-Referer: https://www.example.com/page1.html</code></pre></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET /page2.html HTTP/1.1<br>Host: www.example.com<br>Referer: https://www.example.com/page1.html<br></code></pre></td></tr></table></figure></li>
 </ol>
 <p>11.<strong>X-Forwarded-For</strong>:用于在HTTP请求经过代理服务器或负载均衡器时保留原始客户端的IP地址信息，可用于修改ip 如127.0.0.1</p>
 <p><code>X-Forwarded-For</code>头部字段的格式如下：</p>
-<pre><code class="hljs text">X-Forwarded-For: &lt;client-IP&gt;, &lt;proxy1-IP&gt;, &lt;proxy2-IP&gt;, ...</code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">X-Forwarded-For: &lt;client-IP&gt;, &lt;proxy1-IP&gt;, &lt;proxy2-IP&gt;, ...<br></code></pre></td></tr></table></figure>
 
 <p>其中，列表中的第一个IP地址（<code>&lt;client-IP&gt;</code>）是客户端的真实IP地址，随后的IP地址表示请求依次经过的代理服务器的IP地址。</p>
 <h2 id="HTTP响应包的结构"><a href="#HTTP响应包的结构" class="headerlink" title="HTTP响应包的结构"></a>HTTP响应包的结构</h2><p>响应行</p>
@@ -349,7 +344,7 @@ Referer: https://www.example.com/page1.html</code></pre></li>
 <h2 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h2><p>HTTP 缓存会存储与请求关联的响应，并将存储的响应复用于后续请求</p>
 <h3 id="私有缓存"><a href="#私有缓存" class="headerlink" title="私有缓存"></a>私有缓存</h3><p>绑定到<strong>特定</strong>客户端的缓存——通常是浏览器缓存</p>
 <p>如果响应包含个性化内容并且你只想将响应存储在私有缓存中，则必须指定 <code>private</code> 指令</p>
-<pre><code class="hljs plaintext">Cache-Control: private</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Cache-Control: private<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>[!CAUTION]</p>
@@ -367,67 +362,31 @@ Referer: https://www.example.com/page1.html</code></pre></li>
 <p>HTTP 缓存规范本质上没有定义显式删除缓存的方法——但是使用托管缓存，可以通过仪表板操作、API 调用、重新启动等实时删除已经存储的响应</p>
 </blockquote>
 <h3 id="启发式缓存"><a href="#启发式缓存" class="headerlink" title="启发式缓存"></a>启发式缓存</h3><p>HTTP 旨在尽可能多地缓存，因此即使没有给出 <code>Cache-Control</code>，如果满足某些条件，响应也会被存储和重用</p>
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 1024
-Date: Tue, 22 Feb 2022 22:22:22 GMT
-Last-Modified（最后修改时间）: Tue, 22 Feb 2021 22:22:22 GMT
-
-&lt;!doctype html&gt;
-…</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>Content-Type: text/html<br>Content-Length: 1024<br>Date: Tue, 22 Feb 2022 22:22:22 GMT<br>Last-Modified（最后修改时间）: Tue, 22 Feb 2021 22:22:22 GMT<br><br>&lt;!doctype html&gt;<br>…<br></code></pre></td></tr></table></figure>
 
 <p>采取以上响应。此回复最后一次更新是在 1 年前</p>
 <h3 id="基于-age-的缓存策略"><a href="#基于-age-的缓存策略" class="headerlink" title="基于 age 的缓存策略"></a>基于 age 的缓存策略</h3><p>存储的 HTTP 响应有两种状态：<strong>fresh</strong> 和 <strong>stale</strong>。<em>fresh</em> 状态通常表示响应仍然有效，可以重复使用，而 <em>stale</em> 状态表示缓存的响应已经过期</p>
 <p>确定响应何时是 fresh 的和何时是 stale 的标准是 <strong>age</strong>（在 HTTP&#x2F;1.0 中，有效期是通过 <code>Expires</code> 标头来指定的，在 HTTP&#x2F;1.1 中，<code>Cache-Control</code> 采用了 <code>max-age</code>——用于指定经过的时间）</p>
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 1024
-Date: Tue, 22 Feb 2022 22:22:22 GMT
-Cache-Control: max-age=604800
-
-&lt;!doctype html&gt;
-…</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>Content-Type: text/html<br>Content-Length: 1024<br>Date: Tue, 22 Feb 2022 22:22:22 GMT<br>Cache-Control: max-age=604800<br><br>&lt;!doctype html&gt;<br>…<br></code></pre></td></tr></table></figure>
 
 <p>当响应存储在共享缓存中时，有必要通知客户端响应的 age。，如果共享缓存将响应存储了一天，则共享缓存将向后续客户端请求发送以下响应</p>
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 1024
-Date: Tue, 22 Feb 2022 22:22:22 GMT
-Cache-Control: max-age=604800
-Age: 86400
-
-&lt;!doctype html&gt;
-…</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>Content-Type: text/html<br>Content-Length: 1024<br>Date: Tue, 22 Feb 2022 22:22:22 GMT<br>Cache-Control: max-age=604800<br>Age: 86400<br><br>&lt;!doctype html&gt;<br>…<br></code></pre></td></tr></table></figure>
 
 <h3 id="Vary响应"><a href="#Vary响应" class="headerlink" title="Vary响应"></a>Vary响应</h3><p>区分响应的方式本质上是基于它们的 URL</p>
 <p>在 <code>Vary</code> 标头的值中添加“<code>Accept-Language</code>”，根据语言单独缓存响应</p>
-<pre><code class="hljs plaintext">Vary: Accept-Language</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Vary: Accept-Language<br></code></pre></td></tr></table></figure>
 
 <p>这会导致缓存基于响应 URL 和 <code>Accept-Language</code>请求标头的组合进行键控</p>
 <h3 id="验证响应"><a href="#验证响应" class="headerlink" title="验证响应"></a>验证响应</h3><p>验证是通过使用包含 <code>If-Modified-Since</code> 或 <code>If-None-Match</code> 请求标头的<strong>条件请求</strong>完成的</p>
 <h4 id="If-Modified-Since"><a href="#If-Modified-Since" class="headerlink" title="If-Modified-Since"></a>If-Modified-Since</h4><p>下面的请求显示客户端发送带有 <code>If-Modified-Since</code> 请求标头的请求，以询问服务器自指定时间以来是否有任何的改变</p>
-<pre><code class="hljs plaintext">GET /index.html HTTP/1.1
-Host: example.com
-Accept: text/html
-If-Modified-Since: Tue, 22 Feb 2022 22:00:00 GMT</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET /index.html HTTP/1.1<br>Host: example.com<br>Accept: text/html<br>If-Modified-Since: Tue, 22 Feb 2022 22:00:00 GMT<br></code></pre></td></tr></table></figure>
 
 <p>如果内容自指定时间以来没有更改，服务器将响应 <code>304 Not Modified</code></p>
 <h4 id="ETag-If-None-Match"><a href="#ETag-If-None-Match" class="headerlink" title="ETag&#x2F;If-None-Match"></a>ETag&#x2F;If-None-Match</h4><p>如果 <code>ETag</code> 标头使用了 hash 值，<code>index.html</code> 资源的 hash 值是 <code>deadbeef</code>，响应如下</p>
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 1024
-Date: Tue, 22 Feb 2022 22:22:22 GMT
-ETag: &quot;deadbeef&quot;
-Cache-Control: max-age=3600
-
-&lt;!doctype html&gt;
-…</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>Content-Type: text/html<br>Content-Length: 1024<br>Date: Tue, 22 Feb 2022 22:22:22 GMT<br>ETag: &quot;deadbeef&quot;<br>Cache-Control: max-age=3600<br><br>&lt;!doctype html&gt;<br>…<br></code></pre></td></tr></table></figure>
 
 <p>如果该响应是陈旧的，则客户端获取缓存响应的 <code>ETag</code> 响应标头的值，并将其放入 <code>If-None-Match</code> 请求标头中，以询问服务器资源是否已被修改</p>
-<pre><code class="hljs plaintext">GET /index.html HTTP/1.1
-Host: example.com
-Accept: text/html
-If-None-Match: &quot;deadbeef&quot;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET /index.html HTTP/1.1<br>Host: example.com<br>Accept: text/html<br>If-None-Match: &quot;deadbeef&quot;<br></code></pre></td></tr></table></figure>
 
 <p>如果服务器为请求的资源确定的 <code>ETag</code> 标头的值与请求中的 <code>If-None-Match</code> 值相同，则服务器将返回 <code>304 Not Modified</code>，如果服务器确定请求的资源现在应该具有不同的 <code>ETag</code> 值，则服务器将其改为 <code>200 OK</code> 和资源的最新版本进行响应</p>
 <blockquote>
@@ -437,31 +396,15 @@ If-None-Match: &quot;deadbeef&quot;</code></pre>
 <h4 id="强制重新验证"><a href="#强制重新验证" class="headerlink" title="强制重新验证"></a>强制重新验证</h4><p>如果你不希望重复使用响应，而是希望始终从服务器获取最新内容，则可以使用 <code>no-cache</code> 指令强制验证</p>
 <p><strong><code>no-cache</code></strong>：允许缓存，不允许直接使用缓存的数据，每次使用缓存前都要向服务器验证数据的有效性</p>
 <p>通过在响应中添加 <code>Cache-Control: no-cache</code> 以及 <code>Last-Modified</code> 和 <code>ETag</code>。如果请求的资源已更新，客户端将收到 <code>200 OK</code> 响应，否则，如果请求的资源尚未更新，则会收到 <code>304 Not Modified</code> 响应</p>
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 1024
-Date: Tue, 22 Feb 2022 22:22:22 GMT
-Last-Modified: Tue, 22 Feb 2022 22:00:00 GMT
-ETag: deadbeef
-Cache-Control: no-cache
-
-&lt;!doctype html&gt;
-…</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>Content-Type: text/html<br>Content-Length: 1024<br>Date: Tue, 22 Feb 2022 22:22:22 GMT<br>Last-Modified: Tue, 22 Feb 2022 22:00:00 GMT<br>ETag: deadbeef<br>Cache-Control: no-cache<br><br>&lt;!doctype html&gt;<br>…<br></code></pre></td></tr></table></figure>
 
 <h3 id="不使用缓存"><a href="#不使用缓存" class="headerlink" title="不使用缓存"></a>不使用缓存</h3><p><code>no-cache</code> 指令不会阻止响应的存储，而是阻止在没有重新验证的情况下重用响应</p>
 <p>使用 <code>private</code> 指令将使个性化响仅与特定客户端一起存储，而不会泄露给缓存的任何其他用户，但在这种情况下，即使设置了 <code>no-store</code>，也必须设置 <code>private</code></p>
-<h3 id="重新加载和强制重新加载"><a href="#重新加载和强制重新加载" class="headerlink" title="重新加载和强制重新加载"></a>重新加载和强制重新加载</h3><h4 id="重新加载"><a href="#重新加载" class="headerlink" title="重新加载"></a>重新加载</h4><pre><code class="hljs plaintext">GET / HTTP/1.1
-Host: example.com
-Cache-Control: max-age=0
-If-None-Match: &quot;deadbeef&quot;
-If-Modified-Since: Tue, 22 Feb 2022 20:20:20 GMT</code></pre>
+<h3 id="重新加载和强制重新加载"><a href="#重新加载和强制重新加载" class="headerlink" title="重新加载和强制重新加载"></a>重新加载和强制重新加载</h3><h4 id="重新加载"><a href="#重新加载" class="headerlink" title="重新加载"></a>重新加载</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET / HTTP/1.1<br>Host: example.com<br>Cache-Control: max-age=0<br>If-None-Match: &quot;deadbeef&quot;<br>If-Modified-Since: Tue, 22 Feb 2022 20:20:20 GMT<br></code></pre></td></tr></table></figure>
 
 <p>请求中的 <code>max-age=0</code> 指令指定“重用 age 为 0 或更少的响应”——因此，中间存储的响应不会被重用</p>
 <p>请求通过 <code>If-None-Match</code> 和 <code>If-Modified-Since</code> 进行验证</p>
-<h4 id="强制重新加载"><a href="#强制重新加载" class="headerlink" title="强制重新加载"></a>强制重新加载</h4><pre><code class="hljs plaintext">GET / HTTP/1.1
-Host: example.com
-Pragma: no-cache
-Cache-Control: no-cache</code></pre>
+<h4 id="强制重新加载"><a href="#强制重新加载" class="headerlink" title="强制重新加载"></a>强制重新加载</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET / HTTP/1.1<br>Host: example.com<br>Pragma: no-cache<br>Cache-Control: no-cache<br></code></pre></td></tr></table></figure>
 
 <p>由于这不是带有 <code>no-cache</code> 的条件请求，因此你可以确定你会从源服务器获得 <code>200 OK</code></p>
 <blockquote>
@@ -470,7 +413,7 @@ Cache-Control: no-cache</code></pre>
 <p>“reload”是“强制重新加载”的正确模式<br>fetch(“&#x2F;“, { cache: “reload” });</p>
 </blockquote>
 <h4 id="避免重新验证"><a href="#避免重新验证" class="headerlink" title="避免重新验证"></a>避免重新验证</h4><p>为了防止用户重新加载时，服务器在内容是不可变时，也会发送重新验证请求，<code>immutable</code> 指令可用于明确指示不需要重新验证</p>
-<pre><code class="hljs plaintext">Cache-Control: max-age=31536000, immutable</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Cache-Control: max-age=31536000, immutable<br></code></pre></td></tr></table></figure>
 
 <h2 id="HTTP重定向"><a href="#HTTP重定向" class="headerlink" title="HTTP重定向"></a>HTTP重定向</h2><p>HTTP 重定向是服务器告诉客户端（通常是浏览器）将请求重定向到另一个 URL 的一种机制。这通常发生在资源已被移动、网站结构发生更改或服务器需要将请求路由到不同位置的情况下</p>
 <p>HTTP 重定向通过返回特定的状态码和 <code>Location</code> 响应头来实现，浏览器收到这些信息后，会自动发起对新的 URL 的请求</p>
@@ -550,27 +493,21 @@ Cache-Control: no-cache</code></pre>
 <h3 id="指向重定向的其他方式"><a href="#指向重定向的其他方式" class="headerlink" title="指向重定向的其他方式"></a>指向重定向的其他方式</h3><h4 id="HTML重定向机制"><a href="#HTML重定向机制" class="headerlink" title="HTML重定向机制"></a>HTML重定向机制</h4><p>用于将用户的请求从一个页面自动转到另一个页面</p>
 <p>可以尝试在页面的<code>&lt;head&gt;</code>中添加一个<code>&lt;meta&gt;</code>元素，并将其 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta#http-equiv"><code>http-equiv</code></a> 属性的值设置为 <code>refresh</code>，可以告诉浏览器在指定的时间间隔后自动加载另一个页面。</p>
 <p>该方法<strong>仅适用于 HTML 页面</strong>，然而并<strong>不能应用于图片或者其他类型的内容</strong></p>
-<pre><code class="hljs plaintext">&lt;head&gt;
-  &lt;meta http-equiv=&quot;Refresh&quot; content=&quot;0(秒数); URL=http://example.com/(目标网址)&quot; /&gt;
-&lt;/head&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;head&gt;<br>  &lt;meta http-equiv=&quot;Refresh&quot; content=&quot;0(秒数); URL=http://example.com/(目标网址)&quot; /&gt;<br>&lt;/head&gt;<br></code></pre></td></tr></table></figure>
 
 <h4 id="借助DOM的-JavaScript-重定向机制"><a href="#借助DOM的-JavaScript-重定向机制" class="headerlink" title="借助DOM的 JavaScript 重定向机制"></a>借助DOM的 JavaScript 重定向机制</h4><p>通常使用 <code>window.location</code> 或 <code>window.location.replace()</code> 方法</p>
 <p><code>window.location</code> 通过改变浏览器的地址栏实现重定向，相当于用户点击了浏览器的地址栏并输入新的 URL</p>
-<pre><code class="hljs plaintext">window.location = &#x27;https://www.example.com&#x27;;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">window.location = &#x27;https://www.example.com&#x27;;<br></code></pre></td></tr></table></figure>
 
 <p><code>window.location.replace()</code> 会将当前页面从浏览器历史记录中移除，并跳转到新页面。它不会在浏览器的历史记录中留下当前页面，因此用户无法通过后退按钮回到当前页面。<strong>相当于无痕模式</strong></p>
-<pre><code class="hljs plaintext">window.location.replace(&#x27;https://www.example.com&#x27;);</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">window.location.replace(&#x27;https://www.example.com&#x27;);<br></code></pre></td></tr></table></figure>
 
 <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><h4 id="域名别称"><a href="#域名别称" class="headerlink" title="域名别称"></a>域名别称</h4><p>扩大站点的用户覆盖面，迁移到新的域名，强制使用HTTPS</p>
 <h4 id="保持链接有效"><a href="#保持链接有效" class="headerlink" title="保持链接有效"></a>保持链接有效</h4><p>当你重构 Web 站点的时候，资源的 URL 会发生改变。即便是你更新站点内部的链接来匹配新的 URL，也无法控制被外部资源使用的 URL。你并不想因此而使旧链接失效，因为它们会为你带来宝贵的用户并且帮助优化你的 SEO（搜索引擎优化，是一种通过优化网站和网页内容来提高其在搜索引擎结果页面（SERP）中的排名，从而增加网站的可见性和访问量的技术和策略），所以需要建立从旧链接到新链接的重定向映射</p>
 <h4 id="对于不安全请求、耗时请求的临时响应"><a href="#对于不安全请求、耗时请求的临时响应" class="headerlink" title="对于不安全请求、耗时请求的临时响应"></a>对于不安全请求、耗时请求的临时响应</h4><h3 id="配置重定向"><a href="#配置重定向" class="headerlink" title="配置重定向"></a>配置重定向</h3><p>通常，HTTP 重定向是由服务器配置文件（如 Apache 的 <code>.htaccess</code> 或 Nginx 的配置文件）实现的。</p>
-<h4 id="在-Apache-中使用-htaccess-文件设置-301-重定向："><a href="#在-Apache-中使用-htaccess-文件设置-301-重定向：" class="headerlink" title="在 Apache 中使用 .htaccess 文件设置 301 重定向："></a>在 <strong>Apache</strong> 中使用 <code>.htaccess</code> 文件设置 301 重定向：</h4><pre><code class="hljs plaintext">Redirect 301 /oldpage http://example.com/newpage</code></pre>
+<h4 id="在-Apache-中使用-htaccess-文件设置-301-重定向："><a href="#在-Apache-中使用-htaccess-文件设置-301-重定向：" class="headerlink" title="在 Apache 中使用 .htaccess 文件设置 301 重定向："></a>在 <strong>Apache</strong> 中使用 <code>.htaccess</code> 文件设置 301 重定向：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Redirect 301 /oldpage http://example.com/newpage<br></code></pre></td></tr></table></figure>
 
-<h4 id="在-Nginx-中设置-301-重定向："><a href="#在-Nginx-中设置-301-重定向：" class="headerlink" title="在 Nginx 中设置 301 重定向："></a>在 <strong>Nginx</strong> 中设置 301 重定向：</h4><pre><code class="hljs plaintext">server &#123;
-    location /oldpage &#123;
-        return 301 http://example.com/newpage;
-    &#125;
-&#125;</code></pre>
+<h4 id="在-Nginx-中设置-301-重定向："><a href="#在-Nginx-中设置-301-重定向：" class="headerlink" title="在 Nginx 中设置 301 重定向："></a>在 <strong>Nginx</strong> 中设置 301 重定向：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">server &#123;<br>    location /oldpage &#123;<br>        return 301 http://example.com/newpage;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="HTTP条件请求"><a href="#HTTP条件请求" class="headerlink" title="HTTP条件请求"></a>HTTP条件请求</h2><p>可以用来验证缓存的有效性，省去不必要的控制手段，以及验证文件的完整性，例如在断点续传的场景下或者在上传或者修改服务器端的文件的时候避免更新丢失问题</p>
 <blockquote>
@@ -592,43 +529,32 @@ Cache-Control: no-cache</code></pre>
 <p>范围请求对于支持随机访问的媒体播放器、明确只需大型文件某部分的数据处理工具，以及允许用户暂停及恢复下载的下载管理器等客户端尤其有用</p>
 <h3 id="检测服务器端是否支持范围请求"><a href="#检测服务器端是否支持范围请求" class="headerlink" title="检测服务器端是否支持范围请求"></a>检测服务器端是否支持范围请求</h3><p>如果 HTTP 响应中存在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Ranges"><code>Accept-Ranges</code></a> 标头：</p>
 <p>1.其值不是“<code>none</code>”，那么该服务器支持范围请求。你可以通过使用像 cURL 这样的工具发出一个 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/HEAD"><code>HEAD</code></a> 请求来进行手动检查</p>
-<pre><code class="hljs plaintext">curl -I http://i.imgur.com/z4d4kWk.jpg</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">curl -I http://i.imgur.com/z4d4kWk.jpg<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-…
-Accept-Ranges: bytes
-Content-Length: 146515</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>…<br>Accept-Ranges: bytes<br>Content-Length: 146515<br></code></pre></td></tr></table></figure>
 
 <p>2.如果网站省略了 <code>Accept-Ranges</code> 标头，那么它们很可能不支持部分请求。有些网站会包含这个标头，但明确将其值设为“<code>none</code>”，以表明它们不支持这一特性</p>
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-…
-Accept-Ranges: none</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>…<br>Accept-Ranges: none<br></code></pre></td></tr></table></figure>
 
 <p>在这种情况下，下载管理器可能会禁用暂停按钮</p>
 <h3 id="从服务器端请求特定的范围"><a href="#从服务器端请求特定的范围" class="headerlink" title="从服务器端请求特定的范围"></a>从服务器端请求特定的范围</h3><p>在 HTTP 请求中包含 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Range"><code>Range</code></a> 标头，可以指定希望服务器返回文档的哪一部分或哪些部分</p>
 <h4 id="单一范围"><a href="#单一范围" class="headerlink" title="单一范围"></a>单一范围</h4><p>curl的“<code>-H</code>”选项会向请求中添加一个标头，即 <code>Range</code> 标头</p>
-<pre><code class="hljs plaintext">curl http://i.imgur.com/z4d4kWk.jpg -i -H &quot;Range: bytes=0-1023&quot;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">curl http://i.imgur.com/z4d4kWk.jpg -i -H &quot;Range: bytes=0-1023&quot;<br></code></pre></td></tr></table></figure>
 
 <p>用于请求1024字节</p>
 <p>发出请求如下</p>
-<pre><code class="hljs plaintext">GET /z4d4kWk.jpg HTTP/1.1
-Host: i.imgur.com
-Range: bytes=0-1023</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET /z4d4kWk.jpg HTTP/1.1<br>Host: i.imgur.com<br>Range: bytes=0-1023<br></code></pre></td></tr></table></figure>
 
 <p>服务器将会返回 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206"><code>206</code></a> <code>Partial Content</code> 状态</p>
-<pre><code class="hljs plaintext">HTTP/1.1 206 Partial Content
-Content-Range: bytes 0-1023/146515
-Content-Length: 1024
-…
-（二进制内容）</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 206 Partial Content<br>Content-Range: bytes 0-1023/146515<br>Content-Length: 1024<br>…<br>（二进制内容）<br></code></pre></td></tr></table></figure>
 
 <h4 id="多重范围"><a href="#多重范围" class="headerlink" title="多重范围"></a>多重范围</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Range"><code>Range</code></a> 标头还允许在文档中支持一次性获取多重范围。这些范围使用逗号分隔</p>
-<pre><code class="hljs plaintext">curl http://www.example.com -i -H &quot;Range: bytes=0-50, 100-150&quot;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">curl http://www.example.com -i -H &quot;Range: bytes=0-50, 100-150&quot;<br></code></pre></td></tr></table></figure>
 
 <p>服务器以 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206"><code>206</code></a> <code>Partial Content</code> 状态码以及 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type"><code>Content-Type</code></a><code>: multipart/byteranges; boundary=3d6b6a416f9b5</code> 标头响应，表明随后的数据将采用多部分字节范围格式。</p>
 <p>每个部分都携带自己的 <code>Content-Type</code> 和 <code>Content-Range</code> 字段，而必须的 boundary 参数定义了用于<strong>分割</strong>每个消息体部分的边界字符串</p>
 <h4 id="条件式范围请求"><a href="#条件式范围请求" class="headerlink" title="条件式范围请求"></a>条件式范围请求</h4><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/If-Range"><code>If-Range</code></a> HTTP 请求标头使范围请求具有条件性：如果条件兑现，则会发起范围请求，服务器将以包含适当内容主体的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206"><code>206</code></a> <code>Partial Content</code> 响应进行回复。如果条件不兑现，会被发送完整的资源回来，并带有 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/200"><code>200</code></a> <code>OK</code> 状态。该标头可与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Last-Modified"><code>Last-Modified</code></a> 验证器或 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/ETag"><code>ETag</code></a> 一起使用，但不能同时使用</p>
-<pre><code class="hljs plaintext">If-Range: Wed, 21 Oct 2015 07:28:00 GMT</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">If-Range: Wed, 21 Oct 2015 07:28:00 GMT<br></code></pre></td></tr></table></figure>
 
 <h3 id="范围请求的响应"><a href="#范围请求的响应" class="headerlink" title="范围请求的响应"></a>范围请求的响应</h3><p> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206"><code>206</code></a> <code>Partial Content</code> 范围请求成功</p>
 <p> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/416"><code>416</code></a> <code>Requested Range Not Satisfiable</code>超出范围的范围请求</p>
@@ -662,37 +588,30 @@ Content-Length: 1024
 <h4 id="User-Agent标头"><a href="#User-Agent标头" class="headerlink" title="User-Agent标头"></a>User-Agent标头</h4><p>提供客户端的设备信息</p>
 <h4 id="Vary响应标头"><a href="#Vary响应标头" class="headerlink" title="Vary响应标头"></a>Vary响应标头</h4><p>用于告诉客户端和代理服务器（如缓存服务器），哪些请求头会影响返回内容的变化</p>
 <p>大多数情况下，vary用于在使用内容协商时创建缓存键</p>
-<pre><code class="hljs plaintext">Vary: *
-Vary: &lt;header-name&gt;, &lt;header-name&gt;, ...</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Vary: *<br>Vary: &lt;header-name&gt;, &lt;header-name&gt;, ...<br></code></pre></td></tr></table></figure>
 
 <p><code>*</code>表示响应因无法确定的原因而改变，禁止缓存此响应</p>
 <p><code>&lt;header-name&gt;</code>指影响响应内容的请求头名称，例如 <code>Accept</code>、<code>Accept-Language</code> </p>
 <p>如果服务器根据 <code>Accept</code> 请求头返回不同的资源（如 JSON 或 HTML），则应该在响应中添加：</p>
-<pre><code class="hljs plaintext">Vary: Accept</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Vary: Accept<br></code></pre></td></tr></table></figure>
 
 <p>如果服务器根据 <code>Accept-Language</code> 返回不同的语言内容：</p>
-<pre><code class="hljs plaintext">Vary: Accept-Language</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Vary: Accept-Language<br></code></pre></td></tr></table></figure>
 
 <p>如果服务器根据 <code>Accept-Encoding</code> 提供不同的压缩格式（如 gzip 或 br）：</p>
-<pre><code class="hljs plaintext">Vary: Accept-Encoding</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Vary: Accept-Encoding<br></code></pre></td></tr></table></figure>
 
 <p>如果服务器根据 <code>User-Agent</code> 提供不同的内容（如桌面和移动设备优化）：</p>
-<pre><code class="hljs plaintext">Vary: User-Agent</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Vary: User-Agent<br></code></pre></td></tr></table></figure>
 
 <h3 id="代理驱动型（响应式协商"><a href="#代理驱动型（响应式协商" class="headerlink" title="代理驱动型（响应式协商)"></a>代理驱动型（响应式协商)</h3><p>客户端和服务器通过多次交互来确定最佳资源版本，面临不明确的请求时，服务器会返回一个页面，其中包含了可供选择的资源的链接</p>
 <h2 id="HTTP安全"><a href="#HTTP安全" class="headerlink" title="HTTP安全"></a>HTTP安全</h2><h3 id="用户信息安全"><a href="#用户信息安全" class="headerlink" title="用户信息安全"></a>用户信息安全</h3><h4 id="如何关闭表单自动填充"><a href="#如何关闭表单自动填充" class="headerlink" title="如何关闭表单自动填充"></a>如何关闭表单自动填充</h4><p>浏览器能够提供自动补全（在用户开始输入的时候给用户提供可能的内容）和自动填充（在加载的时候预先填充某些字段）功能，但可能涉及用户的隐私，因此浏览器允许用户禁用这些功能</p>
 <h5 id="禁止自动补全"><a href="#禁止自动补全" class="headerlink" title="禁止自动补全"></a>禁止自动补全</h5><p>将 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/autocomplete"><code>autocomplete</code></a> 的属性设置为 “off”</p>
 <p>为整个表单设置：</p>
-<pre><code class="hljs plaintext">&lt;form method=&quot;post&quot; action=&quot;/form&quot; autocomplete=&quot;off&quot;&gt;[…]&lt;/form&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;form method=&quot;post&quot; action=&quot;/form&quot; autocomplete=&quot;off&quot;&gt;[…]&lt;/form&gt;<br></code></pre></td></tr></table></figure>
 
 <p>为表单中某个输入元素单独设置：</p>
-<pre><code class="hljs plaintext">&lt;form method=&quot;post&quot; action=&quot;/form&quot;&gt;
-  […]
-  &lt;div&gt;
-    &lt;label for=&quot;cc&quot;&gt;信用卡：&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;cc&quot; name=&quot;cc&quot; autocomplete=&quot;off&quot; /&gt;
-  &lt;/div&gt;
-&lt;/form&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;form method=&quot;post&quot; action=&quot;/form&quot;&gt;<br>  […]<br>  &lt;div&gt;<br>    &lt;label for=&quot;cc&quot;&gt;信用卡：&lt;/label&gt;<br>    &lt;input type=&quot;text&quot; id=&quot;cc&quot; name=&quot;cc&quot; autocomplete=&quot;off&quot; /&gt;<br>  &lt;/div&gt;<br>&lt;/form&gt;<br></code></pre></td></tr></table></figure>
 
 <p>一些浏览器（如 Chrome 和 Edge）即使设置了 <code>autocomplete=&quot;off&quot;</code>，仍会尝试为用户名和密码字段提供自动填充功能，那么你需要更改输入元素的 <code>name</code> 属性（浏览器通常会根据字段的 <code>name</code> 属性判断其用途，可以为这些字段设置随机或无意义的 <code>name</code> 值）</p>
 <h5 id="autocomplete-属性和登录字段"><a href="#autocomplete-属性和登录字段" class="headerlink" title="autocomplete 属性和登录字段"></a>autocomplete 属性和登录字段</h5><p>如果你定义了一个用户管理页面，其中用户可以为其他人指定新的密码，因此你想阻止密码字段的自动填充，你可以使用 <code>autocomplete=&quot;new-password&quot;</code></p>
@@ -706,7 +625,7 @@ Vary: &lt;header-name&gt;, &lt;header-name&gt;, ...</code></pre>
 <li><code>application/pdf</code>对于 PDF 文档</li>
 </ul>
 <h4 id="严格传输安全-HTTP-Strict-Transport-Security-HSTS）"><a href="#严格传输安全-HTTP-Strict-Transport-Security-HSTS）" class="headerlink" title="严格传输安全 (HTTP Strict Transport Security, HSTS）"></a>严格传输安全 (HTTP Strict Transport Security, HSTS）</h4><p>通过强制使用 HTTPS 而非 HTTP 来防止协议降级攻击和会话劫持</p>
-<pre><code class="hljs plaintext">Strict-Transport-Security: max-age=&lt;expire-time&gt;[; includeSubDomains][; preload]</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Strict-Transport-Security: max-age=&lt;expire-time&gt;[; includeSubDomains][; preload]<br></code></pre></td></tr></table></figure>
 
 <p><strong><code>max-age</code></strong>: 必须指定，表示 HSTS 策略的有效期（单位：秒）。例如，<code>max-age=31536000</code> 表示策略有效期为 1 年。</p>
 <p><strong><code>includeSubDomains</code></strong>: 可选，表示 HSTS 策略适用于主域及其所有子域。</p>
@@ -722,26 +641,15 @@ Vary: &lt;header-name&gt;, &lt;header-name&gt;, ...</code></pre>
 <li><code>text/plain</code></li>
 </ul>
 <p>浏览器会直接发送请求，并根据响应头判断是否允许访问</p>
-<pre><code class="hljs plaintext">GET /api/data HTTP/1.1 
-Host: api.example.com 
-Origin: https://example.com</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET /api/data HTTP/1.1 <br>Host: api.example.com <br>Origin: https://example.com<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK 
-Access-Control-Allow-Origin: https://example.com</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK <br>Access-Control-Allow-Origin: https://example.com<br></code></pre></td></tr></table></figure>
 
 <p>如果 <code>Access-Control-Allow-Origin</code> 标头的值与请求的 <code>Origin</code> 匹配，则浏览器允许访问响应数据</p>
 <h5 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h5><p>对于非简单请求（如使用 <code>PUT</code>、<code>DELETE</code> 方法，或自定义标头），浏览器会在正式请求之前发送一个 <strong>预检请求</strong>（<code>OPTIONS</code> 请求），以确保服务器允许此操作</p>
-<pre><code class="hljs plaintext">OPTIONS /api/data HTTP/1.1
-Host: api.example.com
-Origin: https://example.com
-Access-Control-Request-Method: POST
-Access-Control-Request-Headers: Authorization</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">OPTIONS /api/data HTTP/1.1<br>Host: api.example.com<br>Origin: https://example.com<br>Access-Control-Request-Method: POST<br>Access-Control-Request-Headers: Authorization<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">HTTP/1.1 204 No Content
-Access-Control-Allow-Origin: https://example.com
-Access-Control-Allow-Methods: POST, GET, OPTIONS
-Access-Control-Allow-Headers: Authorization
-Access-Control-Max-Age: 3600</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 204 No Content<br>Access-Control-Allow-Origin: https://example.com<br>Access-Control-Allow-Methods: POST, GET, OPTIONS<br>Access-Control-Allow-Headers: Authorization<br>Access-Control-Max-Age: 3600<br></code></pre></td></tr></table></figure>
 
 <p><strong><code>Access-Control-Allow-Origin</code></strong>: 指定允许的来源。</p>
 <p><strong><code>Access-Control-Allow-Methods</code></strong>: 列出允许的 HTTP 方法。</p>
@@ -752,69 +660,64 @@ Access-Control-Max-Age: 3600</code></pre>
 <li>客户端在请求中设置 <code>withCredentials</code> 为 <code>true</code>。</li>
 <li>服务器返回的响应头包含 <code>Access-Control-Allow-Credentials: true</code></li>
 </ul>
-<pre><code class="hljs plaintext">GET /api/data HTTP/1.1
-Host: api.example.com
-Origin: https://example.com
-Cookie: sessionId=abc123</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET /api/data HTTP/1.1<br>Host: api.example.com<br>Origin: https://example.com<br>Cookie: sessionId=abc123<br></code></pre></td></tr></table></figure>
 
-<pre><code class="hljs plaintext">HTTP/1.1 200 OK
-Access-Control-Allow-Origin: https://example.com
-Access-Control-Allow-Credentials: true</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HTTP/1.1 200 OK<br>Access-Control-Allow-Origin: https://example.com<br>Access-Control-Allow-Credentials: true<br></code></pre></td></tr></table></figure>
 
 <p>如果 <code>Access-Control-Allow-Credentials</code> 为 <code>true</code>，<code>Access-Control-Allow-Origin</code> 必须为具体的来源，不能使用通配符 <code>*</code></p>
 <h5 id="HTTP响应标头字段"><a href="#HTTP响应标头字段" class="headerlink" title="HTTP响应标头字段"></a>HTTP响应标头字段</h5><p>1.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Allow-Origin"><code>Access-Control-Allow-Origin</code></a> </p>
-<pre><code class="hljs plaintext">Access-Control-Allow-Origin: &lt;origin&gt; | *</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Allow-Origin: &lt;origin&gt; | *<br></code></pre></td></tr></table></figure>
 
 <p><code>Access-Control-Allow-Origin</code> 参数指定了单一的源，告诉浏览器允许该源访问资源。或者，对于<strong>不需要携带</strong>身份凭证的请求，服务器可以指定该字段的值为通配符“<code>*</code>”，表示允许来自任意源的请求</p>
 <p>2.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Expose-Headers"><code>Access-Control-Expose-Headers</code></a> </p>
 <p>跨源访问时，<code>XMLHttpRequest</code> 对象的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/getResponseHeader"><code>getResponseHeader()</code></a> 方法只能拿到一些最基本的响应头，Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma，如果要访问其他头，则需要服务器设置本响应头</p>
 <p>将指定标头放入允许列表中，供浏览器的 JavaScript 代码（如 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/getResponseHeader"><code>getResponseHeader()</code></a>）获取</p>
-<pre><code class="hljs plaintext">Access-Control-Expose-Headers: &lt;header-name&gt;[, &lt;header-name&gt;]*</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Expose-Headers: &lt;header-name&gt;[, &lt;header-name&gt;]*<br></code></pre></td></tr></table></figure>
 
 <p>3.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Max-Age"><code>Access-Control-Max-Age</code></a></p>
 <p>指定了 preflight 请求的结果能够被缓存多久</p>
-<pre><code class="hljs plaintext">Access-Control-Max-Age: &lt;delta-seconds&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Max-Age: &lt;delta-seconds&gt;<br></code></pre></td></tr></table></figure>
 
 <p>4.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials"><code>Access-Control-Allow-Credentials</code></a> </p>
 <p>指定了当浏览器的 <code>credentials</code> 设置为 true 时是否允许浏览器读取 response 的内容</p>
-<pre><code class="hljs plaintext">Access-Control-Allow-Credentials: true</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Allow-Credentials: true<br></code></pre></td></tr></table></figure>
 
 <p>5.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Allow-Methods"><code>Access-Control-Allow-Methods</code></a> </p>
 <p>指定了访问资源时允许使用的请求方法，用于预检请求的响应。其指明了实际请求所允许使用的 HTTP 方法</p>
-<pre><code class="hljs plaintext">Access-Control-Allow-Methods: &lt;method&gt;[, &lt;method&gt;]*</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Allow-Methods: &lt;method&gt;[, &lt;method&gt;]*<br></code></pre></td></tr></table></figure>
 
 <p>6.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Allow-Headers"><code>Access-Control-Allow-Headers</code></a> </p>
 <p>用于<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Preflight_request">预检请求</a>的响应。其指明了实际请求中允许携带的标头字段</p>
-<pre><code class="hljs plaintext">Access-Control-Allow-Headers: &lt;header-name&gt;[, &lt;header-name&gt;]*</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Allow-Headers: &lt;header-name&gt;[, &lt;header-name&gt;]*<br></code></pre></td></tr></table></figure>
 
 <h5 id="HTTP请求标头字段"><a href="#HTTP请求标头字段" class="headerlink" title="HTTP请求标头字段"></a>HTTP请求标头字段</h5><p>1.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Origin"><code>Origin</code></a> </p>
 <p>表明预检请求或实际跨源请求的源站</p>
-<pre><code class="hljs plaintext">Origin: &lt;origin&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Origin: &lt;origin&gt;<br></code></pre></td></tr></table></figure>
 
 <p>origin 参数的值为源站 URL。它不包含任何路径信息，只是服务器名称</p>
 <p>2.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Request-Method"><code>Access-Control-Request-Method</code></a> </p>
 <p>用于预检请求。其作用是，将实际请求所使用的 HTTP 方法告诉服务器</p>
-<pre><code class="hljs plaintext">Access-Control-Request-Method: &lt;method&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Request-Method: &lt;method&gt;<br></code></pre></td></tr></table></figure>
 
 <p>3.<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Request-Headers"><code>Access-Control-Request-Headers</code></a> </p>
 <p>用于预检请求，将实际请求所携带的标头字段（通过 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/setRequestHeader"><code>setRequestHeader()</code></a> 等设置的）告诉服务器。这个浏览器端标头将由互补的服务器端标头 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Allow-Headers"><code>Access-Control-Allow-Headers</code></a> 回答</p>
-<pre><code class="hljs plaintext">Access-Control-Request-Headers: &lt;field-name&gt;[, &lt;field-name&gt;]*</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Access-Control-Request-Headers: &lt;field-name&gt;[, &lt;field-name&gt;]*<br></code></pre></td></tr></table></figure>
 
 <h4 id="内容安全策略（CSP）"><a href="#内容安全策略（CSP）" class="headerlink" title="内容安全策略（CSP）"></a><strong>内容安全策略</strong>（CSP）</h4><p>是一个额外的安全层，用于检测并削弱某些特定类型的攻击，包括跨站脚本（XSS）和数据注入攻击等</p>
 <p>为使 CSP 可用，你需要配置你的网络服务器返回 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy"><code>Content-Security-Policy</code></a> HTTP 标头，除此之外，<code>&lt;meta&gt;</code>元素也可以被用来配置该策略</p>
-<pre><code class="hljs plaintext">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://trusted.cdn.com&quot;&gt;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://trusted.cdn.com&quot;&gt;<br></code></pre></td></tr></table></figure>
 
 <h5 id="CSP-示例配置"><a href="#CSP-示例配置" class="headerlink" title="CSP 示例配置"></a><strong>CSP 示例配置</strong></h5><h6 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h6><p>只允许从同源加载资源，禁止内联脚本：</p>
-<pre><code class="hljs plaintext">Content-Security-Policy: default-src &#x27;self&#x27;; script-src &#x27;self&#x27;;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Content-Security-Policy: default-src &#x27;self&#x27;; script-src &#x27;self&#x27;;<br></code></pre></td></tr></table></figure>
 
 <h6 id="允许可信第三方资源"><a href="#允许可信第三方资源" class="headerlink" title="允许可信第三方资源"></a>允许可信第三方资源</h6><p>允许从指定的 CDN 加载 JavaScript 和样式：</p>
-<pre><code class="hljs plaintext">Content-Security-Policy: script-src &#x27;self&#x27; https://cdn.example.com; style-src &#x27;self&#x27; https://cdn.example.com;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Content-Security-Policy: script-src &#x27;self&#x27; https://cdn.example.com; style-src &#x27;self&#x27; https://cdn.example.com;<br></code></pre></td></tr></table></figure>
 
 <h6 id="启用报告机制"><a href="#启用报告机制" class="headerlink" title="启用报告机制"></a>启用报告机制</h6><p>当策略被违反时，将报告发送到指定的 URL：</p>
-<pre><code class="hljs plaintext">Content-Security-Policy: default-src &#x27;self&#x27;; report-uri /csp-report-endpoint;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Content-Security-Policy: default-src &#x27;self&#x27;; report-uri /csp-report-endpoint;<br></code></pre></td></tr></table></figure>
 
 <h6 id="防止-iframe-嵌套"><a href="#防止-iframe-嵌套" class="headerlink" title="防止 iframe 嵌套"></a>防止 iframe 嵌套</h6><p>禁止页面被嵌套在 <code>&lt;iframe&gt;</code> 中，防止点击劫持攻击：</p>
-<pre><code class="hljs plaintext">Content-Security-Policy: frame-ancestors &#x27;none&#x27;;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Content-Security-Policy: frame-ancestors &#x27;none&#x27;;<br></code></pre></td></tr></table></figure>
 
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250122092258684.png"></p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250122092258689.png" alt="屏幕截图 2025-01-22 092240"></p>
@@ -1467,5 +1370,5 @@ Access-Control-Allow-Credentials: true</code></pre>
 
 
 <!-- inject -->
-
+<script async src="/js/title.js"></script>
 </div></body></html>

