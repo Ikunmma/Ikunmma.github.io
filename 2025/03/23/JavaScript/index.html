@@ -94,6 +94,10 @@
   
 
   
+    
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css">
+
+  
 
   
 </head>
@@ -166,7 +170,7 @@
 <h3 id="分号"><a href="#分号" class="headerlink" title="分号 ;"></a>分号 ;</h3><p>在每条可执行的语句结尾添加分号或在一行中编写多条语句</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117442.png"></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>是 JavaScript 语句的序列。浏览器按照编写顺序依次执行每条语句。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;demo&quot;).innerHTML=&quot;你好 Dolly&quot;; document.getElementById(&quot;myDIV&quot;).innerHTML=&quot;你最近怎么样?&quot;;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">document.getElementById(&quot;demo&quot;).innerHTML=&quot;你好 Dolly&quot;; document.getElementById(&quot;myDIV&quot;).innerHTML=&quot;你最近怎么样?&quot;;</code></pre>
 
 <h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>代码块的作用是一并地执行语句序列，左花括号开始，以右花括号结束</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117443.png" alt="屏幕截图 2024-10-05 155144"></p>
@@ -176,17 +180,20 @@
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117445.png"></p>
 <h2 id="JavaScript-变量"><a href="#JavaScript-变量" class="headerlink" title="JavaScript 变量"></a>JavaScript 变量</h2><h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><p>用 var 关键词来声明变量，变量可以先使用再声明</p>
 <h4 id="多变量"><a href="#多变量" class="headerlink" title="多变量"></a>多变量</h4><p>在一条语句中声明很多变量：该语句以 var 开头，并使用逗号分隔变量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var lastname=&quot;Doe&quot;, age=30, job=&quot;carpenter&quot;;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var lastname=&quot;Doe&quot;, age=30, job=&quot;carpenter&quot;;</code></pre>
 
 <p>横跨多行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var lastname=&quot;Doe&quot;,</span><br><span class="line">age=30,</span><br><span class="line">job=&quot;carpenter&quot;;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var lastname=&quot;Doe&quot;,
+age=30,
+job=&quot;carpenter&quot;;</code></pre>
 
 <p>一条语句中声明的多个变量不可以同时赋同一个值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var x,y,z=1;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var x,y,z=1;</code></pre>
 
 <p>x,y 为 undefined， z 为 1。</p>
 <h4 id="重新声明变量"><a href="#重新声明变量" class="headerlink" title="重新声明变量"></a>重新声明变量</h4><p>重新声明 JavaScript 变量，该变量的值不会丢失</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var carname=&quot;Volvo&quot;;</span><br><span class="line">var carname;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var carname=&quot;Volvo&quot;;
+var carname;</code></pre>
 
 <p>两条语句执行后，变量 carname 的值依然是 “Volvo”</p>
 <h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>JavaScript 变量可用于存放值（ x&#x3D;5），表达式（z&#x3D;x+y）和文本值 (name&#x3D;”Bill Gates”  用双引号或单引号包围这个值)，一般倡导以字母开头</p>
@@ -199,9 +206,12 @@
 <p>如果你使用名字作为索引，当访问数组时，JavaScript 会把数组重新定义为标准对象。</p>
 <p>执行这样操作后，数组的方法及属性将不能再使用，否则会产生错误（person.length输出为0）</p>
 <p>使用 <strong><code>new Array()</code></strong> 构造函数，通过 <strong><code>.length</code></strong> 获取数组长度</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var cars=new Array();</span><br><span class="line">cars[0]=&quot;Saab&quot;;</span><br><span class="line">cars[1]=&quot;Volvo&quot;;</span><br><span class="line">cars[2]=&quot;BMW&quot;;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var cars=new Array();
+cars[0]=&quot;Saab&quot;;
+cars[1]=&quot;Volvo&quot;;
+cars[2]=&quot;BMW&quot;;</code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);</code></pre>
 
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117448.png"></p>
 <h2 id="JavaScript-对象"><a href="#JavaScript-对象" class="headerlink" title="JavaScript 对象"></a>JavaScript 对象</h2><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义</p>
@@ -209,7 +219,16 @@
 <h3 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h3><p>对象的方法定义了一个函数，并作为对象的属性存储。对象方法通过添加 () 调用 (作为一个函数)。</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117450.png"></p>
 <h3 id="typeof，Undefined-和-Null"><a href="#typeof，Undefined-和-Null" class="headerlink" title="typeof，Undefined 和 Null"></a>typeof，Undefined 和 Null</h3><p>typeof 操作符来检测变量的数据类型</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typeof &quot;John&quot;         // 返回 string</span><br><span class="line">typeof 3.14          // 返回 number</span><br><span class="line">typeof NaN           // 返回 number</span><br><span class="line">typeof false         // 返回 boolean</span><br><span class="line">typeof [1,2,3,4]       // 返回 object</span><br><span class="line">typeof &#123;name:&#x27;John&#x27;, age:34&#125; // 返回 object</span><br><span class="line">typeof new Date()       // 返回 object</span><br><span class="line">typeof function () &#123;&#125;     // 返回 function</span><br><span class="line">typeof myCar         // 返回 undefined (如果 myCar 没有声明)</span><br><span class="line">typeof null          // 返回 object</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">typeof &quot;John&quot;         // 返回 string
+typeof 3.14          // 返回 number
+typeof NaN           // 返回 number
+typeof false         // 返回 boolean
+typeof [1,2,3,4]       // 返回 object
+typeof &#123;name:&#x27;John&#x27;, age:34&#125; // 返回 object
+typeof new Date()       // 返回 object
+typeof function () &#123;&#125;     // 返回 function
+typeof myCar         // 返回 undefined (如果 myCar 没有声明)
+typeof null          // 返回 object</code></pre>
 
 <p>Undefined 这个值表示变量不含有值。任何变量都可以通过设置值为 <strong>undefined</strong> 来清空</p>
 <p>null 表示 “什么都没有”，但类型为<strong>对象</strong>，是一个<strong>只有一个值的特殊类型</strong>。表示一个空对象引用。可以设置为 null 来清空变量。</p>
@@ -249,14 +268,24 @@
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117463.png"></p>
 <p><strong>加法</strong>是两个<strong>数字</strong>相加。</p>
 <p><strong>连接</strong>是两个<strong>字符串</strong>连接。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x = 10 + 5;     // x 的结果为 15</span><br><span class="line">var x = 10 + &quot;5&quot;;    // x 的结果为 &quot;105&quot;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var x = 10 + 5;     // x 的结果为 15
+var x = 10 + &quot;5&quot;;    // x 的结果为 &quot;105&quot;</code></pre>
 
 <h2 id="JavaScript循环"><a href="#JavaScript循环" class="headerlink" title="JavaScript循环"></a>JavaScript循环</h2><h3 id=""><a href="#" class="headerlink" title=""></a><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117464.png"></h3><p>在 switch 语句中，用恒等计算符(&#x3D;&#x3D;&#x3D;)进行比较</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var x = 10;</span><br><span class="line">switch(x) &#123;</span><br><span class="line">  case 10: alert(&quot;Hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var x = 10;
+switch(x) &#123;
+  case 10: alert(&quot;Hello&quot;);
+&#125;</code></pre>
 
 <p>上例会出现弹窗</p>
 <h2 id="JavaScript-类型转换"><a href="#JavaScript-类型转换" class="headerlink" title="JavaScript 类型转换"></a>JavaScript 类型转换</h2><h3 id="constructor-属性"><a href="#constructor-属性" class="headerlink" title="constructor 属性"></a>constructor 属性</h3><p><strong>constructor</strong> 属性返回所有 JavaScript 变量的构造函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;John&quot;.constructor         // 返回函数 String() &#123; [native code] &#125;</span><br><span class="line">(3.14).constructor         // 返回函数 Number() &#123; [native code] &#125;</span><br><span class="line">false.constructor         // 返回函数 Boolean() &#123; [native code] &#125;</span><br><span class="line">[1,2,3,4].constructor       // 返回函数 Array()  &#123; [native code] &#125;</span><br><span class="line">&#123;name:&#x27;John&#x27;, age:34&#125;.constructor // 返回函数 Object() &#123; [native code] &#125;</span><br><span class="line">new Date().constructor       // 返回函数 Date()  &#123; [native code] &#125;</span><br><span class="line">function () &#123;&#125;.constructor     // 返回函数 Function()&#123; [native code] &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&quot;John&quot;.constructor         // 返回函数 String() &#123; [native code] &#125;
+(3.14).constructor         // 返回函数 Number() &#123; [native code] &#125;
+false.constructor         // 返回函数 Boolean() &#123; [native code] &#125;
+[1,2,3,4].constructor       // 返回函数 Array()  &#123; [native code] &#125;
+&#123;name:&#x27;John&#x27;, age:34&#125;.constructor // 返回函数 Object() &#123; [native code] &#125;
+new Date().constructor       // 返回函数 Date()  &#123; [native code] &#125;
+function () &#123;&#125;.constructor     // 返回函数 Function()&#123; [native code] &#125;</code></pre>
 
 <h3 id="JavaScript-类型转换-1"><a href="#JavaScript-类型转换-1" class="headerlink" title="JavaScript 类型转换"></a>JavaScript 类型转换</h3><p>JavaScript 变量可以转换为新变量或其他数据类型</p>
 <h4 id="将数字转换为字符串"><a href="#将数字转换为字符串" class="headerlink" title="将数字转换为字符串"></a>将数字转换为字符串</h4><p>全局方法 <strong>String()</strong> 可以将数字，字母，变量，表达式转换为字符串</p>
@@ -286,13 +315,14 @@
 <h4 id="将布尔值转换为字符串"><a href="#将布尔值转换为字符串" class="headerlink" title="将布尔值转换为字符串"></a>将布尔值转换为字符串</h4><p>全局方法 <strong>String()</strong> </p>
 <p>Boolean 方法 <strong>toString()</strong> </p>
 <h4 id="将日期转换为字符串"><a href="#将日期转换为字符串" class="headerlink" title="将日期转换为字符串"></a>将日期转换为字符串</h4><p>Date() 返回字符串。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date()  </span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">Date()</code></pre>
 
 <p>全局方法 String() 可以将日期对象转换为字符串。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(new Date())  </span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">String(new Date())</code></pre>
 
 <p>Date 方法 <strong>toString()</strong> 也有相同的效果。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj = new Date()</span><br><span class="line">obj.toString() </span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">obj = new Date()
+obj.toString()</code></pre>
 
 <table>
 <thead>
@@ -339,7 +369,10 @@
 </tr>
 </tbody></table>
 <h4 id="将字符串转换为数字"><a href="#将字符串转换为数字" class="headerlink" title="将字符串转换为数字"></a>将字符串转换为数字</h4><p>全局方法 <strong>Number()</strong> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Number(&quot;3.14&quot;)  // 返回 3.14</span><br><span class="line">Number(&quot; &quot;)    // 返回 0</span><br><span class="line">Number(&quot;&quot;)    // 返回 0</span><br><span class="line">Number(&quot;99 88&quot;)  // 返回 NaN</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">Number(&quot;3.14&quot;)  // 返回 3.14
+Number(&quot; &quot;)    // 返回 0
+Number(&quot;&quot;)    // 返回 0
+Number(&quot;99 88&quot;)  // 返回 NaN</code></pre>
 
 <table>
 <thead>
@@ -359,20 +392,28 @@
 </tbody></table>
 <h4 id="将布尔值转换为数字"><a href="#将布尔值转换为数字" class="headerlink" title="将布尔值转换为数字"></a>将布尔值转换为数字</h4><p>全局方法 <strong>Number()</strong> </p>
 <h4 id="将日期转换为数字"><a href="#将日期转换为数字" class="headerlink" title="将日期转换为数字"></a>将日期转换为数字</h4><p>全局方法 <strong>Number()</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = new Date();</span><br><span class="line">Number(d)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">d = new Date();
+Number(d)</code></pre>
 
 <p>日期方法 <strong>getTime()</strong> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = new Date();</span><br><span class="line">d.getTime()  </span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">d = new Date();
+d.getTime()</code></pre>
 
 <h4 id="自动转换为字符串"><a href="#自动转换为字符串" class="headerlink" title="自动转换为字符串"></a>自动转换为字符串</h4><p>当你尝试输出一个对象或一个变量时 JavaScript 会自动调用变量的 toString() 方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;demo&quot;).innerHTML = myVar;</span><br><span class="line"></span><br><span class="line">myVar = &#123;name:&quot;Fjohn&quot;&#125; // toString 转换为 &quot;[object Object]&quot;</span><br><span class="line">myVar = [1,2,3,4]    // toString 转换为 &quot;1,2,3,4&quot;</span><br><span class="line">myVar = new Date()   // toString 转换为 &quot;Fri Jul 18 2014 09:08:55 GMT+0200&quot;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">document.getElementById(&quot;demo&quot;).innerHTML = myVar;
+
+myVar = &#123;name:&quot;Fjohn&quot;&#125; // toString 转换为 &quot;[object Object]&quot;
+myVar = [1,2,3,4]    // toString 转换为 &quot;1,2,3,4&quot;
+myVar = new Date()   // toString 转换为 &quot;Fri Jul 18 2014 09:08:55 GMT+0200&quot;</code></pre>
 
 <p>数字和布尔值也经常相互转换：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myVar = 123       // toString 转换为 &quot;123&quot;</span><br><span class="line">myVar = true       // toString 转换为 &quot;true&quot;</span><br><span class="line">myVar = false      // toString 转换为 &quot;false&quot;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">myVar = 123       // toString 转换为 &quot;123&quot;
+myVar = true       // toString 转换为 &quot;true&quot;
+myVar = false      // toString 转换为 &quot;false&quot;</code></pre>
 
 <h2 id="JavaScript-正则表达式"><a href="#JavaScript-正则表达式" class="headerlink" title="JavaScript 正则表达式"></a>JavaScript 正则表达式</h2><p>使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式</p>
 <p>正则表达式可用于所有文本搜索和文本替换的操作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/正则表达式主体/修饰符(可选)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">/正则表达式主体/修饰符(可选)</code></pre>
 
 <p>var patt &#x3D; &#x2F;runoob&#x2F;i</p>
 <p><strong>&#x2F;runoob&#x2F;i</strong> 是一个正则表达式。<strong>runoob</strong> 是一个<strong>正则表达式主体</strong> (用于检索)。<strong>i</strong> 是一个<strong>修饰符</strong> (搜索不区分大小写)</p>
@@ -380,13 +421,15 @@
 <p><strong>replace()</strong> 方法用于在字符串中用一些字符串替换另一些字符串，或替换一个与正则表达式匹配的子串。</p>
 <h3 id="RegExp-对象"><a href="#RegExp-对象" class="headerlink" title="RegExp 对象"></a>RegExp 对象</h3><h3 id="test-使用"><a href="#test-使用" class="headerlink" title="test()使用"></a>test()使用</h3><p>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true</p>
 <p>搜索字符串中的字符 “e”：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var patt = /e/;</span><br><span class="line">patt.test(&quot;The best things in life are free!&quot;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var patt = /e/;
+patt.test(&quot;The best things in life are free!&quot;);</code></pre>
 
 <p>或：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/e/.test(&quot;The best things in life are free!&quot;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">/e/.test(&quot;The best things in life are free!&quot;)</code></pre>
 
 <h3 id="exec-使用"><a href="#exec-使用" class="headerlink" title="exec()使用"></a>exec()使用</h3><p>exec() 方法用于检索字符串中的正则表达式的匹配。该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var patt1=new RegExp(&quot;e&quot;);</span><br><span class="line">document.write(patt1.exec(&quot;The best things in life are free&quot;));</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var patt1=new RegExp(&quot;e&quot;);
+document.write(patt1.exec(&quot;The best things in life are free&quot;));</code></pre>
 
 <p>输出为e</p>
 <h2 id="JavaScript-错误"><a href="#JavaScript-错误" class="headerlink" title="JavaScript 错误"></a>JavaScript 错误</h2><h3 id="throw语句创建自定义错误"><a href="#throw语句创建自定义错误" class="headerlink" title="throw语句创建自定义错误"></a>throw语句创建自定义错误</h3><h3 id="try-语句测试代码块的错误"><a href="#try-语句测试代码块的错误" class="headerlink" title="try 语句测试代码块的错误"></a><strong>try</strong> 语句测试代码块的错误</h3><h3 id="catch-语句处理错误"><a href="#catch-语句处理错误" class="headerlink" title="catch 语句处理错误"></a><strong>catch</strong> 语句处理错误</h3><h3 id="finally-语句"><a href="#finally-语句" class="headerlink" title="finally 语句"></a>finally 语句</h3><p>finally 语句不论之前的 try 和 catch 中是否产生异常都会执行该代码块</p>
@@ -412,18 +455,42 @@
 <p>在相同的作用域或块级作用域中，不能使用 <strong>let</strong> 关键字来重置 <strong>let</strong> 关键字声明的变量</p>
 <h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const 用于声明一个或多个常量，声明时<strong>必须进行初始化</strong>，定义常量的值不能通过再赋值修改，也不能再次声明</p>
 <p>const 定义的变量并非常量，并非不可变，它定义了一个常量引用一个值。使用 const 定义的对象或者数组，其实是可变的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 创建常量对象</span><br><span class="line">const car = &#123;type:&quot;Fiat&quot;, model:&quot;500&quot;, color:&quot;white&quot;&#125;;</span><br><span class="line"></span><br><span class="line">// 修改属性:</span><br><span class="line">car.color = &quot;red&quot;;</span><br><span class="line"></span><br><span class="line">// 添加属性</span><br><span class="line">car.owner = &quot;Johnson&quot;;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">// 创建常量对象
+const car = &#123;type:&quot;Fiat&quot;, model:&quot;500&quot;, color:&quot;white&quot;&#125;;
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 创建常量数组</span><br><span class="line">const cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];</span><br><span class="line"></span><br><span class="line">// 修改元素</span><br><span class="line">cars[0] = &quot;Toyota&quot;;</span><br><span class="line"></span><br><span class="line">// 添加元素</span><br><span class="line">cars.push(&quot;Audi&quot;);</span><br></pre></td></tr></table></figure>
+// 修改属性:
+car.color = &quot;red&quot;;
+
+// 添加属性
+car.owner = &quot;Johnson&quot;;</code></pre>
+
+<pre><code class="hljs plaintext">// 创建常量数组
+const cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];
+
+// 修改元素
+cars[0] = &quot;Toyota&quot;;
+
+// 添加元素
+cars.push(&quot;Audi&quot;);</code></pre>
 
 <h3 id="void"><a href="#void" class="headerlink" title="void"></a>void</h3><p>指定要计算一个表达式但是不返回值</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117475.png"></p>
 <p>href&#x3D;”#”与href&#x3D;”javascript:void(0)”的区别</p>
 <p><strong>#</strong> 包含了一个位置信息，默认的锚是**#top** 也就是网页的上端。而javascript:void(0), 仅仅表示一个死链接。在页面很长的时候会使用 <strong>#</strong> 来定位页面的具体位置，格式为：<strong># + id</strong></p>
 <h2 id="JavaScript-JSON"><a href="#JavaScript-JSON" class="headerlink" title="JavaScript JSON"></a>JavaScript JSON</h2><p>JSON 是用于存储和传输数据的格式， 通常用于服务端向网页传递数据 </p>
-<h3 id="JSON-数组"><a href="#JSON-数组" class="headerlink" title="JSON 数组"></a>JSON 数组</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;sites&quot;:[</span><br><span class="line">    &#123;&quot;name&quot;:&quot;Runoob&quot;, &quot;url&quot;:&quot;www.runoob.com&quot;&#125;, </span><br><span class="line">    &#123;&quot;name&quot;:&quot;Google&quot;, &quot;url&quot;:&quot;www.google.com&quot;&#125;,</span><br><span class="line">    &#123;&quot;name&quot;:&quot;Taobao&quot;, &quot;url&quot;:&quot;www.taobao.com&quot;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="JSON-数组"><a href="#JSON-数组" class="headerlink" title="JSON 数组"></a>JSON 数组</h3><pre><code class="hljs plaintext">&quot;sites&quot;:[
+    &#123;&quot;name&quot;:&quot;Runoob&quot;, &quot;url&quot;:&quot;www.runoob.com&quot;&#125;, 
+    &#123;&quot;name&quot;:&quot;Google&quot;, &quot;url&quot;:&quot;www.google.com&quot;&#125;,
+    &#123;&quot;name&quot;:&quot;Taobao&quot;, &quot;url&quot;:&quot;www.taobao.com&quot;&#125;
+]</code></pre>
 
-<h3 id="JSON-字符串转换为-JavaScript-对象"><a href="#JSON-字符串转换为-JavaScript-对象" class="headerlink" title="JSON 字符串转换为 JavaScript 对象"></a>JSON 字符串转换为 JavaScript 对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var text = &#x27;&#123; &quot;sites&quot; : [&#x27; +</span><br><span class="line">    &#x27;&#123; &quot;name&quot;:&quot;Runoob&quot; , &quot;url&quot;:&quot;www.runoob.com&quot; &#125;,&#x27; +</span><br><span class="line">    &#x27;&#123; &quot;name&quot;:&quot;Google&quot; , &quot;url&quot;:&quot;www.google.com&quot; &#125;,&#x27; +</span><br><span class="line">    &#x27;&#123; &quot;name&quot;:&quot;Taobao&quot; , &quot;url&quot;:&quot;www.taobao.com&quot; &#125; ]&#125;&#x27;;</span><br><span class="line">    </span><br><span class="line">obj = JSON.parse(text);</span><br><span class="line">document.getElementById(&quot;demo&quot;).innerHTML = obj.sites[1].name + &quot; &quot; + obj.sites[1].url;</span><br></pre></td></tr></table></figure>
+<h3 id="JSON-字符串转换为-JavaScript-对象"><a href="#JSON-字符串转换为-JavaScript-对象" class="headerlink" title="JSON 字符串转换为 JavaScript 对象"></a>JSON 字符串转换为 JavaScript 对象</h3><pre><code class="hljs plaintext">var text = &#x27;&#123; &quot;sites&quot; : [&#x27; +
+    &#x27;&#123; &quot;name&quot;:&quot;Runoob&quot; , &quot;url&quot;:&quot;www.runoob.com&quot; &#125;,&#x27; +
+    &#x27;&#123; &quot;name&quot;:&quot;Google&quot; , &quot;url&quot;:&quot;www.google.com&quot; &#125;,&#x27; +
+    &#x27;&#123; &quot;name&quot;:&quot;Taobao&quot; , &quot;url&quot;:&quot;www.taobao.com&quot; &#125; ]&#125;&#x27;;
+    
+obj = JSON.parse(text);
+document.getElementById(&quot;demo&quot;).innerHTML = obj.sites[1].name + &quot; &quot; + obj.sites[1].url;</code></pre>
 
 <table>
 <thead>
@@ -441,75 +508,224 @@
 <td align="left">用于将 JavaScript 值转换为 JSON 字符串。</td>
 </tr>
 </tbody></table>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">legend</span>&gt;</span>BMI计算器<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;meter&quot;</span>&gt;</span> 身高(m)<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;meter&quot;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;weight&quot;</span>&gt;</span> 体重(kg)<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;weight&quot;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;myFunction()&quot;</span>&gt;</span>获取BMI<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;bmi&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">var</span> meter,weight,bmii,a;</span></span><br><span class="line"><span class="language-javascript">			meter=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;meter&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">			weight=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;weight&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">			bmii=(weight/(meter*meter)).<span class="title function_">toFixed</span>(<span class="number">2</span>);</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">if</span> (<span class="built_in">isNaN</span>(meter)||<span class="built_in">isNaN</span>(weight)||meter &lt;= <span class="number">0</span>||weight &lt;= <span class="number">0</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        		<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bmi&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&quot;请正确填写身高和体重！&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">        		<span class="keyword">return</span>;</span></span><br><span class="line"><span class="language-javascript">      		&#125;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">if</span>(bmii&lt;<span class="number">18.5</span>)a=<span class="string">&quot;体重过低&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">else</span> <span class="keyword">if</span>(bmii&gt;=<span class="number">24</span>)a=<span class="string">&quot;体重过高&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">else</span> a=<span class="string">&quot;正常&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">			<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bmi&quot;</span>).<span class="property">innerHTML</span>=bmii+a;</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>BMI计算器<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;meter&quot;</span>&gt;</span> 身高(m)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;meter&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;weight&quot;</span>&gt;</span> 体重(kg)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;weight&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;myFunction()&quot;</span>&gt;</span>获取BMI<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;bmi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">        <span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">            <span class="hljs-keyword">var</span> meter,weight,bmii,a;</span>
+<span class="language-javascript">            meter=<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;meter&quot;</span>).<span class="hljs-property">value</span>;</span>
+<span class="language-javascript">            weight=<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;weight&quot;</span>).<span class="hljs-property">value</span>;</span>
+<span class="language-javascript">            bmii=(weight/(meter*meter)).<span class="hljs-title function_">toFixed</span>(<span class="hljs-number">2</span>);</span>
+<span class="language-javascript">            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(meter)||<span class="hljs-built_in">isNaN</span>(weight)||meter &lt;= <span class="hljs-number">0</span>||weight &lt;= <span class="hljs-number">0</span>)&#123;</span>
+<span class="language-javascript">                <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;bmi&quot;</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;请正确填写身高和体重！&quot;</span>;</span>
+<span class="language-javascript">                <span class="hljs-keyword">return</span>;</span>
+<span class="language-javascript">              &#125;</span>
+<span class="language-javascript">            <span class="hljs-keyword">if</span>(bmii&lt;<span class="hljs-number">18.5</span>)a=<span class="hljs-string">&quot;体重过低&quot;</span>;</span>
+<span class="language-javascript">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bmii&gt;=<span class="hljs-number">24</span>)a=<span class="hljs-string">&quot;体重过高&quot;</span>;</span>
+<span class="language-javascript">            <span class="hljs-keyword">else</span> a=<span class="hljs-string">&quot;正常&quot;</span>;</span>
+<span class="language-javascript">            <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;bmi&quot;</span>).<span class="hljs-property">innerHTML</span>=bmii+a;</span>
+<span class="language-javascript">            </span>
+<span class="language-javascript">        &#125;</span>
+<span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 
 <h2 id="button元素"><a href="#button元素" class="headerlink" title="button元素"></a>button元素</h2><p>常用于触发某些操作或事件，如提交表单、执行 JavaScript 函数等。你可以通过 <code>&lt;button&gt;</code> 元素来创建各种类型的按钮，并且可以为它们添加不同的属性和事件监听器</p>
-<h3 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h3><h4 id="type-属性"><a href="#type-属性" class="headerlink" title="type 属性"></a><code>type</code> 属性</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;button&quot;&gt;普通按钮&lt;/button&gt; </span><br><span class="line">&lt;button type=&quot;submit&quot;&gt;提交按钮&lt;/button&gt; </span><br><span class="line">&lt;button type=&quot;reset&quot;&gt;重置按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h3><h4 id="type-属性"><a href="#type-属性" class="headerlink" title="type 属性"></a><code>type</code> 属性</h4><pre><code class="hljs plaintext">&lt;button type=&quot;button&quot;&gt;普通按钮&lt;/button&gt; 
+&lt;button type=&quot;submit&quot;&gt;提交按钮&lt;/button&gt; 
+&lt;button type=&quot;reset&quot;&gt;重置按钮&lt;/button&gt;</code></pre>
 
 <h4 id="disabled-属性"><a href="#disabled-属性" class="headerlink" title="disabled 属性"></a><code>disabled</code> 属性</h4><p>禁用按钮，用户无法点击</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button disabled&gt;禁用按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button disabled&gt;禁用按钮&lt;/button&gt;</code></pre>
 
 <h4 id="autofocus-属性"><a href="#autofocus-属性" class="headerlink" title="autofocus 属性"></a><code>autofocus</code> 属性</h4><p>页面加载时，自动聚焦到按钮</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button autofocus&gt;自动聚焦按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button autofocus&gt;自动聚焦按钮&lt;/button&gt;</code></pre>
 
 <h4 id="name-属性"><a href="#name-属性" class="headerlink" title="name 属性"></a><code>name</code> 属性</h4><p>为按钮指定名称，通常在表单提交时使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button name=&quot;submitBtn&quot; type=&quot;submit&quot;&gt;提交&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button name=&quot;submitBtn&quot; type=&quot;submit&quot;&gt;提交&lt;/button&gt;</code></pre>
 
 <h4 id="value-属性"><a href="#value-属性" class="headerlink" title="value 属性"></a><code>value</code> 属性</h4><p>为按钮指定一个值，通常配合 <code>type=&quot;submit&quot;</code> 使用，表示提交时传递的参数值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;submit&quot; value=&quot;submitForm&quot;&gt;提交表单&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button type=&quot;submit&quot; value=&quot;submitForm&quot;&gt;提交表单&lt;/button&gt;</code></pre>
 
 <h3 id="使用-JavaScript-与按钮交互"><a href="#使用-JavaScript-与按钮交互" class="headerlink" title="使用 JavaScript 与按钮交互"></a>使用 JavaScript 与按钮交互</h3><p>可以使用 JavaScript 为按钮添加点击事件，执行特定的操作</p>
 <p>可以通过 <code>addEventListener()</code> 方法绑定多个事件，支持复杂的事件处理和监听</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&#x27;按钮被点击！&#x27;)&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // 也可以通过 JavaScript 来绑定事件</span><br><span class="line">  const button = document.querySelector(&quot;button&quot;);</span><br><span class="line">  button.addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;按钮被点击！&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button onclick=&quot;alert(&#x27;按钮被点击！&#x27;)&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  // 也可以通过 JavaScript 来绑定事件
+  const button = document.querySelector(&quot;button&quot;);
+  button.addEventListener(&quot;click&quot;, function() &#123;
+    alert(&quot;按钮被点击！&quot;);
+  &#125;);
+&lt;/script&gt;</code></pre>
 
 <h3 id="动态按钮"><a href="#动态按钮" class="headerlink" title="动态按钮"></a>动态按钮</h3><p>按钮可以通过 JavaScript 来动态改变文本、颜色或状态</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot; onclick=&quot;changeText()&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function changeText() &#123;</span><br><span class="line">    const button = document.getElementById(&quot;myButton&quot;);</span><br><span class="line">    button.innerHTML = &quot;按钮已被点击&quot;;</span><br><span class="line">    button.style.backgroundColor = &quot;red&quot;;</span><br><span class="line">    button.disabled = true; // 禁用按钮</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button id=&quot;myButton&quot; onclick=&quot;changeText()&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  function changeText() &#123;
+    const button = document.getElementById(&quot;myButton&quot;);
+    button.innerHTML = &quot;按钮已被点击&quot;;
+    button.style.backgroundColor = &quot;red&quot;;
+    button.disabled = true; // 禁用按钮
+  &#125;
+&lt;/script&gt;</code></pre>
 
 <h2 id="onclick与addEventListener"><a href="#onclick与addEventListener" class="headerlink" title="onclick与addEventListener()"></a>onclick与addEventListener()</h2><h3 id="oncllick"><a href="#oncllick" class="headerlink" title="oncllick"></a>oncllick</h3><p>一个 HTML 事件属性，用于在用户点击某个元素时触发指定的 JavaScript 函数或代码。这个事件最常见的用法是在<strong>按钮、链接或任何可点击的元素上绑定点击事件</strong></p>
-<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><h5 id="在-HTML-中使用-onclick"><a href="#在-HTML-中使用-onclick" class="headerlink" title="在 HTML 中使用 onclick"></a>在 HTML 中使用 <code>onclick</code></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&#x27;按钮被点击了！&#x27;)&quot;&gt;点击我&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><h5 id="在-HTML-中使用-onclick"><a href="#在-HTML-中使用-onclick" class="headerlink" title="在 HTML 中使用 onclick"></a>在 HTML 中使用 <code>onclick</code></h5><pre><code class="hljs plaintext">&lt;button onclick=&quot;alert(&#x27;按钮被点击了！&#x27;)&quot;&gt;点击我&lt;/button&gt;</code></pre>
 
-<h5 id="调用-JavaScript-函数"><a href="#调用-JavaScript-函数" class="headerlink" title="调用 JavaScript 函数"></a>调用 JavaScript 函数</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;myFunction()&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function myFunction() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="调用-JavaScript-函数"><a href="#调用-JavaScript-函数" class="headerlink" title="调用 JavaScript 函数"></a>调用 JavaScript 函数</h5><pre><code class="hljs plaintext">&lt;button onclick=&quot;myFunction()&quot;&gt;点击我&lt;/button&gt;
+&lt;script&gt;
+  function myFunction() &#123;
+    alert(&#x27;按钮被点击了！&#x27;);
+  &#125;
+&lt;/script&gt;</code></pre>
 
-<h4 id="通过-JavaScript-动态绑定-onclick-事件"><a href="#通过-JavaScript-动态绑定-onclick-事件" class="headerlink" title="通过 JavaScript 动态绑定 onclick 事件"></a>通过 JavaScript 动态绑定 <code>onclick</code> 事件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&#x27;myButton&#x27;).onclick = function() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="通过-JavaScript-动态绑定-onclick-事件"><a href="#通过-JavaScript-动态绑定-onclick-事件" class="headerlink" title="通过 JavaScript 动态绑定 onclick 事件"></a>通过 JavaScript 动态绑定 <code>onclick</code> 事件</h4><pre><code class="hljs plaintext">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  document.getElementById(&#x27;myButton&#x27;).onclick = function() &#123;
+    alert(&#x27;按钮被点击了！&#x27;);
+  &#125;;
+&lt;/script&gt;</code></pre>
 
 <p>使用 JavaScript 选择了 ID 为 <code>myButton</code> 的按钮，并为其添加了一个 <code>onclick</code> 事件监听器</p>
 <h4 id="通过-onclick-传递事件对象（event）"><a href="#通过-onclick-传递事件对象（event）" class="headerlink" title="通过 onclick 传递事件对象（event）"></a>通过 <code>onclick</code> 传递事件对象（<code>event</code>）</h4><p>获取有关事件的更多信息（如点击位置、目标元素等）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;myFunction(event)&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function myFunction(event) &#123;</span><br><span class="line">    alert(&#x27;点击位置：X = &#x27; + event.clientX + &#x27;, Y = &#x27; + event.clientY);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button onclick=&quot;myFunction(event)&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  function myFunction(event) &#123;
+    alert(&#x27;点击位置：X = &#x27; + event.clientX + &#x27;, Y = &#x27; + event.clientY);
+  &#125;
+&lt;/script&gt;</code></pre>
 
 <p>此例中，<code>event</code> 对象包含了有关点击事件的信息，如鼠标的 <code>clientX</code> 和 <code>clientY</code> 坐标</p>
 <h4 id="使用-event-preventDefault-阻止默认行为"><a href="#使用-event-preventDefault-阻止默认行为" class="headerlink" title="使用 event.preventDefault()阻止默认行为"></a>使用 <code>event.preventDefault()</code>阻止默认行为</h4><p>阻止点击事件的默认行为（如点击链接时跳转、提交表单等）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.example.com&quot; onclick=&quot;preventDefaultAction(event)&quot;&gt;点击我&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function preventDefaultAction(event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    alert(&#x27;默认行为已被阻止&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;a href=&quot;https://www.example.com&quot; onclick=&quot;preventDefaultAction(event)&quot;&gt;点击我&lt;/a&gt;
 
-<h4 id="使用-this-引用当前元素"><a href="#使用-this-引用当前元素" class="headerlink" title="使用 this 引用当前元素"></a>使用 <code>this</code> 引用当前元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;showMessage(this)&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function showMessage(button) &#123;</span><br><span class="line">    alert(&#x27;按钮的文本是：&#x27; + button.innerText);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+&lt;script&gt;
+  function preventDefaultAction(event) &#123;
+    event.preventDefault();
+    alert(&#x27;默认行为已被阻止&#x27;);
+  &#125;
+&lt;/script&gt;</code></pre>
+
+<h4 id="使用-this-引用当前元素"><a href="#使用-this-引用当前元素" class="headerlink" title="使用 this 引用当前元素"></a>使用 <code>this</code> 引用当前元素</h4><pre><code class="hljs plaintext">&lt;button onclick=&quot;showMessage(this)&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  function showMessage(button) &#123;
+    alert(&#x27;按钮的文本是：&#x27; + button.innerText);
+  &#125;
+&lt;/script&gt;</code></pre>
 
 <p>例子中，<code>this</code> 代表按钮本身，<code>button.innerText</code> 获取按钮的文本内容</p>
 <h3 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener()"></a>addEventListener()</h3><p>是 JavaScript 中用于向元素添加事件监听器的方法。与 <code>onclick</code> 属性相比，<code>addEventListener()</code> 更加灵活和强大，它<strong>允许绑定多个事件监听器</strong>，并且能够更好地控制事件传播、捕获与冒泡机制</p>
-<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(event, function, useCapture);</span><br></pre></td></tr></table></figure>
+<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><pre><code class="hljs plaintext">element.addEventListener(event, function, useCapture);</code></pre>
 
 <p><strong><code>event</code></strong>：事件类型（如 <code>&quot;click&quot;</code>、<code>&quot;mouseover&quot;</code>、<code>&quot;keydown&quot;</code> 等）。</p>
 <p><strong><code>function</code></strong>：事件触发时执行的回调函数。</p>
 <p><strong><code>useCapture</code></strong>（可选）：一个布尔值，指定事件是应该在捕获阶段触发（<code>true</code>事件从文档的根节点到达目标元素），还是在冒泡阶段触发（<code>false</code>事件从目标元素返回到文档的根节点）。默认值为 <code>false</code>。</p>
-<h4 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h4><h5 id="添加点击事件监听器"><a href="#添加点击事件监听器" class="headerlink" title="添加点击事件监听器"></a>添加点击事件监听器</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  // 添加点击事件监听器</span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h4><h5 id="添加点击事件监听器"><a href="#添加点击事件监听器" class="headerlink" title="添加点击事件监听器"></a>添加点击事件监听器</h5><pre><code class="hljs plaintext">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  const button = document.getElementById(&#x27;myButton&#x27;);
+
+  // 添加点击事件监听器
+  button.addEventListener(&#x27;click&#x27;, function() &#123;
+    alert(&#x27;按钮被点击了！&#x27;);
+  &#125;);
+&lt;/script&gt;</code></pre>
 
 <h5 id="传递事件对象"><a href="#传递事件对象" class="headerlink" title="传递事件对象"></a>传递事件对象</h5><p><code>addEventListener()</code> 方法会自动传递一个事件对象给回调函数，可以通过该对象获取更多关于事件的信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function(event) &#123;</span><br><span class="line">    alert(&#x27;点击位置：X = &#x27; + event.clientX + &#x27;, Y = &#x27; + event.clientY);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  const button = document.getElementById(&#x27;myButton&#x27;);
+
+  button.addEventListener(&#x27;click&#x27;, function(event) &#123;
+    alert(&#x27;点击位置：X = &#x27; + event.clientX + &#x27;, Y = &#x27; + event.clientY);
+  &#125;);
+&lt;/script&gt;</code></pre>
 
 <h5 id="使用-this-访问触发事件的元素"><a href="#使用-this-访问触发事件的元素" class="headerlink" title="使用 this 访问触发事件的元素"></a>使用 <code>this</code> 访问触发事件的元素</h5><p>在 <code>addEventListener()</code> 中，<code>this</code> 通常指向触发事件的元素。因此，可以使用 <code>this</code> 来访问该元素的属性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;按钮的文本是：&#x27; + this.innerText);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  const button = document.getElementById(&#x27;myButton&#x27;);
+
+  button.addEventListener(&#x27;click&#x27;, function() &#123;
+    alert(&#x27;按钮的文本是：&#x27; + this.innerText);
+  &#125;);
+&lt;/script&gt;</code></pre>
 
 <h4 id="添加多个事件监听器"><a href="#添加多个事件监听器" class="headerlink" title="添加多个事件监听器"></a>添加多个事件监听器</h4><p><code>addEventListener()</code> 允许你为同一个元素添加多个事件监听器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;第一个事件&#x27;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;第二个事件&#x27;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;
+
+&lt;script&gt;
+  const button = document.getElementById(&#x27;myButton&#x27;);
+
+  button.addEventListener(&#x27;click&#x27;, function() &#123;
+    alert(&#x27;第一个事件&#x27;);
+  &#125;);
+
+  button.addEventListener(&#x27;click&#x27;, function() &#123;
+    alert(&#x27;第二个事件&#x27;);
+  &#125;);
+&lt;/script&gt;</code></pre>
 
 <p>例子中，当按钮被点击时，两个警告框会依次弹出</p>
 <h4 id="移除事件监听器"><a href="#移除事件监听器" class="headerlink" title="移除事件监听器"></a>移除事件监听器</h4><p>用 <code>removeEventListener()</code> 方法来移除已经添加的事件监听器。需要注意的是，<code>removeEventListener()</code> 只能移除通过 <code>addEventListener()</code> 添加的事件监听器，并且需要传递相同的事件类型和回调函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  function handleClick() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, handleClick);</span><br><span class="line"></span><br><span class="line">  // 移除事件监听器</span><br><span class="line">  button.removeEventListener(&#x27;click&#x27;, handleClick);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;
 
-<h1 id="JavaScript-HTML-DOM"><a href="#JavaScript-HTML-DOM" class="headerlink" title="JavaScript HTML DOM"></a>JavaScript HTML DOM</h1><h2 id="DOM-HTML"><a href="#DOM-HTML" class="headerlink" title="DOM HTML"></a>DOM HTML</h2><h3 id="查找-HTML-元素"><a href="#查找-HTML-元素" class="headerlink" title="查找 HTML 元素"></a>查找 HTML 元素</h3><h4 id="通过-id-找到-HTML-元素"><a href="#通过-id-找到-HTML-元素" class="headerlink" title="通过 id 找到 HTML 元素"></a>通过 id 找到 HTML 元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;intro&quot;&gt;你好世界!&lt;/p&gt;</span><br><span class="line">&lt;p&gt;该实例展示了 &lt;b&gt;getElementById&lt;/b&gt; 方法!&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">x=document.getElementById(&quot;intro&quot;);</span><br><span class="line">document.write(&quot;&lt;p&gt;文本来自 id 为 intro 段落: &quot; + x.innerHTML + &quot;&lt;/p&gt;&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+&lt;script&gt;
+  const button = document.getElementById(&#x27;myButton&#x27;);
+
+  function handleClick() &#123;
+    alert(&#x27;按钮被点击了！&#x27;);
+  &#125;
+
+  button.addEventListener(&#x27;click&#x27;, handleClick);
+
+  // 移除事件监听器
+  button.removeEventListener(&#x27;click&#x27;, handleClick);
+&lt;/script&gt;</code></pre>
+
+<h1 id="JavaScript-HTML-DOM"><a href="#JavaScript-HTML-DOM" class="headerlink" title="JavaScript HTML DOM"></a>JavaScript HTML DOM</h1><h2 id="DOM-HTML"><a href="#DOM-HTML" class="headerlink" title="DOM HTML"></a>DOM HTML</h2><h3 id="查找-HTML-元素"><a href="#查找-HTML-元素" class="headerlink" title="查找 HTML 元素"></a>查找 HTML 元素</h3><h4 id="通过-id-找到-HTML-元素"><a href="#通过-id-找到-HTML-元素" class="headerlink" title="通过 id 找到 HTML 元素"></a>通过 id 找到 HTML 元素</h4><pre><code class="hljs plaintext">&lt;p id=&quot;intro&quot;&gt;你好世界!&lt;/p&gt;
+&lt;p&gt;该实例展示了 &lt;b&gt;getElementById&lt;/b&gt; 方法!&lt;/p&gt;
+&lt;script&gt;
+x=document.getElementById(&quot;intro&quot;);
+document.write(&quot;&lt;p&gt;文本来自 id 为 intro 段落: &quot; + x.innerHTML + &quot;&lt;/p&gt;&quot;);
+&lt;/script&gt;</code></pre>
 
 <h4 id="通过标签名找到-HTML-元素"><a href="#通过标签名找到-HTML-元素" class="headerlink" title="通过标签名找到 HTML 元素"></a>通过标签名找到 HTML 元素</h4><p>查找 id&#x3D;”main” 的元素，然后查找 id&#x3D;”main” 元素中的所有 <code>&lt;p&gt;</code> 元素</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;你好世界!&lt;/p&gt;</span><br><span class="line">&lt;div id=&quot;main&quot;&gt;</span><br><span class="line">&lt;p&gt; DOM 是非常有用的。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;该实例展示了  &lt;b&gt;getElementsByTagName&lt;/b&gt; 方法&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x=document.getElementById(&quot;main&quot;);</span><br><span class="line">var y=x.getElementsByTagName(&quot;p&quot;);</span><br><span class="line">document.write(&#x27;id=&quot;main&quot;元素中的第一个段落为：&#x27; + y[0].innerHTML);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p&gt;你好世界!&lt;/p&gt;
+&lt;div id=&quot;main&quot;&gt;
+&lt;p&gt; DOM 是非常有用的。&lt;/p&gt;
+&lt;p&gt;该实例展示了  &lt;b&gt;getElementsByTagName&lt;/b&gt; 方法&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var x=document.getElementById(&quot;main&quot;);
+var y=x.getElementsByTagName(&quot;p&quot;);
+document.write(&#x27;id=&quot;main&quot;元素中的第一个段落为：&#x27; + y[0].innerHTML);
+&lt;/script&gt;</code></pre>
 
-<h4 id="通过类名找到-HTML-元素"><a href="#通过类名找到-HTML-元素" class="headerlink" title="通过类名找到 HTML 元素"></a>通过类名找到 HTML 元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;intro&quot;&gt;你好世界!&lt;/p&gt;</span><br><span class="line">&lt;p&gt;该实例展示了 &lt;b&gt;getElementsByClassName&lt;/b&gt; 方法!&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">x=document.getElementsByClassName(&quot;intro&quot;);</span><br><span class="line">document.write(&quot;&lt;p&gt;文本来自 class 为 intro 段落: &quot; + x[0].innerHTML + &quot;&lt;/p&gt;&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="通过类名找到-HTML-元素"><a href="#通过类名找到-HTML-元素" class="headerlink" title="通过类名找到 HTML 元素"></a>通过类名找到 HTML 元素</h4><pre><code class="hljs plaintext">&lt;p class=&quot;intro&quot;&gt;你好世界!&lt;/p&gt;
+&lt;p&gt;该实例展示了 &lt;b&gt;getElementsByClassName&lt;/b&gt; 方法!&lt;/p&gt;
+&lt;script&gt;
+x=document.getElementsByClassName(&quot;intro&quot;);
+document.write(&quot;&lt;p&gt;文本来自 class 为 intro 段落: &quot; + x[0].innerHTML + &quot;&lt;/p&gt;&quot;);
+&lt;/script&gt;</code></pre>
 
 <h3 id="改变HTML"><a href="#改变HTML" class="headerlink" title="改变HTML"></a>改变HTML</h3><h4 id="改变-HTML-输出流"><a href="#改变-HTML-输出流" class="headerlink" title="改变 HTML 输出流"></a>改变 HTML 输出流</h4><p>在 JavaScript 中，<code>document.write()</code> 可用于直接向 HTML 输出流写内容</p>
 <blockquote>
@@ -517,32 +733,56 @@
 <p>绝对不要在文档(DOM)加载完成之后使用 document.write()。这会覆盖该文档</p>
 </blockquote>
 <h4 id="改变-HTML-内容"><a href="#改变-HTML-内容" class="headerlink" title="改变 HTML 内容"></a>改变 HTML 内容</h4><p>修改 HTML 内容的最简单的方法是使用 innerHTML 属性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(id).innerHTML=新的 HTML</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">document.getElementById(id).innerHTML=新的 HTML</code></pre>
 
-<h4 id="改变-HTML-属性"><a href="#改变-HTML-属性" class="headerlink" title="改变 HTML 属性"></a>改变 HTML 属性</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(id).attribute=新属性值</span><br></pre></td></tr></table></figure>
+<h4 id="改变-HTML-属性"><a href="#改变-HTML-属性" class="headerlink" title="改变 HTML 属性"></a>改变 HTML 属性</h4><pre><code class="hljs plaintext">document.getElementById(id).attribute=新属性值</code></pre>
 
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250123193811849.png"></p>
-<h2 id="DOM-CSS"><a href="#DOM-CSS" class="headerlink" title="DOM CSS"></a>DOM CSS</h2><h3 id="改变-HTML-样式"><a href="#改变-HTML-样式" class="headerlink" title="改变 HTML 样式"></a>改变 HTML 样式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(id).style.property=新样式</span><br></pre></td></tr></table></figure>
+<h2 id="DOM-CSS"><a href="#DOM-CSS" class="headerlink" title="DOM CSS"></a>DOM CSS</h2><h3 id="改变-HTML-样式"><a href="#改变-HTML-样式" class="headerlink" title="改变 HTML 样式"></a>改变 HTML 样式</h3><pre><code class="hljs plaintext">document.getElementById(id).style.property=新样式</code></pre>
 
 <h3 id="使用事件"><a href="#使用事件" class="headerlink" title="使用事件"></a>使用事件</h3><p>HTML DOM 允许我们通过触发事件来执行代码</p>
 <p>比如事件：元素被点击。页面加载完成。输入框被修改。</p>
 <p>下例改变字体颜色</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 id=&quot;id1&quot;&gt;我的标题 1&lt;/h1&gt;</span><br><span class="line">&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&#x27;id1&#x27;).style.color=&#x27;red&#x27;&quot;&gt;</span><br><span class="line">点我!&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;h1 id=&quot;id1&quot;&gt;我的标题 1&lt;/h1&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&#x27;id1&#x27;).style.color=&#x27;red&#x27;&quot;&gt;
+点我!&lt;/button&gt;</code></pre>
 
 <p>下例使元素显示或消失</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;p1&quot;&gt;这是一个文本。&lt;/p&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;隐藏文本&quot; onclick=&quot;document.getElementById(&#x27;p1&#x27;).style.visibility=&#x27;hidden&#x27;&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;显示文本&quot; onclick=&quot;document.getElementById(&#x27;p1&#x27;).style.visibility=&#x27;visible&#x27;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p id=&quot;p1&quot;&gt;这是一个文本。&lt;/p&gt;
+&lt;input type=&quot;button&quot; value=&quot;隐藏文本&quot; onclick=&quot;document.getElementById(&#x27;p1&#x27;).style.visibility=&#x27;hidden&#x27;&quot; /&gt;
+&lt;input type=&quot;button&quot; value=&quot;显示文本&quot; onclick=&quot;document.getElementById(&#x27;p1&#x27;).style.visibility=&#x27;visible&#x27;&quot; /&gt;</code></pre>
 
 <h2 id="DOM-事件"><a href="#DOM-事件" class="headerlink" title="DOM 事件"></a>DOM 事件</h2><h3 id="对事件做出反应"><a href="#对事件做出反应" class="headerlink" title="对事件做出反应"></a>对事件做出反应</h3><p>用户点击某个元素时执行代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 onclick=&quot;this.innerHTML=&#x27;Ooops!&#x27;&quot;&gt;点击文本!&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;h1 onclick=&quot;this.innerHTML=&#x27;Ooops!&#x27;&quot;&gt;点击文本!&lt;/h1&gt;</code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 onclick=&quot;changetext(this)&quot;&gt;点击文本!&lt;/h1&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function changetext(id)&#123;</span><br><span class="line">	id.innerHTML=&quot;Ooops!&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;h1 onclick=&quot;changetext(this)&quot;&gt;点击文本!&lt;/h1&gt;
+&lt;script&gt;
+function changetext(id)&#123;
+    id.innerHTML=&quot;Ooops!&quot;;
+&#125;
+&lt;/script&gt;</code></pre>
 
 <h3 id="HTML事件属性"><a href="#HTML事件属性" class="headerlink" title="HTML事件属性"></a>HTML事件属性</h3><p>如需向 HTML 元素分配 事件，可以使用事件属性</p>
 <p>如向 button 元素分配 onclick 事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;点击按钮执行 &lt;em&gt;displayDate()&lt;/em&gt; 函数.&lt;/p&gt;</span><br><span class="line">&lt;button onclick=&quot;displayDate()&quot;&gt;点这里&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function displayDate()&#123;</span><br><span class="line">	document.getElementById(&quot;demo&quot;).innerHTML=Date();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p&gt;点击按钮执行 &lt;em&gt;displayDate()&lt;/em&gt; 函数.&lt;/p&gt;
+&lt;button onclick=&quot;displayDate()&quot;&gt;点这里&lt;/button&gt;
+&lt;script&gt;
+function displayDate()&#123;
+    document.getElementById(&quot;demo&quot;).innerHTML=Date();
+&#125;
+&lt;/script&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</code></pre>
 
 <h3 id="使用HTML-DOM-来分配事件"><a href="#使用HTML-DOM-来分配事件" class="headerlink" title="使用HTML DOM 来分配事件"></a>使用HTML DOM 来分配事件</h3><p>如向 button 元素分配 onclick 事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;点击按钮执行 &lt;em&gt;displayDate()&lt;/em&gt; 函数.&lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点这里&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;myBtn&quot;).onclick=function()&#123;displayDate()&#125;;</span><br><span class="line">function displayDate()&#123;</span><br><span class="line">	document.getElementById(&quot;demo&quot;).innerHTML=Date();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p&gt;点击按钮执行 &lt;em&gt;displayDate()&lt;/em&gt; 函数.&lt;/p&gt;
+&lt;button id=&quot;myBtn&quot;&gt;点这里&lt;/button&gt;
+&lt;script&gt;
+document.getElementById(&quot;myBtn&quot;).onclick=function()&#123;displayDate()&#125;;
+function displayDate()&#123;
+    document.getElementById(&quot;demo&quot;).innerHTML=Date();
+&#125;
+&lt;/script&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</code></pre>
 
 <p>上例中，名为 displayDate 的函数被分配给 id&#x3D;”myBtn” 的 HTML 元素。</p>
 <p>按钮点击时Javascript函数将会被执行</p>
@@ -552,33 +792,105 @@
 <p>onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。</p>
 <p>onload 和 onunload 事件可用于处理 cookie</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=&quot;checkCookies()&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function checkCookies()&#123;</span><br><span class="line">	if (navigator.cookieEnabled==true)&#123;</span><br><span class="line">		alert(&quot;Cookies 可用&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	else&#123;</span><br><span class="line">		alert(&quot;Cookies 不可用&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;p&gt;弹窗-提示浏览器 cookie 是否可用。&lt;/p&gt;	</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;body onload=&quot;checkCookies()&quot;&gt;
+&lt;script&gt;
+function checkCookies()&#123;
+    if (navigator.cookieEnabled==true)&#123;
+        alert(&quot;Cookies 可用&quot;)
+    &#125;
+    else&#123;
+        alert(&quot;Cookies 不可用&quot;)
+    &#125;
+&#125;
+&lt;/script&gt;
+&lt;p&gt;弹窗-提示浏览器 cookie 是否可用。&lt;/p&gt;    
+&lt;/body&gt;</code></pre>
 
 <h3 id="onchange事件"><a href="#onchange事件" class="headerlink" title="onchange事件"></a>onchange事件</h3><p>onchange 事件常结合对输入字段的验证来使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function myFunction()&#123;</span><br><span class="line">	var x=document.getElementById(&quot;fname&quot;);</span><br><span class="line">	x.value=x.value.toUpperCase();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">输入你的名字: &lt;input type=&quot;text&quot; id=&quot;fname&quot; onchange=&quot;myFunction()&quot;&gt;</span><br><span class="line">&lt;p&gt;当你离开输入框后，函数将被触发，将小写字母转为大写字母。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;script&gt;
+function myFunction()&#123;
+    var x=document.getElementById(&quot;fname&quot;);
+    x.value=x.value.toUpperCase();
+&#125;
+&lt;/script&gt;
+输入你的名字: &lt;input type=&quot;text&quot; id=&quot;fname&quot; onchange=&quot;myFunction()&quot;&gt;
+&lt;p&gt;当你离开输入框后，函数将被触发，将小写字母转为大写字母。&lt;/p&gt;</code></pre>
 
 <h3 id="onmouseover-和-onmouseout-事件"><a href="#onmouseover-和-onmouseout-事件" class="headerlink" title="onmouseover 和 onmouseout 事件"></a>onmouseover 和 onmouseout 事件</h3><p>onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onmouseover=&quot;mOver(this)&quot; onmouseout=&quot;mOut(this)&quot;&gt;Mouse Over Me&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function mOver(obj)&#123;</span><br><span class="line">	obj.innerHTML=&quot;Thank You&quot;</span><br><span class="line">&#125;</span><br><span class="line">function mOut(obj)&#123;</span><br><span class="line">	obj.innerHTML=&quot;Mouse Over Me&quot;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;div onmouseover=&quot;mOver(this)&quot; onmouseout=&quot;mOut(this)&quot;&gt;Mouse Over Me&lt;/div&gt;
+&lt;script&gt;
+function mOver(obj)&#123;
+    obj.innerHTML=&quot;Thank You&quot;
+&#125;
+function mOut(obj)&#123;
+    obj.innerHTML=&quot;Mouse Over Me&quot;
+&#125;
+&lt;/script&gt;</code></pre>
 
 <h3 id="onmousedown、onmouseup-以及-onclick-事件"><a href="#onmousedown、onmouseup-以及-onclick-事件" class="headerlink" title="onmousedown、onmouseup 以及 onclick 事件"></a>onmousedown、onmouseup 以及 onclick 事件</h3><p>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件</p>
-<h2 id="DOM-EventListener"><a href="#DOM-EventListener" class="headerlink" title="DOM EventListener"></a>DOM EventListener</h2><h3 id="addEventListener-方法"><a href="#addEventListener-方法" class="headerlink" title="addEventListener() 方法"></a>addEventListener() 方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;该实例使用 addEventListener() 方法在按钮中添加点击事件。 &lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, displayDate);</span><br><span class="line">function displayDate() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML = Date();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="DOM-EventListener"><a href="#DOM-EventListener" class="headerlink" title="DOM EventListener"></a>DOM EventListener</h2><h3 id="addEventListener-方法"><a href="#addEventListener-方法" class="headerlink" title="addEventListener() 方法"></a>addEventListener() 方法</h3><pre><code class="hljs plaintext">&lt;p&gt;该实例使用 addEventListener() 方法在按钮中添加点击事件。 &lt;/p&gt;
+&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, displayDate);
+function displayDate() &#123;
+    document.getElementById(&quot;demo&quot;).innerHTML = Date();
+&#125;
+&lt;/script&gt;</code></pre>
 
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(event, function, useCapture);</span><br></pre></td></tr></table></figure>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code class="hljs plaintext">element.addEventListener(event, function, useCapture);</code></pre>
 
 <p>第一个参数是事件的类型 (如 “click” 或 “mousedown”).</p>
 <p>第二个参数是事件触发后调用的函数。</p>
 <p>第三个参数是个布尔值用于描述事件是冒泡还是捕获。该参数是可选的。</p>
 <h3 id="向原元素添加事件句柄"><a href="#向原元素添加事件句柄" class="headerlink" title="向原元素添加事件句柄"></a>向原元素添加事件句柄</h3><p>如当用户点击元素时弹出 “Hello World!” ：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;该实例使用 addEventListener() 方法在按钮中添加点击事件。 &lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, function()&#123;</span><br><span class="line">    alert(&quot;Hello World!&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p&gt;该实例使用 addEventListener() 方法在按钮中添加点击事件。 &lt;/p&gt;
+&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;
+&lt;script&gt;
+document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, function()&#123;
+    alert(&quot;Hello World!&quot;);
+&#125;);
+&lt;/script&gt;</code></pre>
 
 <h3 id="向同一个元素中添加多个事件句柄"><a href="#向同一个元素中添加多个事件句柄" class="headerlink" title="向同一个元素中添加多个事件句柄"></a>向同一个元素中添加多个事件句柄</h3><p>addEventListener() 方法允许向同一个元素添加多个事件，且不会覆盖已存在的事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;该实例使用 addEventListener() 方法向同个按钮中添加两个点击事件。&lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">x.addEventListener(&quot;click&quot;, myFunction);</span><br><span class="line">x.addEventListener(&quot;click&quot;, someOtherFunction);</span><br><span class="line">function myFunction() &#123;</span><br><span class="line">    alert (&quot;Hello World!&quot;)</span><br><span class="line">&#125;</span><br><span class="line">function someOtherFunction() &#123;</span><br><span class="line">    alert (&quot;函数已执行!&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p&gt;该实例使用 addEventListener() 方法向同个按钮中添加两个点击事件。&lt;/p&gt;
+&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;
+&lt;script&gt;
+var x = document.getElementById(&quot;myBtn&quot;);
+x.addEventListener(&quot;click&quot;, myFunction);
+x.addEventListener(&quot;click&quot;, someOtherFunction);
+function myFunction() &#123;
+    alert (&quot;Hello World!&quot;)
+&#125;
+function someOtherFunction() &#123;
+    alert (&quot;函数已执行!&quot;)
+&#125;
+&lt;/script&gt;</code></pre>
 
 <p>你可以向同个元素添加不同类型的事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;实例使用 addEventListener() 方法在同一个按钮中添加多个事件。&lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">x.addEventListener(&quot;mouseover&quot;, myFunction);</span><br><span class="line">x.addEventListener(&quot;click&quot;, mySecondFunction);</span><br><span class="line">x.addEventListener(&quot;mouseout&quot;, myThirdFunction);</span><br><span class="line">function myFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Moused over!&lt;br&gt;&quot;</span><br><span class="line">&#125;</span><br><span class="line">function mySecondFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Clicked!&lt;br&gt;&quot;</span><br><span class="line">&#125;</span><br><span class="line">function myThirdFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Moused out!&lt;br&gt;&quot;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p&gt;实例使用 addEventListener() 方法在同一个按钮中添加多个事件。&lt;/p&gt;
+&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+var x = document.getElementById(&quot;myBtn&quot;);
+x.addEventListener(&quot;mouseover&quot;, myFunction);
+x.addEventListener(&quot;click&quot;, mySecondFunction);
+x.addEventListener(&quot;mouseout&quot;, myThirdFunction);
+function myFunction() &#123;
+    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Moused over!&lt;br&gt;&quot;
+&#125;
+function mySecondFunction() &#123;
+    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Clicked!&lt;br&gt;&quot;
+&#125;
+function myThirdFunction() &#123;
+    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Moused out!&lt;br&gt;&quot;
+&#125;
+&lt;/script&gt;</code></pre>
 
 <h3 id="向-Window-对象添加事件句柄"><a href="#向-Window-对象添加事件句柄" class="headerlink" title="向 Window 对象添加事件句柄"></a>向 Window 对象添加事件句柄</h3><p>当用户重置窗口大小时添加事件监听：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&quot;resize&quot;, function()&#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML = sometext;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">window.addEventListener(&quot;resize&quot;, function()&#123;
+    document.getElementById(&quot;demo&quot;).innerHTML = sometext;
+&#125;);</code></pre>
 
 <h3 id="事件冒泡或事件捕获"><a href="#事件冒泡或事件捕获" class="headerlink" title="事件冒泡或事件捕获"></a>事件冒泡或事件捕获</h3><p>事件传递有两种方式：冒泡与捕获</p>
 <p>事件传递定义了元素事件触发的顺序</p>
@@ -586,41 +898,118 @@
 <p>在 <em>冒泡</em> 中，内部元素的事件会先被触发，然后再触发外部元素，即： <code>&lt;p&gt;</code> 元素的点击事件先触发，然后会触发 <code>&lt;div&gt;</code> 元素的点击事件。</p>
 <p>在 <em>捕获</em> 中，外部元素的事件会先被触发，然后才会触发内部元素的事件，即： <code>&lt;div&gt;</code> 元素的点击事件先触发 ，然后再触发 <code>&lt;p&gt;</code> 元素的点击事件。</p>
 <p>addEventListener() 方法可以指定 “useCapture” 参数来设置传递类型：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(event, function, useCapture);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">addEventListener(event, function, useCapture);</code></pre>
 
 <p>默认值为 false, 即冒泡传递，当值为 true 时, 事件使用捕获传递</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;实例演示了在添加不同事件监听时，冒泡与捕获的不同。&lt;/p&gt;</span><br><span class="line">&lt;div id=&quot;myDiv&quot;&gt;</span><br><span class="line">	&lt;p id=&quot;myP&quot;&gt;点击段落，我是冒泡。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;&lt;br&gt;</span><br><span class="line">&lt;div id=&quot;myDiv2&quot;&gt;</span><br><span class="line">	&lt;p id=&quot;myP2&quot;&gt;点击段落，我是捕获。 &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">&lt;!--冒泡--&gt;</span><br><span class="line">document.getElementById(&quot;myP&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;你点击了 P 元素!&quot;);</span><br><span class="line">&#125;, false);</span><br><span class="line">document.getElementById(&quot;myDiv&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot; 你点击了 DIV 元素 !&quot;);</span><br><span class="line">&#125;, false);</span><br><span class="line">&lt;!--捕获--&gt;</span><br><span class="line">document.getElementById(&quot;myP2&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;你点击了 P2 元素!&quot;);</span><br><span class="line">&#125;, true);</span><br><span class="line">document.getElementById(&quot;myDiv2&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;你点击了 DIV2 元素 !&quot;);</span><br><span class="line">&#125;, true);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;p&gt;实例演示了在添加不同事件监听时，冒泡与捕获的不同。&lt;/p&gt;
+&lt;div id=&quot;myDiv&quot;&gt;
+    &lt;p id=&quot;myP&quot;&gt;点击段落，我是冒泡。&lt;/p&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;div id=&quot;myDiv2&quot;&gt;
+    &lt;p id=&quot;myP2&quot;&gt;点击段落，我是捕获。 &lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&lt;!--冒泡--&gt;
+document.getElementById(&quot;myP&quot;).addEventListener(&quot;click&quot;, function() &#123;
+    alert(&quot;你点击了 P 元素!&quot;);
+&#125;, false);
+document.getElementById(&quot;myDiv&quot;).addEventListener(&quot;click&quot;, function() &#123;
+    alert(&quot; 你点击了 DIV 元素 !&quot;);
+&#125;, false);
+&lt;!--捕获--&gt;
+document.getElementById(&quot;myP2&quot;).addEventListener(&quot;click&quot;, function() &#123;
+    alert(&quot;你点击了 P2 元素!&quot;);
+&#125;, true);
+document.getElementById(&quot;myDiv2&quot;).addEventListener(&quot;click&quot;, function() &#123;
+    alert(&quot;你点击了 DIV2 元素 !&quot;);
+&#125;, true);
+&lt;/script&gt;</code></pre>
 
 <h3 id="removeEventListener-方法"><a href="#removeEventListener-方法" class="headerlink" title="removeEventListener() 方法"></a>removeEventListener() 方法</h3><p>removeEventListener() 方法移除由 addEventListener() 方法添加的事件句柄:</p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/jsref/dom-obj-event.html">HTML DOM 事件对象参考手册</a></p>
 <h2 id="DOM-元素"><a href="#DOM-元素" class="headerlink" title="DOM 元素"></a>DOM 元素</h2><h3 id="创建新的-HTML-元素-节点"><a href="#创建新的-HTML-元素-节点" class="headerlink" title="创建新的 HTML 元素 (节点)"></a>创建新的 HTML 元素 (节点)</h3><p>要创建新的 HTML 元素 (节点)需要先创建一个元素，然后在已存在的元素中添加它</p>
 <h4 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild()"></a>appendChild()</h4><p>是 JavaScript 中用于将一个节点（元素或文本节点）追加到指定父节点的最后一个子节点位置的方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;!-- 这是父元素 --&gt;</span><br><span class="line">  &lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">  &lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // 1. 找到父元素 div1</span><br><span class="line">  var parentElement = document.getElementById(&quot;div1&quot;);</span><br><span class="line"></span><br><span class="line">  // 2. 创建一个新的子元素 &lt;p&gt;</span><br><span class="line">  var childElement = document.createElement(&quot;p&quot;);</span><br><span class="line"></span><br><span class="line">  // 3. 创建子元素中的文本内容</span><br><span class="line">  var childText = document.createTextNode(&quot;这是一个新的段落。&quot;);</span><br><span class="line"></span><br><span class="line">  // 4. 将文本内容放入子元素中</span><br><span class="line">  childElement.appendChild(childText);</span><br><span class="line"></span><br><span class="line">  // 5. 将子元素添加到父元素中</span><br><span class="line">  parentElement.appendChild(childElement);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;div id=&quot;div1&quot;&gt;
+  &lt;!-- 这是父元素 --&gt;
+  &lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;
+  &lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  // 1. 找到父元素 div1
+  var parentElement = document.getElementById(&quot;div1&quot;);
+
+  // 2. 创建一个新的子元素 &lt;p&gt;
+  var childElement = document.createElement(&quot;p&quot;);
+
+  // 3. 创建子元素中的文本内容
+  var childText = document.createTextNode(&quot;这是一个新的段落。&quot;);
+
+  // 4. 将文本内容放入子元素中
+  childElement.appendChild(childText);
+
+  // 5. 将子元素添加到父元素中
+  parentElement.appendChild(childElement);
+&lt;/script&gt;</code></pre>
 
 <h4 id="insertBefore"><a href="#insertBefore" class="headerlink" title="insertBefore()"></a>insertBefore()</h4><p>用于在指定的父元素中，将一个新节点插入到某个已存在的子节点之前</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;p id=&quot;p1&quot;&gt;这是第一个段落。&lt;/p&gt;</span><br><span class="line">  &lt;p id=&quot;p2&quot;&gt;这是第二个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // 获取父元素 div1</span><br><span class="line">  var parentElement = document.getElementById(&quot;div1&quot;);</span><br><span class="line"></span><br><span class="line">  // 创建一个新的段落节点</span><br><span class="line">  var newParagraph = document.createElement(&quot;p&quot;);</span><br><span class="line">  newParagraph.innerText = &quot;这是一个新插入的段落。&quot;;</span><br><span class="line"></span><br><span class="line">  // 找到参考节点（p1）</span><br><span class="line">  var referenceNode = document.getElementById(&quot;p1&quot;);</span><br><span class="line"></span><br><span class="line">  // 将新段落插入到 p1 之前</span><br><span class="line">  parentElement.insertBefore(newParagraph, referenceNode);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;div id=&quot;div1&quot;&gt;
+  &lt;p id=&quot;p1&quot;&gt;这是第一个段落。&lt;/p&gt;
+  &lt;p id=&quot;p2&quot;&gt;这是第二个段落。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  // 获取父元素 div1
+  var parentElement = document.getElementById(&quot;div1&quot;);
+
+  // 创建一个新的段落节点
+  var newParagraph = document.createElement(&quot;p&quot;);
+  newParagraph.innerText = &quot;这是一个新插入的段落。&quot;;
+
+  // 找到参考节点（p1）
+  var referenceNode = document.getElementById(&quot;p1&quot;);
+
+  // 将新段落插入到 p1 之前
+  parentElement.insertBefore(newParagraph, referenceNode);
+&lt;/script&gt;</code></pre>
 
 <h3 id="移除已存在的元素"><a href="#移除已存在的元素" class="headerlink" title="移除已存在的元素"></a>移除已存在的元素</h3><p>HTML 文档中 <code>&lt;div&gt;</code> 元素包含两个子节点 (两个 <code>&lt;p&gt;</code> 元素):</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">&lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&lt;div id=&quot;div1&quot;&gt;
+&lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;
+&lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
 <p>查找 id&#x3D;”div1” 的元素:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var parent = document.getElementById(&quot;div1&quot;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var parent = document.getElementById(&quot;div1&quot;);</code></pre>
 
 <p>查找 id&#x3D;”p1” 的 <code>&lt;p&gt;</code> 元素:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var child = document.getElementById(&quot;p1&quot;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var child = document.getElementById(&quot;p1&quot;);</code></pre>
 
 <p>从父元素中移除子节点：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parent.removeChild(child);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">parent.removeChild(child);</code></pre>
 
 <blockquote>
 <p>[!CAUTION]</p>
 <p>删除节点必须知道父节点</p>
 </blockquote>
-<h3 id="替换-HTML-元素-replaceChild"><a href="#替换-HTML-元素-replaceChild" class="headerlink" title="替换 HTML 元素 - replaceChild()"></a>替换 HTML 元素 - replaceChild()</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">&lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">var para = document.createElement(&quot;p&quot;);</span><br><span class="line">var node = document.createTextNode(&quot;这是一个新的段落。&quot;);</span><br><span class="line">para.appendChild(node);</span><br><span class="line"> </span><br><span class="line">var parent = document.getElementById(&quot;div1&quot;);</span><br><span class="line">var child = document.getElementById(&quot;p1&quot;);</span><br><span class="line">parent.replaceChild(para, child);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="替换-HTML-元素-replaceChild"><a href="#替换-HTML-元素-replaceChild" class="headerlink" title="替换 HTML 元素 - replaceChild()"></a>替换 HTML 元素 - replaceChild()</h3><pre><code class="hljs plaintext">&lt;div id=&quot;div1&quot;&gt;
+&lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;
+&lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;
+&lt;/div&gt;
+ 
+&lt;script&gt;
+var para = document.createElement(&quot;p&quot;);
+var node = document.createTextNode(&quot;这是一个新的段落。&quot;);
+para.appendChild(node);
+ 
+var parent = document.getElementById(&quot;div1&quot;);
+var child = document.getElementById(&quot;p1&quot;);
+parent.replaceChild(para, child);
+&lt;/script&gt;</code></pre>
 
 <h2 id="HTML-DOM-集合"><a href="#HTML-DOM-集合" class="headerlink" title="HTML DOM 集合"></a>HTML DOM 集合</h2><h3 id="HTML-Collection-对象"><a href="#HTML-Collection-对象" class="headerlink" title="HTML Collection 对象"></a>HTML Collection 对象</h3><p><code>getElementsByTagName()</code> 方法返回 HTMLCollection对象。</p>
 <p>HTMLCollection 对象类似包含 HTML 元素的一个数组。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var x = document.getElementsByTagName(&quot;p&quot;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var x = document.getElementsByTagName(&quot;p&quot;);</code></pre>
 
 <p>集合中的元素可以通过索引(以 0 为起始位置)来访问。访问第二个 <code>&lt;p&gt;</code> 元素可以是以下代码:y &#x3D; x[1];</p>
 <blockquote>
@@ -630,10 +1019,10 @@
 </blockquote>
 <h3 id="HTML-Collection-对象-length-属性"><a href="#HTML-Collection-对象-length-属性" class="headerlink" title="HTML Collection 对象 .length 属性"></a>HTML Collection 对象 .length 属性</h3><p> length 属性定义了集合中元素的数量</p>
 <p>获取 <code>&lt;p&gt;</code> 元素的集合：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var myCollection = document.getElementsByTagName(&quot;p&quot;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">var myCollection = document.getElementsByTagName(&quot;p&quot;);</code></pre>
 
 <p>显示集合元素个数：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;demo&quot;).innerHTML = myCollection.length;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">document.getElementById(&quot;demo&quot;).innerHTML = myCollection.length;</code></pre>
 
 <p>集合 length 属性常用于遍历集合中的元素。</p>
 <h3 id="NodeList-对象"><a href="#NodeList-对象" class="headerlink" title="NodeList 对象"></a>NodeList 对象</h3><p><strong>NodeList</strong> 对象是一个从文档中获取的节点列表 (集合)</p>

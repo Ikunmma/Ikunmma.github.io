@@ -47,6 +47,10 @@
   
 
   
+    
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css">
+
+  
 
   
 </head>
@@ -95,47 +99,66 @@
 <h2 id="CRLF注入"><a href="#CRLF注入" class="headerlink" title="CRLF注入"></a>CRLF注入</h2><p>在输入中插入 <code>\r\n</code>，改变 HTTP 头部或 HTML 页面结构，进而实现 <strong>XSS、HTTP 响应拆分（HTTP Response Splitting）、Web 伪造攻击</strong></p>
 <h3 id="HTTP响应拆分"><a href="#HTTP响应拆分" class="headerlink" title="HTTP响应拆分"></a>HTTP响应拆分</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>服务器在响应 HTTP 头时，通常会使用 <code>\r\n</code> 作为分隔符</p>
 <p>如果攻击者可以在 <strong>URL 或请求头</strong>中注入 <code>\r\n</code>，就可能 <strong>伪造 HTTP 头部或插入恶意内容</strong></p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Set-Cookie: user=admin</span><br><span class="line"></span><br><span class="line">&lt;html&gt;&lt;body&gt;Welcome&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code class="hljs plaintext">HTTP/1.1 200 OK
+Content-Type: text/html
+Set-Cookie: user=admin
+
+&lt;html&gt;&lt;body&gt;Welcome&lt;/body&gt;&lt;/html&gt;</code></pre>
 
 <p>攻击者构造请求：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/page?param=%0D%0ASet-Cookie:%20admin=true</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">https://example.com/page?param=%0D%0ASet-Cookie:%20admin=true</code></pre>
 
 <p>服务器返回：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Set-Cookie: user=admin</span><br><span class="line">Set-Cookie: admin=true  &lt;-- 攻击者成功伪造 Cookie</span><br><span class="line"></span><br><span class="line">&lt;html&gt;&lt;body&gt;Welcome&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">HTTP/1.1 200 OK
+Content-Type: text/html
+Set-Cookie: user=admin
+Set-Cookie: admin=true  &lt;-- 攻击者成功伪造 Cookie
+
+&lt;html&gt;&lt;body&gt;Welcome&lt;/body&gt;&lt;/html&gt;</code></pre>
 
 <p><strong>攻击者成功伪造cookie，可能绕过身份验证，可以用于会话劫持、钓鱼攻击等</strong></p>
 <p><strong>其可与<code>location</code>头结合进行重定向</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/page?username=%0D%0ALocation:%20https://evil.com%0D%0A</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">https://example.com/page?username=%0D%0ALocation:%20https://evil.com%0D%0A</code></pre>
 
 <p>可能导致服务器返回：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Set-Cookie: user=</span><br><span class="line">Location: https://evil.com   &lt;-- 伪造重定向</span><br><span class="line"></span><br><span class="line">&lt;html&gt;&lt;body&gt;Welcome!&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">HTTP/1.1 200 OK
+Content-Type: text/html
+Set-Cookie: user=
+Location: https://evil.com   &lt;-- 伪造重定向
+
+&lt;html&gt;&lt;body&gt;Welcome!&lt;/body&gt;&lt;/html&gt;</code></pre>
 
 <p>用户被恶意跳转到<code>evil.com</code></p>
 <h3 id="CRLF与XSS结合"><a href="#CRLF与XSS结合" class="headerlink" title="CRLF与XSS结合"></a>CRLF与XSS结合</h3><p>攻击者构造请求：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/page?param=%0D%0AContent-Length:%200%0D%0A%0D%0A&lt;script&gt;alert(&#x27;XSS&#x27;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">https://example.com/page?param=%0D%0AContent-Length:%200%0D%0A%0D%0A&lt;script&gt;alert(&#x27;XSS&#x27;)&lt;/script&gt;</code></pre>
 
 <p>服务器返回：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Content-Length: 0  &lt;-- 伪造的 Content-Length</span><br><span class="line">                              </span><br><span class="line">&lt;script&gt;alert(&#x27;XSS&#x27;)&lt;/script&gt;  &lt;-- XSS 代码被执行</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 0  &lt;-- 伪造的 Content-Length
+                              
+&lt;script&gt;alert(&#x27;XSS&#x27;)&lt;/script&gt;  &lt;-- XSS 代码被执行</code></pre>
 
 <h3 id="CRLF-造成日志伪造"><a href="#CRLF-造成日志伪造" class="headerlink" title="CRLF 造成日志伪造"></a>CRLF 造成日志伪造</h3><p>很多 Web 服务器会将请求参数写入日志，例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[INFO] 2025-02-07 12:00:00 - User input: test</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">[INFO] 2025-02-07 12:00:00 - User input: test</code></pre>
 
 <p>如果攻击者输入 <code>\r\n</code>，可能伪造日志内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/page?param=%0D%0A%5BWARNING%5D%20Security%20Breach!</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">https://example.com/page?param=%0D%0A%5BWARNING%5D%20Security%20Breach!</code></pre>
 
 <p>服务器日志可能变成：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[INFO] 2025-02-07 12:00:00 - User input: </span><br><span class="line">[WARNING] Security Breach!</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">[INFO] 2025-02-07 12:00:00 - User input: 
+[WARNING] Security Breach!</code></pre>
 
 <p><strong>攻击者可以伪造系统日志，可能隐藏攻击痕迹、制造假警报等</strong></p>
-<h2 id="防御-CRLF-注入"><a href="#防御-CRLF-注入" class="headerlink" title="防御 CRLF 注入"></a>防御 CRLF 注入</h2><h3 id="过滤用户输入，移除-r-n"><a href="#过滤用户输入，移除-r-n" class="headerlink" title="过滤用户输入，移除 \r\n"></a>过滤用户输入，移除 <code>\r\n</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userInput = userInput.replace(/[\r\n]/g, &quot;&quot;);  // 删除 CRLF</span><br></pre></td></tr></table></figure>
+<h2 id="防御-CRLF-注入"><a href="#防御-CRLF-注入" class="headerlink" title="防御 CRLF 注入"></a>防御 CRLF 注入</h2><h3 id="过滤用户输入，移除-r-n"><a href="#过滤用户输入，移除-r-n" class="headerlink" title="过滤用户输入，移除 \r\n"></a>过滤用户输入，移除 <code>\r\n</code></h3><pre><code class="hljs plaintext">userInput = userInput.replace(/[\r\n]/g, &quot;&quot;);  // 删除 CRLF</code></pre>
 
-<h3 id="对-URL-参数进行编码"><a href="#对-URL-参数进行编码" class="headerlink" title="对 URL 参数进行编码"></a>对 URL 参数进行编码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">encodeURIComponent(userInput);</span><br></pre></td></tr></table></figure>
+<h3 id="对-URL-参数进行编码"><a href="#对-URL-参数进行编码" class="headerlink" title="对 URL 参数进行编码"></a>对 URL 参数进行编码</h3><pre><code class="hljs plaintext">encodeURIComponent(userInput);</code></pre>
 
 <h3 id="设置-HTTP-头安全策略"><a href="#设置-HTTP-头安全策略" class="headerlink" title="设置 HTTP 头安全策略"></a>设置 HTTP 头安全策略</h3><p>启用 <code>CSP</code> ，<strong>只允许同源（self）资源加载</strong>（内嵌 HTML（非 JS 或 CSS）），阻止外部资源加载</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: default-src &#x27;self&#x27;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">Content-Security-Policy: default-src &#x27;self&#x27;</code></pre>
 
 <h3 id="HTTP-头中使用安全-API"><a href="#HTTP-头中使用安全-API" class="headerlink" title="HTTP 头中使用安全 API"></a>HTTP 头中使用安全 API</h3><p>在 <code>setHeader()</code> 时避免拼接用户输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(&quot;Set-Cookie&quot;, `user=$&#123;encodeURIComponent(username)&#125;`);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">res.setHeader(&quot;Set-Cookie&quot;, `user=$&#123;encodeURIComponent(username)&#125;`);</code></pre>
 
 <h3 id="确保日志安全"><a href="#确保日志安全" class="headerlink" title="确保日志安全"></a>确保日志安全</h3><p>使用 <code>JSON.stringify()</code> 记录日志，防止换行</p>
 <p>避免直接写入用户输入</p>

