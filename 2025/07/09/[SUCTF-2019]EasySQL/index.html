@@ -59,7 +59,7 @@
 
   
 
-  <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4970977_2kzuzq5jacv.css" media="defer" onload="this.media='all'">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4970977_2kzuzq5jacv.css" media="defer" onload="this.media='all'">
 </head>
 <body>
 
@@ -79,7 +79,7 @@
 
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a><a class="item title" href="/2025/07/09/CRLF%E6%BC%8F%E6%B4%9E/"><span class="title">CRLF漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><span class="title">PHP文件包含漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><span class="title">PHP特性总结</span></a><a class="item title" href="/2025/07/09/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span class="title">PHP反序列化</span></a><a class="item title" href="/2025/07/09/php/"><span class="title">PHP</span></a><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL handler的用法与应用</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">(SUCTF 2019)EasySQL</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">强网杯2019随便注</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">Buuctf [flask]SSTI</span></a></div></widget>
 </div>
-<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Ikunmma/Ikunmma.github.io" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="icon-GitHub"/></a></div></footer>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Ikunmma/Ikunmma.github.io" target="_blank" rel="external nofollow noopener noreferrer"><i class= "iconfont icon-GitHub"></i></a></div></footer>
 </div></aside><div class="l_main" id="main">
 
 
@@ -121,7 +121,7 @@
 <p>用Bp抓包再利用sql关键字字典对query进行爆破</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250305184148796.png" alt="" /></p>
 <p>发现过滤（部分）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">flag|drop|create|insert|like|regexp|outfile|readfile|where|from|union|update|delete|if|sleep|floor|extractvalue|updatexml|or|and|&amp;|<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag|drop|create|insert|like|regexp|outfile|readfile|where|from|union|update|delete|if|sleep|floor|extractvalue|updatexml|or|and|&amp;|</span><br></pre></td></tr></table></figure>
 <p>盲注，联合注入，报错注入不可用！</p>
 <p>尝试<strong>堆叠注入</strong>：<strong>将多条SQL语句放在一起，并用分号;隔开</strong></p>
 <p>查数据库名</p>
@@ -131,16 +131,16 @@
 <p>表Flag，可以确定flag在表Flag中</p>
 <p>我们首先想到利用from来查询Flag，但是通过抓包分析可知，from关键字被过滤掉了，所以只能另寻他法</p>
 <p>正常而言，我们使用<strong>预编译</strong>来绕过限制</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1;sEt@a=concat(&quot;select * fr&quot;,&quot;om Flag&quot;);PRepare hello from @a;execute hello;#<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1;sEt@a=concat(&quot;select * fr&quot;,&quot;om Flag&quot;);PRepare hello from @a;execute hello;#</span><br></pre></td></tr></table></figure>
 <p>但过滤了prepare，大小写绕过也不行</p>
 <p>输入非零数字得到结果一直是1和而输入其余字符的数据就得不到回显=&gt;来判断出内部的查询语句可能存在有<code>||</code>（即or：或运算）</p>
 <blockquote>
 <p>默认情况下在MySQL中<code>||</code>运算符是逻辑或运算符（即or），但取决于<code>PIPES_AS_CONCAT SQL</code>模式</p>
 <p>如果启用了<code>set sql_mode=pipes_as_concat</code>模式，则||运算符用作字符串连接，即用作<code>concat()</code>函数同义词</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">那么内置语句就可以猜测为：<br>sql=&quot;select post[&#x27;query&#x27;] || flag from Flag&quot;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">那么内置语句就可以猜测为：</span><br><span class="line">sql=&quot;select post[&#x27;query&#x27;] || flag from Flag&quot;;</span><br></pre></td></tr></table></figure>
 <p>查询语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1;set sql_mode=pipes_as_concat;select 1<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1;set sql_mode=pipes_as_concat;select 1</span><br></pre></td></tr></table></figure>
 <p>得到flag</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250306090818793.png" alt="" /></p>
 <blockquote>

