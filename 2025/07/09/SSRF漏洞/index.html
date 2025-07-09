@@ -20,12 +20,12 @@
   <title>SSRF漏洞 - 无言の小屋</title>
 
   
-    <meta name="description" content="SSRF漏洞基础知识概述SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种由攻击者构造请求，由服务端发起请求的安全漏洞。一般情况下，SSRF攻击的目标是外网无法访问的内部系统(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统) 大白话：利用服务器漏洞以服务器的身份发送一条构造好的请求给服务器所在内网进行攻击 主要攻击方式当攻击">
+    <meta name="description" content="SSRF漏洞  基础知识  概述 SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种由攻击者构造请求，由服务端发起请求的安全漏洞。一般情况下，SSRF攻击的目标是外网无法访问的内部系统(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统) 大白话：利用服务器漏洞以服务器的身份发送一条构造好的请求给服务器所在内网进行攻击  主要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSRF漏洞">
 <meta property="og:url" content="https://ikunmma.github.io/2025/07/09/SSRF%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="无言の小屋">
-<meta property="og:description" content="SSRF漏洞基础知识概述SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种由攻击者构造请求，由服务端发起请求的安全漏洞。一般情况下，SSRF攻击的目标是外网无法访问的内部系统(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统) 大白话：利用服务器漏洞以服务器的身份发送一条构造好的请求给服务器所在内网进行攻击 主要攻击方式当攻击">
+<meta property="og:description" content="SSRF漏洞  基础知识  概述 SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种由攻击者构造请求，由服务端发起请求的安全漏洞。一般情况下，SSRF攻击的目标是外网无法访问的内部系统(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统) 大白话：利用服务器漏洞以服务器的身份发送一条构造好的请求给服务器所在内网进行攻击  主要">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250227202439582.jpeg">
 <meta property="article:published_time" content="2025-07-09T03:47:54.141Z">
@@ -70,7 +70,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL</span></a><a class="item title" href="/2025/07/09/Flask%E4%B8%AD%E7%9A%84Jinja2%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"><span class="title">SSTI漏洞</span></a><a class="item title" href="/2025/07/09/Python%20SSTI%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><span class="title">SSTI漏洞</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/"><span class="title">C++</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">“Buuctf [flask]SSTI”</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">“[SUCTF 2019]EasySQL”</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">“[强网杯 2019]随便注”</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/"><span class="title">C++</span></a><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><span class="title">PHP文件包含漏洞</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/"><span class="title">C++中的转换构造函数与类型转换运算符</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/"><span class="title">C++中的拷贝构造函数、浅拷贝与深拷贝</span></a><a class="item title" href="/2025/07/09/Flask%E4%B8%AD%E7%9A%84Jinja2%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"><span class="title">Flask中的Jinja2简单用法</span></a><a class="item title" href="/2025/07/09/Python%20SSTI%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><span class="title">Python SSTI漏洞简单利用</span></a><a class="item title" href="/2025/07/09/Python%20SSTI%E5%9F%BA%E7%A1%80%E7%BB%95%E8%BF%87/"><span class="title">Python SSTI基础绕过</span></a><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">“Buuctf [flask]SSTI”</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">“[SUCTF 2019]EasySQL”</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">“[强网杯 2019]随便注”</span></a><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -94,21 +94,25 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="SSRF漏洞"><a href="#SSRF漏洞" class="headerlink" title="SSRF漏洞"></a>SSRF漏洞</h1><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种<strong>由攻击者构造请求，由服务端发起请求的安全漏洞</strong>。一般情况下，SSRF<strong>攻击的目标是外网无法访问的内部系统</strong>(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统)</p>
+  </div><article class="md-text content"><h1 id="ssrf漏洞"><a class="markdownIt-Anchor" href="#ssrf漏洞"></a> SSRF漏洞</h1>
+<h2 id="基础知识"><a class="markdownIt-Anchor" href="#基础知识"></a> 基础知识</h2>
+<h3 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h3>
+<p>SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种<strong>由攻击者构造请求，由服务端发起请求的安全漏洞</strong>。一般情况下，SSRF<strong>攻击的目标是外网无法访问的内部系统</strong>(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统)</p>
 <p><strong>大白话：利用服务器漏洞以服务器的身份发送一条构造好的请求给服务器所在内网进行攻击</strong></p>
-<h3 id="主要攻击方式"><a href="#主要攻击方式" class="headerlink" title="主要攻击方式"></a>主要攻击方式</h3><p>当攻击者想要访问服务器B上的服务，但是由于存在防火墙或者服务器B是属于内网主机等原因导致攻击者无法直接访问。如果服务器A存在SSRF漏洞，这时攻击者可以借助服务器A来发起SSRF攻击，通过服务器A向主机B发起请求，达到攻击内网的目的</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250227202439582.jpeg" alt="img"></p>
+<h3 id="主要攻击方式"><a class="markdownIt-Anchor" href="#主要攻击方式"></a> 主要攻击方式</h3>
+<p>当攻击者想要访问服务器B上的服务，但是由于存在防火墙或者服务器B是属于内网主机等原因导致攻击者无法直接访问。如果服务器A存在SSRF漏洞，这时攻击者可以借助服务器A来发起SSRF攻击，通过服务器A向主机B发起请求，达到攻击内网的目的</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250227202439582.jpeg" alt="img" /></p>
 <p>示例：</p>
 <p>漏洞场景：某网站有一个在线加载功能可以把指定的远程文章加载到本地，链接如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://www.xxx.com/article.php?url=https://blog.csdn.net/qq_43531669/article/details/112498646<br></code></pre></td></tr></table></figure>
-
 <p>假如系统没有对url参数进行任何的检查，就可以构造其他的请求，例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://www.xxx.com/article.php?url=http://127.0.0.1:22<br>http://www.xxx.com/article.php?url=file:///etc/passwd<br>http://www.xxx.com/article.php?url=dict://127.0.0.1:22/data:data2 (dict可以向服务端口请求data data2)<br>http://www.xxx.com/article.php?url=gopher://127.0.0.1:2233/_test (向2233端口发送数据test,同样可以发送POST请求)<br></code></pre></td></tr></table></figure>
-
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>SSRF漏洞形成的原因大都是由于服务端提供了从其他服务器获取数据的功能但没有对目标地址做过滤与限制。攻击者可以利用改漏洞获取内部系统的一些信息（因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内网系统）</p>
+<h3 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h3>
+<p>SSRF漏洞形成的原因大都是由于服务端提供了从其他服务器获取数据的功能但没有对目标地址做过滤与限制。攻击者可以利用改漏洞获取内部系统的一些信息（因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内网系统）</p>
 <p>很多网站提供了从其他的服务器上获取数据的功能。通过指定的URL，网站可以从其他地方获取图片、下载文件、读取文件内容等。</p>
 <p>SSRF的实质就是利用存在缺陷的Web站点作为代理攻击远程和本地的服务器。</p>
-<h3 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h3><ul>
+<h3 id="危害"><a class="markdownIt-Anchor" href="#危害"></a> 危害</h3>
+<ul>
 <li>对外网、服务器所在内网、本地进行端口扫描，获取一些服务的banner信息。</li>
 <li>攻击运行在内网或本地的应用程序。</li>
 <li>对内网Web应用进行指纹识别，识别企业内部的资产信息。</li>
@@ -120,73 +124,98 @@
 <p><code>http://127.0.0.1:3306/</code>（MySQL 默认端口）</p>
 <p><code>http://192.168.0.1:8000/</code>（常见的内网 Web 服务端口）</p>
 </blockquote>
-<h2 id="漏洞检测"><a href="#漏洞检测" class="headerlink" title="漏洞检测"></a>漏洞检测</h2><h3 id="漏洞验证"><a href="#漏洞验证" class="headerlink" title="漏洞验证"></a>漏洞验证</h3><ul>
+<h2 id="漏洞检测"><a class="markdownIt-Anchor" href="#漏洞检测"></a> 漏洞检测</h2>
+<h3 id="漏洞验证"><a class="markdownIt-Anchor" href="#漏洞验证"></a> 漏洞验证</h3>
+<ul>
 <li>通过抓包分析发送的请求是否是由服务器端发送的来判断是否存在SSRF漏洞。</li>
 <li>在页面源码中查找访问的资源地址，如果该资源地址类型为<code>http://www.xxx.com/a.php?image=地址</code>就可能存在SSRF漏洞</li>
 </ul>
-<h3 id="漏洞可能出现点"><a href="#漏洞可能出现点" class="headerlink" title="漏洞可能出现点"></a>漏洞可能出现点</h3><h4 id="分享功能"><a href="#分享功能" class="headerlink" title="分享功能"></a>分享功能</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://share.xxx.com/index.php?url=http://www.xxx.com<br></code></pre></td></tr></table></figure>
-
+<h3 id="漏洞可能出现点"><a class="markdownIt-Anchor" href="#漏洞可能出现点"></a> 漏洞可能出现点</h3>
+<h4 id="分享功能"><a class="markdownIt-Anchor" href="#分享功能"></a> 分享功能</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://share.xxx.com/index.php?url=http://www.xxx.com<br></code></pre></td></tr></table></figure>
 <p>通过url参数的获取来实现点击链接的时候跳到指定的分享文章</p>
-<h4 id="图片加载-下载"><a href="#图片加载-下载" class="headerlink" title="图片加载&#x2F;下载"></a>图片加载&#x2F;下载</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://image.xxx.com/image.php?image=http://www.xxx.com<br></code></pre></td></tr></table></figure>
-
+<h4 id="图片加载下载"><a class="markdownIt-Anchor" href="#图片加载下载"></a> 图片加载/下载</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://image.xxx.com/image.php?image=http://www.xxx.com<br></code></pre></td></tr></table></figure>
 <p>图片加载存在于很多的编辑器中，编辑器上传图片处加载设定好的远程服务器上的图片地址</p>
-<h4 id="图片-文章收藏功能"><a href="#图片-文章收藏功能" class="headerlink" title="图片&#x2F;文章收藏功能"></a>图片&#x2F;文章收藏功能</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://title.xxx.com/title?title=http://title.xxx.com/xxx<br></code></pre></td></tr></table></figure>
-
+<h4 id="图片文章收藏功能"><a class="markdownIt-Anchor" href="#图片文章收藏功能"></a> 图片/文章收藏功能</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://title.xxx.com/title?title=http://title.xxx.com/xxx<br></code></pre></td></tr></table></figure>
 <p>例如 title参数是文章的标题地址，代表了一个文章的地址链接，如果收藏功能采用了此种形式保存文章，则在没有限制参数的形式下可能存在SSRF</p>
-<h4 id="转码服务"><a href="#转码服务" class="headerlink" title="转码服务"></a>转码服务</h4><p>通过URL地址把原地址的网页内容调优使其适合手机屏幕浏览</p>
-<h4 id="在线翻译"><a href="#在线翻译" class="headerlink" title="在线翻译"></a>在线翻译</h4><p>给网址翻译对应网页的内容</p>
-<h4 id="邮件系统"><a href="#邮件系统" class="headerlink" title="邮件系统"></a>邮件系统</h4><p>比如接收邮件服务器地址</p>
-<h4 id="从URL关键字中寻找"><a href="#从URL关键字中寻找" class="headerlink" title="从URL关键字中寻找"></a>从URL关键字中寻找</h4><p><code>share</code>、<code>wap</code>、<code>url</code>、<code>link</code>、<code>src</code>、<code>source</code>、<code>target</code>、<code>u</code>、<code>3g</code>、<code>display</code>、<code>sourceURl</code>、<code>imageURL</code>、<code>domain</code></p>
-<h2 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h2><p>部分存在漏洞，或者可能产生SSRF的功能中做了白名单或者黑名单的处理，来达到阻止对内网服务和资源的攻击和访问。因此想要达到SSRF的攻击，需要对请求的参数地址做相关的绕过处理</p>
+<h4 id="转码服务"><a class="markdownIt-Anchor" href="#转码服务"></a> 转码服务</h4>
+<p>通过URL地址把原地址的网页内容调优使其适合手机屏幕浏览</p>
+<h4 id="在线翻译"><a class="markdownIt-Anchor" href="#在线翻译"></a> 在线翻译</h4>
+<p>给网址翻译对应网页的内容</p>
+<h4 id="邮件系统"><a class="markdownIt-Anchor" href="#邮件系统"></a> 邮件系统</h4>
+<p>比如接收邮件服务器地址</p>
+<h4 id="从url关键字中寻找"><a class="markdownIt-Anchor" href="#从url关键字中寻找"></a> 从URL关键字中寻找</h4>
+<p><code>share</code>、<code>wap</code>、<code>url</code>、<code>link</code>、<code>src</code>、<code>source</code>、<code>target</code>、<code>u</code>、<code>3g</code>、<code>display</code>、<code>sourceURl</code>、<code>imageURL</code>、<code>domain</code></p>
+<h2 id="绕过"><a class="markdownIt-Anchor" href="#绕过"></a> 绕过</h2>
+<p>部分存在漏洞，或者可能产生SSRF的功能中做了白名单或者黑名单的处理，来达到阻止对内网服务和资源的攻击和访问。因此想要达到SSRF的攻击，需要对请求的参数地址做相关的绕过处理</p>
 <blockquote>
-<h4 id="常见限制"><a href="#常见限制" class="headerlink" title="常见限制"></a>常见限制</h4><p><strong>1.限制为<code>http://www.xxx.com</code>域名</strong><br>采用http基本身份认证的方式绕过。即@<br><code>http://www.xxx.com@www.xxc.com</code><br><strong>2.限制请求IP不为内网地址</strong><br>当不允许ip为内网地址时<br>（1）采取短网址绕过<br>（2）采取特殊域名<br>（3）采取进制转换<br><strong>3.限制请求只为http协议</strong><br>（1）采取302跳转<br>（2）采取短地址</p>
+<h4 id="常见限制"><a class="markdownIt-Anchor" href="#常见限制"></a> 常见限制</h4>
+<p><strong>1.限制为<code>http://www.xxx.com</code>域名</strong><br />
+采用http基本身份认证的方式绕过。即@<br />
+<code>http://www.xxx.com@www.xxc.com</code><br />
+<strong>2.限制请求IP不为内网地址</strong><br />
+当不允许ip为内网地址时<br />
+（1）采取短网址绕过<br />
+（2）采取特殊域名<br />
+（3）采取进制转换<br />
+<strong>3.限制请求只为http协议</strong><br />
+（1）采取302跳转<br />
+（2）采取短地址</p>
 </blockquote>
-<h3 id="绕过限制为某种域名"><a href="#绕过限制为某种域名" class="headerlink" title="绕过限制为某种域名"></a>绕过限制为某种域名</h3><h4 id="绕过-1"><a href="#绕过-1" class="headerlink" title="@绕过"></a>@绕过</h4><p>当网站限制只能访问 <code>http://www.xxx.com</code>类型的域名时，可以采用http基本身份认证的方式绕过</p>
+<h3 id="绕过限制为某种域名"><a class="markdownIt-Anchor" href="#绕过限制为某种域名"></a> 绕过限制为某种域名</h3>
+<h4 id="绕过-2"><a class="markdownIt-Anchor" href="#绕过-2"></a> @绕过</h4>
+<p>当网站限制只能访问 <code>http://www.xxx.com</code>类型的域名时，可以采用http基本身份认证的方式绕过</p>
 <p>如：<code>http://www.xxx.com@www.xxc.com</code></p>
 <p>在对@解析域名中，不同的处理函数存在处理差异，例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://www.aaa.com@www.bbb.com@www.ccc.com<br></code></pre></td></tr></table></figure>
-
 <p>在PHP的parse_url中会识别 <code>www.ccc.com</code>，而libcurl则识别为 <code>www.bbb.com</code></p>
 <blockquote>
 <p>要求URL中必须包含<code>http://notfound.ctfhub.com</code>，来尝试利用URL的一些特殊地方绕过这个限制吧</p>
 <p>构造payload：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?url=http://notfound.ctfhub.com@127.0.0.1/flag.php<br></code></pre></td></tr></table></figure>
-
-<p>如果要求以<code>http://notfound.ctfhub</code>开头.com 结尾的话，依旧可以使用@</p>
+<p>如果要求以<code>http://notfound.ctfhub</code><a target="_blank" rel="noopener" href="http://xn--2sst8k.com">开头.com</a> 结尾的话，依旧可以使用@</p>
 <p>payload</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?url=http://notfound.ctfhub@127.0.0.1/flag.php.com<br></code></pre></td></tr></table></figure>
-
 <p>或者：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?url=http://ctf.@127.0.0.1/flag.php#show<br></code></pre></td></tr></table></figure>
-
-
 <p>此类需要某某开头 某某结束的题目均可使用@进行绕过</p>
 </blockquote>
-<h3 id="绕过限制请求IP不为内网地址"><a href="#绕过限制请求IP不为内网地址" class="headerlink" title="绕过限制请求IP不为内网地址"></a>绕过限制请求IP不为内网地址</h3><h4 id="利用句号"><a href="#利用句号" class="headerlink" title="利用句号"></a>利用句号</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">127。0。0。1  &gt;&gt;&gt;  127.0.0.1<br></code></pre></td></tr></table></figure>
-
-<h4 id="利用"><a href="#利用" class="headerlink" title="利用[::]"></a>利用[::]</h4><p>可以利用<code>[::]</code>来绕过localhost</p>
+<h3 id="绕过限制请求ip不为内网地址"><a class="markdownIt-Anchor" href="#绕过限制请求ip不为内网地址"></a> 绕过限制请求IP不为内网地址</h3>
+<h4 id="利用句号"><a class="markdownIt-Anchor" href="#利用句号"></a> 利用句号</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">127。0。0。1  &gt;&gt;&gt;  127.0.0.1<br></code></pre></td></tr></table></figure>
+<h4 id="利用"><a class="markdownIt-Anchor" href="#利用"></a> 利用[::]</h4>
+<p>可以利用<code>[::]</code>来绕过localhost</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://[::]:80/  &gt;&gt;&gt;  http://127.0.0.1<br></code></pre></td></tr></table></figure>
-
-<h4 id="添加端口号"><a href="#添加端口号" class="headerlink" title="添加端口号"></a>添加端口号</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://127.0.0.1:8080<br></code></pre></td></tr></table></figure>
-
-<h4 id="利用短网址"><a href="#利用短网址" class="headerlink" title="利用短网址"></a>利用短网址</h4><p><a target="_blank" rel="noopener" href="https://tinyurl.com/">短网址</a></p>
-<h4 id="使用解析到内网的域名"><a href="#使用解析到内网的域名" class="headerlink" title="使用解析到内网的域名"></a>使用解析到内网的域名</h4><p>如果服务端没有先解析IP再过滤内网地址，我们就可以使用localhost等解析到内网的域名。</p>
-<p>另外 xip.io 提供了一个方便的服务，这个网站的子域名会解析到对应的IP，例如192.168.0.1.xip.io，解析到192.168.0.1</p>
+<h4 id="添加端口号"><a class="markdownIt-Anchor" href="#添加端口号"></a> 添加端口号</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://127.0.0.1:8080<br></code></pre></td></tr></table></figure>
+<h4 id="利用短网址"><a class="markdownIt-Anchor" href="#利用短网址"></a> 利用短网址</h4>
+<p><a target="_blank" rel="noopener" href="https://tinyurl.com/">短网址</a></p>
+<h4 id="使用解析到内网的域名"><a class="markdownIt-Anchor" href="#使用解析到内网的域名"></a> 使用解析到内网的域名</h4>
+<p>如果服务端没有先解析IP再过滤内网地址，我们就可以使用localhost等解析到内网的域名。</p>
+<p>另外 <a target="_blank" rel="noopener" href="http://xip.io">xip.io</a> 提供了一个方便的服务，这个网站的子域名会解析到对应的IP，<a target="_blank" rel="noopener" href="http://xn--192-uc0ep96b.168.0.1.xip.io">例如192.168.0.1.xip.io</a>，解析到192.168.0.1</p>
 <blockquote>
-<p><strong>xip.io</strong> 是一个<strong>通配符 DNS 解析服务</strong>，它可以将特定格式的域名解析为<strong>任意 IP 地址</strong>，常用于开发和内网测试</p>
+<p><strong><a target="_blank" rel="noopener" href="http://xip.io">xip.io</a></strong> 是一个<strong>通配符 DNS 解析服务</strong>，它可以将特定格式的域名解析为<strong>任意 IP 地址</strong>，常用于开发和内网测试</p>
 </blockquote>
-<h4 id="采用进制转换"><a href="#采用进制转换" class="headerlink" title="采用进制转换"></a>采用进制转换</h4><p>若对IP进行正则过滤，可以通过改写IP形式来绕过</p>
+<h4 id="采用进制转换"><a class="markdownIt-Anchor" href="#采用进制转换"></a> 采用进制转换</h4>
+<p>若对IP进行正则过滤，可以通过改写IP形式来绕过</p>
 <p>对于这种过滤我们采用改编IP的写法的方式进行绕过，例如<code>127.0.0.1</code>这个IP地址可以被改写成：</p>
-<p>-<br>   十进制整数表示</p>
-<p>  <code>2130706433</code></p>
 <ul>
-<li><p>八进制表示</p>
+<li>
+<p>十进制整数表示</p>
+<p><code>2130706433</code></p>
+</li>
+<li>
+<p>八进制表示</p>
 <p><code>0177.0.0.01</code></p>
 </li>
-<li><p>十六进制表示</p>
+<li>
+<p>十六进制表示</p>
 <p><code>0x7F000001</code></p>
 </li>
-<li><p>混合进制</p>
+<li>
+<p>混合进制</p>
 <p><code>127.0x0.1</code></p>
 <p><code>127.1</code></p>
 <p><code>0x7f.1</code></p>
@@ -194,47 +223,68 @@
 </ul>
 <p>访问改写后的IP地址时，Apache会报400 Bad Request，但Nginx、MySQL等其他服务仍能正常工作。</p>
 <p>另外，<code>0.0.0.0</code>这个IP可以直接访问到本地，也通常被正则过滤遗漏</p>
-<h4 id="302跳转"><a href="#302跳转" class="headerlink" title="302跳转"></a>302跳转</h4><p>限制请求只为http协议时使用</p>
+<h4 id="302跳转"><a class="markdownIt-Anchor" href="#302跳转"></a> 302跳转</h4>
+<p>限制请求只为http协议时使用</p>
 <p><a target="_blank" rel="noopener" href="https://tinyurl.com/">生成302跳转地址</a></p>
-<h3 id="限制请求只为http协议"><a href="#限制请求只为http协议" class="headerlink" title="限制请求只为http协议"></a>限制请求只为http协议</h3><h4 id="采用302跳转"><a href="#采用302跳转" class="headerlink" title="采用302跳转"></a>采用302跳转</h4><h4 id="采用短地址"><a href="#采用短地址" class="headerlink" title="采用短地址"></a>采用短地址</h4><h3 id="回环地址绕过"><a href="#回环地址绕过" class="headerlink" title="回环地址绕过"></a>回环地址绕过</h3><p>回环地址不止<code>127.0.0.1</code>，这便有了很大的操作空间</p>
+<h3 id="限制请求只为http协议"><a class="markdownIt-Anchor" href="#限制请求只为http协议"></a> 限制请求只为http协议</h3>
+<h4 id="采用302跳转"><a class="markdownIt-Anchor" href="#采用302跳转"></a> 采用302跳转</h4>
+<h4 id="采用短地址"><a class="markdownIt-Anchor" href="#采用短地址"></a> 采用短地址</h4>
+<h3 id="回环地址绕过"><a class="markdownIt-Anchor" href="#回环地址绕过"></a> 回环地址绕过</h3>
+<p>回环地址不止<code>127.0.0.1</code>，这便有了很大的操作空间</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">url=http://0/flag.php<br>url=http://0.0/flag.php<br>url=http://sudo.cc/flag.php<br>http://localhost/<br>http://[0:0:0:0:0:ffff:127.0.0.1]/<br>http://①②⑦.⓪.⓪.① <br></code></pre></td></tr></table></figure>
-
-<h3 id="利用URL伪协议"><a href="#利用URL伪协议" class="headerlink" title="利用URL伪协议"></a>利用URL伪协议</h3><h4 id="Gopher协议（万能协议）"><a href="#Gopher协议（万能协议）" class="headerlink" title="Gopher协议（万能协议）"></a>Gopher协议（万能协议）</h4><p>gopher支持发出GET、POST请求：可以先截获get请求包和post请求包，再在一个url参数中构造POST或者GET请求，从而达到攻击内网应用的目的。例如可以使用gopher协议对与内网的Redis服务进行攻击</p>
-<h4 id="file协议"><a href="#file协议" class="headerlink" title="file协议"></a>file协议</h4><p>读取文件很好用</p>
+<h3 id="利用url伪协议"><a class="markdownIt-Anchor" href="#利用url伪协议"></a> 利用URL伪协议</h3>
+<h4 id="gopher协议万能协议"><a class="markdownIt-Anchor" href="#gopher协议万能协议"></a> Gopher协议（万能协议）</h4>
+<p>gopher支持发出GET、POST请求：可以先截获get请求包和post请求包，再在一个url参数中构造POST或者GET请求，从而达到攻击内网应用的目的。例如可以使用gopher协议对与内网的Redis服务进行攻击</p>
+<h4 id="file协议"><a class="markdownIt-Anchor" href="#file协议"></a> file协议</h4>
+<p>读取文件很好用</p>
 <p>在有回显的情况下，利用 file 协议可以读取任意内容</p>
 <p><code>file://var/www/html/flag.php</code></p>
-<h4 id="dict协议"><a href="#dict协议" class="headerlink" title="dict协议"></a>dict协议</h4><p>dict 协议是一个字典服务器协议，通常用于让客户端使用过程中能够访问更多的字典源，能用来探测安装软件版本信息，查看端口，操作内网redis服务<br>协议格式：<code>dict://&lt;host&gt;:&lt;port&gt;/&lt;dict-path&gt;</code><br>一般用<code>dict://&lt;host&gt;:&lt;port&gt;/info</code> 探测端口应用信息</p>
+<h4 id="dict协议"><a class="markdownIt-Anchor" href="#dict协议"></a> dict协议</h4>
+<p>dict 协议是一个字典服务器协议，通常用于让客户端使用过程中能够访问更多的字典源，能用来探测安装软件版本信息，查看端口，操作内网redis服务<br />
+协议格式：<code>dict://&lt;host&gt;:&lt;port&gt;/&lt;dict-path&gt;</code><br />
+一般用<code>dict://&lt;host&gt;:&lt;port&gt;/info</code> 探测端口应用信息</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">dict://127.0.0.1:6379 //探测redis是否存活<br>dict://127.0.0.1:6379/info //探测端口应用信息<br></code></pre></td></tr></table></figure>
-
-<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><h3 id="产生漏洞的函数"><a href="#产生漏洞的函数" class="headerlink" title="产生漏洞的函数"></a>产生漏洞的函数</h3><p>SSRF涉及到的危险函数主要是网络访问，支持伪协议的网络读取</p>
-<h4 id="file-get-contents"><a href="#file-get-contents" class="headerlink" title="file_get_contents()"></a>file_get_contents()</h4><p><code>file_get_contents</code>函数可以对本地文件进行读取，也可以对远程文件进行读取</p>
-<h5 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h5><p>PHP 4 &gt;&#x3D; 4.3.0, PHP 5, PHP 7, PHP 8</p>
-<h5 id="利用-1"><a href="#利用-1" class="headerlink" title="利用"></a>利用</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$url</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;url&#x27;</span>];;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-variable">$url</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
+<h2 id="漏洞利用"><a class="markdownIt-Anchor" href="#漏洞利用"></a> 漏洞利用</h2>
+<h3 id="产生漏洞的函数"><a class="markdownIt-Anchor" href="#产生漏洞的函数"></a> 产生漏洞的函数</h3>
+<p>SSRF涉及到的危险函数主要是网络访问，支持伪协议的网络读取</p>
+<h4 id="file_get_contents"><a class="markdownIt-Anchor" href="#file_get_contents"></a> file_get_contents()</h4>
+<p><code>file_get_contents</code>函数可以对本地文件进行读取，也可以对远程文件进行读取</p>
+<h5 id="条件"><a class="markdownIt-Anchor" href="#条件"></a> 条件</h5>
+<p>PHP 4 &gt;= 4.3.0, PHP 5, PHP 7, PHP 8</p>
+<h5 id="利用-2"><a class="markdownIt-Anchor" href="#利用-2"></a> 利用</h5>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$url</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;url&#x27;</span>];;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-variable">$url</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <p>这个函数的作用是将整个文件读入一个字符串中，并且此函数是用于把文件的内容读入到一个字符串中的首选方法</p>
 <p>比如：下面的代码执行结果是输出<code>test.txt</code>文件里面的字符串</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">file_get_contents</span>(“test.txt”);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="fsockopen"><a href="#fsockopen" class="headerlink" title="fsockopen()"></a>fsockopen()</h4><h5 id="条件-1"><a href="#条件-1" class="headerlink" title="条件"></a>条件</h5><p>PHP 4, PHP 5, PHP 7, PHP 8</p>
-<h5 id="利用-2"><a href="#利用-2" class="headerlink" title="利用"></a>利用</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GetFile</span>(<span class="hljs-params"><span class="hljs-variable">$host</span>,<span class="hljs-variable">$port</span>,<span class="hljs-variable">$link</span></span>) </span>&#123; <br>    <span class="hljs-variable">$fp</span> = <span class="hljs-title function_ invoke__">fsockopen</span>(<span class="hljs-variable">$host</span>, <span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-variable">$port</span>), <span class="hljs-variable">$errno</span>, <span class="hljs-variable">$errstr</span>, <span class="hljs-number">30</span>);   <br>    <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$fp</span>) &#123; <br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;<span class="hljs-subst">$errstr</span> (error number <span class="hljs-subst">$errno</span>) \n&quot;</span>; <br>    &#125; <span class="hljs-keyword">else</span> &#123; <br>        <span class="hljs-variable">$out</span> = <span class="hljs-string">&quot;GET <span class="hljs-subst">$link</span> HTTP/1.1\r\n&quot;</span>; <br>        <span class="hljs-variable">$out</span> .= <span class="hljs-string">&quot;Host: <span class="hljs-subst">$host</span>\r\n&quot;</span>; <br>        <span class="hljs-variable">$out</span> .= <span class="hljs-string">&quot;Connection: Close\r\n\r\n&quot;</span>; <br>        <span class="hljs-variable">$out</span> .= <span class="hljs-string">&quot;\r\n&quot;</span>; <br>        <span class="hljs-title function_ invoke__">fwrite</span>(<span class="hljs-variable">$fp</span>, <span class="hljs-variable">$out</span>); <br>        <span class="hljs-variable">$contents</span>=<span class="hljs-string">&#x27;&#x27;</span>; <br>        <span class="hljs-keyword">while</span> (!<span class="hljs-title function_ invoke__">feof</span>(<span class="hljs-variable">$fp</span>)) &#123; <br>            <span class="hljs-variable">$contents</span>.= <span class="hljs-title function_ invoke__">fgets</span>(<span class="hljs-variable">$fp</span>, <span class="hljs-number">1024</span>); <br>        &#125; <br>        <span class="hljs-title function_ invoke__">fclose</span>(<span class="hljs-variable">$fp</span>); <br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$contents</span>; <br>    &#125; <br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
+<h4 id="fsockopen"><a class="markdownIt-Anchor" href="#fsockopen"></a> fsockopen()</h4>
+<h5 id="条件-2"><a class="markdownIt-Anchor" href="#条件-2"></a> 条件</h5>
+<p>PHP 4, PHP 5, PHP 7, PHP 8</p>
+<h5 id="利用-3"><a class="markdownIt-Anchor" href="#利用-3"></a> 利用</h5>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">GetFile</span>(<span class="hljs-params"><span class="hljs-variable">$host</span>,<span class="hljs-variable">$port</span>,<span class="hljs-variable">$link</span></span>) </span>&#123; <br>    <span class="hljs-variable">$fp</span> = <span class="hljs-title function_ invoke__">fsockopen</span>(<span class="hljs-variable">$host</span>, <span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-variable">$port</span>), <span class="hljs-variable">$errno</span>, <span class="hljs-variable">$errstr</span>, <span class="hljs-number">30</span>);   <br>    <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$fp</span>) &#123; <br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;<span class="hljs-subst">$errstr</span> (error number <span class="hljs-subst">$errno</span>) \n&quot;</span>; <br>    &#125; <span class="hljs-keyword">else</span> &#123; <br>        <span class="hljs-variable">$out</span> = <span class="hljs-string">&quot;GET <span class="hljs-subst">$link</span> HTTP/1.1\r\n&quot;</span>; <br>        <span class="hljs-variable">$out</span> .= <span class="hljs-string">&quot;Host: <span class="hljs-subst">$host</span>\r\n&quot;</span>; <br>        <span class="hljs-variable">$out</span> .= <span class="hljs-string">&quot;Connection: Close\r\n\r\n&quot;</span>; <br>        <span class="hljs-variable">$out</span> .= <span class="hljs-string">&quot;\r\n&quot;</span>; <br>        <span class="hljs-title function_ invoke__">fwrite</span>(<span class="hljs-variable">$fp</span>, <span class="hljs-variable">$out</span>); <br>        <span class="hljs-variable">$contents</span>=<span class="hljs-string">&#x27;&#x27;</span>; <br>        <span class="hljs-keyword">while</span> (!<span class="hljs-title function_ invoke__">feof</span>(<span class="hljs-variable">$fp</span>)) &#123; <br>            <span class="hljs-variable">$contents</span>.= <span class="hljs-title function_ invoke__">fgets</span>(<span class="hljs-variable">$fp</span>, <span class="hljs-number">1024</span>); <br>        &#125; <br>        <span class="hljs-title function_ invoke__">fclose</span>(<span class="hljs-variable">$fp</span>); <br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$contents</span>; <br>    &#125; <br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <p><strong><code>fsockopen</code>函数实现对用户指定url数据的获取</strong>，该函数使用socket（端口）跟服务器建立tcp连接，传输数据。变量host为主机名，port为端口，errstr表示错误信息将以字符串的信息返回，30为时限</p>
-<h4 id="curl-exec"><a href="#curl-exec" class="headerlink" title="curl_exec()"></a>curl_exec()</h4><h5 id="条件-2"><a href="#条件-2" class="headerlink" title="条件"></a>条件</h5><p>PHP 4 &gt;&#x3D; 4.0.2, PHP 5, PHP 7, PHP 8</p>
-<h5 id="利用-3"><a href="#利用-3" class="headerlink" title="利用"></a>利用</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;url&#x27;</span>]))&#123;<br>    <span class="hljs-variable">$link</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;url&#x27;</span>];<br>    <span class="hljs-variable">$curlobj</span> = <span class="hljs-title function_ invoke__">curl_init</span>();<span class="hljs-comment">// 创建新的 cURL 资源</span><br>    <span class="hljs-title function_ invoke__">curl_setopt</span>(<span class="hljs-variable">$curlobj</span>, CURLOPT_POST, <span class="hljs-number">0</span>);<br>    <span class="hljs-title function_ invoke__">curl_setopt</span>(<span class="hljs-variable">$curlobj</span>,CURLOPT_URL,<span class="hljs-variable">$link</span>);<br>    <span class="hljs-title function_ invoke__">curl_setopt</span>(<span class="hljs-variable">$curlobj</span>, CURLOPT_RETURNTRANSFER, <span class="hljs-number">1</span>);<span class="hljs-comment">// 设置 URL 和相应的选项</span><br>    <span class="hljs-variable">$result</span>=<span class="hljs-title function_ invoke__">curl_exec</span>(<span class="hljs-variable">$curlobj</span>);<span class="hljs-comment">// 抓取 URL 并把它传递给浏览器</span><br>    <span class="hljs-title function_ invoke__">curl_close</span>(<span class="hljs-variable">$curlobj</span>);<span class="hljs-comment">// 关闭 cURL 资源，并且释放系统资源</span><br><br>    <span class="hljs-variable">$filename</span> = <span class="hljs-string">&#x27;./curled/&#x27;</span>.<span class="hljs-title function_ invoke__">rand</span>().<span class="hljs-string">&#x27;.txt&#x27;</span>;<br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$filename</span>, <span class="hljs-variable">$result</span>); <br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$result</span>;<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
-
+<h4 id="curl_exec"><a class="markdownIt-Anchor" href="#curl_exec"></a> curl_exec()</h4>
+<h5 id="条件-3"><a class="markdownIt-Anchor" href="#条件-3"></a> 条件</h5>
+<p>PHP 4 &gt;= 4.0.2, PHP 5, PHP 7, PHP 8</p>
+<h5 id="利用-4"><a class="markdownIt-Anchor" href="#利用-4"></a> 利用</h5>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;url&#x27;</span>]))&#123;<br>    <span class="hljs-variable">$link</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;url&#x27;</span>];<br>    <span class="hljs-variable">$curlobj</span> = <span class="hljs-title function_ invoke__">curl_init</span>();<span class="hljs-comment">// 创建新的 cURL 资源</span><br>    <span class="hljs-title function_ invoke__">curl_setopt</span>(<span class="hljs-variable">$curlobj</span>, CURLOPT_POST, <span class="hljs-number">0</span>);<br>    <span class="hljs-title function_ invoke__">curl_setopt</span>(<span class="hljs-variable">$curlobj</span>,CURLOPT_URL,<span class="hljs-variable">$link</span>);<br>    <span class="hljs-title function_ invoke__">curl_setopt</span>(<span class="hljs-variable">$curlobj</span>, CURLOPT_RETURNTRANSFER, <span class="hljs-number">1</span>);<span class="hljs-comment">// 设置 URL 和相应的选项</span><br>    <span class="hljs-variable">$result</span>=<span class="hljs-title function_ invoke__">curl_exec</span>(<span class="hljs-variable">$curlobj</span>);<span class="hljs-comment">// 抓取 URL 并把它传递给浏览器</span><br>    <span class="hljs-title function_ invoke__">curl_close</span>(<span class="hljs-variable">$curlobj</span>);<span class="hljs-comment">// 关闭 cURL 资源，并且释放系统资源</span><br><br>    <span class="hljs-variable">$filename</span> = <span class="hljs-string">&#x27;./curled/&#x27;</span>.<span class="hljs-title function_ invoke__">rand</span>().<span class="hljs-string">&#x27;.txt&#x27;</span>;<br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$filename</span>, <span class="hljs-variable">$result</span>); <br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$result</span>;<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <p><strong><code>curl_exec</code>函数用于执行指定的cURL会话</strong></p>
 <blockquote>
-<p>1.一般情况下PHP不会开启fopen的gopher wrapper<br>2.<code>file_get_contents</code>的gopher协议不能URL编码<br>3.<code>file_get_contents</code>关于Gopher的302跳转会出现bug，导致利用失败<br>4.curl&#x2F;libcurl 7.43 上gopher协议存在bug(%00截断) 经测试7.49 可用<br>5.<code>curl_exec()</code> &#x2F;&#x2F;默认不跟踪跳转，<br>6.<code>file_get_contents() // file_get_contents</code>支持<code>php://input</code>协议</p>
+<p>1.一般情况下PHP不会开启fopen的gopher wrapper<br />
+2.<code>file_get_contents</code>的gopher协议不能URL编码<br />
+3.<code>file_get_contents</code>关于Gopher的302跳转会出现bug，导致利用失败<br />
+4.curl/libcurl 7.43 上gopher协议存在bug(%00截断) 经测试7.49 可用<br />
+5.<code>curl_exec()</code> //默认不跟踪跳转，<br />
+6.<code>file_get_contents() // file_get_contents</code>支持<code>php://input</code>协议</p>
 </blockquote>
-<h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h5><p>把url中的内容改成内网的其他服务器上地址和端口，探测内网信息，比如端口开放情况</p>
+<h5 id="步骤"><a class="markdownIt-Anchor" href="#步骤"></a> 步骤</h5>
+<p>把url中的内容改成内网的其他服务器上地址和端口，探测内网信息，比如端口开放情况</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?url=http://127.0.0.1:22<br></code></pre></td></tr></table></figure>
-
 <p>再打开Burp，抓包发到Intruder，设置Payload（端口处）</p>
 <p>爆破，检测到了内网主机的80端口（例子）是开放的</p>
 <p>也可以通过SSRF漏洞读取内网服务器的文件，例如将url修改为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?url=file:///c:/windows/system.ini<br></code></pre></td></tr></table></figure>
-
-<h2 id="防御SSRF"><a href="#防御SSRF" class="headerlink" title="防御SSRF"></a>防御SSRF</h2><ul>
+<h2 id="防御ssrf"><a class="markdownIt-Anchor" href="#防御ssrf"></a> 防御SSRF</h2>
+<ul>
 <li>禁止跳转</li>
 <li>禁用除http和https外的协议，如：<code>file://</code>、<code>gopher://</code>、<code>dict://</code>等。</li>
 <li>限制请求的端口为http常用的端口，如 80、443、8080。</li>
@@ -263,14 +313,15 @@
 
 
 
-<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hackun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hackun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br />
+本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
 <div class="widgets">
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SSRF%E6%BC%8F%E6%B4%9E"><span class="toc-text">SSRF漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">主要攻击方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B1%E5%AE%B3"><span class="toc-text">危害</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">漏洞检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E9%AA%8C%E8%AF%81"><span class="toc-text">漏洞验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%82%B9"><span class="toc-text">漏洞可能出现点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E4%BA%AB%E5%8A%9F%E8%83%BD"><span class="toc-text">分享功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD-%E4%B8%8B%E8%BD%BD"><span class="toc-text">图片加载&#x2F;下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87-%E6%96%87%E7%AB%A0%E6%94%B6%E8%97%8F%E5%8A%9F%E8%83%BD"><span class="toc-text">图片&#x2F;文章收藏功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E7%A0%81%E6%9C%8D%E5%8A%A1"><span class="toc-text">转码服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E7%BF%BB%E8%AF%91"><span class="toc-text">在线翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">邮件系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8EURL%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%AD%E5%AF%BB%E6%89%BE"><span class="toc-text">从URL关键字中寻找</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87"><span class="toc-text">绕过</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%99%90%E5%88%B6"><span class="toc-text">常见限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%99%90%E5%88%B6%E4%B8%BA%E6%9F%90%E7%A7%8D%E5%9F%9F%E5%90%8D"><span class="toc-text">绕过限制为某种域名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%95%E8%BF%87-1"><span class="toc-text">@绕过</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%99%90%E5%88%B6%E8%AF%B7%E6%B1%82IP%E4%B8%8D%E4%B8%BA%E5%86%85%E7%BD%91%E5%9C%B0%E5%9D%80"><span class="toc-text">绕过限制请求IP不为内网地址</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%8F%A5%E5%8F%B7"><span class="toc-text">利用句号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8"><span class="toc-text">利用[::]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-text">添加端口号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E7%9F%AD%E7%BD%91%E5%9D%80"><span class="toc-text">利用短网址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%A7%A3%E6%9E%90%E5%88%B0%E5%86%85%E7%BD%91%E7%9A%84%E5%9F%9F%E5%90%8D"><span class="toc-text">使用解析到内网的域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="toc-text">采用进制转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#302%E8%B7%B3%E8%BD%AC"><span class="toc-text">302跳转</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E8%AF%B7%E6%B1%82%E5%8F%AA%E4%B8%BAhttp%E5%8D%8F%E8%AE%AE"><span class="toc-text">限制请求只为http协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%87%E7%94%A8302%E8%B7%B3%E8%BD%AC"><span class="toc-text">采用302跳转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E7%9F%AD%E5%9C%B0%E5%9D%80"><span class="toc-text">采用短地址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E7%8E%AF%E5%9C%B0%E5%9D%80%E7%BB%95%E8%BF%87"><span class="toc-text">回环地址绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8URL%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text">利用URL伪协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Gopher%E5%8D%8F%E8%AE%AE%EF%BC%88%E4%B8%87%E8%83%BD%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-text">Gopher协议（万能协议）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file%E5%8D%8F%E8%AE%AE"><span class="toc-text">file协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dict%E5%8D%8F%E8%AE%AE"><span class="toc-text">dict协议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-text">漏洞利用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">产生漏洞的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#file-get-contents"><span class="toc-text">file_get_contents()</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-1"><span class="toc-text">利用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fsockopen"><span class="toc-text">fsockopen()</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-1"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-2"><span class="toc-text">利用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#curl-exec"><span class="toc-text">curl_exec()</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-2"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-3"><span class="toc-text">利用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1SSRF"><span class="toc-text">防御SSRF</span></a></li></ol></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ssrf%E6%BC%8F%E6%B4%9E"><span class="toc-text"> SSRF漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text"> 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F"><span class="toc-text"> 主要攻击方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text"> 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B1%E5%AE%B3"><span class="toc-text"> 危害</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B"><span class="toc-text"> 漏洞检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E9%AA%8C%E8%AF%81"><span class="toc-text"> 漏洞验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%82%B9"><span class="toc-text"> 漏洞可能出现点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E4%BA%AB%E5%8A%9F%E8%83%BD"><span class="toc-text"> 分享功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E4%B8%8B%E8%BD%BD"><span class="toc-text"> 图片加载&#x2F;下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0%E6%94%B6%E8%97%8F%E5%8A%9F%E8%83%BD"><span class="toc-text"> 图片&#x2F;文章收藏功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E7%A0%81%E6%9C%8D%E5%8A%A1"><span class="toc-text"> 转码服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E7%BF%BB%E8%AF%91"><span class="toc-text"> 在线翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text"> 邮件系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8Eurl%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%AD%E5%AF%BB%E6%89%BE"><span class="toc-text"> 从URL关键字中寻找</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87"><span class="toc-text"> 绕过</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%99%90%E5%88%B6"><span class="toc-text"> 常见限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%99%90%E5%88%B6%E4%B8%BA%E6%9F%90%E7%A7%8D%E5%9F%9F%E5%90%8D"><span class="toc-text"> 绕过限制为某种域名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%95%E8%BF%87-2"><span class="toc-text"> @绕过</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%99%90%E5%88%B6%E8%AF%B7%E6%B1%82ip%E4%B8%8D%E4%B8%BA%E5%86%85%E7%BD%91%E5%9C%B0%E5%9D%80"><span class="toc-text"> 绕过限制请求IP不为内网地址</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%8F%A5%E5%8F%B7"><span class="toc-text"> 利用句号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8"><span class="toc-text"> 利用[::]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-text"> 添加端口号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E7%9F%AD%E7%BD%91%E5%9D%80"><span class="toc-text"> 利用短网址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%A7%A3%E6%9E%90%E5%88%B0%E5%86%85%E7%BD%91%E7%9A%84%E5%9F%9F%E5%90%8D"><span class="toc-text"> 使用解析到内网的域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="toc-text"> 采用进制转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#302%E8%B7%B3%E8%BD%AC"><span class="toc-text"> 302跳转</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E8%AF%B7%E6%B1%82%E5%8F%AA%E4%B8%BAhttp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> 限制请求只为http协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%87%E7%94%A8302%E8%B7%B3%E8%BD%AC"><span class="toc-text"> 采用302跳转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E7%9F%AD%E5%9C%B0%E5%9D%80"><span class="toc-text"> 采用短地址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E7%8E%AF%E5%9C%B0%E5%9D%80%E7%BB%95%E8%BF%87"><span class="toc-text"> 回环地址绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8url%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text"> 利用URL伪协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#gopher%E5%8D%8F%E8%AE%AE%E4%B8%87%E8%83%BD%E5%8D%8F%E8%AE%AE"><span class="toc-text"> Gopher协议（万能协议）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file%E5%8D%8F%E8%AE%AE"><span class="toc-text"> file协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dict%E5%8D%8F%E8%AE%AE"><span class="toc-text"> dict协议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-text"> 漏洞利用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text"> 产生漏洞的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#file_get_contents"><span class="toc-text"> file_get_contents()</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-2"><span class="toc-text"> 利用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fsockopen"><span class="toc-text"> fsockopen()</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-2"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-3"><span class="toc-text"> 利用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#curl_exec"><span class="toc-text"> curl_exec()</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-3"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-4"><span class="toc-text"> 利用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text"> 步骤</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1ssrf"><span class="toc-text"> 防御SSRF</span></a></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel blur'>

