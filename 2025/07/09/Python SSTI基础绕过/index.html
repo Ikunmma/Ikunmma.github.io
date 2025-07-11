@@ -17,26 +17,24 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>Python SSTI基础绕过 - 无言の小屋</title>
+  <title>无言の小屋</title>
 
   
     <meta name="description" content="Python SSTI基础绕过  关键字绕过  拼接 12&#x27;&#x27;.__class__ &#x3D; &#x27;&#x27;[&#x27;__cla&#x27; + &#x27;ss__&#x27;] #可以不用加号&#x27;&#x27;.__class__ &#x3D;&#x27;&#x27;|attr((&#x27;__clas&#x27;,&#x27;s__&#x27;)|join) 还可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python SSTI基础绕过">
+<meta property="og:title" content="无言の小屋">
 <meta property="og:url" content="https://ikunmma.github.io/2025/07/09/Python%20SSTI%E5%9F%BA%E7%A1%80%E7%BB%95%E8%BF%87/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="Python SSTI基础绕过  关键字绕过  拼接 12&#x27;&#x27;.__class__ &#x3D; &#x27;&#x27;[&#x27;__cla&#x27; + &#x27;ss__&#x27;] #可以不用加号&#x27;&#x27;.__class__ &#x3D;&#x27;&#x27;|attr((&#x27;__clas&#x27;,&#x27;s__&#x27;)|join) 还可">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-09T04:06:43.363Z">
-<meta property="article:modified_time" content="2025-07-09T04:08:40.136Z">
+<meta property="article:modified_time" content="2025-07-09T03:03:25.888Z">
 <meta property="article:author" content="Hackun">
-<meta property="article:tag" content="漏洞">
-<meta property="article:tag" content="SSTI">
 <meta name="twitter:card" content="summary">
   
   
   
-  <meta name="keywords" content="漏洞,SSTI">
+  
 
   <!-- feed -->
   
@@ -68,7 +66,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a><a class="item title" href="/2025/07/09/CRLF%E6%BC%8F%E6%B4%9E/"><span class="title">CRLF漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><span class="title">PHP文件包含漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><span class="title">PHP特性总结</span></a><a class="item title" href="/2025/07/09/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span class="title">PHP反序列化</span></a><a class="item title" href="/2025/07/09/php/"><span class="title">PHP</span></a><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL handler的用法与应用</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">(SUCTF 2019)EasySQL</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">强网杯2019随便注</span></a><a class="item title" href="/2025/07/09/%5Bflask%5DSSTI%201/"><span class="title">Buuctf [flask]SSTI</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/09/HTTP/"><span class="title">HTTP</span></a><a class="item title" href="/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"><span class="title">文件上传漏洞</span></a><a class="item title" href="/2025/07/09/CRLF%E6%BC%8F%E6%B4%9E/"><span class="title">CRLF漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"><span class="title">PHP文件包含漏洞</span></a><a class="item title" href="/2025/07/09/PHP%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><span class="title">PHP特性总结</span></a><a class="item title" href="/2025/07/09/PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span class="title">PHP反序列化</span></a><a class="item title" href="/2025/07/09/php/"><span class="title">PHP</span></a><a class="item title" href="/2025/07/09/MySQL%20handler%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/"><span class="title">MySQL handler的用法与应用</span></a><a class="item title" href="/2025/07/09/%5BSUCTF-2019%5DEasySQL/"><span class="title">(SUCTF 2019)EasySQL</span></a><a class="item title" href="/2025/07/09/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF-2019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/"><span class="title">强网杯2019随便注</span></a></div></widget>
 </div>
 <footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Ikunmma/Ikunmma.github.io" target="_blank" rel="external nofollow noopener noreferrer"><i class= "iconfont icon-GitHub"></i></a></div></footer>
 </div></aside><div class="l_main" id="main">
@@ -80,16 +78,8 @@
 <div class="article banner top">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%BC%8F%E6%B4%9E/">漏洞</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-09T04:06:43.363Z">2025-07-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-09T04:08:40.136Z">2025-07-09</time></span></div></div></div>
-    
-    <div class="bottom only-title">
-      
-      <div class="text-area">
-        <h1 class="text title"><span>Python SSTI基础绕过</span></h1>
-        
-      </div>
-    </div>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-09T04:06:43.363Z">2025-07-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-09T03:03:25.888Z">2025-07-09</time></span></div></div></div>
     
   </div>
   </div><article class="md-text content"><h1 id="python-ssti基础绕过"><a class="markdownIt-Anchor" href="#python-ssti基础绕过"></a> Python SSTI基础绕过</h1>
