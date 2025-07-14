@@ -93,7 +93,7 @@ XSS是基于前端的一种攻击，其实就是非Web应用自身的JS代码被
 </br>
 <script type="text/javascript">
 function show_runtime() {
-  indow.setTimeout("show_runtime()", 1000);
+  window.setTimeout("show_runtime()", 1000);
   X = new Date("10/20/2023 00:00:00 ");
   Y = new Date();
   T = (Y.getTime() - X.getTime());
