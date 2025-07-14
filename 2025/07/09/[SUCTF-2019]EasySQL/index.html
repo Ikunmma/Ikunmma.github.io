@@ -166,27 +166,36 @@
 
 
 <footer class="page-footer footnote"><hr><div class="text"><center>
-</br>
-</br>
-<script type="text/javascript">
-function show_runtime() {
-  window.setTimeout("show_runtime()", 1000);
-  X = new Date("10/20/2023 00:00:00 ");
-  Y = new Date();
-  T = (Y.getTime() - X.getTime());
-  M = 24 * 60 * 60 * 1000;
-  a = T / M;
-  A = Math.floor(a);
-  b = (a - A) * 24;
-  B = Math.floor(b);
-  c = (b - B) * 60;
-  C = Math.floor((b - B) * 60);
-  D = Math.floor((c - C) * 60);
-  runtime_span.innerHTML = "⏲️ 本站已运行 " + A + "天|" + B + "小时|" + C + "分|" + D + "秒 ⏲️"
-}
-show_runtime();
-</script>
-<span id="runtime_span"> </span>
+  <div>
+    <div>
+      "© 2025 "
+      <a style="font-weight:700" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ikunmma">子非鲲</a> 
+      " 使用 "
+      <a style="font-weight:700" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar </a>
+      " 创建 "
+      <br>
+      <span id="runtime_span"></span>
+    </div>
+    <script type="text/javascript">
+    function show_runtime() {
+      window.setTimeout("show_runtime()", 1000);
+      X = new Date("10/20/2023 00:00:00 ");
+      Y = new Date();
+      T = (Y.getTime() - X.getTime());
+      M = 24 * 60 * 60 * 1000;
+      a = T / M;
+      A = Math.floor(a);
+      b = (a - A) * 24;
+      B = Math.floor(b);
+      c = (b - B) * 60;
+      C = Math.floor((b - B) * 60);
+      D = Math.floor((c - C) * 60);
+      runtime_span.innerHTML = "⏲️ 本站已运行 " + A + "天|" + B + "小时|" + C + "分|" + D + "秒 ⏲️"
+    }
+    show_runtime();
+    </script>
+  </div>
+</center>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
 <div class="widgets">
