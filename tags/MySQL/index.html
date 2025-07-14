@@ -109,19 +109,19 @@ HANDLER是一个比较低级的语句，具有自己的会话机制，且会话�
 </br>
 <script type="text/javascript">
 function show_runtime() {
-    window.setTimeout("show_runtime()", 1000);
-    X = new Date("10/20/2023 00:00:00 ");
-    Y = new Date();
-    T = (Y.getTime() - X.getTime());
-    M = 24 * 60 * 60 * 1000;
-    a = T / M;
-    A = Math.floor(a);
-    b = (a - A) * 24;
-    B = Math.floor(b);
-    c = (b - B) * 60;
-    C = Math.floor((b - B) * 60);
-    D = Math.floor((c - C) * 60);
-    runtime_span.innerHTML = "⏲️ 本站已运行 " + 70 "天|" + B + "小时|" + C + "分|" + D + "秒 ⏲️"
+  indow.setTimeout("show_runtime()", 1000);
+  X = new Date("10/20/2023 00:00:00 ");
+  Y = new Date();
+  T = (Y.getTime() - X.getTime());
+  M = 24 * 60 * 60 * 1000;
+  a = T / M;
+  A = Math.floor(a);
+  b = (a - A) * 24;
+  B = Math.floor(b);
+  c = (b - B) * 60;
+  C = Math.floor((b - B) * 60);
+  D = Math.floor((c - C) * 60);
+  runtime_span.innerHTML = "⏲️ 本站已运行 " + A + "天|" + B + "小时|" + C + "分|" + D + "秒 ⏲️"
 }
 show_runtime();
 </script>
