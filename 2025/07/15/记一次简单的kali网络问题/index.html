@@ -17,27 +17,30 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>C++中的转换构造函数与类型转换运算符 - 无言の小屋</title>
+  <title>记一次简单的kali网络问题 - 无言の小屋</title>
 
   
-    <meta name="description" content="C++中的转换构造函数与类型转换运算符  隐式类型转换 C++的内置类型之间会进行隐式的类型转换  char、short、int、long四个类型混合运算时，较小的(占用字节数小)整数类型会被自动提升为较大的(占用字节数大)整数类型，以确保不会丢失精度 signed类型和unsigned类型混合运算的结果是unsigned类型 整型(char、short、int、long)和浮点类型(float">
+    <meta name="description" content="记一次简单的kali网络问题 kali虚拟机连不上网时可以尝试以下方法重置网络连接 首先在终端输入ifconfig，只输出以下语句  说明未与主机建立联系，我们尝试用sudo dhclient -v重置网络连接  再输入ifconfig，输出以下内容代表网络连接成功（再进一步连接的话开tun模式）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++中的转换构造函数与类型转换运算符">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:title" content="记一次简单的kali网络问题">
+<meta property="og:url" content="https://ikunmma.github.io/2025/07/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%AE%80%E5%8D%95%E7%9A%84kali%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="无言の小屋">
-<meta property="og:description" content="C++中的转换构造函数与类型转换运算符  隐式类型转换 C++的内置类型之间会进行隐式的类型转换  char、short、int、long四个类型混合运算时，较小的(占用字节数小)整数类型会被自动提升为较大的(占用字节数大)整数类型，以确保不会丢失精度 signed类型和unsigned类型混合运算的结果是unsigned类型 整型(char、short、int、long)和浮点类型(float">
+<meta property="og:description" content="记一次简单的kali网络问题 kali虚拟机连不上网时可以尝试以下方法重置网络连接 首先在终端输入ifconfig，只输出以下语句  说明未与主机建立联系，我们尝试用sudo dhclient -v重置网络连接  再输入ifconfig，输出以下内容代表网络连接成功（再进一步连接的话开tun模式）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250417213943604.png">
-<meta property="article:published_time" content="2025-07-09T03:45:13.097Z">
-<meta property="article:modified_time" content="2025-07-09T04:09:36.465Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715093434746.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715093719351.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715093957587.png">
+<meta property="article:published_time" content="2025-07-15T01:44:23.325Z">
+<meta property="article:modified_time" content="2025-07-15T01:44:03.777Z">
 <meta property="article:author" content="Hackun">
-<meta property="article:tag" content="编程">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250417213943604.png">
+<meta property="article:tag" content="虚拟机">
+<meta property="article:tag" content="kali">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715093434746.png">
   
   
   
-  <meta name="keywords" content="编程">
+  <meta name="keywords" content="虚拟机,kali">
 
   <!-- feed -->
   
@@ -78,54 +81,29 @@
 
 
 
-<div class="article banner top">
+<div class="article banner top"><img class="bg lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/kali.jpg">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-09T03:45:13.097Z">2025-07-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-09T04:09:36.465Z">2025-07-09</time></span></div></div></div>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/kali/">kali</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-15T01:44:23.325Z">2025-07-15</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-15T01:44:03.777Z">2025-07-15</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>C++中的转换构造函数与类型转换运算符</span></h1>
+        <h1 class="text title"><span>记一次简单的kali网络问题</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="c中的转换构造函数与类型转换运算符"><a class="markdownIt-Anchor" href="#c中的转换构造函数与类型转换运算符"></a> C++中的转换构造函数与类型转换运算符</h1>
-<h2 id="隐式类型转换"><a class="markdownIt-Anchor" href="#隐式类型转换"></a> 隐式类型转换</h2>
-<p>C++的内置类型之间会进行隐式的类型转换</p>
-<ul>
-<li>char、short、int、long四个类型混合运算时，较小的(占用字节数小)整数类型会被自动提升为较大的(占用字节数大)整数类型，以确保不会丢失精度</li>
-<li>signed类型和unsigned类型混合运算的结果是unsigned类型</li>
-<li>整型(char、short、int、long)和浮点类型(float、double)混合运算时，会自动提升为浮点类型；较短的浮点数类型（如float）会被自动提升为更长的浮点数类型（如double）以进行混合运算，以确保不会丢失精度</li>
-</ul>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250417213943604.png" alt="" /></p>
-<h2 id="自定义的类类型转换"><a class="markdownIt-Anchor" href="#自定义的类类型转换"></a> 自定义的类类型转换</h2>
-<p>C++提供<strong>转换构造函数、类型转换运算符函数这两种成员函数</strong>来支持类类型的类型转换</p>
-<h3 id="转换构造函数"><a class="markdownIt-Anchor" href="#转换构造函数"></a> 转换构造函数</h3>
-<p>将其他类型的对象转换为本类对象</p>
-<h4 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h4>
-<ul>
-<li>属于构造函数的一种，没有返回值，函数名和类名一样</li>
-<li><strong>只有一个形参，或其他形参都有默认值</strong></li>
-<li>形参类型可以是内置类型，也可以是其他类类型</li>
-<li>可以使用关键字 explicit 限制隐式转换</li>
-</ul>
-<h4 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h4>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">int</span> x) &#123;</span><br><span class="line">        <span class="comment">// 将 int 转换为 MyClass</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="类型转换运算符函数"><a class="markdownIt-Anchor" href="#类型转换运算符函数"></a> 类型转换运算符函数</h3>
-<p>将类对象转换为其他类型对象</p>
-<h4 id="特点-2"><a class="markdownIt-Anchor" href="#特点-2"></a> 特点</h4>
-<ul>
-<li>函数原型没有返回值、没有参数</li>
-<li>函数名为关键字<code>operator 类型</code>（类型为要转换的类型）</li>
-<li><strong>必须要有return语句</strong>，return的类型就是要转换为的类型</li>
-<li>转换为的类型可以是内置类型，也可以是其他类类型</li>
-</ul>
-<h4 id="使用-2"><a class="markdownIt-Anchor" href="#使用-2"></a> 使用</h4>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">int</span> v) : <span class="built_in">value</span>(v) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 类型转换函数</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="title">int</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+  </div><article class="md-text content"><h1 id="记一次简单的kali网络问题"><a class="markdownIt-Anchor" href="#记一次简单的kali网络问题"></a> 记一次简单的kali网络问题</h1>
+<p>kali虚拟机连不上网时可以尝试以下方法重置网络连接</p>
+<p>首先在终端输入<code>ifconfig</code>，只输出以下语句</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715093434746.png" alt="" /></p>
+<p>说明未与主机建立联系，我们尝试用<code>sudo dhclient -v</code>重置网络连接</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715093719351.png" alt="" /></p>
+<p>再输入<code>ifconfig</code>，输出以下内容代表网络连接成功（再进一步连接的话开tun模式）</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715093957587.png" alt="" /></p>
 
 <div class="article-footer fs14">
     <section id="license">
@@ -135,7 +113,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/07/09/CRLF%E6%BC%8F%E6%B4%9E/">CRLF漏洞</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/09/C++%E4%B8%AD%E7%9A%84%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/">C++中的拷贝构造函数、浅拷贝与深拷贝</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/14/WSL%20%E8%A3%85%E9%85%8DUbuntu/">WSL装配Ubuntu</a></div></section></div>
 
 
 
@@ -181,7 +159,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text"> C++中的转换构造函数与类型转换运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text"> 隐式类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%B1%BB%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text"> 自定义的类类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text"> 转换构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text"> 特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text"> 使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6%E5%87%BD%E6%95%B0"><span class="toc-text"> 类型转换运算符函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-2"><span class="toc-text"> 特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-2"><span class="toc-text"> 使用</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%AE%80%E5%8D%95%E7%9A%84kali%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98"><span class="toc-text"> 记一次简单的kali网络问题</span></a></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel blur'>
