@@ -1,28 +1,6 @@
-#cursor {
-    position: fixed;
-    width: 16px;
-    height: 16px;
-    background: rgb(41, 41, 41); /*修改鼠标跟随的颜色*/
-    border-radius: 8px;
-    opacity: 0.25;
-    z-index: 10086;
-    pointer-events: none;
-    transition: 0.2s ease-in-out;
-    transition-property: background, opacity, transform;
+body {
+  cursor: url("https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071208706.cur"), auto;
 }
-
-#cursor.hidden {
-    opacity: 0;
+a {
+  cursor: url("https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071205091.cur"), auto !important;
 }
-
-#cursor.hover {
-    opacity: 0.1;
-    transform: scale(2.5);
-}
-
-#cursor.active {
-    opacity: 0.5;
-    transform: scale(0.5);
-}
-
-
