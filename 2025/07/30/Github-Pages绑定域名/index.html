@@ -33,9 +33,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730144652642.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730153600147.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730152713644.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730173512231.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730143632827.gif">
 <meta property="article:published_time" content="2025-07-30T09:03:41.613Z">
-<meta property="article:modified_time" content="2025-07-30T09:22:52.694Z">
+<meta property="article:modified_time" content="2025-07-30T09:37:00.654Z">
 <meta property="article:author" content="Hackun">
 <meta property="article:tag" content="博客美化">
 <meta name="twitter:card" content="summary_large_image">
@@ -88,7 +89,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/">博客美化</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-30T09:03:41.613Z">2025-07-30</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-30T09:22:52.694Z">2025-07-30</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-30T09:03:41.613Z">2025-07-30</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-30T09:37:00.654Z">2025-07-30</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -100,7 +101,7 @@
     
   </div>
   </div><article class="md-text content"><h1 id="github-pages绑定域名"><a class="markdownIt-Anchor" href="#github-pages绑定域名"></a> Github Pages绑定域名</h1>
-<div class="tag-plugin paper"><div class="content underline"><div class="title"></div><div class="body"><div class="paragraph"><p>不经历撕心裂肺的痛苦与筋疲力尽的挣扎，怎能破茧成蝶，实现涅槃重生？</p></div></div><div class="footer"></div></div></div>
+<div class="tag-plugin quot"><p class="content" type="text"><span class="empty"></span><span class="text">不经历撕心裂肺的痛苦与筋疲力尽的挣扎，怎能破茧成蝶，实现涅槃重生？</span><span class="empty"></span></p></div>
 <h2 id="域名注册"><a class="markdownIt-Anchor" href="#域名注册"></a> 域名注册</h2>
 <p>进入<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云官网</a>，先到域名注册页面购买自己心仪的域名</p>
 <p>新用户需要进行实名认证，在订单详情页有相关提示进行认证即可，一般10分钟内可审核通过，实名认证成功后，可直接购买域名，选择支付宝支付即可</p>
@@ -121,6 +122,11 @@
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730153600147.png" alt="" /></p>
 <p>前往<a target="_blank" rel="noopener" href="https://github.com/">Github Page</a>已搭建好的仓库中，点击<strong>settings</strong>→ <strong>page</strong>→<strong>Custom domain</strong> 项中添加进行解析后的自定义域名→ 勾选 <strong>Enforce HTTPS</strong></p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730152713644.png" alt="" /></p>
+<p>这样Github Pages就绑定域名了</p>
+<p>你以为这样就好了吗😛。。。。。。</p>
+<p>实则不然，你会遇到每次使用hexo deploy部署之后，github page的custom domian自定义域名就会失效</p>
+<p>这时，只需在hexo项目的source文件夹下新建CNAME文件，里面填入你的域名，并保存，这样每次hexo deploy后，github page就不会出现域名重置了</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730173512231.png" alt="" /></p>
 <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250730143632827.gif" alt="img" style="zoom: 50%;" />
 
 <div class="article-footer fs14">
@@ -183,7 +189,7 @@
     </script>
   </div>
 </center>
-<div class="totalcount" style="text-align:center"> 共发表 38 篇 Blog · <span class="post-count" > 总计 102k 字 </span></div></div></footer>
+<div class="totalcount" style="text-align:center"> 共发表 38 篇 Blog · <span class="post-count" > 总计 102.1k 字 </span></div></div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
 <div class="widgets">
 
