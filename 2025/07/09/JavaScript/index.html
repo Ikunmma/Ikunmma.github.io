@@ -1,0 +1,1434 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  
+  <title>JavaScript - 无言の小屋</title>
+
+  
+    <meta name="description" content="JavaScript HTML 中的 Javascript 脚本代码必须位于 &lt;script&gt; 与 &lt;&#x2F;script&gt; 标签间 Javascript 脚本代码可被放置在 HTML 页面的 &lt;body&gt; 和 &lt;head&gt; 中  JavaScript 输出 JavaScript 没有任何打印或者输出的函数  使用 window.alert() 弹出警告">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/JavaScript/index.html">
+<meta property="og:site_name" content="无言の小屋">
+<meta property="og:description" content="JavaScript HTML 中的 Javascript 脚本代码必须位于 &lt;script&gt; 与 &lt;&#x2F;script&gt; 标签间 Javascript 脚本代码可被放置在 HTML 页面的 &lt;body&gt; 和 &lt;head&gt; 中  JavaScript 输出 JavaScript 没有任何打印或者输出的函数  使用 window.alert() 弹出警告">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117433.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117434.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117435.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117437.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117438.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117440.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117441.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117442.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117443.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117444.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117445.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117446.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117447.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117448.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117449.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117450.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117451.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117452.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117453.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117454.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117455.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117456.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117457.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117458.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117459.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117460.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117461.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117462.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117463.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117464.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117465.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117466.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117467.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117468.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117469.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117470.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117471.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117472.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117473.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117474.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117475.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250123193811849.png">
+<meta property="article:published_time" content="2025-07-09T03:45:13.107Z">
+<meta property="article:modified_time" content="2025-02-18T08:08:53.916Z">
+<meta property="article:author" content="Hackun">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="DOM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117433.png">
+  
+  
+  
+  <meta name="keywords" content="前端,JavaScript,DOM">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.29.1">
+
+
+  
+    <link rel="shortcut icon" href="/img/hh.jpg">
+  
+
+  
+
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4970977_2kzuzq5jacv.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/footer.css"><link rel="stylesheet" href="/css/cursor.css">
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715114957806.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无言の小屋</div><div class="sub normal cap"><small>在谷底也要开花,在海底也要望月</small></div><div class="sub hover cap" style="opacity:0"> Designed by hackun</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item active" title="文档" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="wiki" href="/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="目标" href="/explore/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a><a class="nav-item" title="友链" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/08/29/%E4%BB%8EXML%E5%88%B0XXE/"><span class="title">从XML到XXE</span></a><a class="item title" href="/2025/08/24/SQL%E9%A2%84%E7%BC%96%E8%AF%91/"><span class="title">预编译真的能完美防御SQL注入吗？？？</span></a><a class="item title" href="/2025/07/09/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2025/08/12/Github-Pages%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"><span class="title">Github Pages绑定域名</span></a><a class="item title" href="/2025/08/12/%E8%A7%A3%E5%86%B3Ubuntu%E4%B8%8EWindows%E9%97%B4%E6%97%A0%E6%B3%95%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E9%97%AE%E9%A2%98/"><span class="title">解决Ubuntu与Windows间无法复制粘贴问题</span></a><a class="item title" href="/2025/08/08/MySQL%20UDF%E6%8F%90%E6%9D%83/"><span class="title">MySQL UDF提权</span></a><a class="item title" href="/2025/08/06/MySQL-UDF%E6%8F%90%E6%9D%8316%E8%BF%9B%E5%88%B6%E6%9F%A5%E8%AF%A2/"><span class="title">MySQL UDF提权16进制查询</span></a><a class="item title" href="/2025/07/29/%E8%A7%A3%E5%86%B3Windows%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/"><span class="title">解决Windows端口占用问题</span></a><a class="item title" href="/2025/07/28/xss-labs/"><span class="title">xss-labs</span></a><a class="item title" href="/2025/07/28/sqli-labs/"><span class="title">sqli-labs</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-09T03:45:13.107Z">2025-07-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-02-18T08:08:53.916Z">2025-02-18</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>JavaScript</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="javascript"><a class="markdownIt-Anchor" href="#javascript"></a> JavaScript</h1>
+<p>HTML 中的 Javascript 脚本代码必须位于 <code>&lt;script&gt;</code> 与 <strong><code>&lt;/script&gt;</code></strong> 标签间</p>
+<p>Javascript 脚本代码可被放置在 HTML 页面的 <code>&lt;body&gt;</code> 和 <strong><code>&lt;head&gt;</code></strong> 中</p>
+<h2 id="javascript-输出"><a class="markdownIt-Anchor" href="#javascript-输出"></a> JavaScript 输出</h2>
+<p>JavaScript 没有任何打印或者输出的函数</p>
+<h3 id="使用-windowalert-弹出警告框来显示数据"><a class="markdownIt-Anchor" href="#使用-windowalert-弹出警告框来显示数据"></a> 使用 <strong>window.alert()</strong> 弹出警告框来显示数据</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117433.png" alt="" /></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117434.png" alt="" /></p>
+<h3 id="使用-innerhtml-写入到-html-元素"><a class="markdownIt-Anchor" href="#使用-innerhtml-写入到-html-元素"></a> 使用 <strong>innerHTML</strong> 写入到 HTML 元素</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117435.png" alt="" /></p>
+<p><strong>document.getElementById(“demo”)</strong> 用 id 属性(标识 HTML 元素)来查找 HTML 元素的 JS 代码</p>
+<p>**innerHTML = “段落已修改。”**用于修改元素的 HTML 内容(innerHTML)的JS 代码</p>
+<h3 id="使用-documentwrite-方法将内容写到-html-文档中"><a class="markdownIt-Anchor" href="#使用-documentwrite-方法将内容写到-html-文档中"></a> 使用 <strong>document.write()</strong> 方法将内容写到 HTML 文档中</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117437.png" alt="" /></p>
+<p>用 document.write() 可以向文档写入内容。</p>
+<p>如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117438.png" alt="" /></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117439.png" alt="屏幕截图 2024-10-05 110900" /></p>
+<h3 id="使用-consolelog-写入到浏览器的控制台"><a class="markdownIt-Anchor" href="#使用-consolelog-写入到浏览器的控制台"></a> 使用 <strong>console.log()</strong> 写入到浏览器的控制台</h3>
+<p>使用 <strong>console.log()</strong> 方法在浏览器中( F12 来启用调试模式， 在调试窗口中点击 “Console” 菜单)显示 JavaScript 值</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117440.png" alt="" /></p>
+<h2 id="javascript-语法"><a class="markdownIt-Anchor" href="#javascript-语法"></a> JavaScript 语法</h2>
+<h3 id="字面量"><a class="markdownIt-Anchor" href="#字面量"></a> 字面量</h3>
+<p><strong>数字（Number）字面量</strong> 可以是整数或者是小数，或者是科学计数(e)【123e5=12300000】</p>
+<p><strong>字符串（String）字面量</strong> 可以使用单引号或双引号</p>
+<p><strong>表达式字面量</strong> 用于计算</p>
+<p><strong>数组（Array）字面量</strong> 定义一个数组 [40, 100, 1, 5, 25, 10]</p>
+<p><strong>对象（Object）字面量</strong> 定义一个对象 {firstName:“John”, lastName:“Doe”, age:50, eyeColor:“blue”}</p>
+<p><strong>函数（Function）字面量</strong> 定义一个函数  function myFunction(a, b) { return a * b;}</p>
+<h3 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h3>
+<p>变量用于存储数据值，使用关键字 <strong>var</strong> 来定义变量， 使用等号来为变量赋值</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117441.png" alt="" /></p>
+<h3 id="语句"><a class="markdownIt-Anchor" href="#语句"></a> 语句</h3>
+<p>用于向浏览器发出命令（详见下节）</p>
+<h3 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h3>
+<p>数字，字符串，数组，对象等</p>
+<h3 id="函数"><a class="markdownIt-Anchor" href="#函数"></a> 函数</h3>
+<h2 id="javascript-语句"><a class="markdownIt-Anchor" href="#javascript-语句"></a> JavaScript 语句</h2>
+<p>JavaScript 语句是发给浏览器的命令，告诉浏览器要做的事情</p>
+<h3 id="分号"><a class="markdownIt-Anchor" href="#分号"></a> 分号 ;</h3>
+<p>在每条可执行的语句结尾添加分号或在一行中编写多条语句</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117442.png" alt="" /></p>
+<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
+<p>是 JavaScript 语句的序列。浏览器按照编写顺序依次执行每条语句。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;demo&quot;).innerHTML=&quot;你好 Dolly&quot;; document.getElementById(&quot;myDIV&quot;).innerHTML=&quot;你最近怎么样?&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="代码块"><a class="markdownIt-Anchor" href="#代码块"></a> 代码块</h3>
+<p>代码块的作用是一并地执行语句序列，左花括号开始，以右花括号结束</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117443.png" alt="屏幕截图 2024-10-05 155144" /></p>
+<h3 id="语句标识符"><a class="markdownIt-Anchor" href="#语句标识符"></a> 语句标识符</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117444.png" alt="" /></p>
+<h3 id="空格"><a class="markdownIt-Anchor" href="#空格"></a> 空格</h3>
+<p>JavaScript 会忽略多余的空格</p>
+<h3 id="折行"><a class="markdownIt-Anchor" href="#折行"></a> 折行</h3>
+<p>使用反斜杠对代码行进行换行</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117445.png" alt="" /></p>
+<h2 id="javascript-变量"><a class="markdownIt-Anchor" href="#javascript-变量"></a> JavaScript 变量</h2>
+<h3 id="变量声明"><a class="markdownIt-Anchor" href="#变量声明"></a> 变量声明</h3>
+<p>用 var 关键词来声明变量，变量可以先使用再声明</p>
+<h4 id="多变量"><a class="markdownIt-Anchor" href="#多变量"></a> 多变量</h4>
+<p>在一条语句中声明很多变量：该语句以 var 开头，并使用逗号分隔变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var lastname=&quot;Doe&quot;, age=30, job=&quot;carpenter&quot;;</span><br></pre></td></tr></table></figure>
+<p>横跨多行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var lastname=&quot;Doe&quot;,</span><br><span class="line">age=30,</span><br><span class="line">job=&quot;carpenter&quot;;</span><br></pre></td></tr></table></figure>
+<p>一条语句中声明的多个变量不可以同时赋同一个值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var x,y,z=1;</span><br></pre></td></tr></table></figure>
+<p>x,y 为 undefined， z 为 1。</p>
+<h4 id="重新声明变量"><a class="markdownIt-Anchor" href="#重新声明变量"></a> 重新声明变量</h4>
+<p>重新声明 JavaScript 变量，该变量的值不会丢失</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var carname=&quot;Volvo&quot;;</span><br><span class="line">var carname;</span><br></pre></td></tr></table></figure>
+<p>两条语句执行后，变量 carname 的值依然是 “Volvo”</p>
+<h3 id="变量类型"><a class="markdownIt-Anchor" href="#变量类型"></a> 变量类型</h3>
+<p>JavaScript 变量可用于存放值（ x=5），表达式（z=x+y）和文本值 (name=“Bill Gates”  用双引号或单引号包围这个值)，一般倡导以字母开头</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117446.png" alt="" /></p>
+<h2 id="javascript-数据类型"><a class="markdownIt-Anchor" href="#javascript-数据类型"></a> JavaScript 数据类型</h2>
+<p><strong>值类型(基本类型)</strong>：字符串（String）、数字(Number)、布尔(Boolean)、空（Null）、未定义（Undefined）、Symbol</p>
+<p><strong>引用数据类型（对象类型）</strong>：对象(Object)、数组(Array)、函数(Function)，还有两个特殊的对象：正则（RegExp）和日期（Date）</p>
+<p>变量的数据类型可以使用 <strong>typeof</strong> 操作符来查看</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117447.png" alt="" /></p>
+<h3 id="javascript-数组"><a class="markdownIt-Anchor" href="#javascript-数组"></a> JavaScript 数组</h3>
+<p>JavaScript 不支持使用名字来索引数组，只允许使用数字索引</p>
+<p>如果你使用名字作为索引，当访问数组时，JavaScript 会把数组重新定义为标准对象。</p>
+<p>执行这样操作后，数组的方法及属性将不能再使用，否则会产生错误（person.length输出为0）</p>
+<p>使用 <strong><code>new Array()</code></strong> 构造函数，通过 <strong><code>.length</code></strong> 获取数组长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var cars=new Array();</span><br><span class="line">cars[0]=&quot;Saab&quot;;</span><br><span class="line">cars[1]=&quot;Volvo&quot;;</span><br><span class="line">cars[2]=&quot;BMW&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);</span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117448.png" alt="" /></p>
+<h2 id="javascript-对象"><a class="markdownIt-Anchor" href="#javascript-对象"></a> JavaScript 对象</h2>
+<p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义</p>
+<h3 id="对象属性两种访问方式"><a class="markdownIt-Anchor" href="#对象属性两种访问方式"></a> 对象属性两种访问方式</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117449.png" alt="" /></p>
+<h3 id="对象方法"><a class="markdownIt-Anchor" href="#对象方法"></a> 对象方法</h3>
+<p>对象的方法定义了一个函数，并作为对象的属性存储。对象方法通过添加 () 调用 (作为一个函数)。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117450.png" alt="" /></p>
+<h3 id="typeofundefined-和-null"><a class="markdownIt-Anchor" href="#typeofundefined-和-null"></a> typeof，Undefined 和 Null</h3>
+<p>typeof 操作符来检测变量的数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typeof &quot;John&quot;         // 返回 string</span><br><span class="line">typeof 3.14          // 返回 number</span><br><span class="line">typeof NaN           // 返回 number</span><br><span class="line">typeof false         // 返回 boolean</span><br><span class="line">typeof [1,2,3,4]       // 返回 object</span><br><span class="line">typeof &#123;name:&#x27;John&#x27;, age:34&#125; // 返回 object</span><br><span class="line">typeof new Date()       // 返回 object</span><br><span class="line">typeof function () &#123;&#125;     // 返回 function</span><br><span class="line">typeof myCar         // 返回 undefined (如果 myCar 没有声明)</span><br><span class="line">typeof null          // 返回 object</span><br></pre></td></tr></table></figure>
+<p>Undefined 这个值表示变量不含有值。任何变量都可以通过设置值为 <strong>undefined</strong> 来清空</p>
+<p>null 表示 “什么都没有”，但类型为<strong>对象</strong>，是一个<strong>只有一个值的特殊类型</strong>。表示一个空对象引用。可以设置为 null 来清空变量。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117451.png" alt="" /></p>
+<p>在常规的比较==中，数据类型是被忽略的</p>
+<p>在严格的比较运算中，=== 为恒等计算符，同时检查表达式的值与类型</p>
+<h2 id="javascript-函数"><a class="markdownIt-Anchor" href="#javascript-函数"></a> JavaScript 函数</h2>
+<h3 id="调用带参数的函数"><a class="markdownIt-Anchor" href="#调用带参数的函数"></a> 调用带参数的函数</h3>
+<p>变量和参数必须以一致的顺序出现（第一个变量就是第一个被传递的参数的给定的值）</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117452.png" alt="" /></p>
+<h3 id="带有返回值的函数"><a class="markdownIt-Anchor" href="#带有返回值的函数"></a> 带有返回值的函数</h3>
+<p>使用 return 语句时，函数会停止执行，并返回指定的值</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117453.png" alt="" /></p>
+<h2 id="javascript-作用域"><a class="markdownIt-Anchor" href="#javascript-作用域"></a> JavaScript 作用域</h2>
+<p><strong>作用域为可访问变量，对象，函数的集合</strong></p>
+<h3 id="javascript-局部作用域"><a class="markdownIt-Anchor" href="#javascript-局部作用域"></a> JavaScript 局部作用域</h3>
+<p>局部变量：只能在函数内部访问，局部变量在函数开始执行时创建，函数执行完后局部变量会自动销毁，不同的函数可以使用相同名称的变量</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117454.png" alt="" /></p>
+<h3 id="javascript-全局变量"><a class="markdownIt-Anchor" href="#javascript-全局变量"></a> JavaScript 全局变量</h3>
+<p>全局变量有 <strong>全局作用域</strong>: 网页中所有脚本和函数均可使用</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117455.png" alt="" /></p>
+<p>如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117456.png" alt="" /></p>
+<h2 id="javascript-字符串"><a class="markdownIt-Anchor" href="#javascript-字符串"></a> JavaScript 字符串</h2>
+<p>JavaScript 字符串用于存储和处理文本</p>
+<p>字符串的索引从 0 开始，这意味着第一个字符索引值为 <strong>[0]</strong>，第二个为 <strong>[1]</strong>，以此类推</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117457.png" alt="" /></p>
+<h3 id="特殊字符"><a class="markdownIt-Anchor" href="#特殊字符"></a> 特殊字符</h3>
+<p>反斜杠是一个<strong>转义字符</strong>。 转义字符将特殊字符转换为字符串字符</p>
+<p>例如：可以在字符串中使用引号，字符串中的引号不要与字符串的引号相同（但可以在字符串添加转义字符来使用引号）</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117458.png" alt="" /></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117459.png" alt="" /></p>
+<h3 id="字符串长度"><a class="markdownIt-Anchor" href="#字符串长度"></a> 字符串长度</h3>
+<p>使用内置属性 <strong>length</strong> 来计算字符串的长度</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117460.png" alt="" /></p>
+<h3 id="模板字符串"><a class="markdownIt-Anchor" href="#模板字符串"></a> 模板字符串</h3>
+<p>模板字符串中可以同时使用单引号和双引号</p>
+<p>模板字符串还支持多行文本，而无需使用特殊的转义字符：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117461.png" alt="" /></p>
+<p>模板字面量还可以包含占位符——一种由美元符号和大括号分隔的嵌入式表达式：<strong>${expression}</strong></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117462.png" alt="" /></p>
+<h2 id="javascript-运算符"><a class="markdownIt-Anchor" href="#javascript-运算符"></a> JavaScript 运算符</h2>
+<h3 id="用于字符串的-运算符"><a class="markdownIt-Anchor" href="#用于字符串的-运算符"></a> 用于字符串的 + 运算符</h3>
+<p>+ 运算符用于把文本值或字符串变量加起来（连接起来）</p>
+<p>如需把两个或多个字符串变量连接起来，请使用 <strong>+</strong> 运算符</p>
+<p>要想在两个字符串之间增加空格，需要把空格插入一个字符串之中或者把空格插入表达式中(txt3=txt1+&quot; &quot;+txt2)</p>
+<p>**规则:**如果把数字与字符串相加，结果将成为字符串！</p>
+<h3 id="条件运算符"><a class="markdownIt-Anchor" href="#条件运算符"></a> 条件运算符</h3>
+<p><em>variablename</em>=(<em>condition</em>)?<em>value1</em>:<em>value2</em></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117463.png" alt="" /></p>
+<p><strong>加法</strong>是两个<strong>数字</strong>相加。</p>
+<p><strong>连接</strong>是两个<strong>字符串</strong>连接。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x = 10 + 5;     // x 的结果为 15</span><br><span class="line">var x = 10 + &quot;5&quot;;    // x 的结果为 &quot;105&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="javascript循环"><a class="markdownIt-Anchor" href="#javascript循环"></a> JavaScript循环</h2>
+<h3 id=""><a class="markdownIt-Anchor" href="#"></a> <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117464.png" alt="" /></h3>
+<p>在 switch 语句中，用恒等计算符(===)进行比较</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var x = 10;</span><br><span class="line">switch(x) &#123;</span><br><span class="line">  case 10: alert(&quot;Hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上例会出现弹窗</p>
+<h2 id="javascript-类型转换"><a class="markdownIt-Anchor" href="#javascript-类型转换"></a> JavaScript 类型转换</h2>
+<h3 id="constructor-属性"><a class="markdownIt-Anchor" href="#constructor-属性"></a> constructor 属性</h3>
+<p><strong>constructor</strong> 属性返回所有 JavaScript 变量的构造函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot;John&quot;.constructor         // 返回函数 String() &#123; [native code] &#125;</span><br><span class="line">(3.14).constructor         // 返回函数 Number() &#123; [native code] &#125;</span><br><span class="line">false.constructor         // 返回函数 Boolean() &#123; [native code] &#125;</span><br><span class="line">[1,2,3,4].constructor       // 返回函数 Array()  &#123; [native code] &#125;</span><br><span class="line">&#123;name:&#x27;John&#x27;, age:34&#125;.constructor // 返回函数 Object() &#123; [native code] &#125;</span><br><span class="line">new Date().constructor       // 返回函数 Date()  &#123; [native code] &#125;</span><br><span class="line">function () &#123;&#125;.constructor     // 返回函数 Function()&#123; [native code] &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="javascript-类型转换-2"><a class="markdownIt-Anchor" href="#javascript-类型转换-2"></a> JavaScript 类型转换</h3>
+<p>JavaScript 变量可以转换为新变量或其他数据类型</p>
+<h4 id="将数字转换为字符串"><a class="markdownIt-Anchor" href="#将数字转换为字符串"></a> 将数字转换为字符串</h4>
+<p>全局方法 <strong>String()</strong> 可以将数字，字母，变量，表达式转换为字符串</p>
+<p>String(x)  String(123)</p>
+<p>Number 方法 <strong>toString()</strong> 也是</p>
+<p>x.toString()   (123).toString()</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">toExponential()</td>
+<td style="text-align:left">把对象的值转换为指数计数法。</td>
+</tr>
+<tr>
+<td style="text-align:left">toFixed()</td>
+<td style="text-align:left">把数字转换为字符串，结果的小数点后有指定位数的数字。</td>
+</tr>
+<tr>
+<td style="text-align:left">toPrecision()</td>
+<td style="text-align:left">把数字格式化为指定的长度。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="将布尔值转换为字符串"><a class="markdownIt-Anchor" href="#将布尔值转换为字符串"></a> 将布尔值转换为字符串</h4>
+<p>全局方法 <strong>String()</strong></p>
+<p>Boolean 方法 <strong>toString()</strong></p>
+<h4 id="将日期转换为字符串"><a class="markdownIt-Anchor" href="#将日期转换为字符串"></a> 将日期转换为字符串</h4>
+<p>Date() 返回字符串。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date()  </span><br></pre></td></tr></table></figure>
+<p>全局方法 String() 可以将日期对象转换为字符串。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(new Date())  </span><br></pre></td></tr></table></figure>
+<p>Date 方法 <strong>toString()</strong> 也有相同的效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj = new Date()</span><br><span class="line">obj.toString() </span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">getDate()</td>
+<td style="text-align:left">从 Date 对象返回一个月中的某一天 (1 ~ 31)。</td>
+</tr>
+<tr>
+<td style="text-align:left">getDay()</td>
+<td style="text-align:left">从 Date 对象返回一周中的某一天 (0 ~ 6)。</td>
+</tr>
+<tr>
+<td style="text-align:left">getFullYear()</td>
+<td style="text-align:left">从 Date 对象以四位数字返回年份。</td>
+</tr>
+<tr>
+<td style="text-align:left">getHours()</td>
+<td style="text-align:left">返回 Date 对象的小时 (0 ~ 23)。</td>
+</tr>
+<tr>
+<td style="text-align:left">getMilliseconds()</td>
+<td style="text-align:left">返回 Date 对象的毫秒(0 ~ 999)。</td>
+</tr>
+<tr>
+<td style="text-align:left">getMinutes()</td>
+<td style="text-align:left">返回 Date 对象的分钟 (0 ~ 59)。</td>
+</tr>
+<tr>
+<td style="text-align:left">getMonth()</td>
+<td style="text-align:left">从 Date 对象返回月份 (0 ~ 11)。</td>
+</tr>
+<tr>
+<td style="text-align:left">getSeconds()</td>
+<td style="text-align:left">返回 Date 对象的秒数 (0 ~ 59)。</td>
+</tr>
+<tr>
+<td style="text-align:left">getTime()</td>
+<td style="text-align:left">返回 1970 年 1 月 1 日至今的毫秒数。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="将字符串转换为数字"><a class="markdownIt-Anchor" href="#将字符串转换为数字"></a> 将字符串转换为数字</h4>
+<p>全局方法 <strong>Number()</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Number(&quot;3.14&quot;)  // 返回 3.14</span><br><span class="line">Number(&quot; &quot;)    // 返回 0</span><br><span class="line">Number(&quot;&quot;)    // 返回 0</span><br><span class="line">Number(&quot;99 88&quot;)  // 返回 NaN</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">parseFloat()</td>
+<td style="text-align:left">解析一个字符串，并返回一个浮点数。</td>
+</tr>
+<tr>
+<td style="text-align:left">parseInt()</td>
+<td style="text-align:left">解析一个字符串，并返回一个整数。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="将布尔值转换为数字"><a class="markdownIt-Anchor" href="#将布尔值转换为数字"></a> 将布尔值转换为数字</h4>
+<p>全局方法 <strong>Number()</strong></p>
+<h4 id="将日期转换为数字"><a class="markdownIt-Anchor" href="#将日期转换为数字"></a> 将日期转换为数字</h4>
+<p>全局方法 <strong>Number()</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = new Date();</span><br><span class="line">Number(d)</span><br></pre></td></tr></table></figure>
+<p>日期方法 <strong>getTime()</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = new Date();</span><br><span class="line">d.getTime()  </span><br></pre></td></tr></table></figure>
+<h4 id="自动转换为字符串"><a class="markdownIt-Anchor" href="#自动转换为字符串"></a> 自动转换为字符串</h4>
+<p>当你尝试输出一个对象或一个变量时 JavaScript 会自动调用变量的 toString() 方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;demo&quot;).innerHTML = myVar;</span><br><span class="line"></span><br><span class="line">myVar = &#123;name:&quot;Fjohn&quot;&#125; // toString 转换为 &quot;[object Object]&quot;</span><br><span class="line">myVar = [1,2,3,4]    // toString 转换为 &quot;1,2,3,4&quot;</span><br><span class="line">myVar = new Date()   // toString 转换为 &quot;Fri Jul 18 2014 09:08:55 GMT+0200&quot;</span><br></pre></td></tr></table></figure>
+<p>数字和布尔值也经常相互转换：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myVar = 123       // toString 转换为 &quot;123&quot;</span><br><span class="line">myVar = true       // toString 转换为 &quot;true&quot;</span><br><span class="line">myVar = false      // toString 转换为 &quot;false&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="javascript-正则表达式"><a class="markdownIt-Anchor" href="#javascript-正则表达式"></a> JavaScript 正则表达式</h2>
+<p>使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式</p>
+<p>正则表达式可用于所有文本搜索和文本替换的操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/正则表达式主体/修饰符(可选)</span><br></pre></td></tr></table></figure>
+<p>var patt = /runoob/i</p>
+<p><strong>/runoob/i</strong> 是一个正则表达式。<strong>runoob</strong> 是一个<strong>正则表达式主体</strong> (用于检索)。<strong>i</strong> 是一个<strong>修饰符</strong> (搜索不区分大小写)</p>
+<h3 id="字符串的使用"><a class="markdownIt-Anchor" href="#字符串的使用"></a> 字符串的使用</h3>
+<p><strong>search()</strong> 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。</p>
+<p><strong>replace()</strong> 方法用于在字符串中用一些字符串替换另一些字符串，或替换一个与正则表达式匹配的子串。</p>
+<h3 id="regexp-对象"><a class="markdownIt-Anchor" href="#regexp-对象"></a> RegExp 对象</h3>
+<h3 id="test使用"><a class="markdownIt-Anchor" href="#test使用"></a> test()使用</h3>
+<p>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true</p>
+<p>搜索字符串中的字符 “e”：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var patt = /e/;</span><br><span class="line">patt.test(&quot;The best things in life are free!&quot;);</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/e/.test(&quot;The best things in life are free!&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="exec使用"><a class="markdownIt-Anchor" href="#exec使用"></a> exec()使用</h3>
+<p>exec() 方法用于检索字符串中的正则表达式的匹配。该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var patt1=new RegExp(&quot;e&quot;);</span><br><span class="line">document.write(patt1.exec(&quot;The best things in life are free&quot;));</span><br></pre></td></tr></table></figure>
+<p>输出为e</p>
+<h2 id="javascript-错误"><a class="markdownIt-Anchor" href="#javascript-错误"></a> JavaScript 错误</h2>
+<h3 id="throw语句创建自定义错误"><a class="markdownIt-Anchor" href="#throw语句创建自定义错误"></a> throw语句创建自定义错误</h3>
+<h3 id="try-语句测试代码块的错误"><a class="markdownIt-Anchor" href="#try-语句测试代码块的错误"></a> <strong>try</strong> 语句测试代码块的错误</h3>
+<h3 id="catch-语句处理错误"><a class="markdownIt-Anchor" href="#catch-语句处理错误"></a> <strong>catch</strong> 语句处理错误</h3>
+<h3 id="finally-语句"><a class="markdownIt-Anchor" href="#finally-语句"></a> finally 语句</h3>
+<p>finally 语句不论之前的 try 和 catch 中是否产生异常都会执行该代码块</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117465.png" alt="" /></p>
+<h2 id="javascript-表单"><a class="markdownIt-Anchor" href="#javascript-表单"></a> JavaScript 表单</h2>
+<h3 id="javascript-表单验证"><a class="markdownIt-Anchor" href="#javascript-表单验证"></a> JavaScript 表单验证</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117466.png" alt="" /></p>
+<h3 id="javascript-验证输入的数字"><a class="markdownIt-Anchor" href="#javascript-验证输入的数字"></a> JavaScript 验证输入的数字</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117467.png" alt="" /></p>
+<h2 id="javascript关键字"><a class="markdownIt-Anchor" href="#javascript关键字"></a> JavaScript关键字</h2>
+<h3 id="this"><a class="markdownIt-Anchor" href="#this"></a> this</h3>
+<h4 id="方法中的-this"><a class="markdownIt-Anchor" href="#方法中的-this"></a> 方法中的 this</h4>
+<p>this 指向调用它所在方法的对象</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117468.png" alt="" /></p>
+<h4 id="单独使用-this"><a class="markdownIt-Anchor" href="#单独使用-this"></a> 单独使用 this</h4>
+<p>单独使用 this，则它指向全局(Global)对象</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117469.png" alt="" /></p>
+<h4 id="函数中使用-this"><a class="markdownIt-Anchor" href="#函数中使用-this"></a> 函数中使用 this</h4>
+<p>在函数中，函数的所属者默认绑定到 this 上</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117470.png" alt="" /></p>
+<p>严格模式下，<strong>this</strong> 为 <strong>undefined</strong>，因为严格模式下不允许默认绑定</p>
+<h4 id="事件中的-this"><a class="markdownIt-Anchor" href="#事件中的-this"></a> 事件中的 this</h4>
+<p>this 指向了接收事件的 HTML 元素</p>
+<h4 id="对象方法中绑定"><a class="markdownIt-Anchor" href="#对象方法中绑定"></a> 对象方法中绑定</h4>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117471.png" alt="" /></p>
+<p>this 是 person 对象，person 对象是函数的所有者</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117472.png" alt="" /></p>
+<p><strong>this.firstName</strong> 表示 <strong>this</strong> (person) 对象的 <strong>firstName</strong> 属性</p>
+<h4 id="显式函数绑定"><a class="markdownIt-Anchor" href="#显式函数绑定"></a> 显式函数绑定</h4>
+<p>函数也是对象，对象则有方法，apply 和 call 就是函数对象的方法，他们允许切换函数执行的上下文环境（context），即 this 绑定的对象</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117473.png" alt="" /></p>
+<h3 id="let"><a class="markdownIt-Anchor" href="#let"></a> let</h3>
+<p>let 声明的变量只在 let 命令所在的代码块 <strong>{}</strong> 内有效，在 <strong>{}</strong> 之外不能访问</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117474.png" alt="" /></p>
+<p>在相同的作用域或块级作用域中，不能使用 <strong>let</strong> 关键字来重置 <strong>let</strong> 关键字声明的变量</p>
+<h3 id="const"><a class="markdownIt-Anchor" href="#const"></a> const</h3>
+<p>const 用于声明一个或多个常量，声明时<strong>必须进行初始化</strong>，定义常量的值不能通过再赋值修改，也不能再次声明</p>
+<p>const 定义的变量并非常量，并非不可变，它定义了一个常量引用一个值。使用 const 定义的对象或者数组，其实是可变的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 创建常量对象</span><br><span class="line">const car = &#123;type:&quot;Fiat&quot;, model:&quot;500&quot;, color:&quot;white&quot;&#125;;</span><br><span class="line"></span><br><span class="line">// 修改属性:</span><br><span class="line">car.color = &quot;red&quot;;</span><br><span class="line"></span><br><span class="line">// 添加属性</span><br><span class="line">car.owner = &quot;Johnson&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 创建常量数组</span><br><span class="line">const cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];</span><br><span class="line"></span><br><span class="line">// 修改元素</span><br><span class="line">cars[0] = &quot;Toyota&quot;;</span><br><span class="line"></span><br><span class="line">// 添加元素</span><br><span class="line">cars.push(&quot;Audi&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="void"><a class="markdownIt-Anchor" href="#void"></a> void</h3>
+<p>指定要计算一个表达式但是不返回值</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20241225001117475.png" alt="" /></p>
+<p>href=&quot;#&quot;与href=&quot;javascript:void(0)&quot;的区别</p>
+<p><strong>#</strong> 包含了一个位置信息，默认的锚是**#top** 也就是网页的上端。而javascript:void(0), 仅仅表示一个死链接。在页面很长的时候会使用 <strong>#</strong> 来定位页面的具体位置，格式为：<strong># + id</strong></p>
+<h2 id="javascript-json"><a class="markdownIt-Anchor" href="#javascript-json"></a> JavaScript JSON</h2>
+<p>JSON 是用于存储和传输数据的格式， 通常用于服务端向网页传递数据</p>
+<h3 id="json-数组"><a class="markdownIt-Anchor" href="#json-数组"></a> JSON 数组</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;sites&quot;:[</span><br><span class="line">    &#123;&quot;name&quot;:&quot;Runoob&quot;, &quot;url&quot;:&quot;www.runoob.com&quot;&#125;, </span><br><span class="line">    &#123;&quot;name&quot;:&quot;Google&quot;, &quot;url&quot;:&quot;www.google.com&quot;&#125;,</span><br><span class="line">    &#123;&quot;name&quot;:&quot;Taobao&quot;, &quot;url&quot;:&quot;www.taobao.com&quot;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="json-字符串转换为-javascript-对象"><a class="markdownIt-Anchor" href="#json-字符串转换为-javascript-对象"></a> JSON 字符串转换为 JavaScript 对象</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var text = &#x27;&#123; &quot;sites&quot; : [&#x27; +</span><br><span class="line">    &#x27;&#123; &quot;name&quot;:&quot;Runoob&quot; , &quot;url&quot;:&quot;www.runoob.com&quot; &#125;,&#x27; +</span><br><span class="line">    &#x27;&#123; &quot;name&quot;:&quot;Google&quot; , &quot;url&quot;:&quot;www.google.com&quot; &#125;,&#x27; +</span><br><span class="line">    &#x27;&#123; &quot;name&quot;:&quot;Taobao&quot; , &quot;url&quot;:&quot;www.taobao.com&quot; &#125; ]&#125;&#x27;;</span><br><span class="line">    </span><br><span class="line">obj = JSON.parse(text);</span><br><span class="line">document.getElementById(&quot;demo&quot;).innerHTML = obj.sites[1].name + &quot; &quot; + obj.sites[1].url;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/js/javascript-json-parse.html">JSON.parse()</a></td>
+<td style="text-align:left">用于将一个 JSON 字符串转换为 JavaScript 对象。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/js/javascript-json-stringify.html">JSON.stringify()</a></td>
+<td style="text-align:left">用于将 JavaScript 值转换为 JSON 字符串。</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">legend</span>&gt;</span>BMI计算器<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;meter&quot;</span>&gt;</span> 身高(m)<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;meter&quot;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;weight&quot;</span>&gt;</span> 体重(kg)<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;weight&quot;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;myFunction()&quot;</span>&gt;</span>获取BMI<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;bmi&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> meter,weight,bmii,a;</span></span><br><span class="line"><span class="language-javascript">            meter=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;meter&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">            weight=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;weight&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">            bmii=(weight/(meter*meter)).<span class="title function_">toFixed</span>(<span class="number">2</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span> (<span class="built_in">isNaN</span>(meter)||<span class="built_in">isNaN</span>(weight)||meter &lt;= <span class="number">0</span>||weight &lt;= <span class="number">0</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bmi&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&quot;请正确填写身高和体重！&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">return</span>;</span></span><br><span class="line"><span class="language-javascript">              &#125;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span>(bmii&lt;<span class="number">18.5</span>)a=<span class="string">&quot;体重过低&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">else</span> <span class="keyword">if</span>(bmii&gt;=<span class="number">24</span>)a=<span class="string">&quot;体重过高&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">else</span> a=<span class="string">&quot;正常&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;bmi&quot;</span>).<span class="property">innerHTML</span>=bmii+a;</span></span><br><span class="line"><span class="language-javascript">            </span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="button元素"><a class="markdownIt-Anchor" href="#button元素"></a> button元素</h2>
+<p>常用于触发某些操作或事件，如提交表单、执行 JavaScript 函数等。你可以通过 <code>&lt;button&gt;</code> 元素来创建各种类型的按钮，并且可以为它们添加不同的属性和事件监听器</p>
+<h3 id="常用属性"><a class="markdownIt-Anchor" href="#常用属性"></a> 常用属性</h3>
+<h4 id="type-属性"><a class="markdownIt-Anchor" href="#type-属性"></a> <code>type</code> 属性</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;button&quot;&gt;普通按钮&lt;/button&gt; </span><br><span class="line">&lt;button type=&quot;submit&quot;&gt;提交按钮&lt;/button&gt; </span><br><span class="line">&lt;button type=&quot;reset&quot;&gt;重置按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="disabled-属性"><a class="markdownIt-Anchor" href="#disabled-属性"></a> <code>disabled</code> 属性</h4>
+<p>禁用按钮，用户无法点击</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button disabled&gt;禁用按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="autofocus-属性"><a class="markdownIt-Anchor" href="#autofocus-属性"></a> <code>autofocus</code> 属性</h4>
+<p>页面加载时，自动聚焦到按钮</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button autofocus&gt;自动聚焦按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="name-属性"><a class="markdownIt-Anchor" href="#name-属性"></a> <code>name</code> 属性</h4>
+<p>为按钮指定名称，通常在表单提交时使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button name=&quot;submitBtn&quot; type=&quot;submit&quot;&gt;提交&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="value-属性"><a class="markdownIt-Anchor" href="#value-属性"></a> <code>value</code> 属性</h4>
+<p>为按钮指定一个值，通常配合 <code>type=&quot;submit&quot;</code> 使用，表示提交时传递的参数值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;submit&quot; value=&quot;submitForm&quot;&gt;提交表单&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-javascript-与按钮交互"><a class="markdownIt-Anchor" href="#使用-javascript-与按钮交互"></a> 使用 JavaScript 与按钮交互</h3>
+<p>可以使用 JavaScript 为按钮添加点击事件，执行特定的操作</p>
+<p>可以通过 <code>addEventListener()</code> 方法绑定多个事件，支持复杂的事件处理和监听</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&#x27;按钮被点击！&#x27;)&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // 也可以通过 JavaScript 来绑定事件</span><br><span class="line">  const button = document.querySelector(&quot;button&quot;);</span><br><span class="line">  button.addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;按钮被点击！&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="动态按钮"><a class="markdownIt-Anchor" href="#动态按钮"></a> 动态按钮</h3>
+<p>按钮可以通过 JavaScript 来动态改变文本、颜色或状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot; onclick=&quot;changeText()&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function changeText() &#123;</span><br><span class="line">    const button = document.getElementById(&quot;myButton&quot;);</span><br><span class="line">    button.innerHTML = &quot;按钮已被点击&quot;;</span><br><span class="line">    button.style.backgroundColor = &quot;red&quot;;</span><br><span class="line">    button.disabled = true; // 禁用按钮</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="onclick与addeventlistener"><a class="markdownIt-Anchor" href="#onclick与addeventlistener"></a> onclick与addEventListener()</h2>
+<h3 id="oncllick"><a class="markdownIt-Anchor" href="#oncllick"></a> oncllick</h3>
+<p>一个 HTML 事件属性，用于在用户点击某个元素时触发指定的 JavaScript 函数或代码。这个事件最常见的用法是在<strong>按钮、链接或任何可点击的元素上绑定点击事件</strong></p>
+<h4 id="基本用法"><a class="markdownIt-Anchor" href="#基本用法"></a> 基本用法</h4>
+<h5 id="在-html-中使用-onclick"><a class="markdownIt-Anchor" href="#在-html-中使用-onclick"></a> 在 HTML 中使用 <code>onclick</code></h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&#x27;按钮被点击了！&#x27;)&quot;&gt;点击我&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="调用-javascript-函数"><a class="markdownIt-Anchor" href="#调用-javascript-函数"></a> 调用 JavaScript 函数</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;myFunction()&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function myFunction() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="通过-javascript-动态绑定-onclick-事件"><a class="markdownIt-Anchor" href="#通过-javascript-动态绑定-onclick-事件"></a> 通过 JavaScript 动态绑定 <code>onclick</code> 事件</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  document.getElementById(&#x27;myButton&#x27;).onclick = function() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>使用 JavaScript 选择了 ID 为 <code>myButton</code> 的按钮，并为其添加了一个 <code>onclick</code> 事件监听器</p>
+<h4 id="通过-onclick-传递事件对象event"><a class="markdownIt-Anchor" href="#通过-onclick-传递事件对象event"></a> 通过 <code>onclick</code> 传递事件对象（<code>event</code>）</h4>
+<p>获取有关事件的更多信息（如点击位置、目标元素等）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;myFunction(event)&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function myFunction(event) &#123;</span><br><span class="line">    alert(&#x27;点击位置：X = &#x27; + event.clientX + &#x27;, Y = &#x27; + event.clientY);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>此例中，<code>event</code> 对象包含了有关点击事件的信息，如鼠标的 <code>clientX</code> 和 <code>clientY</code> 坐标</p>
+<h4 id="使用-eventpreventdefault阻止默认行为"><a class="markdownIt-Anchor" href="#使用-eventpreventdefault阻止默认行为"></a> 使用 <code>event.preventDefault()</code>阻止默认行为</h4>
+<p>阻止点击事件的默认行为（如点击链接时跳转、提交表单等）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.example.com&quot; onclick=&quot;preventDefaultAction(event)&quot;&gt;点击我&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function preventDefaultAction(event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    alert(&#x27;默认行为已被阻止&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="使用-this-引用当前元素"><a class="markdownIt-Anchor" href="#使用-this-引用当前元素"></a> 使用 <code>this</code> 引用当前元素</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;showMessage(this)&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function showMessage(button) &#123;</span><br><span class="line">    alert(&#x27;按钮的文本是：&#x27; + button.innerText);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>例子中，<code>this</code> 代表按钮本身，<code>button.innerText</code> 获取按钮的文本内容</p>
+<h3 id="addeventlistener"><a class="markdownIt-Anchor" href="#addeventlistener"></a> addEventListener()</h3>
+<p>是 JavaScript 中用于向元素添加事件监听器的方法。与 <code>onclick</code> 属性相比，<code>addEventListener()</code> 更加灵活和强大，它<strong>允许绑定多个事件监听器</strong>，并且能够更好地控制事件传播、捕获与冒泡机制</p>
+<h4 id="基本语法"><a class="markdownIt-Anchor" href="#基本语法"></a> 基本语法</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(event, function, useCapture);</span><br></pre></td></tr></table></figure>
+<p><strong><code>event</code></strong>：事件类型（如 <code>&quot;click&quot;</code>、<code>&quot;mouseover&quot;</code>、<code>&quot;keydown&quot;</code> 等）。</p>
+<p><strong><code>function</code></strong>：事件触发时执行的回调函数。</p>
+<p><strong><code>useCapture</code></strong>（可选）：一个布尔值，指定事件是应该在捕获阶段触发（<code>true</code>事件从文档的根节点到达目标元素），还是在冒泡阶段触发（<code>false</code>事件从目标元素返回到文档的根节点）。默认值为 <code>false</code>。</p>
+<h4 id="基本用法-2"><a class="markdownIt-Anchor" href="#基本用法-2"></a> 基本用法</h4>
+<h5 id="添加点击事件监听器"><a class="markdownIt-Anchor" href="#添加点击事件监听器"></a> 添加点击事件监听器</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  // 添加点击事件监听器</span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="传递事件对象"><a class="markdownIt-Anchor" href="#传递事件对象"></a> 传递事件对象</h5>
+<p><code>addEventListener()</code> 方法会自动传递一个事件对象给回调函数，可以通过该对象获取更多关于事件的信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function(event) &#123;</span><br><span class="line">    alert(&#x27;点击位置：X = &#x27; + event.clientX + &#x27;, Y = &#x27; + event.clientY);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="使用-this-访问触发事件的元素"><a class="markdownIt-Anchor" href="#使用-this-访问触发事件的元素"></a> 使用 <code>this</code> 访问触发事件的元素</h5>
+<p>在 <code>addEventListener()</code> 中，<code>this</code> 通常指向触发事件的元素。因此，可以使用 <code>this</code> 来访问该元素的属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;按钮的文本是：&#x27; + this.innerText);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="添加多个事件监听器"><a class="markdownIt-Anchor" href="#添加多个事件监听器"></a> 添加多个事件监听器</h4>
+<p><code>addEventListener()</code> 允许你为同一个元素添加多个事件监听器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;第一个事件&#x27;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    alert(&#x27;第二个事件&#x27;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>例子中，当按钮被点击时，两个警告框会依次弹出</p>
+<h4 id="移除事件监听器"><a class="markdownIt-Anchor" href="#移除事件监听器"></a> 移除事件监听器</h4>
+<p>用 <code>removeEventListener()</code> 方法来移除已经添加的事件监听器。需要注意的是，<code>removeEventListener()</code> 只能移除通过 <code>addEventListener()</code> 添加的事件监听器，并且需要传递相同的事件类型和回调函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;myButton&quot;&gt;点击我&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const button = document.getElementById(&#x27;myButton&#x27;);</span><br><span class="line"></span><br><span class="line">  function handleClick() &#123;</span><br><span class="line">    alert(&#x27;按钮被点击了！&#x27;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  button.addEventListener(&#x27;click&#x27;, handleClick);</span><br><span class="line"></span><br><span class="line">  // 移除事件监听器</span><br><span class="line">  button.removeEventListener(&#x27;click&#x27;, handleClick);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="javascript-html-dom"><a class="markdownIt-Anchor" href="#javascript-html-dom"></a> JavaScript HTML DOM</h1>
+<h2 id="dom-html"><a class="markdownIt-Anchor" href="#dom-html"></a> DOM HTML</h2>
+<h3 id="查找-html-元素"><a class="markdownIt-Anchor" href="#查找-html-元素"></a> 查找 HTML 元素</h3>
+<h4 id="通过-id-找到-html-元素"><a class="markdownIt-Anchor" href="#通过-id-找到-html-元素"></a> 通过 id 找到 HTML 元素</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;intro&quot;&gt;你好世界!&lt;/p&gt;</span><br><span class="line">&lt;p&gt;该实例展示了 &lt;b&gt;getElementById&lt;/b&gt; 方法!&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">x=document.getElementById(&quot;intro&quot;);</span><br><span class="line">document.write(&quot;&lt;p&gt;文本来自 id 为 intro 段落: &quot; + x.innerHTML + &quot;&lt;/p&gt;&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="通过标签名找到-html-元素"><a class="markdownIt-Anchor" href="#通过标签名找到-html-元素"></a> 通过标签名找到 HTML 元素</h4>
+<p>查找 id=“main” 的元素，然后查找 id=“main” 元素中的所有 <code>&lt;p&gt;</code> 元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;你好世界!&lt;/p&gt;</span><br><span class="line">&lt;div id=&quot;main&quot;&gt;</span><br><span class="line">&lt;p&gt; DOM 是非常有用的。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;该实例展示了  &lt;b&gt;getElementsByTagName&lt;/b&gt; 方法&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x=document.getElementById(&quot;main&quot;);</span><br><span class="line">var y=x.getElementsByTagName(&quot;p&quot;);</span><br><span class="line">document.write(&#x27;id=&quot;main&quot;元素中的第一个段落为：&#x27; + y[0].innerHTML);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="通过类名找到-html-元素"><a class="markdownIt-Anchor" href="#通过类名找到-html-元素"></a> 通过类名找到 HTML 元素</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;intro&quot;&gt;你好世界!&lt;/p&gt;</span><br><span class="line">&lt;p&gt;该实例展示了 &lt;b&gt;getElementsByClassName&lt;/b&gt; 方法!&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">x=document.getElementsByClassName(&quot;intro&quot;);</span><br><span class="line">document.write(&quot;&lt;p&gt;文本来自 class 为 intro 段落: &quot; + x[0].innerHTML + &quot;&lt;/p&gt;&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="改变html"><a class="markdownIt-Anchor" href="#改变html"></a> 改变HTML</h3>
+<h4 id="改变-html-输出流"><a class="markdownIt-Anchor" href="#改变-html-输出流"></a> 改变 HTML 输出流</h4>
+<p>在 JavaScript 中，<code>document.write()</code> 可用于直接向 HTML 输出流写内容</p>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>绝对不要在文档(DOM)加载完成之后使用 document.write()。这会覆盖该文档</p>
+</blockquote>
+<h4 id="改变-html-内容"><a class="markdownIt-Anchor" href="#改变-html-内容"></a> 改变 HTML 内容</h4>
+<p>修改 HTML 内容的最简单的方法是使用 innerHTML 属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(id).innerHTML=新的 HTML</span><br></pre></td></tr></table></figure>
+<h4 id="改变-html-属性"><a class="markdownIt-Anchor" href="#改变-html-属性"></a> 改变 HTML 属性</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(id).attribute=新属性值</span><br></pre></td></tr></table></figure>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250123193811849.png" alt="" /></p>
+<h2 id="dom-css"><a class="markdownIt-Anchor" href="#dom-css"></a> DOM CSS</h2>
+<h3 id="改变-html-样式"><a class="markdownIt-Anchor" href="#改变-html-样式"></a> 改变 HTML 样式</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(id).style.property=新样式</span><br></pre></td></tr></table></figure>
+<h3 id="使用事件"><a class="markdownIt-Anchor" href="#使用事件"></a> 使用事件</h3>
+<p>HTML DOM 允许我们通过触发事件来执行代码</p>
+<p>比如事件：元素被点击。页面加载完成。输入框被修改。</p>
+<p>下例改变字体颜色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 id=&quot;id1&quot;&gt;我的标题 1&lt;/h1&gt;</span><br><span class="line">&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&#x27;id1&#x27;).style.color=&#x27;red&#x27;&quot;&gt;</span><br><span class="line">点我!&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>下例使元素显示或消失</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;p1&quot;&gt;这是一个文本。&lt;/p&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;隐藏文本&quot; onclick=&quot;document.getElementById(&#x27;p1&#x27;).style.visibility=&#x27;hidden&#x27;&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;显示文本&quot; onclick=&quot;document.getElementById(&#x27;p1&#x27;).style.visibility=&#x27;visible&#x27;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="dom-事件"><a class="markdownIt-Anchor" href="#dom-事件"></a> DOM 事件</h2>
+<h3 id="对事件做出反应"><a class="markdownIt-Anchor" href="#对事件做出反应"></a> 对事件做出反应</h3>
+<p>用户点击某个元素时执行代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 onclick=&quot;this.innerHTML=&#x27;Ooops!&#x27;&quot;&gt;点击文本!&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 onclick=&quot;changetext(this)&quot;&gt;点击文本!&lt;/h1&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function changetext(id)&#123;</span><br><span class="line">    id.innerHTML=&quot;Ooops!&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="html事件属性"><a class="markdownIt-Anchor" href="#html事件属性"></a> HTML事件属性</h3>
+<p>如需向 HTML 元素分配 事件，可以使用事件属性</p>
+<p>如向 button 元素分配 onclick 事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;点击按钮执行 &lt;em&gt;displayDate()&lt;/em&gt; 函数.&lt;/p&gt;</span><br><span class="line">&lt;button onclick=&quot;displayDate()&quot;&gt;点这里&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function displayDate()&#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML=Date();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用html-dom-来分配事件"><a class="markdownIt-Anchor" href="#使用html-dom-来分配事件"></a> 使用HTML DOM 来分配事件</h3>
+<p>如向 button 元素分配 onclick 事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;点击按钮执行 &lt;em&gt;displayDate()&lt;/em&gt; 函数.&lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点这里&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;myBtn&quot;).onclick=function()&#123;displayDate()&#125;;</span><br><span class="line">function displayDate()&#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML=Date();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>上例中，名为 displayDate 的函数被分配给 id=“myBtn” 的 HTML 元素。</p>
+<p>按钮点击时Javascript函数将会被执行</p>
+<h3 id="onload和onunload事件"><a class="markdownIt-Anchor" href="#onload和onunload事件"></a> onload和onunload事件</h3>
+<p>onload 和 onunload 事件会在用户进入或离开页面时被触发</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。</p>
+<p>onload 和 onunload 事件可用于处理 cookie</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=&quot;checkCookies()&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function checkCookies()&#123;</span><br><span class="line">    if (navigator.cookieEnabled==true)&#123;</span><br><span class="line">        alert(&quot;Cookies 可用&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        alert(&quot;Cookies 不可用&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;p&gt;弹窗-提示浏览器 cookie 是否可用。&lt;/p&gt;    </span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="onchange事件"><a class="markdownIt-Anchor" href="#onchange事件"></a> onchange事件</h3>
+<p>onchange 事件常结合对输入字段的验证来使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function myFunction()&#123;</span><br><span class="line">    var x=document.getElementById(&quot;fname&quot;);</span><br><span class="line">    x.value=x.value.toUpperCase();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">输入你的名字: &lt;input type=&quot;text&quot; id=&quot;fname&quot; onchange=&quot;myFunction()&quot;&gt;</span><br><span class="line">&lt;p&gt;当你离开输入框后，函数将被触发，将小写字母转为大写字母。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="onmouseover-和-onmouseout-事件"><a class="markdownIt-Anchor" href="#onmouseover-和-onmouseout-事件"></a> onmouseover 和 onmouseout 事件</h3>
+<p>onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onmouseover=&quot;mOver(this)&quot; onmouseout=&quot;mOut(this)&quot;&gt;Mouse Over Me&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function mOver(obj)&#123;</span><br><span class="line">    obj.innerHTML=&quot;Thank You&quot;</span><br><span class="line">&#125;</span><br><span class="line">function mOut(obj)&#123;</span><br><span class="line">    obj.innerHTML=&quot;Mouse Over Me&quot;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="onmousedown-onmouseup-以及-onclick-事件"><a class="markdownIt-Anchor" href="#onmousedown-onmouseup-以及-onclick-事件"></a> onmousedown、onmouseup 以及 onclick 事件</h3>
+<p>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件</p>
+<h2 id="dom-eventlistener"><a class="markdownIt-Anchor" href="#dom-eventlistener"></a> DOM EventListener</h2>
+<h3 id="addeventlistener-方法"><a class="markdownIt-Anchor" href="#addeventlistener-方法"></a> addEventListener() 方法</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;该实例使用 addEventListener() 方法在按钮中添加点击事件。 &lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, displayDate);</span><br><span class="line">function displayDate() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML = Date();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(event, function, useCapture);</span><br></pre></td></tr></table></figure>
+<p>第一个参数是事件的类型 (如 “click” 或 “mousedown”).</p>
+<p>第二个参数是事件触发后调用的函数。</p>
+<p>第三个参数是个布尔值用于描述事件是冒泡还是捕获。该参数是可选的。</p>
+<h3 id="向原元素添加事件句柄"><a class="markdownIt-Anchor" href="#向原元素添加事件句柄"></a> 向原元素添加事件句柄</h3>
+<p>如当用户点击元素时弹出 “Hello World!” ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;该实例使用 addEventListener() 方法在按钮中添加点击事件。 &lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;myBtn&quot;).addEventListener(&quot;click&quot;, function()&#123;</span><br><span class="line">    alert(&quot;Hello World!&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="向同一个元素中添加多个事件句柄"><a class="markdownIt-Anchor" href="#向同一个元素中添加多个事件句柄"></a> 向同一个元素中添加多个事件句柄</h3>
+<p>addEventListener() 方法允许向同一个元素添加多个事件，且不会覆盖已存在的事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;该实例使用 addEventListener() 方法向同个按钮中添加两个点击事件。&lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">x.addEventListener(&quot;click&quot;, myFunction);</span><br><span class="line">x.addEventListener(&quot;click&quot;, someOtherFunction);</span><br><span class="line">function myFunction() &#123;</span><br><span class="line">    alert (&quot;Hello World!&quot;)</span><br><span class="line">&#125;</span><br><span class="line">function someOtherFunction() &#123;</span><br><span class="line">    alert (&quot;函数已执行!&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>你可以向同个元素添加不同类型的事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;实例使用 addEventListener() 方法在同一个按钮中添加多个事件。&lt;/p&gt;</span><br><span class="line">&lt;button id=&quot;myBtn&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">x.addEventListener(&quot;mouseover&quot;, myFunction);</span><br><span class="line">x.addEventListener(&quot;click&quot;, mySecondFunction);</span><br><span class="line">x.addEventListener(&quot;mouseout&quot;, myThirdFunction);</span><br><span class="line">function myFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Moused over!&lt;br&gt;&quot;</span><br><span class="line">&#125;</span><br><span class="line">function mySecondFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Clicked!&lt;br&gt;&quot;</span><br><span class="line">&#125;</span><br><span class="line">function myThirdFunction() &#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML += &quot;Moused out!&lt;br&gt;&quot;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="向-window-对象添加事件句柄"><a class="markdownIt-Anchor" href="#向-window-对象添加事件句柄"></a> 向 Window 对象添加事件句柄</h3>
+<p>当用户重置窗口大小时添加事件监听：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&quot;resize&quot;, function()&#123;</span><br><span class="line">    document.getElementById(&quot;demo&quot;).innerHTML = sometext;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="事件冒泡或事件捕获"><a class="markdownIt-Anchor" href="#事件冒泡或事件捕获"></a> 事件冒泡或事件捕获</h3>
+<p>事件传递有两种方式：冒泡与捕获</p>
+<p>事件传递定义了元素事件触发的顺序</p>
+<p>将 <code>&lt;p&gt;</code> 元素插入到 <code>&lt;div&gt;</code> 元素中，用户点击 <code>&lt;p&gt;</code> 元素：</p>
+<p>在 <em>冒泡</em> 中，内部元素的事件会先被触发，然后再触发外部元素，即： <code>&lt;p&gt;</code> 元素的点击事件先触发，然后会触发 <code>&lt;div&gt;</code> 元素的点击事件。</p>
+<p>在 <em>捕获</em> 中，外部元素的事件会先被触发，然后才会触发内部元素的事件，即： <code>&lt;div&gt;</code> 元素的点击事件先触发 ，然后再触发 <code>&lt;p&gt;</code> 元素的点击事件。</p>
+<p>addEventListener() 方法可以指定 “useCapture” 参数来设置传递类型：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(event, function, useCapture);</span><br></pre></td></tr></table></figure>
+<p>默认值为 false, 即冒泡传递，当值为 true 时, 事件使用捕获传递</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;实例演示了在添加不同事件监听时，冒泡与捕获的不同。&lt;/p&gt;</span><br><span class="line">&lt;div id=&quot;myDiv&quot;&gt;</span><br><span class="line">    &lt;p id=&quot;myP&quot;&gt;点击段落，我是冒泡。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;&lt;br&gt;</span><br><span class="line">&lt;div id=&quot;myDiv2&quot;&gt;</span><br><span class="line">    &lt;p id=&quot;myP2&quot;&gt;点击段落，我是捕获。 &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">&lt;!--冒泡--&gt;</span><br><span class="line">document.getElementById(&quot;myP&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;你点击了 P 元素!&quot;);</span><br><span class="line">&#125;, false);</span><br><span class="line">document.getElementById(&quot;myDiv&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot; 你点击了 DIV 元素 !&quot;);</span><br><span class="line">&#125;, false);</span><br><span class="line">&lt;!--捕获--&gt;</span><br><span class="line">document.getElementById(&quot;myP2&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;你点击了 P2 元素!&quot;);</span><br><span class="line">&#125;, true);</span><br><span class="line">document.getElementById(&quot;myDiv2&quot;).addEventListener(&quot;click&quot;, function() &#123;</span><br><span class="line">    alert(&quot;你点击了 DIV2 元素 !&quot;);</span><br><span class="line">&#125;, true);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="removeeventlistener-方法"><a class="markdownIt-Anchor" href="#removeeventlistener-方法"></a> removeEventListener() 方法</h3>
+<p>removeEventListener() 方法移除由 addEventListener() 方法添加的事件句柄:</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/jsref/dom-obj-event.html">HTML DOM 事件对象参考手册</a></p>
+<h2 id="dom-元素"><a class="markdownIt-Anchor" href="#dom-元素"></a> DOM 元素</h2>
+<h3 id="创建新的-html-元素-节点"><a class="markdownIt-Anchor" href="#创建新的-html-元素-节点"></a> 创建新的 HTML 元素 (节点)</h3>
+<p>要创建新的 HTML 元素 (节点)需要先创建一个元素，然后在已存在的元素中添加它</p>
+<h4 id="appendchild"><a class="markdownIt-Anchor" href="#appendchild"></a> appendChild()</h4>
+<p>是 JavaScript 中用于将一个节点（元素或文本节点）追加到指定父节点的最后一个子节点位置的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;!-- 这是父元素 --&gt;</span><br><span class="line">  &lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">  &lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // 1. 找到父元素 div1</span><br><span class="line">  var parentElement = document.getElementById(&quot;div1&quot;);</span><br><span class="line"></span><br><span class="line">  // 2. 创建一个新的子元素 &lt;p&gt;</span><br><span class="line">  var childElement = document.createElement(&quot;p&quot;);</span><br><span class="line"></span><br><span class="line">  // 3. 创建子元素中的文本内容</span><br><span class="line">  var childText = document.createTextNode(&quot;这是一个新的段落。&quot;);</span><br><span class="line"></span><br><span class="line">  // 4. 将文本内容放入子元素中</span><br><span class="line">  childElement.appendChild(childText);</span><br><span class="line"></span><br><span class="line">  // 5. 将子元素添加到父元素中</span><br><span class="line">  parentElement.appendChild(childElement);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="insertbefore"><a class="markdownIt-Anchor" href="#insertbefore"></a> insertBefore()</h4>
+<p>用于在指定的父元素中，将一个新节点插入到某个已存在的子节点之前</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">  &lt;p id=&quot;p1&quot;&gt;这是第一个段落。&lt;/p&gt;</span><br><span class="line">  &lt;p id=&quot;p2&quot;&gt;这是第二个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  // 获取父元素 div1</span><br><span class="line">  var parentElement = document.getElementById(&quot;div1&quot;);</span><br><span class="line"></span><br><span class="line">  // 创建一个新的段落节点</span><br><span class="line">  var newParagraph = document.createElement(&quot;p&quot;);</span><br><span class="line">  newParagraph.innerText = &quot;这是一个新插入的段落。&quot;;</span><br><span class="line"></span><br><span class="line">  // 找到参考节点（p1）</span><br><span class="line">  var referenceNode = document.getElementById(&quot;p1&quot;);</span><br><span class="line"></span><br><span class="line">  // 将新段落插入到 p1 之前</span><br><span class="line">  parentElement.insertBefore(newParagraph, referenceNode);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="移除已存在的元素"><a class="markdownIt-Anchor" href="#移除已存在的元素"></a> 移除已存在的元素</h3>
+<p>HTML 文档中 <code>&lt;div&gt;</code> 元素包含两个子节点 (两个 <code>&lt;p&gt;</code> 元素):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">&lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>查找 id=“div1” 的元素:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var parent = document.getElementById(&quot;div1&quot;);</span><br></pre></td></tr></table></figure>
+<p>查找 id=“p1” 的 <code>&lt;p&gt;</code> 元素:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var child = document.getElementById(&quot;p1&quot;);</span><br></pre></td></tr></table></figure>
+<p>从父元素中移除子节点：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parent.removeChild(child);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>删除节点必须知道父节点</p>
+</blockquote>
+<h3 id="替换-html-元素-replacechild"><a class="markdownIt-Anchor" href="#替换-html-元素-replacechild"></a> 替换 HTML 元素 - replaceChild()</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">&lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;p id=&quot;p2&quot;&gt;这是另外一个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">var para = document.createElement(&quot;p&quot;);</span><br><span class="line">var node = document.createTextNode(&quot;这是一个新的段落。&quot;);</span><br><span class="line">para.appendChild(node);</span><br><span class="line"> </span><br><span class="line">var parent = document.getElementById(&quot;div1&quot;);</span><br><span class="line">var child = document.getElementById(&quot;p1&quot;);</span><br><span class="line">parent.replaceChild(para, child);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="html-dom-集合"><a class="markdownIt-Anchor" href="#html-dom-集合"></a> HTML DOM 集合</h2>
+<h3 id="html-collection-对象"><a class="markdownIt-Anchor" href="#html-collection-对象"></a> HTML Collection 对象</h3>
+<p><code>getElementsByTagName()</code> 方法返回 HTMLCollection对象。</p>
+<p>HTMLCollection 对象类似包含 HTML 元素的一个数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var x = document.getElementsByTagName(&quot;p&quot;);</span><br></pre></td></tr></table></figure>
+<p>集合中的元素可以通过索引(以 0 为起始位置)来访问。访问第二个 <code>&lt;p&gt;</code> 元素可以是以下代码:y = x[1];</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p><strong>HTMLCollection 不是一个数组！</strong></p>
+<p>但可以像数组一样，使用索引来获取元素</p>
+</blockquote>
+<h3 id="html-collection-对象-length-属性"><a class="markdownIt-Anchor" href="#html-collection-对象-length-属性"></a> HTML Collection 对象 .length 属性</h3>
+<p>length 属性定义了集合中元素的数量</p>
+<p>获取 <code>&lt;p&gt;</code> 元素的集合：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var myCollection = document.getElementsByTagName(&quot;p&quot;);</span><br></pre></td></tr></table></figure>
+<p>显示集合元素个数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;demo&quot;).innerHTML = myCollection.length;</span><br></pre></td></tr></table></figure>
+<p>集合 length 属性常用于遍历集合中的元素。</p>
+<h3 id="nodelist-对象"><a class="markdownIt-Anchor" href="#nodelist-对象"></a> NodeList 对象</h3>
+<p><strong>NodeList</strong> 对象是一个从文档中获取的节点列表 (集合)</p>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>HTML Collection是 HTML 元素的集合。</p>
+<p>NodeList 是一个文档节点的集合。</p>
+<p>NodeList 与 HTMLCollection 都与数组对象有点类似，可以使用索引 (0, 1, 2, 3, 4, …) 来获取元素。</p>
+<p>NodeList 与 HTMLCollection 都有 length 属性。</p>
+<p>HTMLCollection 元素可以通过 name，id 或索引来获取。</p>
+<p>NodeList 只能通过索引来获取。</p>
+<p>只有 NodeList 对象有包含属性节点和文本节点。</p>
+</blockquote>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/07/09/kali%E4%BC%98%E5%8C%96/">kali优化</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/09/HTTP/">HTTP</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs15">博客</span><a href="/">近期</a><a href="/">分类</a><a href="/">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs15">项目</span><a href="/">开源库</a></div><div class="sitemap-group"><span class="fs15">社交</span><a href="/">友链</a><a href="/">留言板</a></div><div class="sitemap-group"><span class="fs15">更多</span><a href="/">关于本站</a><a href="/">GitHub</a></div></div><div class="text"><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/emoji@3.1/blobcat/bouncefast.gif" alt="猫猫🐱" style="float: right; width: 80px; margin-left: 0px;"></img></p>
+<center>
+<br><br>
+  <div>
+    <div>
+      © 2025 
+      <a style="font-weight:700" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ikunmma">子非鲲</a> 
+      使用
+      <a style="font-weight:700" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar </a>
+      创建
+      <br>
+      <span id="runtime_span"></span>
+    </div>
+    <script type="text/javascript">
+    function show_runtime() {
+      window.setTimeout("show_runtime()", 1000);
+      X = new Date("5/1/2025 00:00:00 ");
+      Y = new Date();
+      T = (Y.getTime() - X.getTime());
+      M = 24 * 60 * 60 * 1000;
+      a = T / M;
+      A = Math.floor(a);
+      b = (a - A) * 24;
+      B = Math.floor(b);
+      c = (b - B) * 60;
+      C = Math.floor((b - B) * 60);
+      D = Math.floor((c - C) * 60);
+      runtime_span.innerHTML = "💥 本站已运行 " + A + "天|" + B + "小时|" + C + "分|" + D + "秒 💥"
+    }
+    show_runtime();
+    </script>
+  </div>
+</center>
+<div class="totalcount" style="text-align:center"> 共发表 43 篇 Blog · <span class="post-count" > 总计 108.3k 字 </span></div></div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript"><span class="toc-text"> JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E8%BE%93%E5%87%BA"><span class="toc-text"> JavaScript 输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-windowalert-%E5%BC%B9%E5%87%BA%E8%AD%A6%E5%91%8A%E6%A1%86%E6%9D%A5%E6%98%BE%E7%A4%BA%E6%95%B0%E6%8D%AE"><span class="toc-text"> 使用 window.alert() 弹出警告框来显示数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-innerhtml-%E5%86%99%E5%85%A5%E5%88%B0-html-%E5%85%83%E7%B4%A0"><span class="toc-text"> 使用 innerHTML 写入到 HTML 元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-documentwrite-%E6%96%B9%E6%B3%95%E5%B0%86%E5%86%85%E5%AE%B9%E5%86%99%E5%88%B0-html-%E6%96%87%E6%A1%A3%E4%B8%AD"><span class="toc-text"> 使用 document.write() 方法将内容写到 HTML 文档中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-consolelog-%E5%86%99%E5%85%A5%E5%88%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="toc-text"> 使用 console.log() 写入到浏览器的控制台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E8%AF%AD%E6%B3%95"><span class="toc-text"> JavaScript 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-text"> 字面量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text"> 变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-text"> 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text"> 函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E8%AF%AD%E5%8F%A5"><span class="toc-text"> JavaScript 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8F%B7"><span class="toc-text"> 分号 ;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text"> 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text"> 代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-text"> 语句标识符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%A0%BC"><span class="toc-text"> 空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E8%A1%8C"><span class="toc-text"> 折行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E5%8F%98%E9%87%8F"><span class="toc-text"> JavaScript 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="toc-text"> 变量声明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%8F%98%E9%87%8F"><span class="toc-text"> 多变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="toc-text"> 重新声明变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-text"> 变量类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text"> JavaScript 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-%E6%95%B0%E7%BB%84"><span class="toc-text"> JavaScript 数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E5%AF%B9%E8%B1%A1"><span class="toc-text"> JavaScript 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E4%B8%A4%E7%A7%8D%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F"><span class="toc-text"> 对象属性两种访问方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-text"> 对象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeofundefined-%E5%92%8C-null"><span class="toc-text"> typeof，Undefined 和 Null</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E5%87%BD%E6%95%B0"><span class="toc-text"> JavaScript 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text"> 调用带参数的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%A6%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text"> 带有返回值的函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text"> JavaScript 作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-%E5%B1%80%E9%83%A8%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text"> JavaScript 局部作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text"> JavaScript 全局变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> JavaScript 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-text"> 特殊字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6"><span class="toc-text"> 字符串长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 模板字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text"> JavaScript 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text"> 用于字符串的 + 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text"> 条件运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript%E5%BE%AA%E7%8E%AF"><span class="toc-text"> JavaScript循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"> </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text"> JavaScript 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#constructor-%E5%B1%9E%E6%80%A7"><span class="toc-text"> constructor 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-2"><span class="toc-text"> JavaScript 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 将数字转换为字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E5%B8%83%E5%B0%94%E5%80%BC%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 将布尔值转换为字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 将日期转换为字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E5%AD%97"><span class="toc-text"> 将字符串转换为数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E5%B8%83%E5%B0%94%E5%80%BC%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E5%AD%97"><span class="toc-text"> 将布尔值转换为数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E5%AD%97"><span class="toc-text"> 将日期转换为数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 自动转换为字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text"> JavaScript 正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text"> 字符串的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#regexp-%E5%AF%B9%E8%B1%A1"><span class="toc-text"> RegExp 对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#test%E4%BD%BF%E7%94%A8"><span class="toc-text"> test()使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exec%E4%BD%BF%E7%94%A8"><span class="toc-text"> exec()使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E9%94%99%E8%AF%AF"><span class="toc-text"> JavaScript 错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#throw%E8%AF%AD%E5%8F%A5%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF"><span class="toc-text"> throw语句创建自定义错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#try-%E8%AF%AD%E5%8F%A5%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-text"> try 语句测试代码块的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#catch-%E8%AF%AD%E5%8F%A5%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF"><span class="toc-text"> catch 语句处理错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#finally-%E8%AF%AD%E5%8F%A5"><span class="toc-text"> finally 语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-%E8%A1%A8%E5%8D%95"><span class="toc-text"> JavaScript 表单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81"><span class="toc-text"> JavaScript 表单验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-%E9%AA%8C%E8%AF%81%E8%BE%93%E5%85%A5%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text"> JavaScript 验证输入的数字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text"> JavaScript关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-text"> this</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%AD%E7%9A%84-this"><span class="toc-text"> 方法中的 this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E7%8B%AC%E4%BD%BF%E7%94%A8-this"><span class="toc-text"> 单独使用 this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%B8%AD%E4%BD%BF%E7%94%A8-this"><span class="toc-text"> 函数中使用 this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%B8%AD%E7%9A%84-this"><span class="toc-text"> 事件中的 this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E4%B8%AD%E7%BB%91%E5%AE%9A"><span class="toc-text"> 对象方法中绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A"><span class="toc-text"> 显式函数绑定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let"><span class="toc-text"> let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const"><span class="toc-text"> const</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#void"><span class="toc-text"> void</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-json"><span class="toc-text"> JavaScript JSON</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-%E6%95%B0%E7%BB%84"><span class="toc-text"> JSON 数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA-javascript-%E5%AF%B9%E8%B1%A1"><span class="toc-text"> JSON 字符串转换为 JavaScript 对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#button%E5%85%83%E7%B4%A0"><span class="toc-text"> button元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-text"> 常用属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#type-%E5%B1%9E%E6%80%A7"><span class="toc-text"> type 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#disabled-%E5%B1%9E%E6%80%A7"><span class="toc-text"> disabled 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#autofocus-%E5%B1%9E%E6%80%A7"><span class="toc-text"> autofocus 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#name-%E5%B1%9E%E6%80%A7"><span class="toc-text"> name 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#value-%E5%B1%9E%E6%80%A7"><span class="toc-text"> value 属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-javascript-%E4%B8%8E%E6%8C%89%E9%92%AE%E4%BA%A4%E4%BA%92"><span class="toc-text"> 使用 JavaScript 与按钮交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%8C%89%E9%92%AE"><span class="toc-text"> 动态按钮</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#onclick%E4%B8%8Eaddeventlistener"><span class="toc-text"> onclick与addEventListener()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#oncllick"><span class="toc-text"> oncllick</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-text"> 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8-html-%E4%B8%AD%E4%BD%BF%E7%94%A8-onclick"><span class="toc-text"> 在 HTML 中使用 onclick</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E7%94%A8-javascript-%E5%87%BD%E6%95%B0"><span class="toc-text"> 调用 JavaScript 函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-javascript-%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A-onclick-%E4%BA%8B%E4%BB%B6"><span class="toc-text"> 通过 JavaScript 动态绑定 onclick 事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-onclick-%E4%BC%A0%E9%80%92%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1event"><span class="toc-text"> 通过 onclick 传递事件对象（event）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-eventpreventdefault%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="toc-text"> 使用 event.preventDefault()阻止默认行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-this-%E5%BC%95%E7%94%A8%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0"><span class="toc-text"> 使用 this 引用当前元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#addeventlistener"><span class="toc-text"> addEventListener()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text"> 基本语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-2"><span class="toc-text"> 基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-text"> 添加点击事件监听器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-text"> 传递事件对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-this-%E8%AE%BF%E9%97%AE%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text"> 使用 this 访问触发事件的元素</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-text"> 添加多个事件监听器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-text"> 移除事件监听器</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript-html-dom"><span class="toc-text"> JavaScript HTML DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dom-html"><span class="toc-text"> DOM HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE-html-%E5%85%83%E7%B4%A0"><span class="toc-text"> 查找 HTML 元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-id-%E6%89%BE%E5%88%B0-html-%E5%85%83%E7%B4%A0"><span class="toc-text"> 通过 id 找到 HTML 元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E6%A0%87%E7%AD%BE%E5%90%8D%E6%89%BE%E5%88%B0-html-%E5%85%83%E7%B4%A0"><span class="toc-text"> 通过标签名找到 HTML 元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%B1%BB%E5%90%8D%E6%89%BE%E5%88%B0-html-%E5%85%83%E7%B4%A0"><span class="toc-text"> 通过类名找到 HTML 元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98html"><span class="toc-text"> 改变HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E5%8F%98-html-%E8%BE%93%E5%87%BA%E6%B5%81"><span class="toc-text"> 改变 HTML 输出流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E5%8F%98-html-%E5%86%85%E5%AE%B9"><span class="toc-text"> 改变 HTML 内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E5%8F%98-html-%E5%B1%9E%E6%80%A7"><span class="toc-text"> 改变 HTML 属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dom-css"><span class="toc-text"> DOM CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98-html-%E6%A0%B7%E5%BC%8F"><span class="toc-text"> 改变 HTML 样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6"><span class="toc-text"> 使用事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dom-%E4%BA%8B%E4%BB%B6"><span class="toc-text"> DOM 事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8B%E4%BB%B6%E5%81%9A%E5%87%BA%E5%8F%8D%E5%BA%94"><span class="toc-text"> 对事件做出反应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html%E4%BA%8B%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="toc-text"> HTML事件属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8html-dom-%E6%9D%A5%E5%88%86%E9%85%8D%E4%BA%8B%E4%BB%B6"><span class="toc-text"> 使用HTML DOM 来分配事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onload%E5%92%8Conunload%E4%BA%8B%E4%BB%B6"><span class="toc-text"> onload和onunload事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onchange%E4%BA%8B%E4%BB%B6"><span class="toc-text"> onchange事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onmouseover-%E5%92%8C-onmouseout-%E4%BA%8B%E4%BB%B6"><span class="toc-text"> onmouseover 和 onmouseout 事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onmousedown-onmouseup-%E4%BB%A5%E5%8F%8A-onclick-%E4%BA%8B%E4%BB%B6"><span class="toc-text"> onmousedown、onmouseup 以及 onclick 事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dom-eventlistener"><span class="toc-text"> DOM EventListener</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#addeventlistener-%E6%96%B9%E6%B3%95"><span class="toc-text"> addEventListener() 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text"> 语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E5%8E%9F%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6%E5%8F%A5%E6%9F%84"><span class="toc-text"> 向原元素添加事件句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E5%90%8C%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E4%BA%8B%E4%BB%B6%E5%8F%A5%E6%9F%84"><span class="toc-text"> 向同一个元素中添加多个事件句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91-window-%E5%AF%B9%E8%B1%A1%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6%E5%8F%A5%E6%9F%84"><span class="toc-text"> 向 Window 对象添加事件句柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1%E6%88%96%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7"><span class="toc-text"> 事件冒泡或事件捕获</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#removeeventlistener-%E6%96%B9%E6%B3%95"><span class="toc-text"> removeEventListener() 方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dom-%E5%85%83%E7%B4%A0"><span class="toc-text"> DOM 元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84-html-%E5%85%83%E7%B4%A0-%E8%8A%82%E7%82%B9"><span class="toc-text"> 创建新的 HTML 元素 (节点)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#appendchild"><span class="toc-text"> appendChild()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#insertbefore"><span class="toc-text"> insertBefore()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E5%B7%B2%E5%AD%98%E5%9C%A8%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text"> 移除已存在的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2-html-%E5%85%83%E7%B4%A0-replacechild"><span class="toc-text"> 替换 HTML 元素 - replaceChild()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-dom-%E9%9B%86%E5%90%88"><span class="toc-text"> HTML DOM 集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html-collection-%E5%AF%B9%E8%B1%A1"><span class="toc-text"> HTML Collection 对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#html-collection-%E5%AF%B9%E8%B1%A1-length-%E5%B1%9E%E6%80%A7"><span class="toc-text"> HTML Collection 对象 .length 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodelist-%E5%AF%B9%E8%B1%A1"><span class="toc-text"> NodeList 对象</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js`,
+    marked: `https://cdn.jsdelivr.net/npm/marked@13.0.1/lib/marked.umd.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function (response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function (data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function (error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+
+<!-- required -->
+<script src="/js/main.js?v=1.29.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    applyThemeToGiscus(theme)
+  }
+
+  const applyThemeToGiscus = (theme) => {
+    theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6.8/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6.8/dist/twikoo.all.min.js","envId":"https://twikoovercel-theta.vercel.app"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+<script async src="/js/title.js"></script>
+</div></body></html>

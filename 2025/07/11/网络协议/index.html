@@ -1,0 +1,1076 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  
+  <title>网络协议 - 无言の小屋</title>
+
+  
+    <meta name="description" content="网络协议  概述  定义 网络协议是计算机网络的核心，它定义了设备之间如何通信，确保数据能够正确、高效、安全地传输。无论是浏览网页、发送邮件还是视频通话，背后都离不开网络协议的支持 大白话：网络协议是设备间“交流的语言”  分层结构 网络协议通常按照分层模型组织，最常见的模型是 OSI七层模型 和 TCP&#x2F;IP四层模型  OSI七层模型  物理层（Physical Layer）: 负责传输原始比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络协议">
+<meta property="og:url" content="https://ikunmma.github.io/2025/07/11/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:site_name" content="无言の小屋">
+<meta property="og:description" content="网络协议  概述  定义 网络协议是计算机网络的核心，它定义了设备之间如何通信，确保数据能够正确、高效、安全地传输。无论是浏览网页、发送邮件还是视频通话，背后都离不开网络协议的支持 大白话：网络协议是设备间“交流的语言”  分层结构 网络协议通常按照分层模型组织，最常见的模型是 OSI七层模型 和 TCP&#x2F;IP四层模型  OSI七层模型  物理层（Physical Layer）: 负责传输原始比">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250711103232166.png">
+<meta property="article:published_time" content="2025-07-11T12:01:06.552Z">
+<meta property="article:modified_time" content="2025-07-11T11:58:07.808Z">
+<meta property="article:author" content="Hackun">
+<meta property="article:tag" content="网络协议">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zkk1233/Picture/main/20250711103232166.png">
+  
+  
+  
+  <meta name="keywords" content="网络协议">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.29.1">
+
+
+  
+    <link rel="shortcut icon" href="/img/hh.jpg">
+  
+
+  
+
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4970977_2kzuzq5jacv.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/footer.css"><link rel="stylesheet" href="/css/cursor.css">
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715114957806.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无言の小屋</div><div class="sub normal cap"><small>在谷底也要开花,在海底也要望月</small></div><div class="sub hover cap" style="opacity:0"> Designed by hackun</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item active" title="文档" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="wiki" href="/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="目标" href="/explore/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a><a class="nav-item" title="友链" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/08/29/%E4%BB%8EXML%E5%88%B0XXE/"><span class="title">从XML到XXE</span></a><a class="item title" href="/2025/08/24/SQL%E9%A2%84%E7%BC%96%E8%AF%91/"><span class="title">预编译真的能完美防御SQL注入吗？？？</span></a><a class="item title" href="/2025/07/09/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2025/08/12/Github-Pages%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"><span class="title">Github Pages绑定域名</span></a><a class="item title" href="/2025/08/12/%E8%A7%A3%E5%86%B3Ubuntu%E4%B8%8EWindows%E9%97%B4%E6%97%A0%E6%B3%95%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E9%97%AE%E9%A2%98/"><span class="title">解决Ubuntu与Windows间无法复制粘贴问题</span></a><a class="item title" href="/2025/08/08/MySQL%20UDF%E6%8F%90%E6%9D%83/"><span class="title">MySQL UDF提权</span></a><a class="item title" href="/2025/08/06/MySQL-UDF%E6%8F%90%E6%9D%8316%E8%BF%9B%E5%88%B6%E6%9F%A5%E8%AF%A2/"><span class="title">MySQL UDF提权16进制查询</span></a><a class="item title" href="/2025/07/29/%E8%A7%A3%E5%86%B3Windows%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/"><span class="title">解决Windows端口占用问题</span></a><a class="item title" href="/2025/07/28/xss-labs/"><span class="title">xss-labs</span></a><a class="item title" href="/2025/07/28/sqli-labs/"><span class="title">sqli-labs</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-11T12:01:06.552Z">2025-07-11</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-11T11:58:07.808Z">2025-07-11</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>网络协议</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="网络协议"><a class="markdownIt-Anchor" href="#网络协议"></a> 网络协议</h1>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<h3 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h3>
+<p>网络协议是计算机网络的核心，它定义了设备之间如何通信，确保数据能够正确、高效、安全地传输。无论是浏览网页、发送邮件还是视频通话，背后都离不开网络协议的支持</p>
+<p>大白话：网络协议是设备间“交流的语言”</p>
+<h3 id="分层结构"><a class="markdownIt-Anchor" href="#分层结构"></a> 分层结构</h3>
+<p>网络协议通常按照分层模型组织，最常见的模型是 OSI七层模型 和 TCP/IP四层模型</p>
+<h4 id="osi七层模型"><a class="markdownIt-Anchor" href="#osi七层模型"></a> OSI七层模型</h4>
+<ul>
+<li><strong>物理层（Physical Layer）:</strong> 负责传输原始比特流（如电缆、光纤、无线电波）</li>
+<li><strong>数据链路层（Data Link Layer）:</strong> 负责将数据封装成帧，并在同一网络中传输（如以太网协议）</li>
+<li><strong>网络层（Network Layer）:</strong> 负责数据包的路由和寻址（如IP协议）</li>
+<li><strong>传输层（Transport Layer）:</strong> 负责端到端的可靠传输（如TCP、UDP协议）</li>
+<li><strong>会话层（Session Layer）:</strong> 负责建立、管理和终止会话（如RPC协议）</li>
+<li><strong>表示层（Presentation Layer）:</strong> 负责数据的格式化和加密（如SSL/TLS协议）</li>
+<li><strong>应用层（Application Layer）:</strong> 负责提供用户接口和应用程序服务（如HTTP、FTP协议）</li>
+</ul>
+<h4 id="tcpip四层模型"><a class="markdownIt-Anchor" href="#tcpip四层模型"></a> TCP/IP四层模型</h4>
+<ul>
+<li><strong>网络接口层（Network Interface Layer）:</strong> 对应OSI的物理层和数据链路层</li>
+<li><strong>网络层（Internet Layer）:</strong> 对应OSI的网络层（如IP协议）</li>
+<li><strong>传输层（Transport Layer）:</strong> 对应OSI的传输层（如TCP、UDP协议）</li>
+<li><strong>应用层（Application Layer）:</strong> 对应OSI的应用层、表示层和会话层（如HTTP、DNS协议）</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250711103232166.png" alt="img" /></p>
+<h3 id="网络通信基础"><a class="markdownIt-Anchor" href="#网络通信基础"></a> 网络通信基础</h3>
+<h4 id="数据包-帧-报文"><a class="markdownIt-Anchor" href="#数据包-帧-报文"></a> 数据包、帧、报文</h4>
+<p>在网络通信中，数据被分割成小块进行传输，这些小块被称为数据包、帧或报文，具体名称取决于所在的网络层次</p>
+<ul>
+<li><strong>数据包（Packet）:</strong> 在网络层（如IP协议）中，数据被封装成数据包，包含源地址、目标地址和数据内容</li>
+<li><strong>帧（Frame）:</strong> 在数据链路层（如以太网协议）中，数据包被进一步封装成帧，包含MAC地址和错误检测信息</li>
+<li><strong>报文（Message）:</strong> 在应用层（如HTTP协议）中，数据以报文的形式传输，包含请求或响应的具体内容</li>
+</ul>
+<h4 id="网络地址"><a class="markdownIt-Anchor" href="#网络地址"></a> 网络地址</h4>
+<h5 id="ip地址internet-protocol-address"><a class="markdownIt-Anchor" href="#ip地址internet-protocol-address"></a> IP地址（Internet Protocol Address）</h5>
+<p>用于标识网络中的设备，分为IPv4（如 <code>192.168.1.1</code>）和IPv6（如 <code>2001:0db8:85a3::8a2e:0370:7334</code>）</p>
+<h5 id="mac地址media-access-control-address"><a class="markdownIt-Anchor" href="#mac地址media-access-control-address"></a> MAC地址（Media Access Control Address）</h5>
+<p>用于标识网络接口卡（NIC），是一个唯一的硬件地址，格式为 <code>00:1A:2B:3C:4D:5E</code></p>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>IP地址相当于家庭住址（可变）</p>
+<p>MAC地址相当于身份证号码（固定）</p>
+</blockquote>
+<h4 id="端口号与套接字"><a class="markdownIt-Anchor" href="#端口号与套接字"></a> 端口号与套接字</h4>
+<h5 id="端口号port-number"><a class="markdownIt-Anchor" href="#端口号port-number"></a> 端口号（Port Number）</h5>
+<p>用于标识设备上的具体应用程序或服务，范围是 0 到 65535</p>
+<p>常见端口号：</p>
+<ul>
+<li>HTTP: 80</li>
+<li>HTTPS: 443</li>
+<li>FTP: 21</li>
+<li>SSH: 22</li>
+<li>DNS: 53</li>
+</ul>
+<h5 id="套接字socket"><a class="markdownIt-Anchor" href="#套接字socket"></a> 套接字（Socket）</h5>
+<p>套接字是网络通信的端点，由IP地址和端口号组成（如 192.168.1.1:80）</p>
+<p>套接字用于建立连接、发送和接收数据</p>
+<p>大白话：Socket 是让两个程序通过网络“说话”的工具</p>
+<h4 id="网络设备"><a class="markdownIt-Anchor" href="#网络设备"></a> 网络设备</h4>
+<p>网络通信依赖于多种设备来实现数据的传输和路由</p>
+<ul>
+<li><strong>路由器（Router）:</strong> 负责在<strong>不同网络</strong>之间转发数据包，基于<strong>IP地址</strong>进行路由选择</li>
+<li><strong>交换机（Switch）:</strong> 负责在<strong>同一网络</strong>内转发数据帧，基于<strong>MAC地址</strong>进行数据交换</li>
+<li><strong>网关（Gateway）:</strong> 连接不同协议或网络，实现数据格式的转换</li>
+<li><strong>调制解调器（Modem）:</strong> 将数字信号转换为模拟信号（如通过电话线传输）</li>
+</ul>
+<h4 id="网络拓扑结构"><a class="markdownIt-Anchor" href="#网络拓扑结构"></a> 网络拓扑结构</h4>
+<p>网络拓扑结构描述了设备之间的连接方式</p>
+<ul>
+<li><strong>星型拓扑（Star Topology）</strong>
+<ul>
+<li>所有设备连接到一个中心节点（如交换机）</li>
+<li>优点：易于管理和扩展</li>
+<li>缺点：中心节点故障会导致整个网络瘫痪</li>
+</ul>
+</li>
+<li><strong>总线型拓扑（Bus Topology）</strong>
+<ul>
+<li>所有设备连接到一条主干线</li>
+<li>优点：成本低</li>
+<li>缺点：主干线故障会影响整个网络</li>
+</ul>
+</li>
+<li><strong>环型拓扑（Ring Topology）</strong>
+<ul>
+<li>设备连接成一个环形</li>
+<li>优点：数据传输效率高</li>
+<li>缺点：单点故障会影响整个网络</li>
+</ul>
+</li>
+<li><strong>网状拓扑（Mesh Topology）</strong>
+<ul>
+<li>设备之间有多条连接路径</li>
+<li>优点：可靠性高</li>
+<li>缺点：成本高，管理复杂</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据传输方式"><a class="markdownIt-Anchor" href="#数据传输方式"></a> 数据传输方式</h4>
+<ul>
+<li><strong>单播（Unicast）:</strong> 数据从一台设备发送到另一台设备</li>
+<li><strong>广播（Broadcast）:</strong> 数据发送到网络中的所有设备</li>
+<li><strong>组播（Multicast）:</strong> 数据发送到一组特定的设备</li>
+</ul>
+<h4 id="网络通信基本流程"><a class="markdownIt-Anchor" href="#网络通信基本流程"></a> 网络通信基本流程</h4>
+<ol>
+<li>数据封装</li>
+</ol>
+<ul>
+<li>应用层生成数据报文</li>
+<li>传输层添加端口号（TCP/UDP）</li>
+<li>网络层添加IP地址（IP）</li>
+<li>数据链路层添加MAC地址（帧）</li>
+<li>物理层将数据转换为比特流</li>
+</ul>
+<ol>
+<li>数据传输</li>
+</ol>
+<p>​	数据通过物理介质（如电缆、光纤）传输</p>
+<ol>
+<li>数据解封装</li>
+</ol>
+<p>​	接收设备逐层解析数据，最终将数据传递给目标应用程序</p>
+<h4 id="常见网络通信工具"><a class="markdownIt-Anchor" href="#常见网络通信工具"></a> 常见网络通信工具</h4>
+<ol>
+<li><strong>Ping</strong>: 测试设备之间的连通性</li>
+<li><strong>Traceroute</strong>: 跟踪数据包的传输路径</li>
+<li><strong>Wireshark</strong>: 抓取和分析网络数据包</li>
+<li><strong>Netstat</strong>: 查看网络连接状态</li>
+</ol>
+<blockquote>
+<p>[!IMPORTANT]</p>
+<p><strong>Netstat命令在Windows中应用为例</strong></p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>netstat -a</code></td>
+<td>显示所有连接和监听端口</td>
+</tr>
+<tr>
+<td><code>netstat -n</code></td>
+<td>以数字方式显示地址和端口（不解析域名）</td>
+</tr>
+<tr>
+<td><code>netstat -o</code>（Windows）</td>
+<td>显示每个连接对应的 <strong>进程ID（PID）</strong></td>
+</tr>
+<tr>
+<td><code>netstat -an</code></td>
+<td>同时显示数字形式和全部连接</td>
+</tr>
+<tr>
+<td><code>netstat -ano</code>（Windows）</td>
+<td>最常用！显示所有连接+端口+PID</td>
+</tr>
+<tr>
+<td><code>netstat -s</code></td>
+<td>显示网络协议统计信息（如 TCP/UDP 收发统计）</td>
+</tr>
+<tr>
+<td><code>netstat -r</code></td>
+<td>显示路由表（等价于 <code>route print</code>）</td>
+</tr>
+<tr>
+<td>`netstat -an</td>
+<td>findstr ESTABLISHED `</td>
+</tr>
+<tr>
+<td>`netstat -ano</td>
+<td>findstr :8080`</td>
+</tr>
+<tr>
+<td>`tasklist</td>
+<td>findstr 1234`</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h2 id="协议"><a class="markdownIt-Anchor" href="#协议"></a> 协议</h2>
+<h3 id="ftp协议"><a class="markdownIt-Anchor" href="#ftp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/ftp-protocol.html">FTP协议</a></h3>
+<p>FTP（File Transfer Protocol，<strong>文件传输协议</strong>）是一种用于在网络上传输文件的协议，其允许用户从一台计算机（客户端）向另一台计算机（服务器）上传或下载文件</p>
+<p>默认端口21</p>
+<h3 id="ssh协议"><a class="markdownIt-Anchor" href="#ssh协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/secure-shell.html">SSH协议</a></h3>
+<p>SSH（Secure Shell，安全外壳协议）是一种用于安全远程登录和其他网络服务的<strong>加密协议</strong></p>
+<p>SSH 通过加密通信来保护数据在传输过程中的安全性，广泛应用于系统管理、文件传输和远程命令执行等场景</p>
+<p>默认端口22</p>
+<h3 id="telnet协议"><a class="markdownIt-Anchor" href="#telnet协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/telnet-protocol.html">Telnet协议</a></h3>
+<p>Telnet 是一种用于远程登录的网络协议，允许用户通过网络连接到远程计算机并在其上执行命令，其是SSH协议的前身</p>
+<p>默认端口23</p>
+<h3 id="tcp协议"><a class="markdownIt-Anchor" href="#tcp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/tcp-protocol.html">TCP协议</a></h3>
+<p>TCP（Transmission Control Protocol，传输控制协议）是互联网协议套件中的核心协议之一，位于传输层。它提供了一种可靠的、面向连接的、基于字节流的数据传输服务。TCP 的主要特点是确保数据在传输过程中不丢失、不重复，并且按顺序到达</p>
+<h3 id="smtp协议"><a class="markdownIt-Anchor" href="#smtp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/smtp-protocol.html">SMTP协议</a></h3>
+<p>SMTP（Simple Mail Transfer Protocol，简单邮件传输协议）是一种用于发送电子邮件的网络协议，负责将邮件从发送方传递到接收方的邮件服务器</p>
+<p>默认端口25</p>
+<h3 id="dns协议"><a class="markdownIt-Anchor" href="#dns协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/dns-protocol.html">DNS协议</a></h3>
+<p>DNS（Domain Name System，域名系统）是互联网中用于将域名（如 <code>www.example.com</code>）转换为 IP 地址（如 <code>93.184.216.34</code>）的分布式系统</p>
+<p>DNS 相当于互联网的&quot;电话簿&quot;，使得用户可以通过易记的域名访问网络资源，而无需记住复杂的 IP 地址</p>
+<p>默认端口53</p>
+<h3 id="http协议"><a class="markdownIt-Anchor" href="#http协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/http-protocol.html">HTTP协议</a></h3>
+<p>HTTP（HyperText Transfer Protocol，超文本传输协议）是互联网上应用最广泛的协议之一，用于在客户端（如浏览器）和服务器之间传输超文本（如网页）</p>
+<p>HTTP 是万维网（WWW）的基础，支持网页浏览、文件下载、API 调用等应用场景</p>
+<p>默认端口80</p>
+<h3 id="https协议"><a class="markdownIt-Anchor" href="#https协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/https-protocol.html">HTTPS协议</a></h3>
+<p>HTTPS（HyperText Transfer Protocol Secure，安全超文本传输协议）是 HTTP 的安全版本，通过在 HTTP 和传输层之间加入 TLS/SSL 加密层，保护数据传输的安全性和完整性</p>
+<p>HTTPS 广泛用于保护敏感信息（如登录凭证、支付信息）的传输</p>
+<p>默认端口443</p>
+<h3 id="pop3协议"><a class="markdownIt-Anchor" href="#pop3协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/pop3-protocol.html">POP3协议</a></h3>
+<p>POP3（Post Office Protocol version 3，邮局协议第3版）是一种用于从邮件服务器下载电子邮件的协议</p>
+<p>POP3 允许用户通过客户端（如 Outlook、Thunderbird）从服务器获取邮件，并将邮件存储到本地设备</p>
+<p>默认端口110</p>
+<h3 id="imap协议"><a class="markdownIt-Anchor" href="#imap协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/imap-protocol.html">IMAP协议</a></h3>
+<p>IMAP（Internet Message Access Protocol，互联网邮件访问协议）是一种用于从邮件服务器访问和管理电子邮件的协议</p>
+<p>与 POP3 不同，IMAP 允许用户在服务器上管理邮件，支持多设备同步和高级邮件操作</p>
+<p>默认端口143</p>
+<h3 id="rdp协议"><a class="markdownIt-Anchor" href="#rdp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/rdp-protocol.html">RDP协议</a></h3>
+<p>RDP（Remote Desktop Protocol，远程桌面协议）是由 Microsoft 开发的一种协议，用于远程访问和控制另一台计算机的桌面</p>
+<p>RDP 允许用户通过网络在本地设备上操作远程计算机，就像坐在远程计算机前一样</p>
+<p>默认端口3389</p>
+<h3 id="sftp协议"><a class="markdownIt-Anchor" href="#sftp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/sftp-protocol.html">SFTP协议</a></h3>
+<p>SFTP（SSH File Transfer Protocol，SSH 文件传输协议）是一种基于 SSH（Secure Shell）的文件传输协议，用于在客户端和服务器之间安全地传输文件</p>
+<p>默认的 SSH 端口22</p>
+<h3 id="udp协议"><a class="markdownIt-Anchor" href="#udp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/udp-protocol.html">UDP协议</a></h3>
+<p>UDP（User Datagram Protocol，用户数据报协议）是一种简单的、无连接的传输层协议，用于在网络中传输数据</p>
+<p>与TCP不同的是，UDP不提供可靠性、顺序性和流量控制，但它具有低延迟和高效的特点，适合对实时性要求较高的应用</p>
+<h3 id="ssl协议"><a class="markdownIt-Anchor" href="#ssl协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/ssl-protocol.html">SSL协议</a></h3>
+<p>SSL（Secure Sockets Layer，安全套接层）是一种用于保护网络通信安全的协议，通过在传输层和应用层之间建立加密通道，防止数据被窃听、篡改和伪装</p>
+<p>SSL 是 HTTPS、FTPS 等安全协议的基础，现已被更先进的 TLS（Transport Layer Security，传输层安全）协议所取代，但 SSL 仍然被广泛使用和提及</p>
+<h3 id="tls协议"><a class="markdownIt-Anchor" href="#tls协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/tls-protocol.html">TLS协议</a></h3>
+<p>TLS（Transport Layer Security，传输层安全）是一种用于在网络中加密数据传输的协议，旨在保护数据的机密性、完整性和身份验证。</p>
+<p>TLS 是 SSL（Secure Sockets Layer，安全套接层）的继任者，提供了更强的安全性和性能。TLS 是 HTTPS、SMTPS、FTPS 等安全协议的基础</p>
+<h3 id="arp协议"><a class="markdownIt-Anchor" href="#arp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/arp-protocol.html">ARP协议</a></h3>
+<p>ARP（Address Resolution Protocol，地址解析协议）是一种用于将网络层地址（如 IP 地址）解析为数据链路层地址（如 MAC 地址）的协议</p>
+<h3 id="rarp协议"><a class="markdownIt-Anchor" href="#rarp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/rarp-protocol.html">RARP协议</a></h3>
+<p>RARP（Reverse Address Resolution Protocol，反向地址解析协议）是一种用于将数据链路层地址（如 MAC 地址）解析为网络层地址（如 IP 地址）的协议</p>
+<p>RARP 是 ARP（Address Resolution Protocol，地址解析协议）的反向操作，主要用于无盘工作站等设备在启动时获取自己的 IP 地址</p>
+<h3 id="dhcp协议"><a class="markdownIt-Anchor" href="#dhcp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/dhcp-protocol.html">DHCP协议</a></h3>
+<p>DHCP（Dynamic Host Configuration Protocol，动态主机配置协议）是一种用于自动分配 IP 地址和其他网络配置信息（如子网掩码、默认网关、DNS 服务器）的协议</p>
+<p>DHCP 简化了网络管理，允许设备在加入网络时自动获取必要的配置，而无需手动设置</p>
+<h3 id="mtp协议"><a class="markdownIt-Anchor" href="#mtp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/mtp-protocol.html">MTP协议</a></h3>
+<p>MTP（Media Transfer Protocol，媒体传输协议）是一种用于在设备和计算机之间传输媒体文件（如照片、视频、音乐）的协议</p>
+<p>MTP 由 Microsoft 开发，主要用于连接 Android 设备、数码相机、MP3 播放器等媒体设备与计算机</p>
+<h3 id="ntp协议"><a class="markdownIt-Anchor" href="#ntp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/ntp-protocol.html">NTP协议</a></h3>
+<p>NTP（Network Time Protocol，网络时间协议）是一种用于同步计算机系统时间的协议</p>
+<p>NTP 通过分层的时间服务器架构，确保网络中所有设备的时间保持一致，精度可达毫秒甚至微秒级别</p>
+<p>NTP 是互联网上最广泛使用的时间同步协议，广泛应用于计算机网络、金融交易、科学实验等领域。</p>
+<h3 id="ppp协议"><a class="markdownIt-Anchor" href="#ppp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/ppp-protocol.html">PPP协议</a></h3>
+<p>PPP（Point-to-Point Protocol，点对点协议）是一种用于在点对点链路上传输数据的协议。</p>
+<p>PPP 广泛应用于拨号连接、DSL、V*N 等场景，支持多种网络层协议（如 IP、IPX）的封装和传输</p>
+<h3 id="icmp协议"><a class="markdownIt-Anchor" href="#icmp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/icmp-protocol.html">ICMP协议</a></h3>
+<p>ICMP（Internet Control Message Protocol，互联网控制消息协议）是 TCP/IP 协议族中的一种网络层协议，用于在 IP 网络中传递控制消息和错误报告</p>
+<p>ICMP 主要用于诊断网络问题、检测网络可达性和报告错误条件</p>
+<p>ICMP 是网络管理和故障排除的重要工具，常见的工具如 ping 和 traceroute 都依赖于 ICMP</p>
+<h3 id="igmp协议"><a class="markdownIt-Anchor" href="#igmp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/igmp-protocol.html">IGMP协议</a></h3>
+<p>IGMP（Internet Group Management Protocol，互联网组管理协议）是一种用于管理 IP 组播组成员关系的协议</p>
+<p>IGMP 运行在主机和与其直接相连的路由器之间，用于支持 IP 组播通信</p>
+<h3 id="ggp协议"><a class="markdownIt-Anchor" href="#ggp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/ggp-protocol.html">GGP协议</a></h3>
+<p>GGP（Gateway-to-Gateway Protocol，网关到网关协议）是一种早期的路由协议，用于在互联网的核心路由器之间交换路由信息</p>
+<p>GGP 是 ARPANET（现代互联网的前身）中最早使用的路由协议之一，主要用于在网关（即路由器）之间动态学习和传播路由信息</p>
+<h3 id="mcp协议"><a class="markdownIt-Anchor" href="#mcp协议"></a> <a target="_blank" rel="noopener" href="https://www.runoob.com/np/mcp-protocol.html">MCP协议</a></h3>
+<p>MCP（Model Context Protocol，模型上下文协议）是一种开放协议，旨在实现 大型语言模型（LLM） 应用与外部数据源、工具和服务之间的无缝集成，类似于网络中的 HTTP 协议或邮件中的 SMTP 协议</p>
+<p>MCP 协议通过标准化模型与外部资源的交互方式，提升 LLM 应用的功能性、灵活性和可扩展性</p>
+<blockquote>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/np/np-tutorial.html">菜鸟教程–网络协议</a></p>
+</blockquote>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/07/14/WSL%20%E8%A3%85%E9%85%8DUbuntu/">WSL装配Ubuntu</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/07/09/Python%20SSTI%E5%9F%BA%E7%A1%80%E7%BB%95%E8%BF%87/">Python SSTI基础绕过</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body twikoo'>
+      
+
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs15">博客</span><a href="/">近期</a><a href="/">分类</a><a href="/">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs15">项目</span><a href="/">开源库</a></div><div class="sitemap-group"><span class="fs15">社交</span><a href="/">友链</a><a href="/">留言板</a></div><div class="sitemap-group"><span class="fs15">更多</span><a href="/">关于本站</a><a href="/">GitHub</a></div></div><div class="text"><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/emoji@3.1/blobcat/bouncefast.gif" alt="猫猫🐱" style="float: right; width: 80px; margin-left: 0px;"></img></p>
+<center>
+<br><br>
+  <div>
+    <div>
+      © 2025 
+      <a style="font-weight:700" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ikunmma">子非鲲</a> 
+      使用
+      <a style="font-weight:700" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar </a>
+      创建
+      <br>
+      <span id="runtime_span"></span>
+    </div>
+    <script type="text/javascript">
+    function show_runtime() {
+      window.setTimeout("show_runtime()", 1000);
+      X = new Date("5/1/2025 00:00:00 ");
+      Y = new Date();
+      T = (Y.getTime() - X.getTime());
+      M = 24 * 60 * 60 * 1000;
+      a = T / M;
+      A = Math.floor(a);
+      b = (a - A) * 24;
+      B = Math.floor(b);
+      c = (b - B) * 60;
+      C = Math.floor((b - B) * 60);
+      D = Math.floor((c - C) * 60);
+      runtime_span.innerHTML = "💥 本站已运行 " + A + "天|" + B + "小时|" + C + "分|" + D + "秒 💥"
+    }
+    show_runtime();
+    </script>
+  </div>
+</center>
+<div class="totalcount" style="text-align:center"> 共发表 43 篇 Blog · <span class="post-count" > 总计 108.3k 字 </span></div></div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE"><span class="toc-text"> 网络协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text"> 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text"> 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-text"> 分层结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#osi%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="toc-text"> OSI七层模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tcpip%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="toc-text"> TCP&#x2F;IP四层模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80"><span class="toc-text"> 网络通信基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85-%E5%B8%A7-%E6%8A%A5%E6%96%87"><span class="toc-text"> 数据包、帧、报文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80"><span class="toc-text"> 网络地址</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ip%E5%9C%B0%E5%9D%80internet-protocol-address"><span class="toc-text"> IP地址（Internet Protocol Address）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mac%E5%9C%B0%E5%9D%80media-access-control-address"><span class="toc-text"> MAC地址（Media Access Control Address）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7%E4%B8%8E%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="toc-text"> 端口号与套接字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7port-number"><span class="toc-text"> 端口号（Port Number）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A5%97%E6%8E%A5%E5%AD%97socket"><span class="toc-text"> 套接字（Socket）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87"><span class="toc-text"> 网络设备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-text"> 网络拓扑结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="toc-text"> 数据传输方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text"> 网络通信基本流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7"><span class="toc-text"> 常见网络通信工具</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE"><span class="toc-text"> 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ftp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> FTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh%E5%8D%8F%E8%AE%AE"><span class="toc-text"> SSH协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#telnet%E5%8D%8F%E8%AE%AE"><span class="toc-text"> Telnet协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> TCP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#smtp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> SMTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dns%E5%8D%8F%E8%AE%AE"><span class="toc-text"> DNS协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http%E5%8D%8F%E8%AE%AE"><span class="toc-text"> HTTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https%E5%8D%8F%E8%AE%AE"><span class="toc-text"> HTTPS协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop3%E5%8D%8F%E8%AE%AE"><span class="toc-text"> POP3协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#imap%E5%8D%8F%E8%AE%AE"><span class="toc-text"> IMAP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rdp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> RDP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sftp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> SFTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#udp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> UDP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E5%8D%8F%E8%AE%AE"><span class="toc-text"> SSL协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tls%E5%8D%8F%E8%AE%AE"><span class="toc-text"> TLS协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> ARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rarp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> RARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dhcp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> DHCP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mtp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> MTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ntp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> NTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ppp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> PPP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#icmp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> ICMP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#igmp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> IGMP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ggp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> GGP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mcp%E5%8D%8F%E8%AE%AE"><span class="toc-text"> MCP协议</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js`,
+    marked: `https://cdn.jsdelivr.net/npm/marked@13.0.1/lib/marked.umd.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function (response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function (data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function (error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+
+<!-- required -->
+<script src="/js/main.js?v=1.29.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    applyThemeToGiscus(theme)
+  }
+
+  const applyThemeToGiscus = (theme) => {
+    theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
+
+  function load_twikoo() {
+    if (!el) return;
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6.8/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6.8/dist/twikoo.all.min.js","envId":"https://twikoovercel-theta.vercel.app"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
+  }
+</script>
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+<script async src="/js/title.js"></script>
+</div></body></html>
