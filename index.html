@@ -164,6 +164,22 @@
       white-space: nowrap;
     }
 
+    .title-link {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.24s ease, text-shadow 0.24s ease;
+    }
+
+    .title-link:visited {
+      color: inherit;
+    }
+
+    .title-link:hover {
+      transform: translateY(-3px);
+      text-shadow: 0 20px 62px rgba(125, 211, 252, 0.42);
+    }
+
     .subtitle {
       position: relative;
       max-width: 660px;
@@ -299,6 +315,7 @@
       border-radius: 999px;
       color: rgba(248, 251, 255, 0.78);
       background: rgba(255, 255, 255, 0.07);
+      font-family: "Times New Roman", Times, serif;
       font-size: 13px;
     }
 
@@ -508,12 +525,8 @@
 
       <section class="hero" aria-label="进入无言の小屋">
         <div class="hero-copy">
-          <h1>无言の小屋</h1>
+          <h1><a class="title-link" href="/home/" aria-label="进入博客">无言の小屋</a></h1>
           <p class="subtitle">在谷底也要开花，在海底也要望月</p>
-          <div class="actions">
-            <a class="button" href="/home/">进入博客</a>
-            <a class="button secondary" href="/profile/">关于站长</a>
-          </div>
           <div class="motto-row" aria-label="内容标签">
             <span class="pill">Web Security</span>
             <span class="pill">Programming</span>
