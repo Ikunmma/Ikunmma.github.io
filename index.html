@@ -13,8 +13,7 @@
       --muted: rgba(248, 251, 255, 0.72);
       --soft: rgba(248, 251, 255, 0.54);
       --line: rgba(255, 255, 255, 0.18);
-      --panel: rgba(9, 14, 26, 0.48);
-      --panel-strong: rgba(9, 14, 26, 0.72);
+      --panel: rgba(255, 255, 255, 0.08);
       --accent: #7dd3fc;
       --accent-warm: #f7c873;
       --accent-green: #8ee6b1;
@@ -60,6 +59,7 @@
         linear-gradient(180deg, rgba(7, 11, 20, 0.18), rgba(7, 11, 20, 0.86)),
         url("/img/profile.jpg") center / cover no-repeat;
       transform: scale(1.02);
+      animation: backgroundDrift 18s ease-in-out infinite alternate;
     }
 
     .entry::after {
@@ -72,6 +72,21 @@
         linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
       background-size: 76px 76px;
       mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), transparent 78%);
+      pointer-events: none;
+      animation: gridFloat 16s linear infinite;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(125, 211, 252, 0.54) 0 1px, transparent 1.6px);
+      background-position: 0 0, 42px 58px;
+      background-size: 140px 140px, 210px 210px;
+      opacity: 0.34;
+      animation: starsMove 28s linear infinite;
       pointer-events: none;
     }
 
@@ -129,31 +144,33 @@
     .hero {
       display: grid;
       align-items: center;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
-      gap: clamp(32px, 6vw, 78px);
+      grid-template-columns: minmax(0, 1fr) minmax(230px, 320px);
+      gap: clamp(34px, 5vw, 66px);
       padding: 62px 0 54px;
     }
 
     .hero-copy {
       max-width: 710px;
+      animation: fadeRise 0.8s ease-out both;
     }
 
     h1 {
       margin: 0;
       max-width: 760px;
-      font-size: clamp(68px, 10vw, 126px);
-      line-height: 0.95;
+      font-size: clamp(58px, 7.4vw, 94px);
+      line-height: 1.08;
       letter-spacing: 0;
       text-shadow: 0 18px 54px rgba(0, 0, 0, 0.42);
+      white-space: nowrap;
     }
 
     .subtitle {
       position: relative;
       max-width: 660px;
-      margin: 30px 0 0;
-      padding-left: 22px;
+      margin: 24px 0 0;
+      padding-left: 20px;
       color: rgba(248, 251, 255, 0.84);
-      font-size: clamp(22px, 2.8vw, 31px);
+      font-size: clamp(21px, 2.2vw, 28px);
       line-height: 1.75;
       text-shadow: 0 10px 34px rgba(0, 0, 0, 0.34);
     }
@@ -173,7 +190,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 44px;
+      margin-top: 36px;
     }
 
     .button {
@@ -189,12 +206,13 @@
       font-weight: 900;
       text-decoration: none;
       box-shadow: 0 14px 34px rgba(125, 211, 252, 0.22);
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
       background: #a7e6ff;
+      box-shadow: 0 18px 40px rgba(125, 211, 252, 0.32);
     }
 
     .button.secondary {
@@ -210,70 +228,62 @@
     }
 
     .side-panel {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: 0 28px 86px rgba(0, 0, 0, 0.38);
-      backdrop-filter: blur(18px);
+      position: relative;
+      padding: 8px 0 8px 30px;
+      border-left: 1px solid rgba(255, 255, 255, 0.24);
+      animation: fadeRise 0.8s ease-out 0.16s both, floatSide 5.8s ease-in-out 1s infinite;
     }
 
-    .profile-card {
-      padding: 26px;
+    .side-panel::before {
+      position: absolute;
+      top: 18px;
+      left: -3px;
+      width: 5px;
+      height: 52px;
+      border-radius: 999px;
+      content: "";
+      background: linear-gradient(var(--accent), var(--accent-warm));
+      box-shadow: 0 0 24px rgba(125, 211, 252, 0.48);
     }
 
-    .profile-card img {
-      width: 86px;
-      height: 86px;
-      border: 2px solid rgba(255, 255, 255, 0.72);
+    .profile-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .profile-head img {
+      width: 64px;
+      height: 64px;
+      border: 2px solid rgba(255, 255, 255, 0.74);
       border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
     }
 
-    .profile-card h2 {
-      margin: 20px 0 8px;
-      font-size: 24px;
+    .profile-head h2 {
+      margin: 0 0 4px;
+      font-size: 25px;
       letter-spacing: 0;
     }
 
-    .profile-card p {
+    .profile-head p,
+    .side-quote {
       margin: 0;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.7;
+    }
+
+    .side-quote {
+      margin-top: 24px;
+      font-size: 19px;
     }
 
     .quick-links {
-      display: grid;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .quick-link {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 13px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.11);
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .quick-link span {
-      color: var(--soft);
-      font-size: 13px;
-    }
-
-    .quick-link strong {
-      font-size: 15px;
-    }
-
-    .quick-link i {
-      flex: 0 0 auto;
-      width: 9px;
-      height: 9px;
-      border-top: 2px solid currentColor;
-      border-right: 2px solid currentColor;
-      transform: rotate(45deg);
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
     }
 
     .motto-row {
@@ -290,6 +300,23 @@
       color: rgba(248, 251, 255, 0.78);
       background: rgba(255, 255, 255, 0.07);
       font-size: 13px;
+    }
+
+    .quick-link {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      color: rgba(248, 251, 255, 0.82);
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .quick-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125, 211, 252, 0.6);
+      background: rgba(125, 211, 252, 0.12);
     }
 
     .pill:nth-child(2) {
@@ -317,6 +344,77 @@
       content: "";
       background: var(--accent-green);
       box-shadow: 0 0 18px var(--accent-green);
+      animation: breathe 1.8s ease-in-out infinite;
+    }
+
+    @keyframes backgroundDrift {
+      from {
+        transform: scale(1.02) translate3d(0, 0, 0);
+      }
+      to {
+        transform: scale(1.07) translate3d(-12px, -8px, 0);
+      }
+    }
+
+    @keyframes gridFloat {
+      from {
+        background-position: 0 0, 0 0;
+      }
+      to {
+        background-position: 76px 76px, 76px 76px;
+      }
+    }
+
+    @keyframes starsMove {
+      from {
+        background-position: 0 0, 42px 58px;
+      }
+      to {
+        background-position: 140px -140px, 252px -152px;
+      }
+    }
+
+    @keyframes fadeRise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatSide {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes breathe {
+      0%,
+      100% {
+        opacity: 0.65;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.45);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
     }
 
     @media (max-width: 840px) {
@@ -340,6 +438,16 @@
 
       .side-panel {
         max-width: 520px;
+        padding: 20px 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.22);
+        border-left: 0;
+      }
+
+      .side-panel::before {
+        top: -3px;
+        left: 0;
+        width: 52px;
+        height: 5px;
       }
     }
 
@@ -360,12 +468,12 @@
       }
 
       h1 {
-        font-size: clamp(58px, 18vw, 82px);
+        font-size: clamp(44px, 13vw, 66px);
       }
 
       .subtitle {
         padding-left: 16px;
-        font-size: 22px;
+        font-size: 20px;
       }
 
       .actions {
@@ -376,14 +484,15 @@
         width: 100%;
       }
 
-      .profile-card {
-        padding: 22px;
+      .profile-head h2 {
+        font-size: 23px;
       }
     }
   </style>
 </head>
 <body>
   <main class="entry">
+    <div class="stars" aria-hidden="true"></div>
     <div class="entry-shell">
       <header class="topbar">
         <a class="brand" href="/" aria-label="无言の小屋">
@@ -412,23 +521,19 @@
           </div>
         </div>
 
-        <aside class="side-panel profile-card" aria-label="站点简介">
-          <img src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715114957806.jpg" alt="Hackun">
-          <h2>Hackun</h2>
-          <p>把踩过的坑、想明白的知识点和偶尔出现的好心情都认真留下来。</p>
+        <aside class="side-panel" aria-label="站点简介">
+          <div class="profile-head">
+            <img src="https://raw.githubusercontent.com/zkk1233/Picture/main/20250715114957806.jpg" alt="Hackun">
+            <div>
+              <h2>Hackun</h2>
+              <p>随手记，慢慢写</p>
+            </div>
+          </div>
+          <p class="side-quote">把踩过的坑、想明白的知识点，和偶尔出现的好心情都留在这里。</p>
           <div class="quick-links">
-            <a class="quick-link" href="/home/">
-              <span><strong>最新文章</strong><br>从这里开始阅读</span>
-              <i aria-hidden="true"></i>
-            </a>
-            <a class="quick-link" href="/categories/">
-              <span><strong>文章分类</strong><br>按主题继续探索</span>
-              <i aria-hidden="true"></i>
-            </a>
-            <a class="quick-link" href="/profile/">
-              <span><strong>关于我</strong><br>认识这个小屋的主人</span>
-              <i aria-hidden="true"></i>
-            </a>
+            <a class="quick-link" href="/home/">最新文章</a>
+            <a class="quick-link" href="/categories/">文章分类</a>
+            <a class="quick-link" href="/profile/">关于我</a>
           </div>
         </aside>
       </section>
