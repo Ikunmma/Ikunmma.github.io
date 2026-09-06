@@ -6505,7 +6505,7 @@ details.toc[open] >div.body section .header+.doc_tree {
 .widget-wrapper.tagcloud.orbit .tag-orbit {
   position: relative;
   width: 100%;
-  min-height: 238px;
+  min-height: 250px;
   overflow: hidden;
   border: 1px solid rgba(136,126,210,0.16);
   border-radius: 12px;
@@ -6546,79 +6546,70 @@ details.toc[open] >div.body section .header+.doc_tree {
   border-color: rgba(165,238,179,0.12);
   transform: translate(-50%, -50%) rotate(19deg);
 }
-.widget-wrapper.tagcloud.orbit .orbit-core {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  top: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: 50%;
-  background: rgba(18,20,38,0.72);
-  color: rgba(255,255,255,0.88);
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 1rem;
-  font-weight: 700;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 22px rgba(127,115,240,0.32);
-}
 .widget-wrapper.tagcloud.orbit .tag-star {
   position: absolute;
   z-index: 1;
-  max-width: 58px;
-  color: rgba(236,238,255,0.78) !important;
-  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 52px;
+  height: 52px;
+  padding: 6px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.32), transparent 20%), linear-gradient(145deg, rgba(122,112,226,0.88), rgba(50,39,101,0.9));
+  color: rgba(255,255,255,0.9) !important;
+  line-height: 1.15;
   text-align: center;
   text-decoration: none;
   transform: translate(-50%, -50%);
-  transition: color 0.2s ease, filter 0.2s ease;
-}
-.widget-wrapper.tagcloud.orbit .tag-star:before {
-  display: block;
-  width: 5px;
-  height: 5px;
-  margin: 0 auto 4px;
-  border-radius: 50%;
-  background: currentColor;
-  content: '';
-  box-shadow: 0 0 9px currentColor;
+  box-shadow: 0 0 16px rgba(127,115,240,0.24), inset 0 -8px 16px rgba(0,0,0,0.18);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 .widget-wrapper.tagcloud.orbit .tag-star span {
-  display: block;
+  display: -webkit-box;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  max-width: 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .widget-wrapper.tagcloud.orbit .tag-star:hover {
   z-index: 3;
-  color: #b8ef79 !important;
-  filter: drop-shadow(0 0 8px rgba(184,239,121,0.42));
+  border-color: rgba(184,239,121,0.72);
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 0 22px rgba(184,239,121,0.32), inset 0 -8px 16px rgba(0,0,0,0.18);
 }
 :root[data-theme="light"] .widget-wrapper.tagcloud.orbit .tag-orbit {
   border-color: rgba(91,77,146,0.14);
   background: radial-gradient(circle at 50% 50%, rgba(118,96,202,0.18), transparent 24%), radial-gradient(circle at 20% 14%, rgba(69,169,184,0.14), transparent 23%), radial-gradient(circle at 88% 84%, rgba(204,109,153,0.13), transparent 26%), rgba(255,255,255,0.82);
   box-shadow: 0 10px 24px rgba(57,49,88,0.08);
 }
-:root[data-theme="light"] .widget-wrapper.tagcloud.orbit .orbit-core {
-  background: rgba(255,255,255,0.78);
-  color: #30294d;
-}
 :root[data-theme="light"] .widget-wrapper.tagcloud.orbit .tag-star {
-  color: rgba(48,41,77,0.72) !important;
+  border-color: rgba(91,77,146,0.18);
+  background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.7), transparent 22%), linear-gradient(145deg, #fff, #d8d3f1);
+  color: #332d54 !important;
+  box-shadow: 0 10px 22px rgba(57,49,88,0.12), inset 0 -8px 14px rgba(95,75,170,0.1);
 }
 :root[data-theme="light"] .widget-wrapper.tagcloud.orbit .tag-star:hover {
-  color: #5f4baa !important;
+  border-color: rgba(95,75,170,0.52);
+  box-shadow: 0 12px 28px rgba(95,75,170,0.2), inset 0 -8px 14px rgba(95,75,170,0.1);
 }
 @media screen and (max-width: 667px) {
   .widget-wrapper.tagcloud.orbit .tag-orbit {
-    min-height: 214px;
+    min-height: 230px;
   }
   .widget-wrapper.tagcloud.orbit .tag-star {
-    max-width: 52px;
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+  }
+  .widget-wrapper.tagcloud.orbit .tag-star span {
+    font-size: 0.62rem;
   }
 }
 @-moz-keyframes tag-orbit-spin {
