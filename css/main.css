@@ -6569,13 +6569,12 @@ details.toc[open] >div.body section .header+.doc_tree {
 .widget-wrapper.tagcloud.orbit .tag-star {
   position: absolute;
   z-index: 1;
-  left: 50%;
-  top: 50%;
-  max-width: 86px;
+  max-width: 58px;
   color: rgba(236,238,255,0.78) !important;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
+  transform: translate(-50%, -50%);
   transition: color 0.2s ease, filter 0.2s ease;
 }
 .widget-wrapper.tagcloud.orbit .tag-star:before {
@@ -6619,7 +6618,7 @@ details.toc[open] >div.body section .header+.doc_tree {
     min-height: 214px;
   }
   .widget-wrapper.tagcloud.orbit .tag-star {
-    max-width: 72px;
+    max-width: 52px;
   }
 }
 @-moz-keyframes tag-orbit-spin {
