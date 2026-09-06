@@ -19,6 +19,15 @@
       --accent-green: #8ee6b1;
     }
 
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --text: #18202b;
+      --muted: rgba(24, 32, 43, 0.72);
+      --soft: rgba(24, 32, 43, 0.58);
+      --line: rgba(24, 32, 43, 0.18);
+      --panel: rgba(255, 255, 255, 0.58);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -30,6 +39,10 @@
       font-family: "KaiTi", "STKaiti", "楷体", "华文楷体", serif;
       background: #070b14;
       color: var(--text);
+    }
+
+    :root[data-theme="light"] body {
+      background: #edf4f8;
     }
 
     body {
@@ -60,6 +73,13 @@
         url("/img/profile.jpg") center / cover no-repeat;
       transform: scale(1.02);
       animation: backgroundDrift 18s ease-in-out infinite alternate;
+    }
+
+    :root[data-theme="light"] .entry::before {
+      background:
+        linear-gradient(90deg, rgba(237, 244, 248, 0.82), rgba(237, 244, 248, 0.44) 54%, rgba(237, 244, 248, 0.74)),
+        linear-gradient(180deg, rgba(237, 244, 248, 0.16), rgba(237, 244, 248, 0.84)),
+        url("/img/profile.jpg") center / cover no-repeat;
     }
 
     .entry::after {
@@ -364,6 +384,52 @@
       animation: breathe 1.8s ease-in-out infinite;
     }
 
+    .theme-toggle {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(10, 16, 28, 0.62);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px);
+      cursor: pointer;
+      font: 700 14px/1 "Microsoft YaHei", "Segoe UI", sans-serif;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125, 211, 252, 0.56);
+    }
+
+    .theme-toggle__icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #dbeafe;
+      box-shadow: inset -6px -2px 0 #7aa2f7, 0 0 0 3px rgba(122, 162, 247, 0.16);
+    }
+
+    :root[data-theme="light"] .theme-toggle {
+      color: #18202b;
+      border-color: rgba(24, 32, 43, 0.14);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 12px 30px rgba(24, 32, 43, 0.14);
+    }
+
+    :root[data-theme="light"] .theme-toggle__icon {
+      background: #f5c542;
+      box-shadow: 0 0 0 3px rgba(245, 197, 66, 0.18);
+    }
+
     @keyframes backgroundDrift {
       from {
         transform: scale(1.02) translate3d(0, 0, 0);
@@ -509,6 +575,10 @@
 </head>
 <body>
   <main class="entry">
+    <button class="theme-toggle" type="button" aria-label="切换到白色模式">
+      <span class="theme-toggle__icon" aria-hidden="true"></span>
+      <span class="theme-toggle__text">白色</span>
+    </button>
     <div class="stars" aria-hidden="true"></div>
     <div class="entry-shell">
       <header class="topbar">
@@ -557,5 +627,36 @@
       </footer>
     </div>
   </main>
+  <script>
+    const root = document.documentElement;
+    const button = document.querySelector('.theme-toggle');
+    const text = button.querySelector('.theme-toggle__text');
+
+    function getEntryTheme() {
+      return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    }
+
+    function updateEntryThemeButton() {
+      const mode = getEntryTheme();
+      button.setAttribute('aria-label', mode === 'dark' ? '切换到白色模式' : '切换到深色模式');
+      text.textContent = mode === 'dark' ? '白色' : '深色';
+    }
+
+    function setEntryTheme(mode) {
+      if (mode === 'light') {
+        root.setAttribute('data-theme', 'light');
+      } else {
+        root.removeAttribute('data-theme');
+      }
+      window.localStorage.setItem('Entry.theme', mode);
+      updateEntryThemeButton();
+    }
+
+    button.addEventListener('click', function () {
+      setEntryTheme(getEntryTheme() === 'dark' ? 'light' : 'dark');
+    });
+
+    setEntryTheme(window.localStorage.getItem('Entry.theme') === 'light' ? 'light' : 'dark');
+  </script>
 </body>
 </html>
