@@ -23,7 +23,7 @@
     <meta name="description" content="SSRF漏洞  基础知识  概述 SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种由攻击者构造请求，由服务端发起请求的安全漏洞。一般情况下，SSRF攻击的目标是外网无法访问的内部系统(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统) 大白话：利用服务器漏洞以服务器的身份发送一条构造好的请求给服务器所在内网进行攻击  主要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSRF漏洞">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/SSRF%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/09/SSRF%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="SSRF漏洞  基础知识  概述 SSRF (Server-Side Request Forgery,服务器端请求伪造)是一种由攻击者构造请求，由服务端发起请求的安全漏洞。一般情况下，SSRF攻击的目标是外网无法访问的内部系统(正因为请求是由服务端发起的，所以服务端能请求到与自身相连而与外网隔离的内部系统) 大白话：利用服务器漏洞以服务器的身份发送一条构造好的请求给服务器所在内网进行攻击  主要">
 <meta property="og:locale" content="zh_CN">
@@ -41,6 +41,8 @@
   <meta name="keywords" content="漏洞,SSRF">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -807,7 +809,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

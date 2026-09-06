@@ -23,7 +23,7 @@
     <meta name="description" content="DNS DNS（Domain Name System）是域名解析系统，的作用非常简单，就是根据域名查出对应的 IP地址 你可以把它想象成一本巨大的电话本，比如当你要访问域名www.goole.com，，首先要通过DNS查出它的IP地址是217.160.0.201  域名  域名的形式 域名可以划分为各个子域，子域还可以继续划分为子域的子域，这样就形成了顶级域、二级域、三级域等  其中顶级域名分为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DNS">
-<meta property="og:url" content="https://ikunmma.github.io/2025/09/10/DNS/index.html">
+<meta property="og:url" content="https://hackun.top/2025/09/10/DNS/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="DNS DNS（Domain Name System）是域名解析系统，的作用非常简单，就是根据域名查出对应的 IP地址 你可以把它想象成一本巨大的电话本，比如当你要访问域名www.goole.com，，首先要通过DNS查出它的IP地址是217.160.0.201  域名  域名的形式 域名可以划分为各个子域，子域还可以继续划分为子域的子域，这样就形成了顶级域、二级域、三级域等  其中顶级域名分为">
 <meta property="og:locale" content="zh_CN">
@@ -46,6 +46,8 @@
   <meta name="keywords" content="渗透测试,网络基础">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -793,7 +795,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

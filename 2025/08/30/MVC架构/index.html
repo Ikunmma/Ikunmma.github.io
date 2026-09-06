@@ -23,7 +23,7 @@
     <meta name="description" content="MVC架构  定义 MVC是一种软件架构模式，常用于图形化界面和 Web 应用的设计，全称是：  M：Model(模型) V：View(视图) C：Controller(控制器)  它的核心思想就是：MVC通过职责分离和分层控制，把数据、显示、逻辑分开，让代码更清晰、好维护，是现代Web开发（如Spring MVC、ASP.NET MVC）的基石  组成部分   Model 负责存储、处理、管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MVC架构">
-<meta property="og:url" content="https://ikunmma.github.io/2025/08/30/MVC%E6%9E%B6%E6%9E%84/index.html">
+<meta property="og:url" content="https://hackun.top/2025/08/30/MVC%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="MVC架构  定义 MVC是一种软件架构模式，常用于图形化界面和 Web 应用的设计，全称是：  M：Model(模型) V：View(视图) C：Controller(控制器)  它的核心思想就是：MVC通过职责分离和分层控制，把数据、显示、逻辑分开，让代码更清晰、好维护，是现代Web开发（如Spring MVC、ASP.NET MVC）的基石  组成部分   Model 负责存储、处理、管理">
 <meta property="og:locale" content="zh_CN">
@@ -42,6 +42,8 @@
   <meta name="keywords" content="软件架构,代码审计">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -731,7 +733,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

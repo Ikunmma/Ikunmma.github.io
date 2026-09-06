@@ -23,7 +23,7 @@
     <meta name="description" content="关于 PyTorch 在调用 CUDA 时卡退问题 在学习Windows下深度学习环境配置时，我参考了李沐老师的视频： Windows 下安装 CUDA 和 Pytorch 跑深度学习 - 动手学深度学习v2_哔哩哔哩_bilibili 在使用Anaconda PowerShell Prompt运行PyTorch调用CUDA时，出现了程序崩溃问题  问题 在python中运行以下代码： 1234">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于 PyTorch 在调用 CUDA 时卡退问题">
-<meta property="og:url" content="https://ikunmma.github.io/2026/09/06/%E5%85%B3%E4%BA%8E-PyTorch-%E5%9C%A8%E8%B0%83%E7%94%A8-CUDA-%E6%97%B6%E5%8D%A1%E9%80%80%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:url" content="https://hackun.top/2026/09/06/%E5%85%B3%E4%BA%8E-PyTorch-%E5%9C%A8%E8%B0%83%E7%94%A8-CUDA-%E6%97%B6%E5%8D%A1%E9%80%80%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="关于 PyTorch 在调用 CUDA 时卡退问题 在学习Windows下深度学习环境配置时，我参考了李沐老师的视频： Windows 下安装 CUDA 和 Pytorch 跑深度学习 - 动手学深度学习v2_哔哩哔哩_bilibili 在使用Anaconda PowerShell Prompt运行PyTorch调用CUDA时，出现了程序崩溃问题  问题 在python中运行以下代码： 1234">
 <meta property="og:locale" content="zh_CN">
@@ -42,6 +42,8 @@
   <meta name="keywords" content="PyTorch,深度学习">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -692,7 +694,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

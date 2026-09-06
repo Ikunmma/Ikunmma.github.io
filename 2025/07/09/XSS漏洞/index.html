@@ -23,7 +23,7 @@
     <meta name="description" content="XSS漏洞 XSS是基于前端的一种攻击，其实就是非Web应用自身的JS代码被黑客恶意插入，通过执行恶意的JS代码，可以导致窃取敏感信息、篡改网页内容或劫持用户会话，大部分情况是窃取Cookie，在你登录账号后的情况下，部分Web应用通过Cookie可以导致黑客能直接登录你的账号  XSS的分类  存储型XSS   恶意脚本存储在后端中(数据库、日志文件、评论等) 持久性攻击，影响所有访问相关页面">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XSS漏洞">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/XSS%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/09/XSS%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="XSS漏洞 XSS是基于前端的一种攻击，其实就是非Web应用自身的JS代码被黑客恶意插入，通过执行恶意的JS代码，可以导致窃取敏感信息、篡改网页内容或劫持用户会话，大部分情况是窃取Cookie，在你登录账号后的情况下，部分Web应用通过Cookie可以导致黑客能直接登录你的账号  XSS的分类  存储型XSS   恶意脚本存储在后端中(数据库、日志文件、评论等) 持久性攻击，影响所有访问相关页面">
 <meta property="og:locale" content="zh_CN">
@@ -43,6 +43,8 @@
   <meta name="keywords" content="漏洞,XSS">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -953,7 +955,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

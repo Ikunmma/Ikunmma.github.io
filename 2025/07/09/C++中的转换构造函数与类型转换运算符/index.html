@@ -23,7 +23,7 @@
     <meta name="description" content="C++中的转换构造函数与类型转换运算符  隐式类型转换 C++的内置类型之间会进行隐式的类型转换  char、short、int、long四个类型混合运算时，较小的(占用字节数小)整数类型会被自动提升为较大的(占用字节数大)整数类型，以确保不会丢失精度 signed类型和unsigned类型混合运算的结果是unsigned类型 整型(char、short、int、long)和浮点类型(float">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++中的转换构造函数与类型转换运算符">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/09/C++%E4%B8%AD%E7%9A%84%E8%BD%AC%E6%8D%A2%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="C++中的转换构造函数与类型转换运算符  隐式类型转换 C++的内置类型之间会进行隐式的类型转换  char、short、int、long四个类型混合运算时，较小的(占用字节数小)整数类型会被自动提升为较大的(占用字节数大)整数类型，以确保不会丢失精度 signed类型和unsigned类型混合运算的结果是unsigned类型 整型(char、short、int、long)和浮点类型(float">
 <meta property="og:locale" content="zh_CN">
@@ -40,6 +40,8 @@
   <meta name="keywords" content="编程">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -636,7 +638,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

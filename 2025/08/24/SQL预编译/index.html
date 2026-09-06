@@ -23,7 +23,7 @@
     <meta name="description" content="SQL预编译  本文章主要解决一个问题： 预编译真的能完美防御SQL注入吗？？？  sql注入是指攻击者拼接恶意SQL语句到接受外部参数的动态SQL查询中，程序本身未对插入的SQL语句进行过滤，导致SQL语句直接被服务端执行 对于如此危险的漏洞，有没有办法进行阻止呢？ 有的兄弟，有的！ 预编译就能解决大部分的SQL注入问题  何为预编译？ 预编译全称Prepared Statement，就是在执">
 <meta property="og:type" content="article">
 <meta property="og:title" content="预编译真的能完美防御SQL注入吗？？？">
-<meta property="og:url" content="https://ikunmma.github.io/2025/08/24/SQL%E9%A2%84%E7%BC%96%E8%AF%91/index.html">
+<meta property="og:url" content="https://hackun.top/2025/08/24/SQL%E9%A2%84%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="SQL预编译  本文章主要解决一个问题： 预编译真的能完美防御SQL注入吗？？？  sql注入是指攻击者拼接恶意SQL语句到接受外部参数的动态SQL查询中，程序本身未对插入的SQL语句进行过滤，导致SQL语句直接被服务端执行 对于如此危险的漏洞，有没有办法进行阻止呢？ 有的兄弟，有的！ 预编译就能解决大部分的SQL注入问题  何为预编译？ 预编译全称Prepared Statement，就是在执">
 <meta property="og:locale" content="zh_CN">
@@ -41,6 +41,8 @@
   <meta name="keywords" content="漏洞,SQL">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -671,7 +673,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

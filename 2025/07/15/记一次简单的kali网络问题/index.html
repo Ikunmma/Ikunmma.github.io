@@ -23,7 +23,7 @@
     <meta name="description" content="记一次简单的kali网络问题 kali虚拟机连不上网时可以尝试以下方法重置网络连接 首先在终端输入ifconfig，只输出以下语句  说明未与主机建立联系，我们尝试用sudo dhclient -v重置网络连接  再输入ifconfig，输出以下内容代表网络连接成功（再进一步连接的话开tun模式）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次简单的kali网络问题">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%AE%80%E5%8D%95%E7%9A%84kali%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%AE%80%E5%8D%95%E7%9A%84kali%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="记一次简单的kali网络问题 kali虚拟机连不上网时可以尝试以下方法重置网络连接 首先在终端输入ifconfig，只输出以下语句  说明未与主机建立联系，我们尝试用sudo dhclient -v重置网络连接  再输入ifconfig，输出以下内容代表网络连接成功（再进一步连接的话开tun模式）">
 <meta property="og:locale" content="zh_CN">
@@ -43,6 +43,8 @@
   <meta name="keywords" content="虚拟机,kali">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -614,7 +616,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

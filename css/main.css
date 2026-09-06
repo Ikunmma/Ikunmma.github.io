@@ -1579,7 +1579,7 @@ div.toast.show {
   background: var(--block-hover);
 }
 .page-footer .sitemap {
-  margin: 0.5rem -4px 2rem;
+  margin: 0.5rem 0 2rem;
   display: grid;
   scrollbar-width: none;
   grid-gap: 1rem 1rem;
@@ -3824,6 +3824,210 @@ details.folding[child=iframe] >div.body {
   .md-text .frame-wrap#iphone11 .frame {
     width: 238px;
     height: 476px;
+  }
+}
+.friends-intro {
+  margin: 1rem 0 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--block-border);
+  border-radius: 12px;
+  background: var(--block);
+}
+.friends-intro h2 {
+  margin: 0 0 0.5rem;
+}
+.friends-intro p {
+  margin: 0.4rem 0;
+  color: var(--text-p2);
+}
+.friends-intro .friends-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.friends-intro .friends-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 1rem;
+  border-radius: 4px;
+  background: var(--text-p1);
+  color: var(--site-bg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.friends-intro .friends-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 16px -4px rgba(0,0,0,0.2);
+}
+.friends-intro .friends-button.secondary {
+  background: var(--block-hover);
+  color: var(--text-p1);
+}
+.friends-site-info {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: var(--block);
+  border-radius: 0 12px 12px 0;
+}
+.friends-site-info p {
+  margin: 0.35rem 0;
+  overflow-wrap: anywhere;
+}
+.users-posts-wrap .grid-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.users-posts-wrap .user-post-card {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--block-border);
+  border-radius: 12px;
+  background: var(--block);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.users-posts-wrap .user-post-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 16px -4px rgba(0,0,0,0.2);
+}
+.users-posts-wrap .user-post-card .friend-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.users-posts-wrap .user-post-card .friend-site {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  color: var(--text-p1);
+}
+.users-posts-wrap .user-post-card .friend-avatar {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--card);
+}
+.users-posts-wrap .user-post-card .friend-identity {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.users-posts-wrap .user-post-card .friend-name {
+  overflow: hidden;
+  color: var(--text-p1);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.users-posts-wrap .user-post-card .friend-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--text-p3);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.users-posts-wrap .user-post-card .friend-labels {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.users-posts-wrap .user-post-card .friend-label {
+  max-width: 72px;
+  overflow: hidden;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--label-color, var(--block-hover));
+  color: var(--text-p1);
+  font-size: 10px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.users-posts-wrap .user-post-card .friend-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--block-border);
+}
+.users-posts-wrap .user-post-card .friend-post {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 30px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  color: var(--text-p2);
+  font-size: 0.8125rem;
+}
+.users-posts-wrap .user-post-card .friend-post:hover {
+  background: var(--block-hover);
+  color: var(--accent);
+}
+.users-posts-wrap .user-post-card .friend-post .post-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.users-posts-wrap .user-post-card .friend-post .post-date {
+  color: var(--text-p4);
+  font-size: 0.75rem;
+}
+.users-posts-wrap .user-post-card .friend-no-post {
+  padding: 0.5rem 6px;
+  color: var(--text-p4);
+  font-size: 0.8125rem;
+}
+.users-posts-wrap .user-post-card .friends-empty {
+  grid-column: 1/-1;
+  margin: 0;
+  padding: 2rem;
+  color: var(--text-p3);
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .users-posts-wrap .grid-box {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 667px) {
+  .friends-intro {
+    padding: 1rem;
+  }
+  .friends-intro .friends-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .friends-intro .friends-button {
+    justify-content: center;
+  }
+  .users-posts-wrap .user-post-card {
+    padding: 0.85rem;
+  }
+  .users-posts-wrap .user-post-card .friend-labels {
+    display: none;
+  }
+  .users-posts-wrap .user-post-card .post-date {
+    display: none;
   }
 }
 .users-wrap .grid-box {

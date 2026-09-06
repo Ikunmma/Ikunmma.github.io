@@ -23,7 +23,7 @@
     <meta name="description" content="HTTP参数污染 在刷sqli-labs 29时遇到了http参数污染，就想着趁火打劫来学习一下 HTTP Parameter Pollution，简称HPP，是一种注入型漏洞，如果Web应用中存在这样的漏洞，可以被攻击者利用来进行客户端或者服务器端的攻击，通过 HPP 参数污染可以实现绕过 waf 来进行攻击  漏洞原理 浏览器与服务器进行交互时，浏览器提交 GET&#x2F;POST 请求参数，这些参">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP参数污染">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/21/HTTP%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/21/HTTP%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="HTTP参数污染 在刷sqli-labs 29时遇到了http参数污染，就想着趁火打劫来学习一下 HTTP Parameter Pollution，简称HPP，是一种注入型漏洞，如果Web应用中存在这样的漏洞，可以被攻击者利用来进行客户端或者服务器端的攻击，通过 HPP 参数污染可以实现绕过 waf 来进行攻击  漏洞原理 浏览器与服务器进行交互时，浏览器提交 GET&#x2F;POST 请求参数，这些参">
 <meta property="og:locale" content="zh_CN">
@@ -46,6 +46,8 @@
   <meta name="keywords" content="漏洞,HTTP">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -682,7 +684,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

@@ -23,7 +23,7 @@
     <meta name="description" content="C语言易错难懂知识  一些基础知识 1.进制 二进制：0b开头 八进制：0开头 十六进制：0X开头（09，AF） 2.float  4字节 有效数字6 double  8字节 有效数字15 不同类型数据运算时，除强制类型转换外，结果都为double型 在一个整数末尾加L&#x2F;l表示长整型 eg. int b&#x3D;5; ​      float a&#x3D;2.0; ​      b&#x3D;b&#x2F;2*a; &#x2F;&#x2F;b&#x3D;5 3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/C%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/09/C%E8%AF%AD%E8%A8%80/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="C语言易错难懂知识  一些基础知识 1.进制 二进制：0b开头 八进制：0开头 十六进制：0X开头（09，AF） 2.float  4字节 有效数字6 double  8字节 有效数字15 不同类型数据运算时，除强制类型转换外，结果都为double型 在一个整数末尾加L&#x2F;l表示长整型 eg. int b&#x3D;5; ​      float a&#x3D;2.0; ​      b&#x3D;b&#x2F;2*a; &#x2F;&#x2F;b&#x3D;5 3">
 <meta property="og:locale" content="zh_CN">
@@ -41,6 +41,8 @@
   <meta name="keywords" content="编程">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -850,7 +852,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

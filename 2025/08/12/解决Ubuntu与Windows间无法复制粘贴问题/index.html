@@ -23,7 +23,7 @@
     <meta name="description" content="解决Ubuntu与Windows间无法复制粘贴问题  open-vm-tools 是在 VMware 虚拟机中提供与宿主机交互的工具包，比如：  自动调整虚拟机分辨率 文件夹共享 剪贴板共享（宿主机与虚拟机之间） 性能优化等   直接在ubuntu命令行执行以下命令 123sudo apt-get autoremove open-vm-tools    &#x2F;&#x2F;卸载已有的工具sudo apt-get">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Ubuntu与Windows间无法复制粘贴问题">
-<meta property="og:url" content="https://ikunmma.github.io/2025/08/12/%E8%A7%A3%E5%86%B3Ubuntu%E4%B8%8EWindows%E9%97%B4%E6%97%A0%E6%B3%95%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:url" content="https://hackun.top/2025/08/12/%E8%A7%A3%E5%86%B3Ubuntu%E4%B8%8EWindows%E9%97%B4%E6%97%A0%E6%B3%95%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="解决Ubuntu与Windows间无法复制粘贴问题  open-vm-tools 是在 VMware 虚拟机中提供与宿主机交互的工具包，比如：  自动调整虚拟机分辨率 文件夹共享 剪贴板共享（宿主机与虚拟机之间） 性能优化等   直接在ubuntu命令行执行以下命令 123sudo apt-get autoremove open-vm-tools    &#x2F;&#x2F;卸载已有的工具sudo apt-get">
 <meta property="og:locale" content="zh_CN">
@@ -39,6 +39,8 @@
   <meta name="keywords" content="虚拟机,ubuntu">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -616,7 +618,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

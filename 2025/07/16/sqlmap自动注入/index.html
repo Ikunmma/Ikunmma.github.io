@@ -23,7 +23,7 @@
     <meta name="description" content="sqlmap自动注入  常用参数 -u：扫描目标url --batch：自动处理提示信息 --cookie：附加cookie参数 获取当前数据库名： --current-db：查询当前web使用的数据库名 -D：应用指定数据库 获取表名： --tables：查询指定库下所有表名（先用-D指定库名） -T：应用指定表 获取字段： --columns：查询指定表下所有字段（先用-T指定名） -C：应">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlmap自动注入">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/16/sqlmap%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/16/sqlmap%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="sqlmap自动注入  常用参数 -u：扫描目标url --batch：自动处理提示信息 --cookie：附加cookie参数 获取当前数据库名： --current-db：查询当前web使用的数据库名 -D：应用指定数据库 获取表名： --tables：查询指定库下所有表名（先用-D指定库名） -T：应用指定表 获取字段： --columns：查询指定表下所有字段（先用-T指定名） -C：应">
 <meta property="og:locale" content="zh_CN">
@@ -42,6 +42,8 @@
   <meta name="keywords" content="CTF工具,SQL,sqlmap">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -644,7 +646,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

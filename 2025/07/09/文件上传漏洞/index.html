@@ -23,7 +23,7 @@
     <meta name="description" content="文件上传漏洞  概述  什么是文件上传漏洞 文件上传漏洞是指由于对用户文件上传部分的控制不足或者处理缺陷，而导致的用户可以向服务器上传恶意文件（木马，病毒，恶意脚本或者WebShell等）并进行执行，后获得执行服务端命令的能力。 大白话：在要上传的文件里构造语句并按照特定的方式进行上传，以达到攻击者的目的  文件上传漏洞产生原因    漏洞成因 攻击方式 示例     文件后缀名校验不严 上传">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件上传漏洞">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="文件上传漏洞  概述  什么是文件上传漏洞 文件上传漏洞是指由于对用户文件上传部分的控制不足或者处理缺陷，而导致的用户可以向服务器上传恶意文件（木马，病毒，恶意脚本或者WebShell等）并进行执行，后获得执行服务端命令的能力。 大白话：在要上传的文件里构造语句并按照特定的方式进行上传，以达到攻击者的目的  文件上传漏洞产生原因    漏洞成因 攻击方式 示例     文件后缀名校验不严 上传">
 <meta property="og:locale" content="zh_CN">
@@ -45,6 +45,8 @@
   <meta name="keywords" content="漏洞,PHP,文件上传">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -1118,7 +1120,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {

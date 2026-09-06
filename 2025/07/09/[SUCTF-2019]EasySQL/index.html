@@ -23,7 +23,7 @@
     <meta name="description" content="[SUCTF 2019]EasySQL  总结  用Bp抓包爆破查询过滤的关键字，找到合适的注入方法 尝试用预编译绕过限制 启用set sql_mode&#x3D;pipes_as_concat模式，将||运算符用作字符串连接，即用作concat()函数同义词   题目   解题思路 输入1，出现回显：  尝试将 1 和 or 一起输入，即 1 or 1&#x3D;1 出现回显：  这说明or被过滤了 这时我们要检">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(SUCTF 2019)EasySQL">
-<meta property="og:url" content="https://ikunmma.github.io/2025/07/09/[SUCTF-2019]EasySQL/index.html">
+<meta property="og:url" content="https://hackun.top/2025/07/09/[SUCTF-2019]EasySQL/index.html">
 <meta property="og:site_name" content="无言の小屋">
 <meta property="og:description" content="[SUCTF 2019]EasySQL  总结  用Bp抓包爆破查询过滤的关键字，找到合适的注入方法 尝试用预编译绕过限制 启用set sql_mode&#x3D;pipes_as_concat模式，将||运算符用作字符串连接，即用作concat()函数同义词   题目   解题思路 输入1，出现回显：  尝试将 1 和 or 一起输入，即 1 or 1&#x3D;1 出现回显：  这说明or被过滤了 这时我们要检">
 <meta property="og:locale" content="zh_CN">
@@ -48,6 +48,8 @@
   <meta name="keywords" content="漏洞,SQL,CTF">
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="无言の小屋" type="application/atom+xml">
   
 
   <link rel="stylesheet" href="/css/main.css?v=1.29.1">
@@ -659,7 +661,7 @@
 
 <script defer>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"}}`));
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"}}`));
     for (let id of Object.keys(ctx.services)) {
       const js = ctx.services[id].js;
       if (id == 'siteinfo') {
