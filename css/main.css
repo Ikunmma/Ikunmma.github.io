@@ -7125,9 +7125,18 @@ details.toc[open] >div.body section .header+.doc_tree {
 }
 .l_body.index[layout='index'] .l_right .widgets .widget-wrapper.notice-card {
   padding: 0;
-  border-radius: 8px;
+  border: 1px solid rgba(184,239,121,0.18);
+  border-radius: 10px;
   background: linear-gradient(180deg, rgba(45,35,82,0.96), rgba(30,25,55,0.96)), #211b3d;
-  box-shadow: 0 18px 36px rgba(0,0,0,0.24);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.24), inset 0 0 0 1px rgba(255,255,255,0.045);
+}
+.l_body.index[layout='index'] .l_right .widgets .widget-wrapper.notice-card:before {
+  position: absolute;
+  inset: 10px;
+  content: '';
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 7px;
+  pointer-events: none;
 }
 .l_body.index[layout='index'] .l_right .widgets .widget-wrapper.notice-card .widget-header {
   padding-top: 1.6rem;
